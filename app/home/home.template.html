@@ -1,0 +1,19 @@
+<div>
+	<div class='wrapper'>
+		<div class='container dropable' [dragula]='"fifth-bag"'>
+			<div>You can move these elements between these two containers</div>
+			<div>Moving them anywhere else isn't quite possible</div>
+			<div>There's also the possibility of moving elements around in the same container, changing their position</div>
+			<div class="child" *ngFor="let control of controls" [attr.data-order]="control.order">
+				<control [data]="control"></control>
+			</div>
+		</div>
+		<div class='container' [dragula]='"fifth-bag"'>
+			<div>This is the default use case. You only need to specify the containers you want to use</div>
+			<div>More interactive use cases lie ahead</div>
+			<div class="newChild child" data-order="-1">
+				<textfield [data]="data"></textfield>
+			</div>
+		</div>
+	</div>
+</div>

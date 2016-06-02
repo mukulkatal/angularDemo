@@ -1,0 +1,157 @@
+import { Component, OnInit } from '@angular/core';
+import {TextField} from '../templates/controls/controls';
+import {Control} from '../templates/controls/control.component';
+import { JSONBuilder } from './services/JSONBuilder.service';
+//import {Dragula, DragulaService} from 'ng2-dragula/ng2-dragula';
+
+declare var jQuery: any;
+declare var interact: any;
+declare var window: any;
+
+@Component({
+  selector: 'my-app',
+  directives: [/*Dragula,*/ Control, TextField],
+  providers: [JSONBuilder],
+  viewProviders: [/*DragulaService*/],
+  templateUrl: 'app/home/home.template2.html'
+})
+
+export class HomeComponent implements OnInit {
+  
+  controls = [
+    {
+      order: 1,
+      type: "textfield",
+      placeholder: 'This is a text field order 1',
+      required: false
+    },
+    {
+      order: 2,
+      type: "textfield",
+      placeholder: 'This is a text field order 2',
+      required: false
+    }
+  ];
+
+  ngOnInit(){
+    // target elements with the "draggable" class
+    interact('.draggable')
+      .draggable({
+        // enable inertial throwing
+        inertia: true,
+        // manualStart: true,
+        // keep the element within the area of it's parent
+        restrict: {
+          restriction: ".canvas",
+          endOnly: true,
+          elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+        },
+        // enable autoScroll
+        autoScroll: true,
+        // call this function on every dragmove event
+        onmove: dragMoveListener,
+        // call this function on every dragend event
+        onend: function(event) {
+          var textEl = event.target.querySelector('p');
+
+          textEl && (textEl.textContent =
+            'moved a distance of '
+            + (Math.sqrt(event.dx * event.dx +
+              event.dy * event.dy) | 0) + 'px');
+        }
+      });
+
+    function dragMoveListener(event) {
+      var target = event.target,
+        // keep the dragged position in the data-x/data-y attributes
+        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+      // translate the element
+      target.style.webkitTransform =
+        target.style.transform =
+        'translate(' + x + 'px, ' + y + 'px)';
+
+      // update the posiion attributes
+      target.setAttribute('data-x', x);
+      target.setAttribute('data-y', y);
+    }
+
+    // this is used later in the resizing and gesture demos
+    window.dragMoveListener = dragMoveListener;
+    // enable draggables to be dropped into this
+    interact('.dropzone').dropzone({
+      // only accept elements matching this CSS selector
+     // accept: '#yes-drop',
+      // Require a 75% element overlap for a drop to be possible
+      overlap: 0.75,
+
+      // listen for drop related events:
+
+      ondropactivate: function(event) {
+        // add active dropzone feedback
+        event.target.classList.add('drop-active');
+      },
+      ondragenter: function(event) {
+        var draggableElement = event.relatedTarget,
+          dropzoneElement = event.target;
+
+        // feedback the possibility of a drop
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
+        draggableElement.textContent = 'Dragged in';
+      },
+      ondragleave: function(event) {
+        // remove the drop feedback style
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
+        event.relatedTarget.textContent = 'Dragged out';
+      },
+      ondrop: function(event) {
+        event.relatedTarget.textContent = 'Dropped';
+      },
+      ondropdeactivate: function(event) {
+        // remove active dropzone feedback
+        event.target.classList.remove('drop-active');
+        event.target.classList.remove('drop-target');
+      }
+    });
+  }
+
+  constructor(/*private dragulaService: DragulaService,*/ private jsonBuilderHelper: JSONBuilder) {
+    jsonBuilderHelper.setTemplate(this.controls);
+
+    /*dragulaService.setOptions('fifth-bag', {
+      copy: true,
+      copySortSource: true,
+      accepts: function(el, target) {
+        return target === document.querySelector('.dropable')
+      }
+    });
+
+    dragulaService.drop.subscribe((value) => {
+      this.onDrop(value.slice(1));
+    });*/
+  }
+
+  /*onDrop(args) {
+    let [e, el] = args;
+
+    let parent = jQuery(el);
+    //add if it's new child else sort the order
+    if (jQuery(e).hasClass('newChild')) {
+      this.jsonBuilderHelper.addNewChild(parent, e, {
+        order: -1,
+        type: "textfield",
+        placeholder: 'This is a text field.',
+        required: false
+      });
+    }
+    else {
+      this.jsonBuilderHelper.sort(parent);
+    }
+
+    //update the components 
+    //this.controls = this.jsonBuilderHelper.getJSONBuilt();
+  }*/
+}
