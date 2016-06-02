@@ -12,7 +12,8 @@
 </div>
 
 <div class="col s3">
-	<div id="yes-drop" class="draggable drag-drop newChild"> #yes-drop </div>
+	
+	<div id="yes-drop" *ngFor="let element of elements" class="draggable drag-drop newChild" data-type="textfield"> element </div>
 
 
 

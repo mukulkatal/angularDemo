@@ -33,7 +33,7 @@ export class JSONBuilder{
 	addNewChild(parent: any,child: any,childTemplate: any){
 		this.JSONTemplate.push(childTemplate);
 		this.sort(parent);
-		jQuery(child).remove();
+		//jQuery(child).remove();
 		console.log(this.JSONTemplate);
 	}
 
