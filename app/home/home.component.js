@@ -13,13 +13,19 @@ var controls_1 = require('../templates/controls/controls');
 var control_component_1 = require('../templates/controls/control.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var HomeComponent = (function () {
-    function HomeComponent(/*private dragulaService: DragulaService,*/ jsonBuilderHelper) {
+    function HomeComponent(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.controls = [
             {
                 order: 1,
                 type: "textfield",
                 placeholder: 'This is a text field order 1',
+                required: false
+            },
+            {
+                order: 3,
+                type: "textfield",
+                placeholder: 'This is a text field order 3',
                 required: false
             },
             {
@@ -30,25 +36,14 @@ var HomeComponent = (function () {
             }
         ];
         jsonBuilderHelper.setTemplate(this.controls);
-        /*dragulaService.setOptions('fifth-bag', {
-          copy: true,
-          copySortSource: true,
-          accepts: function(el, target) {
-            return target === document.querySelector('.dropable')
-          }
-        });
-    
-        dragulaService.drop.subscribe((value) => {
-          this.onDrop(value.slice(1));
-        });*/
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var self = this;
         // target elements with the "draggable" class
         interact('.draggable')
             .draggable({
             // enable inertial throwing
             inertia: true,
-            // manualStart: true,
             // keep the element within the area of it's parent
             restrict: {
                 restriction: ".canvas",
@@ -84,11 +79,8 @@ var HomeComponent = (function () {
         window.dragMoveListener = dragMoveListener;
         // enable draggables to be dropped into this
         interact('.dropzone').dropzone({
-            // only accept elements matching this CSS selector
-            // accept: '#yes-drop',
             // Require a 75% element overlap for a drop to be possible
             overlap: 0.75,
-            // listen for drop related events:
             ondropactivate: function (event) {
                 // add active dropzone feedback
                 event.target.classList.add('drop-active');
@@ -107,6 +99,20 @@ var HomeComponent = (function () {
                 event.relatedTarget.textContent = 'Dragged out';
             },
             ondrop: function (event) {
+                var e = event.relatedTarget;
+                var parent = jQuery('#outer-dropzone');
+                // //add if it's new child else sort the order
+                if (jQuery(e).hasClass('newChild')) {
+                    self.jsonBuilderHelper.addNewChild(parent, e, {
+                        order: -1,
+                        type: "textfield",
+                        placeholder: 'This is a text field.',
+                        required: false
+                    });
+                }
+                else {
+                    self.jsonBuilderHelper.sort(parent);
+                }
                 event.relatedTarget.textContent = 'Dropped';
             },
             ondropdeactivate: function (event) {

@@ -1,12 +1,18 @@
 
-<div class="col s9 canvas" style="height:800px">
-	<div id="outer-dropzone" class="dropzone">
-	 
+<div class="col s9 canvas" style="height:100%">
+	<div id="outer-dropzone" class="dropzone" style="height:100%">
+	 	
+	 	<div class="child" *ngFor="let control of controls" [attr.data-order]="control.order">
+           <control [data]="control"></control>
+        </div>
+
+
+
 	</div>
 </div>
 
 <div class="col s3">
-	<div id="yes-drop" class="draggable drag-drop"> #yes-drop </div>
+	<div id="yes-drop" class="draggable drag-drop newChild"> #yes-drop </div>
 
 
 

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {TextField} from '../templates/controls/controls';
 import {Control} from '../templates/controls/control.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
-//import {Dragula, DragulaService} from 'ng2-dragula/ng2-dragula';
 
 declare var jQuery: any;
 declare var interact: any;
@@ -10,9 +9,9 @@ declare var window: any;
 
 @Component({
   selector: 'my-app',
-  directives: [/*Dragula,*/ Control, TextField],
+  directives: [Control, TextField],
   providers: [JSONBuilder],
-  viewProviders: [/*DragulaService*/],
+  viewProviders: [],
   templateUrl: 'app/home/home.template2.html'
 })
 
@@ -26,20 +25,33 @@ export class HomeComponent implements OnInit {
       required: false
     },
     {
+      order: 3,
+      type: "textfield",
+      placeholder: 'This is a text field order 3',
+      required: false
+    },
+    {
       order: 2,
       type: "textfield",
       placeholder: 'This is a text field order 2',
       required: false
     }
   ];
+  
+  constructor(private jsonBuilderHelper: JSONBuilder) {
+    jsonBuilderHelper.setTemplate(this.controls);
+    
+  }
+
 
   ngOnInit(){
+
+    var self = this;
     // target elements with the "draggable" class
     interact('.draggable')
       .draggable({
         // enable inertial throwing
         inertia: true,
-        // manualStart: true,
         // keep the element within the area of it's parent
         restrict: {
           restriction: ".canvas",
@@ -81,13 +93,8 @@ export class HomeComponent implements OnInit {
     window.dragMoveListener = dragMoveListener;
     // enable draggables to be dropped into this
     interact('.dropzone').dropzone({
-      // only accept elements matching this CSS selector
-     // accept: '#yes-drop',
       // Require a 75% element overlap for a drop to be possible
       overlap: 0.75,
-
-      // listen for drop related events:
-
       ondropactivate: function(event) {
         // add active dropzone feedback
         event.target.classList.add('drop-active');
@@ -108,6 +115,23 @@ export class HomeComponent implements OnInit {
         event.relatedTarget.textContent = 'Dragged out';
       },
       ondrop: function(event) {
+
+         let e  = event.relatedTarget;
+         let parent = jQuery('#outer-dropzone');
+        // //add if it's new child else sort the order
+        if (jQuery(e).hasClass('newChild')) {
+          self.jsonBuilderHelper.addNewChild(parent,e, {
+             order: -1,
+             type: "textfield",
+             placeholder: 'This is a text field.',
+             required: false
+           });
+          //self.controls = self.jsonBuilderHelper.getJSONBuilt();
+        }
+        else{
+          self.jsonBuilderHelper.sort(parent);
+        }
+
         event.relatedTarget.textContent = 'Dropped';
       },
       ondropdeactivate: function(event) {
@@ -118,40 +142,5 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  constructor(/*private dragulaService: DragulaService,*/ private jsonBuilderHelper: JSONBuilder) {
-    jsonBuilderHelper.setTemplate(this.controls);
-
-    /*dragulaService.setOptions('fifth-bag', {
-      copy: true,
-      copySortSource: true,
-      accepts: function(el, target) {
-        return target === document.querySelector('.dropable')
-      }
-    });
-
-    dragulaService.drop.subscribe((value) => {
-      this.onDrop(value.slice(1));
-    });*/
-  }
-
-  /*onDrop(args) {
-    let [e, el] = args;
-
-    let parent = jQuery(el);
-    //add if it's new child else sort the order
-    if (jQuery(e).hasClass('newChild')) {
-      this.jsonBuilderHelper.addNewChild(parent, e, {
-        order: -1,
-        type: "textfield",
-        placeholder: 'This is a text field.',
-        required: false
-      });
-    }
-    else {
-      this.jsonBuilderHelper.sort(parent);
-    }
-
-    //update the components 
-    //this.controls = this.jsonBuilderHelper.getJSONBuilt();
-  }*/
+  
 }
