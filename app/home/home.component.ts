@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit {
         else{
           self.jsonBuilderHelper.sort(parent);
         }
-
+    console.log(self.controls);
         event.relatedTarget.textContent = 'Dropped';
       },
       ondropdeactivate: function(event) {
