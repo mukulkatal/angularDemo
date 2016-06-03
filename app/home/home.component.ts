@@ -3,41 +3,39 @@ import {Control} from '../templates/controls/control.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
 import { JSONElement } from './services/JSONElement.service';
 import { Template1Component } from '../templates/templateAll/template1.component';
+import { Editor } from './components/editor.component';
+
 declare var jQuery: any;
 declare var interact: any;
 declare var window: any;
 
 @Component({
   selector: 'my-app',
-  directives: [Control,Template1Component],
+  directives: [Control,  Editor,Template1Component],
   providers: [JSONBuilder,JSONElement],
   viewProviders: [],
   templateUrl: 'app/home/home.template2.html'
 })
 
-export class HomeComponent implements OnInit {
-    //
+export class HomeComponent implements OnInit {    
   controls :any[];
-
+   selectedControl: any ;
   bindTemplateJson($event)
   {
      this.controls = $event.defaulttemp;
       console.log(this.controls); 
      this.jsonBuilderHelper.setTemplate(this.controls);
+     this.selectedControl= this.controls[0];
   }
   
- 
+
   elements : any[];
   constructor(private jsonBuilderHelper: JSONBuilder,private jsonElementHandler:JSONElement ) { 
-    this.elements = jsonElementHandler.allAvailableElements();  
-    console.log('constructor'); 
-     console.log(this.controls);
+    this.elements = jsonElementHandler.allAvailableElements();     
 }
   
    
-  ngOnInit(){
-      console.log('init'); 
-       console.log(this.controls);
+  ngOnInit(){     
     var self = this;
     // target elements with the "draggable" class
     interact('.draggable')
@@ -133,7 +131,6 @@ export class HomeComponent implements OnInit {
         else{
           self.jsonBuilderHelper.sort(parent);
         }
-   // console.log(self.controls);
         event.relatedTarget.textContent = 'Dropped';
       },
       ondropdeactivate: function(event) {
@@ -144,5 +141,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  
+ 
+  openEditor(control){
+    //var result = jQuery.grep(this.controls, function(e) { return e.order == order; });
+    this.selectedControl = control;
+    console.log(this.controls);
+  }
 }

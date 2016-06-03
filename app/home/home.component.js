@@ -13,22 +13,20 @@ var control_component_1 = require('../templates/controls/control.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var JSONElement_service_1 = require('./services/JSONElement.service');
 var template1_component_1 = require('../templates/templateAll/template1.component');
+var editor_component_1 = require('./components/editor.component');
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.jsonElementHandler = jsonElementHandler;
         this.elements = jsonElementHandler.allAvailableElements();
-        console.log('constructor');
-        console.log(this.controls);
     }
     HomeComponent.prototype.bindTemplateJson = function ($event) {
         this.controls = $event.defaulttemp;
         console.log(this.controls);
         this.jsonBuilderHelper.setTemplate(this.controls);
+        this.selectedControl = this.controls[0];
     };
     HomeComponent.prototype.ngOnInit = function () {
-        console.log('init');
-        console.log(this.controls);
         var self = this;
         // target elements with the "draggable" class
         interact('.draggable')
@@ -105,7 +103,6 @@ var HomeComponent = (function () {
                 else {
                     self.jsonBuilderHelper.sort(parent);
                 }
-                // console.log(self.controls);
                 event.relatedTarget.textContent = 'Dropped';
             },
             ondropdeactivate: function (event) {
@@ -115,10 +112,15 @@ var HomeComponent = (function () {
             }
         });
     };
+    HomeComponent.prototype.openEditor = function (control) {
+        //var result = jQuery.grep(this.controls, function(e) { return e.order == order; });
+        this.selectedControl = control;
+        console.log(this.controls);
+    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            directives: [control_component_1.Control, template1_component_1.Template1Component],
+            directives: [control_component_1.Control, editor_component_1.Editor, template1_component_1.Template1Component],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'app/home/home.template2.html'
