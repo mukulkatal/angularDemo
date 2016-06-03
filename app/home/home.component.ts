@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TextField} from '../templates/controls/controls';
 import {Control} from '../templates/controls/control.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
+import { JSONElement } from './services/JSONElement.service';
 
 import { Editor } from './components/editor.component';
 
@@ -12,7 +13,7 @@ declare var window: any;
 @Component({
   selector: 'my-app',
   directives: [Control, TextField, Editor],
-  providers: [JSONBuilder],
+  providers: [JSONBuilder,JSONElement],
   viewProviders: [],
   templateUrl: 'app/home/home.template2.html'
 })
@@ -40,12 +41,13 @@ export class HomeComponent implements OnInit {
     }
   ];
   
-  constructor(private jsonBuilderHelper: JSONBuilder) {
+  elements : any[];
+  constructor(private jsonBuilderHelper: JSONBuilder,private jsonElementHandler:JSONElement) {    
+    this.elements = jsonElementHandler.allAvailableElements();   
     jsonBuilderHelper.setTemplate(this.controls);
-    
   }
-
-
+  
+   
   ngOnInit(){
 
     var self = this;
@@ -122,6 +124,10 @@ export class HomeComponent implements OnInit {
          let parent = jQuery('#outer-dropzone');
         // //add if it's new child else sort the order
         if (jQuery(e).hasClass('newChild')) {
+            console.log(jQuery(e).data('type'));
+         
+           var jsonElement = self.jsonElementHandler.getJsonOfElem(jQuery(e).data('type'));
+          console.log(jsonElement);
           self.jsonBuilderHelper.addNewChild(parent,e, {
              order: -1,
              type: "textfield",

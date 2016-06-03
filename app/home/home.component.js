@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var controls_1 = require('../templates/controls/controls');
 var control_component_1 = require('../templates/controls/control.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
+var JSONElement_service_1 = require('./services/JSONElement.service');
 var editor_component_1 = require('./components/editor.component');
 var HomeComponent = (function () {
-    function HomeComponent(jsonBuilderHelper) {
+    function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
+        this.jsonElementHandler = jsonElementHandler;
         this.controls = [
             {
                 order: 1,
@@ -37,6 +39,7 @@ var HomeComponent = (function () {
             }
         ];
         this.selectedControl = this.controls[0];
+        this.elements = jsonElementHandler.allAvailableElements();
         jsonBuilderHelper.setTemplate(this.controls);
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -105,6 +108,9 @@ var HomeComponent = (function () {
                 var parent = jQuery('#outer-dropzone');
                 // //add if it's new child else sort the order
                 if (jQuery(e).hasClass('newChild')) {
+                    console.log(jQuery(e).data('type'));
+                    var jsonElement = self.jsonElementHandler.getJsonOfElem(jQuery(e).data('type'));
+                    console.log(jsonElement);
                     self.jsonBuilderHelper.addNewChild(parent, e, {
                         order: -1,
                         type: "textfield",
@@ -134,11 +140,11 @@ var HomeComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             directives: [control_component_1.Control, controls_1.TextField, editor_component_1.Editor],
-            providers: [JSONBuilder_service_1.JSONBuilder],
+            providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'app/home/home.template2.html'
         }), 
-        __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder])
+        __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement])
     ], HomeComponent);
     return HomeComponent;
 }());
