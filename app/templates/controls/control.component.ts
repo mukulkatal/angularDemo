@@ -6,9 +6,7 @@ import {TextField} from './controls';
 @Component({
   selector: 'control',
   directives:[TextField],
-  template: `
-			<textfield *ngIf="data.type=='textfield'" [data]="data"></textfield>
- 	`,
+  template: `<textfield *ngIf="data.type=='textfield'" [data]="data"></textfield>`,
 })
 
 export class Control { 

@@ -19,7 +19,7 @@ var Editor = (function () {
     Editor = __decorate([
         core_1.Component({
             selector: 'editor',
-            template: "\n\t\t<input type=\"type\" [(ngModel)]=\"value.placeholder\" />\n\t"
+            template: "\n\t\t<div>\n\t\t<div>\n\t\t<lable>order</lable><input type=\"text\" [(ngModel)]=\"value.order\" />\n\t\t</div>\n\t\t<div>\n\t\t<lable>type</lable><input type=\"type\" [(ngModel)]=\"value.type\" />\n\t\t</div>\n\t\t<div>\n\t\t<lable>Placeholder</lable><input type=\"type\" [(ngModel)]=\"value.placeholder\" />\n\t\t</div>\n\t\t<div>\n\t\t<lable>required</lable><input type=\"type\" [(ngModel)]=\"value.required\" />\n\t\t</div>\t\n\t\t<div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);

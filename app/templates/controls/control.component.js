@@ -21,7 +21,7 @@ var Control = (function () {
         core_1.Component({
             selector: 'control',
             directives: [controls_1.TextField],
-            template: "\n\t\t\t<textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n \t",
+            template: "<textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>",
         }), 
         __metadata('design:paramtypes', [])
     ], Control);

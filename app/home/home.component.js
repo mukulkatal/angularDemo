@@ -22,19 +22,19 @@ var HomeComponent = (function () {
             {
                 order: 1,
                 type: "textfield",
-                placeholder: 'This is a text field order 1',
+                placeholder: "This is a text field order 1",
                 required: false
             },
             {
                 order: 3,
                 type: "textfield",
-                placeholder: 'This is a text field order 3',
+                placeholder: "This is a text field order 3",
                 required: false
             },
             {
                 order: 2,
                 type: "textfield",
-                placeholder: 'This is a text field order 2',
+                placeholder: "This is a text field order 2",
                 required: false
             }
         ];
