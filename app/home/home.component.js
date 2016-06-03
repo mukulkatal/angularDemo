@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var controls_1 = require('../templates/controls/controls');
 var control_component_1 = require('../templates/controls/control.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
+var editor_component_1 = require('./components/editor.component');
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
@@ -35,6 +36,7 @@ var HomeComponent = (function () {
                 required: false
             }
         ];
+        this.selectedControl = this.controls[0];
         jsonBuilderHelper.setTemplate(this.controls);
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -123,10 +125,15 @@ var HomeComponent = (function () {
             }
         });
     };
+    HomeComponent.prototype.openEditor = function (control) {
+        //var result = jQuery.grep(this.controls, function(e) { return e.order == order; });
+        this.selectedControl = control;
+        console.log(this.controls);
+    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            directives: [control_component_1.Control, controls_1.TextField],
+            directives: [control_component_1.Control, controls_1.TextField, editor_component_1.Editor],
             providers: [JSONBuilder_service_1.JSONBuilder],
             viewProviders: [],
             templateUrl: 'app/home/home.template2.html'

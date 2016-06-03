@@ -37,7 +37,7 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.addNewChild = function (parent, child, childTemplate) {
         this.JSONTemplate.push(childTemplate);
         this.sort(parent);
-        jQuery(child).remove();
+        //jQuery(child).remove();
         console.log(this.JSONTemplate);
     };
     JSONBuilder.prototype.sort = function (parent) {

@@ -3,13 +3,15 @@ import {TextField} from '../templates/controls/controls';
 import {Control} from '../templates/controls/control.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
 
+import { Editor } from './components/editor.component';
+
 declare var jQuery: any;
 declare var interact: any;
 declare var window: any;
 
 @Component({
   selector: 'my-app',
-  directives: [Control, TextField],
+  directives: [Control, TextField, Editor],
   providers: [JSONBuilder],
   viewProviders: [],
   templateUrl: 'app/home/home.template2.html'
@@ -131,7 +133,7 @@ export class HomeComponent implements OnInit {
         else{
           self.jsonBuilderHelper.sort(parent);
         }
-    console.log(self.controls);
+        console.log(self.controls);
         event.relatedTarget.textContent = 'Dropped';
       },
       ondropdeactivate: function(event) {
@@ -142,5 +144,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  
+  selectedControl: any = this.controls[0];
+  openEditor(control){
+    //var result = jQuery.grep(this.controls, function(e) { return e.order == order; });
+    this.selectedControl = control;
+    console.log(this.controls);
+  }
 }

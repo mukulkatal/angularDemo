@@ -2,8 +2,10 @@
 <div class="col s9 canvas" style="height:100%">
 	<div id="outer-dropzone" class="dropzone" style="height:100%">
 	 	
-	 	<div class="child" *ngFor="let control of controls" [attr.data-order]="control.order">
-           <control [data]="control"></control>
+	 	<div class="child" *ngFor="let control of controls" 
+	 	
+	 	[attr.data-order]="control.order">
+           <control [data]="control" (click) = "openEditor(control)"></control>
         </div>
 
 
@@ -14,6 +16,6 @@
 <div class="col s3">
 	<div id="yes-drop" class="draggable drag-drop newChild"> #yes-drop </div>
 
-
+	<editor [value]="selectedControl"></editor>
 
 </div>
