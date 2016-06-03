@@ -13,8 +13,9 @@
 
 <div class="col s3">
 	
-	<div id="yes-drop" *ngFor="let element of elements" class="draggable drag-drop newChild" data-type="textfield"> element </div>
+	<div id="yes-drop" *ngFor="let element of elements; let  i = index" class="draggable drag-drop newChild" [attr.data-type]="element"> {{element}}{{i}} </div>
 
 
 
 </div>
+<div class="col s3">{{controls|json}} </div>

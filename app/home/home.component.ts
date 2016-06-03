@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
     this.elements = jsonElementHandler.allAvailableElements();   
     jsonBuilderHelper.setTemplate(this.controls);
   }
-
-
+  
+   
   ngOnInit(){
 
     var self = this;
@@ -123,7 +123,9 @@ export class HomeComponent implements OnInit {
         // //add if it's new child else sort the order
         if (jQuery(e).hasClass('newChild')) {
             console.log(jQuery(e).data('type'));
-         console.log(e);
+         
+           var jsonElement = self.jsonElementHandler.getJsonOfElem(jQuery(e).data('type'));
+          console.log(jsonElement);
           self.jsonBuilderHelper.addNewChild(parent,e, {
              order: -1,
              type: "textfield",
