@@ -1,21 +1,10 @@
 
 <div class="col s9 canvas" style="height:100%">
 	<div id="outer-dropzone" class="dropzone" style="height:100%">
-	 	
-	 	<div class="child" *ngFor="let control of controls" [attr.data-order]="control.order">
-           <control [data]="control"></control>
-        </div>
-
-
-
+	 	<Template-1 (defaultTemplate)="bindTemplateJson($event)" ></Template-1>
 	</div>
 </div>
 
 <div class="col s3">
-	
 	<div id="yes-drop" *ngFor="let element of elements; let  i = index" class="draggable drag-drop newChild" [attr.data-type]="element"> {{element}}{{i}} </div>
-
-
-
 </div>
-<div class="col s3">{{controls|json}} </div>

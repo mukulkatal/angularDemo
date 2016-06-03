@@ -26,7 +26,7 @@ var TextArea = (function () {
     ], TextArea.prototype, "data", void 0);
     TextArea = __decorate([
         core_1.Component({
-            selector: 'textrea',
+            selector: 'text-area',
             directives: [],
             viewProviders: [],
             template: "\n    <div class=\"input-field\">\n      <textarea class=\"validate\" [required]=\"data.required\" [(ngModel)]=\"value\" ></textarea>\n      <label for=\"first_name\">{{data.placeholder}}</label>\n    </div>\n\t"

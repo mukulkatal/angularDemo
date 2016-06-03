@@ -9,7 +9,7 @@ export class JSONBuilder{
 	}
 	
 	reorder(parent: any){
-		
+			console.log('sorty');
 		var i = 1;
 		var order: any[] = [];
 		parent.find('.child').each(function() {
@@ -29,21 +29,20 @@ export class JSONBuilder{
 			}
 		}
 	}
-
-	addNewChild(parent: any,child: any,childTemplate: any){
+	addNewChild(parent: any,child: any,childTemplate: any){	
 		this.JSONTemplate.push(childTemplate);
-		this.sort(parent);
-		//jQuery(child).remove();
-		console.log(this.JSONTemplate);
+		this.sort(parent);		
+		//jQuery(child).remove();		
 	}
 
-	sort(parent: any){
-		this.reorder(parent);
+	sort(parent: any){				
+		this.reorder(parent);		
 		this.JSONTemplate.sort((a, b) => ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)));
 		console.log(this.JSONTemplate);
 	}
 
 	getJSONBuilt(): any[] {
 		return this.JSONTemplate;
-	}
+	}	
+	
 }

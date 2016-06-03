@@ -16,6 +16,7 @@ var JSONBuilder = (function () {
         this.JSONTemplate = template;
     };
     JSONBuilder.prototype.reorder = function (parent) {
+        console.log('sorty');
         var i = 1;
         var order = [];
         parent.find('.child').each(function () {
@@ -37,8 +38,7 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.addNewChild = function (parent, child, childTemplate) {
         this.JSONTemplate.push(childTemplate);
         this.sort(parent);
-        //jQuery(child).remove();
-        console.log(this.JSONTemplate);
+        //jQuery(child).remove();		
     };
     JSONBuilder.prototype.sort = function (parent) {
         this.reorder(parent);

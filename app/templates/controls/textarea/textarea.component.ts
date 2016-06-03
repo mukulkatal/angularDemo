@@ -1,7 +1,7 @@
 import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'textrea',
+  selector: 'text-area',
   directives: [],
   viewProviders: [],
   template: `

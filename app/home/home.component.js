@@ -9,38 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var controls_1 = require('../templates/controls/controls');
 var control_component_1 = require('../templates/controls/control.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var JSONElement_service_1 = require('./services/JSONElement.service');
+var template1_component_1 = require('../templates/templateAll/template1.component');
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.jsonElementHandler = jsonElementHandler;
-        this.controls = [
-            {
-                order: 1,
-                type: "textfield",
-                placeholder: 'This is a text field order 1',
-                required: false
-            },
-            {
-                order: 3,
-                type: "textfield",
-                placeholder: 'This is a text field order 3',
-                required: false
-            },
-            {
-                order: 2,
-                type: "textfield",
-                placeholder: 'This is a text field order 2',
-                required: false
-            }
-        ];
         this.elements = jsonElementHandler.allAvailableElements();
-        jsonBuilderHelper.setTemplate(this.controls);
+        console.log('constructor');
+        console.log(this.controls);
     }
+    HomeComponent.prototype.bindTemplateJson = function ($event) {
+        this.controls = $event.defaulttemp;
+        console.log(this.controls);
+        this.jsonBuilderHelper.setTemplate(this.controls);
+    };
     HomeComponent.prototype.ngOnInit = function () {
+        console.log('init');
+        console.log(this.controls);
         var self = this;
         // target elements with the "draggable" class
         interact('.draggable')
@@ -106,20 +94,18 @@ var HomeComponent = (function () {
                 var parent = jQuery('#outer-dropzone');
                 // //add if it's new child else sort the order
                 if (jQuery(e).hasClass('newChild')) {
-                    console.log(jQuery(e).data('type'));
+                    // get the element 
                     var jsonElement = self.jsonElementHandler.getJsonOfElem(jQuery(e).data('type'));
-                    console.log(jsonElement);
-                    self.jsonBuilderHelper.addNewChild(parent, e, {
-                        order: -1,
-                        type: "textfield",
-                        placeholder: 'This is a text field.',
-                        required: false
-                    });
+                    //add elemnt in json 
+                    console.log(this.controls);
+                    //this.controls.push(jsonElement);
+                    // add elemnt in UI
+                    self.jsonBuilderHelper.addNewChild(parent, e, jsonElement);
                 }
                 else {
                     self.jsonBuilderHelper.sort(parent);
                 }
-                console.log(self.controls);
+                // console.log(self.controls);
                 event.relatedTarget.textContent = 'Dropped';
             },
             ondropdeactivate: function (event) {
@@ -132,7 +118,7 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            directives: [control_component_1.Control, controls_1.TextField],
+            directives: [control_component_1.Control, template1_component_1.Template1Component],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'app/home/home.template2.html'
