@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var controls_1 = require('../../templates/controls/controls');
+//import {TextField,TextArea} from '../../templates/controls/controls';
 var control_component_1 = require('../../templates/controls/control.component');
 // import { JSONBuilder } from '../../home/services/JSONBuilder.service';
 // import { JSONElement } from '../../home/services/JSONElement.service';
@@ -39,25 +39,26 @@ var Template1Component = (function () {
                 required: false
             }
         ];
+        this.controlSelected = new core_1.EventEmitter();
     }
-    // jsondefault() {
-    // }
-    // elements : any[];
-    // constructor(private jsonBuilderHelper: JSONBuilder,private jsonElementHandler:JSONElement) {    
-    //   this.elements = jsonElementHandler.allAvailableElements();   
-    //   jsonBuilderHelper.setTemplate(this.controls);
-    // }
     Template1Component.prototype.ngOnInit = function () {
         this.defaultTemplate.emit({ defaulttemp: this.defaultJson });
+    };
+    Template1Component.prototype.selectControl = function (control) {
+        this.controlSelected.emit(control);
     };
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], Template1Component.prototype, "defaultTemplate", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Template1Component.prototype, "controlSelected", void 0);
     Template1Component = __decorate([
         core_1.Component({
             selector: 'Template-1',
-            directives: [control_component_1.Control, controls_1.TextField, controls_1.TextArea],
+            directives: [control_component_1.Control],
             viewProviders: [],
             templateUrl: 'app/templates/templateAll/templatesHtml/template1.template.html',
         }), 

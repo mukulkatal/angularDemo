@@ -1,12 +1,10 @@
 <div class="col s9 canvas" style="height:100%">
 	<div id="outer-dropzone" class="dropzone" style="height:100%">
-	 	
-	 	<div class="child" *ngFor="let control of defaultJson" [attr.data-order]="control.order">
+	 	<div class="child" *ngFor="let control of defaultJson" 
+	 		[attr.data-order]="control.order"
+	 		(click)="selectControl(control)"
+	 	>
            <control [data]="control"></control>
         </div>
-
-
-
 	</div>
 </div>
-<div class="col s3">{{defaultJson|json}} </div>

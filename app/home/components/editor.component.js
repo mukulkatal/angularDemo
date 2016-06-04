@@ -19,7 +19,7 @@ var Editor = (function () {
     Editor = __decorate([
         core_1.Component({
             selector: 'editor',
-            template: "\n<input type=\"type\" [(ngModel)]=\"value.placeholder\" />\n"
+            template: "\n\t\t<input type=\"type\" [(ngModel)]=\"value.placeholder\" />\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);
