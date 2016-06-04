@@ -6,7 +6,7 @@ import {TextField,TextArea} from './controls';
   directives:[TextField,TextArea],
   template: `
 			<textfield *ngIf="data.type=='textfield'" [data]="data"></textfield>
-      <text-area *ngIf="data.type=='text-area'" [data]="data" ></text-area>
+      		<text-area *ngIf="data.type=='text-area'" [data]="data" ></text-area>
       `,
 
 })

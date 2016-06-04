@@ -20,11 +20,11 @@ var HomeComponent = (function () {
         this.jsonElementHandler = jsonElementHandler;
         this.elements = jsonElementHandler.allAvailableElements();
     }
-    HomeComponent.prototype.bindTemplateJson = function ($event) {
-        this.controls = $event.defaulttemp;
-        console.log(this.controls);
+    HomeComponent.prototype.bindTemplateJson = function (data) {
+        this.controls = data.defaulttemp;
         this.jsonBuilderHelper.setTemplate(this.controls);
-        this.selectedControl = this.controls[0];
+        console.log(this.controls);
+        //this.selectedControl  = this.controls[0];
     };
     HomeComponent.prototype.ngOnInit = function () {
         var self = this;
@@ -112,8 +112,7 @@ var HomeComponent = (function () {
             }
         });
     };
-    HomeComponent.prototype.openEditor = function (control) {
-        //var result = jQuery.grep(this.controls, function(e) { return e.order == order; });
+    HomeComponent.prototype.onControlSelect = function (control) {
         this.selectedControl = control;
         console.log(this.controls);
     };

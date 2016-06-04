@@ -11,7 +11,7 @@ declare var window: any;
 
 @Component({
   selector: 'my-app',
-  directives: [Control,  Editor,Template1Component],
+  directives: [Control, Editor, Template1Component],
   providers: [JSONBuilder,JSONElement],
   viewProviders: [],
   templateUrl: 'app/home/home.template2.html'
@@ -19,20 +19,20 @@ declare var window: any;
 
 export class HomeComponent implements OnInit {    
   controls :any[];
-   selectedControl: any ;
-  bindTemplateJson($event)
+  selectedControl: any ;
+  bindTemplateJson(data: any)
   {
-     this.controls = $event.defaulttemp;
-      console.log(this.controls); 
+     this.controls = data.defaulttemp;
      this.jsonBuilderHelper.setTemplate(this.controls);
-     this.selectedControl= this.controls[0];
+     console.log(this.controls);
+     //this.selectedControl  = this.controls[0];
   }
   
 
   elements : any[];
   constructor(private jsonBuilderHelper: JSONBuilder,private jsonElementHandler:JSONElement ) { 
     this.elements = jsonElementHandler.allAvailableElements();     
-}
+  }
   
    
   ngOnInit(){     
@@ -141,9 +141,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
- 
-  openEditor(control){
-    //var result = jQuery.grep(this.controls, function(e) { return e.order == order; });
+  onControlSelect(control){
     this.selectedControl = control;
     console.log(this.controls);
   }
