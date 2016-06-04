@@ -6,7 +6,15 @@
 </div>
 
 <div class="col s3">
-	<div id="yes-drop" *ngFor="let element of elements; let  i = index" class="draggable drag-drop newChild" [attr.data-type]="element"> {{element}}{{i}} </div>
+	<div id="yes-drop" *ngFor="let element of elements; let  i = index" class="draggable drag-drop newChild" [attr.data-type]="element">
+
+		<div >
+			<input type="{{element}}" value="{{element}}" name="">
+			{{element}}{{i}}
+		</div>	
+
+
+	</div>
 <!--<editor [value]="selectedControl"></editor>-->
 </div>
 <div class="col s3">{{controls|json}} </div>
