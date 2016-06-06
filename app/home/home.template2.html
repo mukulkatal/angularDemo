@@ -5,13 +5,14 @@
 	 				(controlSelected)="onControlSelect($event)"
 	 	>
 	 	</Template-1>
+	 	
 	</div>
 </div>
 
 <div class="col s3">
 	<div id="yes-drop" *ngFor="let element of elements; let  i = index" class="draggable drag-drop newChild" [attr.data-type]="element"> {{element}}{{i}} </div>
 		<editor *ngIf="selectedControl"
-				[value]="selectedControl"
+				[control]="selectedControl"
 		></editor>
 </div>
 <div class="col s3">{{controls|json}} </div>

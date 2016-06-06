@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var switch_component_1 = require('./switch.component');
 var Editor = (function () {
     function Editor() {
     }
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Editor.prototype, "value", void 0);
+    ], Editor.prototype, "control", void 0);
     Editor = __decorate([
         core_1.Component({
             selector: 'editor',
-            template: "\n\t\t<input type=\"type\" [(ngModel)]=\"value.placeholder\" />\n\t"
+            directives: [switch_component_1.Switch],
+            template: "\n\t\t<switch [control]=\"control\"></switch>\n\t\t<input type=\"type\" [(ngModel)]=\"control.placeholder\" />\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);

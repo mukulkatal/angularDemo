@@ -1,12 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { Switch } from './switch.component';
 
 @Component({
 	selector: 'editor',
+	directives: [Switch],
 	template: `
-		<input type="type" [(ngModel)]="value.placeholder" />
+		<switch [control]="control"></switch>
+		<input type="type" [(ngModel)]="control.placeholder" />
 	`
 })
 
 export class Editor {
-	@Input() value: any;
+	@Input() control: any;
 }
