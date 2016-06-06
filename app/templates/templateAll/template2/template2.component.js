@@ -10,15 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 //import {TextField,TextArea} from '../../templates/controls/controls';
-var control_component_1 = require('../../templates/controls/control.component');
+var control_component_1 = require('../../../templates/controls/control.component');
 // import { JSONBuilder } from '../../home/services/JSONBuilder.service';
 // import { JSONElement } from '../../home/services/JSONElement.service';
 // declare var jQuery: any;
 // declare var interact: any;
 // declare var window: any;
-var Template1Component = (function () {
-    function Template1Component() {
+var Template2Component = (function () {
+    function Template2Component() {
         this.defaultTemplate = new core_1.EventEmitter();
+        this.controlSelected = new core_1.EventEmitter();
         this.defaultJson = [
             {
                 order: 1,
@@ -39,32 +40,31 @@ var Template1Component = (function () {
                 required: false
             }
         ];
-        this.controlSelected = new core_1.EventEmitter();
     }
-    Template1Component.prototype.ngOnInit = function () {
+    Template2Component.prototype.ngOnInit = function () {
         this.defaultTemplate.emit({ defaulttemp: this.defaultJson });
     };
-    Template1Component.prototype.selectControl = function (control) {
+    Template2Component.prototype.selectControl = function (control) {
         this.controlSelected.emit(control);
     };
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], Template1Component.prototype, "defaultTemplate", void 0);
+    ], Template2Component.prototype, "defaultTemplate", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], Template1Component.prototype, "controlSelected", void 0);
-    Template1Component = __decorate([
+    ], Template2Component.prototype, "controlSelected", void 0);
+    Template2Component = __decorate([
         core_1.Component({
-            selector: 'Template-1',
+            selector: 'Temp-2',
             directives: [control_component_1.Control],
             viewProviders: [],
-            templateUrl: 'app/templates/templateAll/templatesHtml/template1.template.html',
+            templateUrl: 'app/templates/templateAll/template2/templatesHtml/template2.template.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], Template1Component);
-    return Template1Component;
+    ], Template2Component);
+    return Template2Component;
 }());
-exports.Template1Component = Template1Component;
-//# sourceMappingURL=template1.component.js.map
+exports.Template2Component = Template2Component;
+//# sourceMappingURL=template2.component.js.map
