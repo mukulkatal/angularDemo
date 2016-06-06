@@ -2,7 +2,7 @@ import { Component, OnInit,Output ,EventEmitter } from '@angular/core';
 import {Control} from '../templates/controls/control.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
 import { JSONElement } from './services/JSONElement.service';
-import { Template1Component } from '../templates/templateAll/template1.component';
+import { Template } from '../templates/templateAll/Template.component';
 import { Editor } from './components/editor.component';
 
 declare var jQuery: any;
@@ -11,7 +11,7 @@ declare var window: any;
 
 @Component({
   selector: 'my-app',
-  directives: [Control, Editor, Template1Component],
+  directives: [Control, Editor, Template],
   providers: [JSONBuilder,JSONElement],
   viewProviders: [],
   templateUrl: 'app/home/home.template2.html'
@@ -19,21 +19,8 @@ declare var window: any;
 
 export class HomeComponent implements OnInit {    
   controls :any[];
+  //TempName : any = "Temp-1" ; 
   selectedControl: any ;
-  bindTemplateJson(data: any)
-  {
-     this.controls = data.defaulttemp;
-     this.jsonBuilderHelper.setTemplate(this.controls);
-     console.log(this.controls);
-     //this.selectedControl  = this.controls[0];
-  }
-  
-
-  elements : any[];
-  constructor(private jsonBuilderHelper: JSONBuilder,private jsonElementHandler:JSONElement ) { 
-    this.elements = jsonElementHandler.allAvailableElements();     
-  }
-  
    
   ngOnInit(){     
     var self = this;
@@ -140,9 +127,23 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
+  
+  /*
+    --  output from the templates for default json and handle selected control
+  */
+  bind_Template_Json(data: any)
+  {    
+     this.controls = data.defaulttemp.defaulttemp;
+     this.jsonBuilderHelper.setTemplate(this.controls);
+     //console.log(this.controls);
+     this.selectedControl  = this.controls[0];
+  }
+  elements : any[];
+  constructor(private jsonBuilderHelper: JSONBuilder,private jsonElementHandler:JSONElement ) { 
+    this.elements = jsonElementHandler.allAvailableElements();   
+  }
+  
   onControlSelect(control){
-    this.selectedControl = control;
-    console.log(this.controls);
+    this.selectedControl = control;   
   }
 }

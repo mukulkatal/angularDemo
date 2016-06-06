@@ -1,10 +1,11 @@
 
 <div class="col s9 canvas" style="height:100%">
 	<div id="outer-dropzone" class="dropzone" style="height:100%">
-	 	<Template-1 (defaultTemplate)="bindTemplateJson($event)" 
+	 	<!--<Template-1 (defaultTemplate)="bindTemplateJson($event)" 
 	 				(controlSelected)="onControlSelect($event)"
 	 	>
-	 	</Template-1>
+	 	</Template-1>-->
+		 <Temp [TempName]="TempName" (default_Template)="bind_Template_Json($event)" 	(control_selected)="onControlSelect($event)"></Temp>
 	</div>
 </div>
 

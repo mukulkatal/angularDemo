@@ -1,25 +1,23 @@
 import { Component,Input,Output,EventEmitter , OnInit } from '@angular/core';
 //import {TextField,TextArea} from '../../templates/controls/controls';
-import {Control} from '../../templates/controls/control.component';
-// import { JSONBuilder } from '../../home/services/JSONBuilder.service';
-// import { JSONElement } from '../../home/services/JSONElement.service';
-
-// declare var jQuery: any;
-// declare var interact: any;
-// declare var window: any;
+import {Control} from '../../../templates/controls/control.component';
 
 @Component({
-    selector: 'Template-1',
+    selector: 'Temp-1',
     directives: [Control],
     viewProviders: [],
-    templateUrl: 'app/templates/templateAll/templatesHtml/template1.template.html',
+    templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
     //styleUrls: ['./stylesheets/template1.css'],
 })
 
 export class Template1Component implements OnInit
 {
-    @Output() defaultTemplate = new EventEmitter();
-
+    @Output() default_Template = new EventEmitter();
+    @Output() selected_control = new EventEmitter();
+    
+      /*  ---
+         default json of the template 
+    */
     defaultJson = [
         {
             order: 1,
@@ -42,12 +40,19 @@ export class Template1Component implements OnInit
     ];
 
     ngOnInit(){
-      this.defaultTemplate.emit({defaulttemp:this.defaultJson});
+    /*  ---
+            Send json on init for initialize the json 
+    */
+      this.default_Template.emit({defaulttemp:this.defaultJson});
     }
 
-    @Output() controlSelected = new EventEmitter();
+  
+    /*  ---
+           when control is selected from particluar template then it pass to parent 
+            template component (i.e Template.ts) and then parent template component pass to home component
+    */
     selectControl(control) {
-        this.controlSelected.emit(control);
+        this.selected_control.emit(control);
     }
 
 }
