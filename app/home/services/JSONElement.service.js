@@ -42,7 +42,7 @@ var JSONElement = (function () {
             "text-area": {
                 order: 1,
                 type: "text-area",
-                placeholder: 'This is a text field order 1',
+                placeholder: 'This is a text Area order bupchigum',
                 required: false
             }
         };

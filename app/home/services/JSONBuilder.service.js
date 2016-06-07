@@ -33,10 +33,15 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.sort = function (order) {
         this.reorder(order);
         this.JSONTemplate.sort(function (a, b) { return ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)); });
-        console.log(this.JSONTemplate);
     };
     JSONBuilder.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
+    };
+    /*
+        --  FIND THE INDEX OF OBJECT IN ARRAY
+     */
+    JSONBuilder.prototype.getObject_Index_InArray = function (Array, Object) {
+        return jQuery.inArray(Object, Array);
     };
     JSONBuilder = __decorate([
         core_1.Injectable(), 

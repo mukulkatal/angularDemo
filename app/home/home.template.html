@@ -8,8 +8,10 @@
 	</div>
 
 	<div class="col s3" style="height:100%">
-		<editor *ngIf="selectedControl"
-				[control]="selectedControl"
+		<editor 
+			*ngIf="selectedControl"
+			[control]="selectedControl"
+			[FullJson] = "controls"
 		>	
 		</editor>
 		<div>{{controls|json}} </div>
@@ -22,7 +24,7 @@
     </a>
     <ul>
         <li>
-            <a class="" href="#">
+            <a (click)="onClick(event)" class="" href="#">
                 <div class="chip">
                     Question
                 </div>

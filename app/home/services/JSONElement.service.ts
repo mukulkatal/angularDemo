@@ -13,8 +13,8 @@ export class JSONElement{
 		var all_elems: any[] = ['textfield','text-area'];
 		// console.log(this.JSONTemplate);
         return all_elems;
-	}
-
+	}   
+ 
 	
     getJsonOfElem(elem_name:any)
     {       
@@ -43,7 +43,7 @@ export class JSONElement{
            "text-area" : {
                         order: 1,
                         type: "text-area",
-                        placeholder: 'This is a text field order 1',
+                        placeholder: 'This is a text Area order bupchigum',
                         required: false
                   }
            

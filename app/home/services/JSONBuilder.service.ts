@@ -27,11 +27,18 @@ export class JSONBuilder{
 	sort(order: string[]){				
 		this.reorder(order);		
 		this.JSONTemplate.sort((a, b) => ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)));
-		console.log(this.JSONTemplate);
 	}
 
 	getJSONBuilt(): any[] {
 		return this.JSONTemplate;
 	}	
 	
+	/* 
+		--  FIND THE INDEX OF OBJECT IN ARRAY
+	 */
+	getObject_Index_InArray(Array:any[],Object:any)
+    {        
+        return jQuery.inArray(Object, Array);
+    }
+    
 }
