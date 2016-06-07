@@ -1,0 +1,37 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var JSONElement_service_1 = require('../services/JSONElement.service');
+var Switch = (function () {
+    function Switch(jsonElementHandler) {
+        this.jsonElementHandler = jsonElementHandler;
+    }
+    Switch.prototype.onChange = function ($event) {
+        var control = this.jsonElementHandler.getJsonOfElem($event.target.value);
+        console.log(control);
+        this.control.type = control.type;
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], Switch.prototype, "control", void 0);
+    Switch = __decorate([
+        core_1.Component({
+            selector: 'switch',
+            providers: [JSONElement_service_1.JSONElement],
+            template: "\n\t\t<select (change)=\"onChange($event)\">\n\t\t\t<option value=\"text-area\" [selected]=\"control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"control.type=='textfield'\">Text Field</option>\n\t\t</select>\n\t"
+        }), 
+        __metadata('design:paramtypes', [JSONElement_service_1.JSONElement])
+    ], Switch);
+    return Switch;
+}());
+exports.Switch = Switch;
+//# sourceMappingURL=switch.component.js.map
