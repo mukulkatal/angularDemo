@@ -36,6 +36,12 @@ var Template1Component = (function () {
                 type: "text-area",
                 placeholder: 'This is a text field order 2',
                 required: false
+            },
+            {
+                order: 2,
+                type: "text-area",
+                placeholder: 'This is a text field order 2',
+                required: false
             }
         ];
     }
@@ -66,6 +72,10 @@ var Template1Component = (function () {
             directives: [control_component_1.Control],
             viewProviders: [],
             templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
+            //styleUrls: ['./stylesheets/template1.css'],
+            styles: [
+                "\n    .m20{\n      margin-top:20px;\n    }\n  "
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], Template1Component);

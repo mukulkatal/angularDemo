@@ -8,6 +8,14 @@ import {Control} from '../../../templates/controls/control.component';
     viewProviders: [],
     templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
     //styleUrls: ['./stylesheets/template1.css'],
+    styles: [
+
+        `
+    .m20{
+      margin-top:20px;
+    }
+  `
+    ]
 })
 
 export class Template1Component implements OnInit
@@ -29,6 +37,12 @@ export class Template1Component implements OnInit
             order: 3,
             type: "textfield",
             placeholder: 'This is a text field order 3',
+            required: false
+        },
+        {
+            order: 2,
+            type: "text-area",
+            placeholder: 'This is a text field order 2',
             required: false
         },
         {

@@ -16,8 +16,8 @@ var Switch = (function () {
     }
     Switch.prototype.onChange = function ($event) {
         var control = this.jsonElementHandler.getJsonOfElem($event.target.value);
-        console.log(control);
-        this.control.type = control.type;
+        this.control = control;
+        console.log(this.control);
     };
     __decorate([
         core_1.Input(), 

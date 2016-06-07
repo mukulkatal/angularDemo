@@ -1,10 +1,9 @@
-<div class="col s9 canvas" style="height:100%">
-	<div id="outer-dropzone" class="dropzone" style="height:100%">
-	 	<div class="child" *ngFor="let control of defaultJson" 
-	 		[attr.data-order]="control.order"
-	 		(click)="selectControl(control)"
-	 	>
-           <control [data]="control"></control>
-        </div>
-	</div>
+
+<div class="col s12 m12 z-depth-3 sortable">
+  <div class="child m20" *ngFor="let control of defaultJson" 
+ 		[attr.data-order]="control.order"
+ 		(click)="selectControl(control)"
+ 	>
+       <control [data]="control"></control>
+    </div>
 </div>

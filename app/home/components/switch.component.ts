@@ -21,7 +21,9 @@ export class Switch {
 
 	onChange($event){
 		let control = this.jsonElementHandler.getJsonOfElem($event.target.value);
-		console.log(control);
-		this.control.type = control.type;
+		
+		this.control = control;
+
+		console.log(this.control);
 	}
 }

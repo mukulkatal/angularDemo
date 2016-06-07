@@ -8,22 +8,11 @@ export class JSONBuilder{
 		this.JSONTemplate = template;
 	}
 	
-	reorder(parent: any){
-			console.log('sorty');
-		var i = 1;
-		var order: any[] = [];
-		parent.find('.child').each(function() {
-			var currentOrder = jQuery(this).parent().data('order');
-			order.push({
-				oldOrder: currentOrder,
-				newOrder: i++
-			});
-		});
-
+	reorder(order: string[]){
 		for (var control in this.JSONTemplate){
-			for (var element in order) {
-				if(this.JSONTemplate[control].order == order[element].oldOrder) {
-					this.JSONTemplate[control].order = order[element].newOrder;
+			for (var index in order) {
+				if(this.JSONTemplate[control].order == order[index]) {
+					this.JSONTemplate[control].order = Number(index)+1;
 					break;
 				}
 			}
@@ -31,12 +20,12 @@ export class JSONBuilder{
 	}
 	addNewChild(parent: any,child: any,childTemplate: any){	
 		this.JSONTemplate.push(childTemplate);
-		this.sort(parent);		
+		//this.sort(parent);		
 		//jQuery(child).remove();		
 	}
 
-	sort(parent: any){				
-		this.reorder(parent);		
+	sort(order: string[]){				
+		this.reorder(order);		
 		this.JSONTemplate.sort((a, b) => ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)));
 		console.log(this.JSONTemplate);
 	}
