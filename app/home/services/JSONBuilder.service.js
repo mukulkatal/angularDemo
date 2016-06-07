@@ -48,6 +48,12 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
     };
+    /*
+        --  FIND THE INDEX OF OBJECT IN ARRAY
+     */
+    JSONBuilder.prototype.getObject_Index_InArray = function (Array, Object) {
+        return jQuery.inArray(Object, Array);
+    };
     JSONBuilder = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

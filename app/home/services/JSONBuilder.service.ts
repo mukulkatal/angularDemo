@@ -45,4 +45,12 @@ export class JSONBuilder{
 		return this.JSONTemplate;
 	}	
 	
+	/* 
+		--  FIND THE INDEX OF OBJECT IN ARRAY
+	 */
+	getObject_Index_InArray(Array:any[],Object:any)
+    {        
+        return jQuery.inArray(Object, Array);
+    }
+    
 }

@@ -13,6 +13,7 @@
 	<div id="yes-drop" *ngFor="let element of elements; let  i = index" class="draggable drag-drop newChild" [attr.data-type]="element"> {{element}}{{i}} </div>
 		<editor *ngIf="selectedControl"
 				[control]="selectedControl"
+				[FullJson] = "controls"
 		>	
 		</editor>
 </div>

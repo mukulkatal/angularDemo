@@ -5,11 +5,12 @@ import { Switch } from './switch.component';
 	selector: 'editor',
 	directives: [Switch],
 	template: `
-		<switch [control]="control"></switch>
+		<switch [control]="control" [FullJson]="FullJson" ></switch>
 		<input type="type" [(ngModel)]="control.placeholder" />
 	`
 })
 
 export class Editor {
 	@Input() control: any;
+	@Input() FullJson: any;
 }
