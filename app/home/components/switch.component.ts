@@ -26,10 +26,8 @@ export class Switch {
 	onChange($event){			
 		let control = this.jsonElementHandler.getJsonOfElem($event.target.value);
 		// get the index of object in the actual Array of Object
-		let Index 	= this.jsonBuilderHelper.getObject_Index_InArray(this.FullJson,this.control);
+		let Index 	= this.jsonBuilderHelper.getObject_Index_InArray(this.FullJson,this.control);	
 		// replace the object in actual array
 		this.FullJson.splice(Index,1,control);			
 	}
-	
-	
 }
