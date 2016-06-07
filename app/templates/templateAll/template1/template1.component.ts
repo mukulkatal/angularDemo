@@ -34,21 +34,21 @@ export class Template1Component implements OnInit
             required: false
         },
         {
+            order: 2,
+            type: "text-area",
+            placeholder: 'This is a text field order 2',
+            required: false
+        },
+        {
             order: 3,
             type: "textfield",
             placeholder: 'This is a text field order 3',
             required: false
         },
         {
-            order: 2,
+            order: 4,
             type: "text-area",
-            placeholder: 'This is a text field order 2',
-            required: false
-        },
-        {
-            order: 2,
-            type: "text-area",
-            placeholder: 'This is a text field order 2',
+            placeholder: 'This is a text field order 4',
             required: false
         }
     ];

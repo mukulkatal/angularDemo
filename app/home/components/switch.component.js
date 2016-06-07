@@ -21,9 +21,11 @@ var Switch = (function () {
      */
     Switch.prototype.onChange = function ($event) {
         var control = this.jsonElementHandler.getJsonOfElem($event.target.value);
-        // get the index of object in the actual Array of Object
+        //set order of new control same as of old control
+        control.order = this.control.order;
+        // get the index of control object in json template
         var Index = this.jsonBuilderHelper.getObject_Index_InArray(this.FullJson, this.control);
-        // replace the object in actual array
+        // replace the control object in json template
         this.FullJson.splice(Index, 1, control);
     };
     __decorate([
