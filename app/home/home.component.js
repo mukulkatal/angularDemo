@@ -118,6 +118,14 @@ var HomeComponent = (function () {
     HomeComponent.prototype.onControlSelect = function (control) {
         this.selectedControl = control;
     };
+    HomeComponent.prototype.onClick = function (e) {
+        //var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
+        console.log(this.controls);
+        this.controls.push({ "order": 1, "type": "textfield", "placeholder": "This is a text field order 1", "required": false });
+        console.log(this.controls);
+        // add elemnt in UI
+        //this.jsonBuilderHelper.addNewChild(parent,e, jsonElement);
+    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'my-app',

@@ -9,6 +9,7 @@
 	</div>
 </div>
 
+<!--
 <div class="col s3">
 	<div id="yes-drop" *ngFor="let element of elements; let  i = index" class="draggable drag-drop newChild" [attr.data-type]="element"> {{element}}{{i}} </div>
 		<editor *ngIf="selectedControl"
@@ -16,5 +17,11 @@
 		>	
 		</editor>
 </div>
+
+
 <div class="col s3">{{controls|json}} </div>
 
+-->
+<div class="col s3"><a (click)="onClick(event)"><img width="150" src="../app/images/add.png"></a></div>
+
+<div class="col s3"><editor *ngIf="selectedControl"	[control]="selectedControl"	></editor></div>

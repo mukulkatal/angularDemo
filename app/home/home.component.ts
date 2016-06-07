@@ -146,4 +146,18 @@ export class HomeComponent implements OnInit {
   onControlSelect(control){
     this.selectedControl = control;   
   }
+
+
+
+  onClick(e){
+     //var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
+     console.log(this.controls);
+
+     this.controls.push({ "order": 1, "type": "textfield", "placeholder": "This is a text field order 1", "required": false });
+
+     console.log(this.controls);
+
+     // add elemnt in UI
+     //this.jsonBuilderHelper.addNewChild(parent,e, jsonElement);
+  }  
 }
