@@ -7,14 +7,13 @@ import {Control} from '../../../templates/controls/control.component';
     directives: [Control],
     viewProviders: [],
     templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
-    //styleUrls: ['./stylesheets/template1.css'],
+    styleUrls: ['node_modules/materialize-css/dist/css/materialize.min.css'],
     styles: [
-
         `
-    .m20{
-      margin-top:20px;
-    }
-  `
+            .p20{
+              padding-bottom:20px;
+            }
+        `
     ]
 })
 
@@ -23,8 +22,8 @@ export class Template1Component implements OnInit
     @Output() default_Template = new EventEmitter();
     @Output() selected_control = new EventEmitter();
     
-      /*  ---
-         default json of the template 
+    /*  ---
+        default json of the template 
     */
     defaultJson = [
         {
@@ -55,15 +54,15 @@ export class Template1Component implements OnInit
 
     ngOnInit(){
     /*  ---
-            Send json on init for initialize the json 
+        end json on init for initialize the json 
     */
       this.default_Template.emit({defaulttemp:this.defaultJson});
     }
 
   
     /*  ---
-           when control is selected from particluar template then it pass to parent 
-            template component (i.e Template.ts) and then parent template component pass to home component
+        when control is selected from particluar template then it pass to parent 
+        template component (i.e Template.ts) and then parent template component pass to home component
     */
     selectControl(control) {
         this.selected_control.emit(control);

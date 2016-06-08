@@ -27,8 +27,6 @@ var JSONBuilder = (function () {
     };
     JSONBuilder.prototype.addNewChild = function (parent, child, childTemplate) {
         this.JSONTemplate.push(childTemplate);
-        //this.sort(parent);		
-        //jQuery(child).remove();		
     };
     JSONBuilder.prototype.sort = function (order) {
         this.reorder(order);
@@ -37,11 +35,11 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
     };
-    /*
-        --  FIND THE INDEX OF OBJECT IN ARRAY
-     */
-    JSONBuilder.prototype.getObject_Index_InArray = function (Array, Object) {
-        return jQuery.inArray(Object, Array);
+    JSONBuilder.changeControl = function (oldControl, newControl, template) {
+        //index of old control in array
+        var index = jQuery.inArray(oldControl, template);
+        //replace oldControl with newControl at index
+        template.splice(index, 1, newControl);
     };
     JSONBuilder = __decorate([
         core_1.Injectable(), 

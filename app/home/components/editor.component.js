@@ -20,12 +20,12 @@ var Editor = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Editor.prototype, "FullJson", void 0);
+    ], Editor.prototype, "jsonTemplate", void 0);
     Editor = __decorate([
         core_1.Component({
             selector: 'editor',
             directives: [switch_component_1.Switch],
-            template: "\n\t\t<switch [control]=\"control\" [FullJson]=\"FullJson\" ></switch>\n\t\t<input type=\"type\" [(ngModel)]=\"control.placeholder\" />\n\t"
+            template: "\n\t\t<switch [control]=\"control\" [jsonTemplate] = \"jsonTemplate\"></switch>\n\t\t<input type=\"type\" [(ngModel)]=\"control.placeholder\" />\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);

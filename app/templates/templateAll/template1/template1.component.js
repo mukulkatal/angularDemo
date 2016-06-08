@@ -16,8 +16,8 @@ var Template1Component = (function () {
         this.default_Template = new core_1.EventEmitter();
         this.selected_control = new core_1.EventEmitter();
         /*  ---
-           default json of the template
-      */
+            default json of the template
+        */
         this.defaultJson = [
             {
                 order: 1,
@@ -47,13 +47,13 @@ var Template1Component = (function () {
     }
     Template1Component.prototype.ngOnInit = function () {
         /*  ---
-                Send json on init for initialize the json
+            end json on init for initialize the json
         */
         this.default_Template.emit({ defaulttemp: this.defaultJson });
     };
     /*  ---
-           when control is selected from particluar template then it pass to parent
-            template component (i.e Template.ts) and then parent template component pass to home component
+        when control is selected from particluar template then it pass to parent
+        template component (i.e Template.ts) and then parent template component pass to home component
     */
     Template1Component.prototype.selectControl = function (control) {
         this.selected_control.emit(control);
@@ -72,9 +72,9 @@ var Template1Component = (function () {
             directives: [control_component_1.Control],
             viewProviders: [],
             templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
-            //styleUrls: ['./stylesheets/template1.css'],
+            styleUrls: ['node_modules/materialize-css/dist/css/materialize.min.css'],
             styles: [
-                "\n    .m20{\n      margin-top:20px;\n    }\n  "
+                "\n            .p20{\n              padding-bottom:20px;\n            }\n        "
             ]
         }), 
         __metadata('design:paramtypes', [])

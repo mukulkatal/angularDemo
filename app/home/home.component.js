@@ -28,7 +28,7 @@ var HomeComponent = (function () {
     HomeComponent.prototype.bind_Template_Json = function (data) {
         this.controls = data.defaulttemp.defaulttemp;
         this.jsonBuilderHelper.setTemplate(this.controls);
-        this.selectedControl = this.controls[0];
+        //this.selectedControl = this.controls[0];
         //drag and sort elements in a section
         var self = this;
         jQuery(".sortable").sortable({
@@ -49,9 +49,9 @@ var HomeComponent = (function () {
         this.selectedControl = control;
     };
     HomeComponent.prototype.onClick = function (e) {
-        //var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
+        var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
         console.log(this.controls);
-        this.controls.push({ "order": 1, "type": "textfield", "placeholder": "This is a text field order 1", "required": false });
+        this.controls.push(jsonElement);
         console.log(this.controls);
         // add elemnt in UI
         //this.jsonBuilderHelper.addNewChild(parent,e, jsonElement);

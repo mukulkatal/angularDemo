@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   bind_Template_Json(data: any) {
     this.controls = data.defaulttemp.defaulttemp;
     this.jsonBuilderHelper.setTemplate(this.controls);
-    this.selectedControl = this.controls[0];
+    //this.selectedControl = this.controls[0];
 
     //drag and sort elements in a section
     let self = this;
@@ -62,10 +62,10 @@ export class HomeComponent implements OnInit {
   }
 
   onClick(e){
-     //var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
+     var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
      console.log(this.controls);
 
-     this.controls.push({ "order": 1, "type": "textfield", "placeholder": "This is a text field order 1", "required": false });
+     this.controls.push(jsonElement);
 
      console.log(this.controls);
 

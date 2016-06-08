@@ -23,10 +23,10 @@ var Switch = (function () {
         var control = this.jsonElementHandler.getJsonOfElem($event.target.value);
         //set order of new control same as of old control
         control.order = this.control.order;
-        // get the index of control object in json template
-        var Index = this.jsonBuilderHelper.getObject_Index_InArray(this.FullJson, this.control);
-        // replace the control object in json template
-        this.FullJson.splice(Index, 1, control);
+        //relace control in jsonTemplate
+        JSONBuilder_service_1.JSONBuilder.changeControl(this.control, control, this.jsonTemplate);
+        //update current control
+        this.control = control;
     };
     __decorate([
         core_1.Input(), 
@@ -35,7 +35,7 @@ var Switch = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], Switch.prototype, "FullJson", void 0);
+    ], Switch.prototype, "jsonTemplate", void 0);
     Switch = __decorate([
         core_1.Component({
             selector: 'switch',

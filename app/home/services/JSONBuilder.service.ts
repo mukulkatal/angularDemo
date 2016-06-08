@@ -19,9 +19,7 @@ export class JSONBuilder{
 		}
 	}
 	addNewChild(parent: any,child: any,childTemplate: any){	
-		this.JSONTemplate.push(childTemplate);
-		//this.sort(parent);		
-		//jQuery(child).remove();		
+		this.JSONTemplate.push(childTemplate);	
 	}
 
 	sort(order: string[]){				
@@ -31,14 +29,13 @@ export class JSONBuilder{
 
 	getJSONBuilt(): any[] {
 		return this.JSONTemplate;
-	}	
-	
-	/* 
-		--  FIND THE INDEX OF OBJECT IN ARRAY
-	 */
-	getObject_Index_InArray(Array:any[],Object:any)
-    {        
-        return jQuery.inArray(Object, Array);
+	}
+
+    static changeControl(oldControl: any, newControl: any, template: any[]){
+    	//index of old control in array
+		let index = jQuery.inArray(oldControl, template);
+		//replace oldControl with newControl at index
+		template.splice(index, 1, newControl);
     }
     
 }

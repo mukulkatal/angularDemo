@@ -28,7 +28,7 @@ export class JSONElement{
            
         */ 
              "textfield" : {
-                        order: 1,
+                        order: 1000,
                         type: "textfield",
                         placeholder: 'This is a text field order 1',
                         required: false
@@ -41,7 +41,7 @@ export class JSONElement{
            
         */    
            "text-area" : {
-                        order: 1,
+                        order: 1000,
                         type: "text-area",
                         placeholder: 'This is a text Area order bupchigum',
                         required: false

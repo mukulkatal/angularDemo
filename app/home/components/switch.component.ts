@@ -16,7 +16,7 @@ import { JSONElement } from '../services/JSONElement.service';
 
 export class Switch {
 	@Input() control: any;
-	@Input() FullJson: Array<Object>;
+	@Input() jsonTemplate: Array<Object>;
 	constructor(private jsonElementHandler: JSONElement ,private jsonBuilderHelper : JSONBuilder ) { 		
 	}
 
@@ -27,10 +27,9 @@ export class Switch {
 		let control = this.jsonElementHandler.getJsonOfElem($event.target.value);
 		//set order of new control same as of old control
 		control.order = this.control.order;
-		// get the index of control object in json template
-		let Index 	= this.jsonBuilderHelper.getObject_Index_InArray(this.FullJson,this.control);	
-		// replace the control object in json template
-		this.FullJson.splice(Index,1,control);
-
+		//relace control in jsonTemplate
+		JSONBuilder.changeControl(this.control, control, this.jsonTemplate);
+		//update current control
+		this.control = control;
 	}
 }

@@ -1,9 +1,11 @@
 
 <div class="col s12 m12 z-depth-3 sortable">
-  <div class="child m20" *ngFor="let control of defaultJson" 
+  
+  	<div class="child p20" *ngFor="let control of defaultJson" 
  		[attr.data-order]="control.order"
  		(click)="selectControl(control)"
  	>
        <control [data]="control"></control>
     </div>
+    
 </div>
