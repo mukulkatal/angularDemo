@@ -6,7 +6,10 @@ import { Switch } from './switch.component';
 	directives: [Switch],
 	template: `
 		<switch [control]="control"></switch>
-		<input type="type" [(ngModel)]="control.placeholder" />
+		<input type="type" [(ngModel)]="control.order" />
+		<input type="type" [(ngModel)]="control.props" />
+		<input type="type" [(ngModel)]="control.type" />
+		<input type="type" [(ngModel)]="control.required" />
 	`
 })
 
