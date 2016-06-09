@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var controlTemplates_store_1 = require('../../templates/controls/controlTemplates.store');
 var JSONElement = (function () {
     function JSONElement() {
     }
@@ -21,32 +22,7 @@ var JSONElement = (function () {
         return all_elems;
     };
     JSONElement.prototype.getJsonOfElem = function (elem_name) {
-        var elemJson;
-        elemJson = {
-            // Json conditions
-            /*
-               ---  Field : textfield    ----
-               
-            */
-            "textfield": {
-                order: 1000,
-                type: "textfield",
-                placeholder: 'This is a text field order 1',
-                required: false
-            },
-            // Json conditions
-            /*
-               ---  Field : textArea   ----
-               
-            */
-            "text-area": {
-                order: 1000,
-                type: "text-area",
-                placeholder: 'This is a text Area order bupchigum',
-                required: false
-            }
-        };
-        return elemJson[elem_name];
+        return controlTemplates_store_1.ControlTemplates[elem_name];
     };
     JSONElement.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
