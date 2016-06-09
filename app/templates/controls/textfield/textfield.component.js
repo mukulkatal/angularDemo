@@ -24,7 +24,7 @@ var TextField = (function () {
             selector: 'textfield',
             directives: [],
             viewProviders: [],
-            template: "\n    <div class=\"input-field\">\n      <input type=\"text\" class=\"validate\" [required]=\"data.required\" [(ngModel)]=\"value\">\n      <label for=\"first_name\">{{data.placeholder}}</label>\n    </div>\n\t"
+            template: "\n    <div class=\"input-field\">\n      <input type=\"text\" class=\"validate\" [required]=\"data.required\" [(ngModel)]=\"value\">\n      <label for=\"first_name\">{{data.config.placeholder}}</label>\n    </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], TextField);

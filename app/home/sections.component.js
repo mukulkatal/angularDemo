@@ -9,23 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var controls_1 = require('./controls');
-var Control = (function () {
-    function Control() {
+//import {Control} from './../../controls/control.component';
+var SectionComponent = (function () {
+    function SectionComponent() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Control.prototype, "data", void 0);
-    Control = __decorate([
+    SectionComponent = __decorate([
         core_1.Component({
-            selector: 'control',
-            directives: [controls_1.TextField, controls_1.TextArea],
-            template: "\n\t\t\t    <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n      \t\t<text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n      ",
+            selector: 'section',
+            directives: [],
+            template: "        \n    \t<ng-content></ng-content>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], Control);
-    return Control;
+    ], SectionComponent);
+    return SectionComponent;
 }());
-exports.Control = Control;
-//# sourceMappingURL=control.component.js.map
+exports.SectionComponent = SectionComponent;
+//# sourceMappingURL=sections.component.js.map

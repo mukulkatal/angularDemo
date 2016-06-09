@@ -9,47 +9,230 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import {TextField,TextArea} from '../../templates/controls/controls';
+var sections_component_1 = require('./components/sections.component');
 var control_component_1 = require('../../../templates/controls/control.component');
 var Template1Component = (function () {
     function Template1Component() {
         this.default_Template = new core_1.EventEmitter();
         this.selected_control = new core_1.EventEmitter();
+        this.selected_section = new core_1.EventEmitter();
         /*  ---
             default json of the template
         */
-        this.defaultJson = [
-            {
-                order: 1,
-                type: "textfield",
-                placeholder: 'This is a text field order 1',
-                required: false
-            },
-            {
-                order: 2,
-                type: "text-area",
-                placeholder: 'This is a text field order 2',
-                required: false
-            },
-            {
-                order: 3,
-                type: "textfield",
-                placeholder: 'This is a text field order 3',
-                required: false
-            },
-            {
-                order: 4,
-                type: "text-area",
-                placeholder: 'This is a text field order 4',
-                required: false
+        this.defaultJson = {
+            "app": {
+                "pages": [{
+                        "sections": [{
+                                "order": 1,
+                                "items": [
+                                    {
+                                        "order": 1,
+                                        "type": "textfield",
+                                        "props": {
+                                            "title": "this checkbox section question",
+                                            "helpText": "SOME HELPER TEXT"
+                                        },
+                                        "config": {
+                                            "type": "text",
+                                            "attr": [{
+                                                    "class": "customeClass",
+                                                    "style": "heightcolorred"
+                                                }],
+                                            "validations": [{
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error"
+                                                }, {
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error",
+                                                    "min": "0",
+                                                    "max": "100"
+                                                }],
+                                            "maxSelections": 1,
+                                            "direction": "horizontal",
+                                            "placeholder": "this textfield in placeholder",
+                                            "defaultvalue": "Default Value"
+                                        },
+                                        "options": [{
+                                                "type": "toggel",
+                                                "lable": "OPTION 1",
+                                                "value": "10",
+                                                "selected": false,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            }]
+                                    },
+                                    {
+                                        "order": 2,
+                                        "type": "text-area",
+                                        "props": {
+                                            "title": "this checkbox section question",
+                                            "helpText": "SOME HELPER TEXT"
+                                        },
+                                        "config": {
+                                            "type": "text",
+                                            "attr": [{
+                                                    "class": "customeClass",
+                                                    "style": "heightcolorred"
+                                                }],
+                                            "validations": [{
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error"
+                                                }, {
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error",
+                                                    "min": "0",
+                                                    "max": "100"
+                                                }],
+                                            "maxSelections": 1,
+                                            "direction": "horizontal",
+                                            "placeholder": "this text area in placeholder",
+                                            "defaultvalue": "Default Value"
+                                        },
+                                        "options": [{
+                                                "type": "toggel",
+                                                "lable": "OPTION 1",
+                                                "value": "10",
+                                                "selected": false,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            }]
+                                    }
+                                ]
+                            },
+                            {
+                                "order": 2,
+                                "items": [
+                                    {
+                                        "order": 1,
+                                        "type": "text-area",
+                                        "props": {
+                                            "title": "this checkbox section question",
+                                            "helpText": "SOME HELPER TEXT"
+                                        },
+                                        "config": {
+                                            "type": "text",
+                                            "attr": [{
+                                                    "class": "customeClass",
+                                                    "style": "heightcolorred"
+                                                }],
+                                            "validations": [{
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error"
+                                                }, {
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error",
+                                                    "min": "0",
+                                                    "max": "100"
+                                                }],
+                                            "maxSelections": 1,
+                                            "direction": "horizontal",
+                                            "placeholder": "this text areea in placeholder",
+                                            "defaultvalue": "Default Value"
+                                        },
+                                        "options": [{
+                                                "type": "toggel",
+                                                "lable": "OPTION 1",
+                                                "value": "10",
+                                                "selected": false,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            }]
+                                    },
+                                    {
+                                        "order": 2,
+                                        "type": "textfield",
+                                        "props": {
+                                            "title": "this checkbox section question",
+                                            "helpText": "SOME HELPER TEXT"
+                                        },
+                                        "config": {
+                                            "type": "text",
+                                            "attr": [{
+                                                    "class": "customeClass",
+                                                    "style": "heightcolorred"
+                                                }],
+                                            "validations": [{
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error"
+                                                }, {
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error",
+                                                    "min": "0",
+                                                    "max": "100"
+                                                }],
+                                            "maxSelections": 1,
+                                            "direction": "horizontal",
+                                            "placeholder": "this textfield in placeholder",
+                                            "defaultvalue": "Default Value"
+                                        },
+                                        "options": [{
+                                                "type": "toggel",
+                                                "lable": "OPTION 1",
+                                                "value": "10",
+                                                "selected": false,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            }]
+                                    }
+                                ]
+                            },
+                        ]
+                    }]
             }
-        ];
+        };
     }
+    //[
+    //     {
+    //         order: 1,
+    //         type: "textfield",
+    //         placeholder: 'This is a text field order 1',
+    //         required: false
+    //     },
+    //     {
+    //         order: 2,
+    //         type: "text-area",
+    //         placeholder: 'This is a text field order 2',
+    //         required: false
+    //     },
+    //     {
+    //         order: 3,
+    //         type: "textfield",
+    //         placeholder: 'This is a text field order 3',
+    //         required: false
+    //     },
+    //     {
+    //         order: 4,
+    //         type: "text-area",
+    //         placeholder: 'This is a text field order 4',
+    //         required: false
+    //     }
+    // ];
     Template1Component.prototype.ngOnInit = function () {
         /*  ---
             end json on init for initialize the json
         */
         this.default_Template.emit({ defaulttemp: this.defaultJson });
+        console.log(this.defaultJson.app.pages[0].sections[0].items);
     };
     /*  ---
         when control is selected from particluar template then it pass to parent
@@ -57,6 +240,9 @@ var Template1Component = (function () {
     */
     Template1Component.prototype.selectControl = function (control) {
         this.selected_control.emit(control);
+    };
+    Template1Component.prototype.selectSection = function (section) {
+        this.selected_section.emit(section);
     };
     __decorate([
         core_1.Output(), 
@@ -66,15 +252,19 @@ var Template1Component = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], Template1Component.prototype, "selected_control", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Template1Component.prototype, "selected_section", void 0);
     Template1Component = __decorate([
         core_1.Component({
             selector: 'Temp-1',
-            directives: [control_component_1.Control],
+            directives: [control_component_1.Control, sections_component_1.SectionComponent],
             viewProviders: [],
             templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
             styleUrls: ['node_modules/materialize-css/dist/css/materialize.min.css'],
             styles: [
-                "\n            .p20{\n              padding-bottom:20px;\n            }\n        "
+                "\n            .p20{\n              padding-bottom:20px;\n            },\n            .mt30\n            {\n              margin-top: 30px;\n            }\n        "
             ]
         }), 
         __metadata('design:paramtypes', [])

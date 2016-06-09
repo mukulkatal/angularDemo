@@ -7,7 +7,7 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   template: `
     <div class="input-field">
       <input type="text" class="validate" [required]="data.required" [(ngModel)]="value">
-      <label for="first_name">{{data.placeholder}}</label>
+      <label for="first_name">{{data.config.placeholder}}</label>
     </div>
 	`
 })

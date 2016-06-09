@@ -25,7 +25,7 @@ var Editor = (function () {
         core_1.Component({
             selector: 'editor',
             directives: [switch_component_1.Switch],
-            template: "\n\n\t\t<switch [control]=\"control\" [jsonTemplate] = \"jsonTemplate\"></switch>\n\t\t<input type=\"type\" [(ngModel)]=\"control.placeholder\" />\n\n\t"
+            template: "\n\n\t\t<switch [control]=\"control\" [jsonTemplate] = \"jsonTemplate\"></switch>\n\t\t<input type=\"type\" [(ngModel)]=\"control.config.placeholder\" />\n\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);

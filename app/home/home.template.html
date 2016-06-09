@@ -3,7 +3,9 @@
 	 	<Temp 
 	 		[TempName]="TempName" 
 	 		(default_Template)="bind_Template_Json($event)" 	
-	 		(control_selected)="onControlSelect($event)" >
+	 		(control_selected)="onControlSelect($event)"
+            (section_selected)="onSectionSelect($event)" 
+         >
 	 	</Temp>
 	</div>
 
@@ -14,7 +16,7 @@
 			[jsonTemplate] = "controls"
 		>	
 		</editor>
-		<div>{{controls|json}} </div>
+		<div> <pre>{{controls | json}}</pre> </div>
 	</div>
 </div>
 

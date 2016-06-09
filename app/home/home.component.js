@@ -27,11 +27,27 @@ var HomeComponent = (function () {
     */
     HomeComponent.prototype.bind_Template_Json = function (data) {
         this.controls = data.defaulttemp.defaulttemp;
+        console.log(this.controls);
         this.jsonBuilderHelper.setTemplate(this.controls);
         //this.selectedControl = this.controls[0];
+        jQuery(".sortable-section").sortable({
+            // cursor: "move",
+            // opacity: 0.5,
+            // revert: true,
+            // scroll: false,
+            //cursorAt: { left: 250, top: 250 },
+            update: function () {
+                //get order from DOM
+                var order = jQuery(".sortable-section").sortable("toArray", { attribute: "data-order" });
+                console.log(order);
+                //sort the array
+                self.jsonBuilderHelper.sort(order);
+            }
+        });
         //drag and sort elements in a section
         var self = this;
         jQuery(".sortable").sortable({
+            connectWith: '.sortable-section',
             cursor: "move",
             opacity: 0.5,
             revert: true,
@@ -40,6 +56,7 @@ var HomeComponent = (function () {
             update: function () {
                 //get order from DOM
                 var order = jQuery(".sortable").sortable("toArray", { attribute: "data-order" });
+                console.log(order);
                 //sort the array
                 self.jsonBuilderHelper.sort(order);
             }
@@ -47,6 +64,11 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.onControlSelect = function (control) {
         this.selectedControl = control;
+    };
+    HomeComponent.prototype.onSectionSelect = function (section) {
+        // console.log(section.items);
+        this.selectedSection = section;
+        this.jsonBuilderHelper.setTemplate(this.selectedSection.items);
     };
     HomeComponent.prototype.onClick = function (e) {
         var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');

@@ -1,11 +1,18 @@
 
-<div class="col s12 m12 z-depth-3 sortable">
-  
-  	<div class="child p20" *ngFor="let control of defaultJson" 
- 		[attr.data-order]="control.order"
- 		(click)="selectControl(control)"
- 	>
-       <control [data]="control"></control>
-    </div>
-    
+<div class="col s12 m12 sortable-section">    
+	<section 
+			*ngFor="let section of defaultJson.app.pages[0].sections" 
+			(click)="selectSection(section)"
+			[attr.data-order]="section.order" 	
+			class="col s12 m12 z-depth-3 sortable mt30"				
+	>
+		 
+			<div class="child p20 " *ngFor="let control of section.items" 
+				[attr.data-order]="control.order"
+				(click)="selectControl(control)"
+			>
+				<control [data]="control"></control>
+			</div>
+		
+	</section>
 </div>

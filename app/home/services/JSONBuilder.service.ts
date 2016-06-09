@@ -22,8 +22,8 @@ export class JSONBuilder{
 		this.JSONTemplate.push(childTemplate);	
 	}
 
-	sort(order: string[]){				
-		this.reorder(order);		
+	sort(order: string[]){
+		this.reorder(order);
 		this.JSONTemplate.sort((a, b) => ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)));
 	}
 

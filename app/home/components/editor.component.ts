@@ -7,7 +7,7 @@ import { Switch } from './switch.component';
 	template: `
 
 		<switch [control]="control" [jsonTemplate] = "jsonTemplate"></switch>
-		<input type="type" [(ngModel)]="control.placeholder" />
+		<input type="type" [(ngModel)]="control.config.placeholder" />
 
 	`
 })

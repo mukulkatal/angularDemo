@@ -14,6 +14,7 @@ var Template = (function () {
     function Template() {
         this.default_Template = new core_1.EventEmitter();
         this.control_selected = new core_1.EventEmitter();
+        this.section_selected = new core_1.EventEmitter();
     }
     Template.prototype.ngOnInit = function () {
     };
@@ -25,8 +26,12 @@ var Template = (function () {
            this is passed from the particluar templat component (eg . Template1.component.ts)
            and now we have to pass it to parent template component i.e home component
     */
-    Template.prototype.selected_control = function (control) {
+    Template.prototype.selectControl = function (control) {
         this.control_selected.emit(control);
+    };
+    Template.prototype.selectSection = function (section) {
+        console.log(section);
+        this.section_selected.emit(section);
     };
     __decorate([
         core_1.Input('TempName'), 
@@ -40,11 +45,15 @@ var Template = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], Template.prototype, "control_selected", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Template.prototype, "section_selected", void 0);
     Template = __decorate([
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.Template1Component, templates_1.Template2Component],
-            template: "     \n         <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selected_control($event)\" ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n       </div>\n        \n      ",
+            template: "     \n         <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\"  ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n       </div>\n        \n      ",
         }), 
         __metadata('design:paramtypes', [])
     ], Template);

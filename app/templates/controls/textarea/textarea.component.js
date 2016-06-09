@@ -24,7 +24,7 @@ var TextArea = (function () {
             selector: 'text-area',
             directives: [],
             viewProviders: [],
-            template: "<div class=\"input-field\">\n                <textarea class=\"validate\" [required]=\"data.required\" [(ngModel)]=\"value\" ></textarea>\n                <label for=\"first_name\">{{data.placeholder}}</label>\n             </div>"
+            template: "<div class=\"input-field\">\n                <textarea class=\"validate\" [required]=\"data.required\" [(ngModel)]=\"value\" ></textarea>\n                <label for=\"first_name\">{{data.config.placeholder}}</label>\n             </div>"
         }), 
         __metadata('design:paramtypes', [])
     ], TextArea);
