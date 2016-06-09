@@ -18,8 +18,8 @@ export class JSONElement{
  
 	
     getJsonOfElem(elem_name:any)
-    {       
-         return ControlTemplates[elem_name];               
+    {
+         return ControlTemplates[elem_name]; 
     }
 
 	getJSONBuilt(): any[] {

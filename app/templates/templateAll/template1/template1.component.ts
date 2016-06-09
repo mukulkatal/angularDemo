@@ -26,6 +26,7 @@ export class Template1Component implements OnInit
         default json of the template 
     */
     defaultJson = [
+
         {
             order: 1,
             type: "textfield",

@@ -51,4 +51,4 @@ export class Template2Component implements OnInit
         this.controlSelected.emit(control);
     }
 
-}
+} 

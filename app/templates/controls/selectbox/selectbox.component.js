@@ -9,27 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var switch_component_1 = require('./switch.component');
-var Editor = (function () {
-    function Editor() {
+var TextField = (function () {
+    function TextField() {
     }
+    TextField.prototype.ngOnInit = function () {
+        console.log('Done');
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Editor.prototype, "control", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Editor.prototype, "jsonTemplate", void 0);
-    Editor = __decorate([
+    ], TextField.prototype, "data", void 0);
+    TextField = __decorate([
         core_1.Component({
-            selector: 'editor',
-            directives: [switch_component_1.Switch],
-            template: "\n\n\t\t<switch [control]=\"control\" [jsonTemplate] = \"jsonTemplate\"></switch>\n\t\t<input type=\"type\" [(ngModel)]=\"control.placeholder\" />\n\n\t"
+            selector: 'selectbox',
+            directives: [],
+            viewProviders: [],
+            template: "\n    <div class=\"input-field\">\n      <select class=\"validate\" [required]=\"data.required\" [(ngModel)]=\"value\" >\n        <option >name</option>\n        <option >age</option>\n        <option >class</option>\n      </select>\n      <label for=\"first_name\">{{data.placeholder}}</label>\n    </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], Editor);
-    return Editor;
+    ], TextField);
+    return TextField;
 }());
-exports.Editor = Editor;
-//# sourceMappingURL=editor.component.js.map
+exports.TextField = TextField;
+//# sourceMappingURL=selectbox.component.js.map

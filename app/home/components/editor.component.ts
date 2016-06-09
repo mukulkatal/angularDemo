@@ -5,8 +5,10 @@ import { Switch } from './switch.component';
 	selector: 'editor',
 	directives: [Switch],
 	template: `
+
 		<switch [control]="control" [jsonTemplate] = "jsonTemplate"></switch>
 		<input type="type" [(ngModel)]="control.placeholder" />
+
 	`
 })
 
