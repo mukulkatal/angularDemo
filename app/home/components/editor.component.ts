@@ -5,14 +5,14 @@ import { Switch } from './switch.component';
 	selector: 'editor',
 	directives: [Switch],
 	template: `
-		<switch [control]="control"></switch>
-		<input type="type" [(ngModel)]="control.order" />
-		<input type="type" [(ngModel)]="control.props" />
-		<input type="type" [(ngModel)]="control.type" />
-		<input type="type" [(ngModel)]="control.required" />
+
+		<switch [control]="control" [jsonTemplate] = "jsonTemplate"></switch>
+		<input type="type" [(ngModel)]="control.placeholder" />
+
 	`
 })
 
 export class Editor {
 	@Input() control: any;
+	@Input() jsonTemplate: any;
 }

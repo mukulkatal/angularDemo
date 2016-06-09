@@ -15,21 +15,11 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.setTemplate = function (template) {
         this.JSONTemplate = template;
     };
-    JSONBuilder.prototype.reorder = function (parent) {
-        console.log('sorty');
-        var i = 1;
-        var order = [];
-        parent.find('.child').each(function () {
-            var currentOrder = jQuery(this).parent().data('order');
-            order.push({
-                oldOrder: currentOrder,
-                newOrder: i++
-            });
-        });
+    JSONBuilder.prototype.reorder = function (order) {
         for (var control in this.JSONTemplate) {
-            for (var element in order) {
-                if (this.JSONTemplate[control].order == order[element].oldOrder) {
-                    this.JSONTemplate[control].order = order[element].newOrder;
+            for (var index in order) {
+                if (this.JSONTemplate[control].order == order[index]) {
+                    this.JSONTemplate[control].order = Number(index) + 1;
                     break;
                 }
             }
@@ -37,16 +27,19 @@ var JSONBuilder = (function () {
     };
     JSONBuilder.prototype.addNewChild = function (parent, child, childTemplate) {
         this.JSONTemplate.push(childTemplate);
-        this.sort(parent);
-        //jQuery(child).remove();		
     };
-    JSONBuilder.prototype.sort = function (parent) {
-        this.reorder(parent);
+    JSONBuilder.prototype.sort = function (order) {
+        this.reorder(order);
         this.JSONTemplate.sort(function (a, b) { return ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)); });
-        console.log(this.JSONTemplate);
     };
     JSONBuilder.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
+    };
+    JSONBuilder.changeControl = function (oldControl, newControl, template) {
+        //index of old control in array
+        var index = jQuery.inArray(oldControl, template);
+        //replace oldControl with newControl at index
+        template.splice(index, 1, newControl);
     };
     JSONBuilder = __decorate([
         core_1.Injectable(), 
