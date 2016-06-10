@@ -24,7 +24,7 @@ var Switch = (function () {
         //set order of new control same as of old control
         control.order = this.control.order;
         //relace control in jsonTemplate
-        JSONBuilder_service_1.JSONBuilder.changeControl(this.control, control, this.jsonTemplate);
+        JSONBuilder_service_1.JSONBuilder.changeControl(this.control, control, this.jsonTemplate.items);
         //update current control
         this.control = control;
     };

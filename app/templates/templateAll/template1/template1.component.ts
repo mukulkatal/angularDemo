@@ -12,10 +12,10 @@ import {Control} from '../../../templates/controls/control.component';
         `
             .p20{
               padding-bottom:20px;
-            },
-            .mt30
+            }
+            .mt40
             {
-              margin-top: 30px;
+              margin-top: 40px;
             }
         `
     ]

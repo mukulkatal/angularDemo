@@ -30,7 +30,7 @@ var Template = (function () {
         this.control_selected.emit(control);
     };
     Template.prototype.selectSection = function (section) {
-        console.log(section);
+        //console.log(section);
         this.section_selected.emit(section);
     };
     __decorate([

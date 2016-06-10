@@ -1,12 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Switch } from './switch.component';
 
 @Component({
 	selector: 'editor',
-	directives: [Switch],
+	directives: [],
 	template: `
-
-		<switch [control]="control" [jsonTemplate] = "jsonTemplate"></switch>
 		<input type="type" [(ngModel)]="control.config.placeholder" />
 
 	`
@@ -14,5 +11,4 @@ import { Switch } from './switch.component';
 
 export class Editor {
 	@Input() control: any;
-	@Input() jsonTemplate: any;
 }

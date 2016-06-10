@@ -18,7 +18,8 @@ export class JSONBuilder{
 			}
 		}
 	}
-	addNewChild(parent: any,child: any,childTemplate: any){	
+	
+	addNewChild(childTemplate: any){	
 		this.JSONTemplate.push(childTemplate);	
 	}
 

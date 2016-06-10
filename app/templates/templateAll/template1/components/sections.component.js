@@ -17,7 +17,7 @@ var SectionComponent = (function () {
         core_1.Component({
             selector: 'section',
             directives: [control_component_1.Control],
-            template: "\n             <ng-content></ng-content>\n    "
+            template: "\n    <div class=\"sortable\">\n        <ng-content></ng-content>\n    </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], SectionComponent);

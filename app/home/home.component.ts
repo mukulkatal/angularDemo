@@ -4,6 +4,7 @@ import { JSONBuilder } from './services/JSONBuilder.service';
 import { JSONElement } from './services/JSONElement.service';
 import { Template } from '../templates/templateAll/Template.component';
 import { Editor } from './components/editor.component';
+import { Switch } from './components/switch.component';
 
 declare var jQuery: any;
 
@@ -11,7 +12,7 @@ declare var window: any;
 
 @Component({
   selector: 'my-app',
-  directives: [Control, Editor, Template],
+  directives: [Control, Editor, Template, Switch],
   providers: [JSONBuilder, JSONElement],
   viewProviders: [],
   templateUrl: 'app/home/home.template.html',
@@ -31,11 +32,11 @@ export class HomeComponent implements OnInit {
 
   bind_Template_Json(data: any) {
     this.controls = data.defaulttemp.defaulttemp;
-    console.log(this.controls);
-    this.jsonBuilderHelper.setTemplate(this.controls);
+
+    //this.jsonBuilderHelper.setTemplate(this.controls);
     //this.selectedControl = this.controls[0];
 
-    jQuery(".sortable-section").sortable({    
+    /*jQuery(".sortable-section").sortable({    
         // cursor: "move",
         // opacity: 0.5,
         // revert: true,
@@ -48,13 +49,13 @@ export class HomeComponent implements OnInit {
           //sort the array
           self.jsonBuilderHelper.sort(order);
         }
-    });
+    });*/
     
     
     //drag and sort elements in a section
     let self = this;
     jQuery(".sortable").sortable({ 
-      connectWith:   '.sortable-section',    
+      //connectWith:   '.sortable-section',    
       cursor: "move",
       opacity: 0.5,
       revert: true,
@@ -78,22 +79,19 @@ export class HomeComponent implements OnInit {
 
   onControlSelect(control) {
     this.selectedControl = control;
+
+    console.log(this.selectedControl);
   }
 
   onSectionSelect(section) {
-   // console.log(section.items);
     this.selectedSection =  section;
     this.jsonBuilderHelper.setTemplate( this.selectedSection.items);
+
+    console.log(this.selectedSection);
   }
+
   onClick(e){
-     var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
-     console.log(this.controls);
-
-     this.controls.push(jsonElement);
-
-     console.log(this.controls);
-
-     // add elemnt in UI
-     //this.jsonBuilderHelper.addNewChild(parent,e, jsonElement);
+    var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
+    this.jsonBuilderHelper.addNewChild(jsonElement);
   }  
 }

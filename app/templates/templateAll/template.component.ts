@@ -39,7 +39,7 @@ export class Template implements OnInit
     }
     
      selectSection(section) {
-         console.log(section);
+         //console.log(section);
         this.section_selected.emit(section);
     }
 

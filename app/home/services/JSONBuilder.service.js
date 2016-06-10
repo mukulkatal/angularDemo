@@ -25,7 +25,7 @@ var JSONBuilder = (function () {
             }
         }
     };
-    JSONBuilder.prototype.addNewChild = function (parent, child, childTemplate) {
+    JSONBuilder.prototype.addNewChild = function (childTemplate) {
         this.JSONTemplate.push(childTemplate);
     };
     JSONBuilder.prototype.sort = function (order) {

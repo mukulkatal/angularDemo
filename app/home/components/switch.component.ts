@@ -28,7 +28,7 @@ export class Switch {
 		//set order of new control same as of old control
 		control.order = this.control.order;
 		//relace control in jsonTemplate
-		JSONBuilder.changeControl(this.control, control, this.jsonTemplate);
+		JSONBuilder.changeControl(this.control, control, this.jsonTemplate.items);
 		//update current control
 		this.control = control;
 	}

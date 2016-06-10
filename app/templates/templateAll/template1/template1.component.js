@@ -264,7 +264,7 @@ var Template1Component = (function () {
             templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
             styleUrls: ['node_modules/materialize-css/dist/css/materialize.min.css'],
             styles: [
-                "\n            .p20{\n              padding-bottom:20px;\n            },\n            .mt30\n            {\n              margin-top: 30px;\n            }\n        "
+                "\n            .p20{\n              padding-bottom:20px;\n            }\n            .mt40\n            {\n              margin-top: 40px;\n            }\n        "
             ]
         }), 
         __metadata('design:paramtypes', [])

@@ -13,9 +13,14 @@
 		<editor 
 			*ngIf="selectedControl"
 			[control]="selectedControl"
-			[jsonTemplate] = "controls"
 		>	
 		</editor>
+        <switch 
+            *ngIf="selectedSection"
+            [control]="selectedControl"
+            [jsonTemplate] = "selectedSection"
+        >
+        </switch>
 		<div> <pre>{{controls | json}}</pre> </div>
 	</div>
 </div>

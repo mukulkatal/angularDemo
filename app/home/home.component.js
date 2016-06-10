@@ -14,6 +14,7 @@ var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var JSONElement_service_1 = require('./services/JSONElement.service');
 var Template_component_1 = require('../templates/templateAll/Template.component');
 var editor_component_1 = require('./components/editor.component');
+var switch_component_1 = require('./components/switch.component');
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
@@ -27,27 +28,26 @@ var HomeComponent = (function () {
     */
     HomeComponent.prototype.bind_Template_Json = function (data) {
         this.controls = data.defaulttemp.defaulttemp;
-        console.log(this.controls);
-        this.jsonBuilderHelper.setTemplate(this.controls);
+        //this.jsonBuilderHelper.setTemplate(this.controls);
         //this.selectedControl = this.controls[0];
-        jQuery(".sortable-section").sortable({
+        /*jQuery(".sortable-section").sortable({
             // cursor: "move",
             // opacity: 0.5,
             // revert: true,
             // scroll: false,
             //cursorAt: { left: 250, top: 250 },
-            update: function () {
-                //get order from DOM
-                var order = jQuery(".sortable-section").sortable("toArray", { attribute: "data-order" });
-                console.log(order);
-                //sort the array
-                self.jsonBuilderHelper.sort(order);
+            update: function() {
+              //get order from DOM
+              let order = jQuery(".sortable-section").sortable("toArray", { attribute: "data-order" });
+              console.log(order);
+              //sort the array
+              self.jsonBuilderHelper.sort(order);
             }
-        });
+        });*/
         //drag and sort elements in a section
         var self = this;
         jQuery(".sortable").sortable({
-            connectWith: '.sortable-section',
+            //connectWith:   '.sortable-section',    
             cursor: "move",
             opacity: 0.5,
             revert: true,
@@ -64,24 +64,21 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.onControlSelect = function (control) {
         this.selectedControl = control;
+        console.log(this.selectedControl);
     };
     HomeComponent.prototype.onSectionSelect = function (section) {
-        // console.log(section.items);
         this.selectedSection = section;
         this.jsonBuilderHelper.setTemplate(this.selectedSection.items);
+        console.log(this.selectedSection);
     };
     HomeComponent.prototype.onClick = function (e) {
         var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
-        console.log(this.controls);
-        this.controls.push(jsonElement);
-        console.log(this.controls);
-        // add elemnt in UI
-        //this.jsonBuilderHelper.addNewChild(parent,e, jsonElement);
+        this.jsonBuilderHelper.addNewChild(jsonElement);
     };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            directives: [control_component_1.Control, editor_component_1.Editor, Template_component_1.Template],
+            directives: [control_component_1.Control, editor_component_1.Editor, Template_component_1.Template, switch_component_1.Switch],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'app/home/home.template.html',
