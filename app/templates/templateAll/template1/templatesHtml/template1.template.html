@@ -3,12 +3,14 @@
 	<section 
 			*ngFor="let section of page.sections" 
 			(click)="selectSection(section)"
+			(mousedown)="selectSection(section)"
 			class="col s12 m12 sortable mt40 z-depth-3"
 	>
 		 
 			<div class="child p20 " *ngFor="let control of section.items" 
 				[attr.data-order]="control.order"
 				(click)="selectControl(control)"
+				(mousedown)="selectControl(control)"
 			>
 				<control [data]="control"></control>
 			</div>
