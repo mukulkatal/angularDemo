@@ -19,7 +19,8 @@ export class JSONElement{
 	
     getJsonOfElem(elem_name:any)
     {
-         return ControlTemplates[elem_name]; 
+		let element = ControlTemplates[elem_name];
+		return JSON.parse(JSON.stringify(element)); 
     }
 
 	getJSONBuilt(): any[] {

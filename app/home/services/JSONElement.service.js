@@ -22,7 +22,8 @@ var JSONElement = (function () {
         return all_elems;
     };
     JSONElement.prototype.getJsonOfElem = function (elem_name) {
-        return controlTemplates_store_1.ControlTemplates[elem_name];
+        var element = controlTemplates_store_1.ControlTemplates[elem_name];
+        return JSON.parse(JSON.stringify(element));
     };
     JSONElement.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
