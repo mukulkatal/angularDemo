@@ -20,6 +20,7 @@ export class JSONElement{
     getJsonOfElem(elem_name:any)
     {
 		let element = ControlTemplates[elem_name];
+		//return a deep copy of object
 		return JSON.parse(JSON.stringify(element)); 
     }
 

@@ -23,6 +23,7 @@ var JSONElement = (function () {
     };
     JSONElement.prototype.getJsonOfElem = function (elem_name) {
         var element = controlTemplates_store_1.ControlTemplates[elem_name];
+        //return a deep copy of object
         return JSON.parse(JSON.stringify(element));
     };
     JSONElement.prototype.getJSONBuilt = function () {

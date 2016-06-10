@@ -3,7 +3,6 @@
 	<section 
 			*ngFor="let section of page.sections" 
 			(click)="selectSection(section)"
-			[attr.data-order]="section.order" 	
 			class="col s12 m12 sortable mt40 z-depth-3"
 	>
 		 
