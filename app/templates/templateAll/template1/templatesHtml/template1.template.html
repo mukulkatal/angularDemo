@@ -1,9 +1,10 @@
-
-<div class="col s12 m12">    
+<div *ngFor="let page of defaultJson.app.pages" class="col s12 m12 z-depth-3" >
+<div class="col s12 m12 sortable-section">    
 	<section 
-			*ngFor="let section of defaultJson.app.pages[0].sections" 
-			(click)="selectSection(section)"	
-			class="col s12 m12 z-depth-3 mt40"				
+			*ngFor="let section of page.sections" 
+			(click)="selectSection(section)"
+			[attr.data-order]="section.order" 	
+			class="col s12 m12 sortable mt30"
 	>
 		 
 			<div class="child p20 " *ngFor="let control of section.items" 
@@ -14,4 +15,5 @@
 			</div>
 		
 	</section>
+</div>
 </div>
