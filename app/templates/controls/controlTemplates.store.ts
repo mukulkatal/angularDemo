@@ -93,5 +93,56 @@ export var ControlTemplates: any =
             "style": "height:100;color:red;"
           }
         }]
-      }           
+      }   
+          ,
+
+           // Json conditions
+        /*
+           ---  Field : select -> options (Dropdown)   ----            
+           
+        */
+
+  "selectbox": {
+    "order": 1000,
+    "type": "selectbox",
+    "props": {
+          "title": "this checkbox section question",
+          "helpText": "SOME HELPER TEXT"
+    },
+    "config": {
+          "type": "text",
+          "attr": [{
+        "class": "customeClass",
+        "style": "heightcolorred"
+          }],
+          "validations": [{
+        "required": "true",
+        "message": "This field is required",
+        "errorClass": "error"
+          }, {
+          "required": "true",
+          "message": "This field is required",
+          "errorClass": "error",
+          "min": "0",
+          "max": "100"
+        }],
+          "maxSelections": 1,
+          "direction": "horizontal",
+          "placeholder": "this text area in placeholder",
+          "defaultvalue": "Default Value"
+    },
+    "options": [
+    {
+          "type": "toggel",
+          "lable": "OPTION 1",
+          "value": "1",
+          "selected": false,
+          "icon": "http://test.com/jd.png",
+          "attr": {
+        "class": "customeClass",
+        "style": "height:100;color:red;"
+          }
+    }
+    ]
+  }    
     };

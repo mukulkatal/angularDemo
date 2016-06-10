@@ -9,26 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var TextField = (function () {
-    function TextField() {
+var SelectBox = (function () {
+    function SelectBox() {
     }
-    TextField.prototype.ngOnInit = function () {
+    SelectBox.prototype.ngOnInit = function () {
         console.log('Done');
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], TextField.prototype, "data", void 0);
-    TextField = __decorate([
+    ], SelectBox.prototype, "data", void 0);
+    SelectBox = __decorate([
         core_1.Component({
             selector: 'selectbox',
             directives: [],
             viewProviders: [],
-            template: "\n    <div class=\"input-field\">\n      <select class=\"validate\" [required]=\"data.required\" [(ngModel)]=\"value\" >\n        <option >name</option>\n        <option >age</option>\n        <option >class</option>\n      </select>\n      <label for=\"first_name\">{{data.placeholder}}</label>\n    </div>\n\t"
+            template: "\n    <div class=\"\">     \n        <select class=\"validate\" [required]=\"data.required\" class=\"display\">\n         <option  *ngFor=\"let option of data.options\" value=\"{{option.value}}\" [selected]=\"option.selected\" >{{option.label}}</option>\n        </select>\n    </div>\n\t",
+            styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [])
-    ], TextField);
-    return TextField;
+    ], SelectBox);
+    return SelectBox;
 }());
-exports.TextField = TextField;
+exports.SelectBox = SelectBox;
 //# sourceMappingURL=selectbox.component.js.map
