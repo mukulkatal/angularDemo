@@ -5,9 +5,7 @@ import {Control} from '../../../controls/control.component';
     selector:'section',
      directives: [Control],
     template:`
-    <div class="sortable">
         <ng-content></ng-content>
-    </div>
     `
 })
 
