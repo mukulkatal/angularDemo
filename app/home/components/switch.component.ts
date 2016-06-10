@@ -9,6 +9,7 @@ import { JSONElement } from '../services/JSONElement.service';
 		<select (change)="onChange($event)" class="display">
 			<option value="text-area" [selected]="control.type=='text-area'">Text Area</option>
 			<option value="textfield" [selected]="control.type=='textfield'">Text Field</option>
+			<option value="selectbox" [selected]="control.type=='selectbox'">DropDown</option>
 		</select>
 	`,
 	styles:['.display{display:block}']

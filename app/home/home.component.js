@@ -82,6 +82,9 @@ var HomeComponent = (function () {
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'app/home/home.template.html',
+            styles: [
+                '.mt20{margin-top:20px}'
+            ],
         }), 
         __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement])
     ], HomeComponent);

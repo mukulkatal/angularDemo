@@ -11,7 +11,7 @@ export class JSONElement{
 	
 	
 	allAvailableElements(){
-		var all_elems: any[] = ['textfield','text-area'];
+		var all_elems: any[] = ['textfield','text-area','selectbox'];
 		// console.log(this.JSONTemplate);
         return all_elems;
 	}   

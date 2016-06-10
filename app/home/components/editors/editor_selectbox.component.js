@@ -1,1 +1,43 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var EditorSelectBox = (function () {
+    function EditorSelectBox() {
+        this.option = {
+            "type": "toggel",
+            "lable": "OPTION 1",
+            "value": "",
+            "selected": false,
+            "icon": "http://test.com/jd.png",
+            "attr": {
+                "class": "customeClass",
+                "style": "height:100;color:red;"
+            }
+        };
+    }
+    EditorSelectBox.prototype.Add_Option_In_Dropdown = function () {
+        this.control.options.push(this.option);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], EditorSelectBox.prototype, "control", void 0);
+    EditorSelectBox = __decorate([
+        core_1.Component({
+            selector: 'editor-selectbox',
+            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t<div *ngFor=\"let option of control.options ; #i = index\">\n\t\t\t<div class=\"options\">\n\t\t\t\t<div>Option {{i+1}}</div>\n\t\t\t\t<label>Label</label>: <input type=\"text\" [(ngModel)] = \"option.label\" />\n\t\t\t\t<label>Value</label> : <input type=\"text\" [(ngModel)] = \"option.value\" />\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t\t<a href=\"Javascript:void(0);\" (click)=\"Add_Option_In_Dropdown()\">Add</a>\n\t"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], EditorSelectBox);
+    return EditorSelectBox;
+}());
+exports.EditorSelectBox = EditorSelectBox;
 //# sourceMappingURL=editor_selectbox.component.js.map

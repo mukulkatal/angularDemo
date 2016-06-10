@@ -1,14 +1,16 @@
 import { Component, Input } from '@angular/core';
+import { EditorSelectBox,EditorTextField} from './editor';
 
 @Component({
 	selector: 'editor',
-	directives: [],
+	directives: [EditorSelectBox, EditorTextField],
 	template: `
-		<input type="type" [(ngModel)]="control.config.placeholder" />
-
+		<editor-textfield *ngIf="editor_control.type=='textfield'" [control]="editor_control"></editor-textfield>
+		<editor-selectbox *ngIf="editor_control.type=='selectbox'" [control]="editor_control"></editor-selectbox>
+		
 	`
 })
 
 export class Editor {
-	@Input() control: any;
+	@Input() editor_control: any;
 }

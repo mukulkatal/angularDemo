@@ -16,6 +16,9 @@ declare var window: any;
   providers: [JSONBuilder, JSONElement],
   viewProviders: [],
   templateUrl: 'app/home/home.template.html',
+  styles : [
+  '.mt20{margin-top:20px}'
+  ],
 })
 
 export class HomeComponent implements OnInit {

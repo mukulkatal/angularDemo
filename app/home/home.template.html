@@ -10,17 +10,22 @@
 	</div>
 
 	<div class="col s3" style="height:100%">
-		<editor 
-			*ngIf="selectedControl"
-			[control]="selectedControl"
-		>	
-		</editor>
-        <switch 
-            *ngIf="selectedSection"
-            [control]="selectedControl"
-            [jsonTemplate] = "selectedSection"
-        >
-        </switch>
+        <div class="">    
+    		<editor 
+    			*ngIf="selectedControl"
+    			[editor_control]="selectedControl"
+    		>	
+    		</editor>
+        </div>
+        <div class="mt20" >
+
+            <switch 
+                *ngIf="selectedSection"
+                [control]="selectedControl"
+                [jsonTemplate] = "selectedSection"
+            >
+            </switch>
+        </div>
 		<div> <pre>{{controls | json}}</pre> </div>
 	</div>
 </div>
