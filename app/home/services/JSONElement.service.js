@@ -23,6 +23,8 @@ var JSONElement = (function () {
     };
     JSONElement.prototype.getJsonOfElem = function (elem_name) {
         var element = controlTemplates_store_1.ControlTemplates[elem_name];
+        //assign a random order to element
+        element.order = Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000;
         //return a deep copy of object
         return JSON.parse(JSON.stringify(element));
     };

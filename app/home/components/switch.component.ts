@@ -16,7 +16,7 @@ import { JSONElement } from '../services/JSONElement.service';
 
 export class Switch {
 	@Input() control: any;
-	@Input() jsonTemplate: Array<Object>;
+	@Input() jsonTemplate: any;
 	constructor(private jsonElementHandler: JSONElement ,private jsonBuilderHelper : JSONBuilder ) { 		
 	}
 

@@ -34,7 +34,7 @@ var Switch = (function () {
     ], Switch.prototype, "control", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Array)
+        __metadata('design:type', Object)
     ], Switch.prototype, "jsonTemplate", void 0);
     Switch = __decorate([
         core_1.Component({
