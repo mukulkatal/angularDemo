@@ -55,7 +55,7 @@ var HomeComponent = (function () {
             //cursorAt: { left: 250, top: 250 },
             update: function () {
                 //get order from DOM
-                var order = jQuery(".sortable").sortable("toArray", { attribute: "data-order" });
+                var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
                 console.log(order);
                 //sort the array
                 self.jsonBuilderHelper.sort(order);
