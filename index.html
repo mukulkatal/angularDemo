@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <base href="/">
+        <title>Angular 2 QuickStart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
+        <link rel="stylesheet" href="asserts/css/custome.css">
+        <!-- <link rel="stylesheet" href="node_modules/dragula/dist/dragula.css"> -->
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- 1. Load libraries -->
+         <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+        <!-- <script src="node_modules/dragula/dist/dragula.js"></script> -->
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.6/interact.min.js"></script> -->
+        <!-- 2. Configure SystemJS -->
+        <script src="systemjs.config.js"></script>
+        <script>
+          System.import('app').catch(function(err){ console.error(err); });
+        </script>
+    </head>
+    <!-- 3. Display the application -->
+    <body>
+        <div class="content-wrapper">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Logo</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="sass.html" class="disp-inline-flex"><i class="small material-icons">play_arrow</i>  Preview</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li><a href="collapsible.html">JavaScript</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <my-app>Loading...</my-app>
+            
+        </div>
+    </body>
+</html>
