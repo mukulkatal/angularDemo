@@ -10,6 +10,7 @@ import { JSONElement } from '../services/JSONElement.service';
 			<option value="text-area" [selected]="control.type=='text-area'">Text Area</option>
 			<option value="textfield" [selected]="control.type=='textfield'">Text Field</option>
 			<option value="selectbox" [selected]="control.type=='selectbox'">DropDown</option>
+			<option value="radio-button" [selected]="control.type=='radio-button'">Radio Button</option>
 		</select>
 	`,
 	styles:['.display{display:block}']

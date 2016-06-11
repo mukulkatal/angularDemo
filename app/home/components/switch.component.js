@@ -49,7 +49,7 @@ var Switch = (function () {
         core_1.Component({
             selector: 'switch',
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
-            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option value=\"text-area\" [selected]=\"control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"control.type=='textfield'\">Text Field</option>\n\t\t\t<option value=\"selectbox\" [selected]=\"control.type=='selectbox'\">DropDown</option>\n\t\t</select>\n\t",
+            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option value=\"text-area\" [selected]=\"control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"control.type=='textfield'\">Text Field</option>\n\t\t\t<option value=\"selectbox\" [selected]=\"control.type=='selectbox'\">DropDown</option>\n\t\t\t<option value=\"radio-button\" [selected]=\"control.type=='radio-button'\">Radio Button</option>\n\t\t</select>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])
