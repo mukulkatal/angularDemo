@@ -13,4 +13,5 @@ import { EditorSelectBox,EditorTextField} from './editor';
 
 export class Editor {
 	@Input() editor_control: any;
+	
 }

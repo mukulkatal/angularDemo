@@ -15,18 +15,23 @@ var Switch = (function () {
     function Switch(jsonElementHandler, jsonBuilderHelper) {
         this.jsonElementHandler = jsonElementHandler;
         this.jsonBuilderHelper = jsonBuilderHelper;
+        this.control_selected = new core_1.EventEmitter();
     }
     /*
         -- Change event function event for select
      */
     Switch.prototype.onChange = function ($event) {
         var control = this.jsonElementHandler.getJsonOfElem($event.target.value);
+        console.log('control');
+        console.log(control);
         //set order of new control same as of old control
         control.order = this.control.order;
         //relace control in jsonTemplate
         JSONBuilder_service_1.JSONBuilder.changeControl(this.control, control, this.jsonTemplate.items);
         //update current control
         this.control = control;
+        // emit output param for update editor		
+        this.control_selected.emit(control);
     };
     __decorate([
         core_1.Input(), 
@@ -36,6 +41,10 @@ var Switch = (function () {
         core_1.Input(), 
         __metadata('design:type', Object)
     ], Switch.prototype, "jsonTemplate", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Switch.prototype, "control_selected", void 0);
     Switch = __decorate([
         core_1.Component({
             selector: 'switch',
