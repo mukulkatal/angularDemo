@@ -77,11 +77,12 @@ var HomeComponent = (function () {
     };
     HomeComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
             directives: [control_component_1.Control, editor_component_1.Editor, Template_component_1.Template, switch_component_1.Switch],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
-            templateUrl: 'app/home/home.template.html',
+            templateUrl: 'home.template.html',
             styles: [
                 '.mt20{margin-top:20px}'
             ],

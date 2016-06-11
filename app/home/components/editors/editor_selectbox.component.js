@@ -25,7 +25,7 @@ var EditorSelectBox = (function () {
     EditorSelectBox = __decorate([
         core_1.Component({
             selector: 'editor-selectbox',
-            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t<div *ngFor=\"let option of control.options ; #i = index\">\n\t\t\t<div class=\"options\">\n\t\t\t\t<div>Option {{i+1}}</div>\n\t\t\t\t<label>Label</label>: <input type=\"text\" [(ngModel)] = \"option.label\" />\n\t\t\t\t<label>Value</label> : <input type=\"text\" [(ngModel)] = \"option.value\" />\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t\t<a href=\"Javascript:void(0);\" (click)=\"Add_Option_In_Dropdown()\">Add</a>\n\t"
+            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t<div *ngFor=\"let option of control.options ; let i = index\">\n\t\t\t<div class=\"options\">\n\t\t\t\t<div>Option {{i+1}}</div>\n\t\t\t\t<label>Label</label>: <input type=\"text\" [(ngModel)] = \"option.label\" />\n\t\t\t\t<label>Value</label> : <input type=\"text\" [(ngModel)] = \"option.value\" />\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t\t<a href=\"Javascript:void(0);\" (click)=\"Add_Option_In_Dropdown()\">Add</a>\n\t"
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement])
     ], EditorSelectBox);
