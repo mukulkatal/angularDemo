@@ -1,9 +1,9 @@
 import { Component,Input } from '@angular/core';
-import {TextField,TextArea,SelectBox,RadioButton} from './controls';
+import {CONTROLS} from './controls';
 
 @Component({
   selector: 'control',
-  directives: [TextField, TextArea, SelectBox, RadioButton],
+  directives: [CONTROLS],
   template: `
 			    <textfield *ngIf="data.type=='textfield'" [data]="data"></textfield>
       			<text-area *ngIf="data.type=='text-area'" [data]="data" ></text-area>

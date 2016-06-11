@@ -1,9 +1,9 @@
 import { Component,Input,Output,EventEmitter,OnInit } from '@angular/core';
-import {Template1Component,Template2Component} from './templates'
+import {TEMPLATES} from './templates'
 
 @Component({
 selector :"Temp",
-directives:[Template1Component,Template2Component],
+directives: [TEMPLATES],
 template : `     
          <div [ngSwitch]="Temp_name">
             <Temp-1 *ngSwitchWhen="'Temp-1'" *ngSwitchDefault  (default_Template)="bind_Template_Json($event)" (selected_control)="selectControl($event)" (selected_section)="selectSection($event)"  ></Temp-1>
