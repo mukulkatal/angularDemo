@@ -18,7 +18,6 @@ var JSONElement = (function () {
     // }
     JSONElement.prototype.allAvailableElements = function () {
         var all_elems = ['textfield', 'text-area', 'selectbox'];
-        // console.log(this.JSONTemplate);
         return all_elems;
     };
     JSONElement.prototype.getJsonOfElem = function (elem_name) {
