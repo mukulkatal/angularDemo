@@ -5,7 +5,7 @@ import { JSONElement } from '../../services/JSONElement.service';
 	selector:'editor-selectbox',
 	template:`
 		<input type="text" [(ngModel)] = "control.config.placeholder" />
-		<div *ngFor="let option of control.options ; #i = index">
+		<div *ngFor="let option of control.options ; let i = index">
 			<div class="options">
 				<div>Option {{i+1}}</div>
 				<label>Label</label>: <input type="text" [(ngModel)] = "option.label" />
