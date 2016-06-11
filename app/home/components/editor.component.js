@@ -21,7 +21,7 @@ var Editor = (function () {
         core_1.Component({
             selector: 'editor',
             directives: [editor_1.EditorSelectBox, editor_1.EditorTextField],
-            template: "\n\t\t<editor-textfield *ngIf=\"editor_control.type=='textfield'\" [control]=\"editor_control\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"editor_control.type=='selectbox'\" [control]=\"editor_control\"></editor-selectbox>\n\t\t\n\t"
+            template: "\n\t\t<editor-textfield *ngIf=\"editor_control.type=='textfield'\" [control]=\"editor_control\"></editor-textfield>\n\t\t<editor-textfield *ngIf=\"editor_control.type=='text-area'\" [control]=\"editor_control\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"editor_control.type=='selectbox'\" [control]=\"editor_control\"></editor-selectbox>\n\t\t<editor-selectbox *ngIf=\"editor_control.type=='radio-button'\" [control]=\"editor_control\"></editor-selectbox>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);

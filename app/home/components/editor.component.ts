@@ -6,11 +6,13 @@ import { EditorSelectBox,EditorTextField} from './editor';
 	directives: [EditorSelectBox, EditorTextField],
 	template: `
 		<editor-textfield *ngIf="editor_control.type=='textfield'" [control]="editor_control"></editor-textfield>
+		<editor-textfield *ngIf="editor_control.type=='text-area'" [control]="editor_control"></editor-textfield>
 		<editor-selectbox *ngIf="editor_control.type=='selectbox'" [control]="editor_control"></editor-selectbox>
-		
+		<editor-selectbox *ngIf="editor_control.type=='radio-button'" [control]="editor_control"></editor-selectbox>
 	`
 })
 
 export class Editor {
 	@Input() editor_control: any;
+	
 }

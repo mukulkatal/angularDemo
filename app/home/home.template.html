@@ -23,6 +23,7 @@
                 *ngIf="selectedSection"
                 [control]="selectedControl"
                 [jsonTemplate] = "selectedSection"
+                (control_selected)="onControlSelect($event)" 
             >
             </switch>
         </div>

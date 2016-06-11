@@ -11,7 +11,7 @@ export class JSONElement{
 	
 	
 	allAvailableElements(){
-		var all_elems: any[] = ['textfield','text-area','selectbox'];
+		var all_elems: any[] = ['textfield','text-area','selectbox','radio-button'];
         return all_elems;
 	}   
  

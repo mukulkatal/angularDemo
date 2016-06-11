@@ -8,14 +8,13 @@ import { JSONElement } from './services/JSONElement.service';
 
 declare var jQuery: any;
 
-declare var window: any;
-
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
   directives: [Control, Editor, Template, Switch],
   providers: [JSONBuilder, JSONElement],
   viewProviders: [],
-  templateUrl: 'app/home/home.template.html',
+  templateUrl: 'home.template.html',
   styles : [
   '.mt20{margin-top:20px}'
   ],

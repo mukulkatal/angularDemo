@@ -20,8 +20,8 @@ var Control = (function () {
     Control = __decorate([
         core_1.Component({
             selector: 'control',
-            directives: [controls_1.TextField, controls_1.TextArea, controls_1.SelectBox],
-            template: "\n\t\t\t    <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n      \t\t\t<text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n      \t\t\t<selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n      ",
+            directives: [controls_1.CONTROLS],
+            template: "\n\t\t\t    <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n      \t\t\t<text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n      \t\t\t<selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n      \t\t\t<radio-button *ngIf=\"data.type=='radio-button'\" [data]=\"data\" ></radio-button>\n      ",
         }), 
         __metadata('design:paramtypes', [])
     ], Control);

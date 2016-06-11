@@ -17,7 +17,7 @@ var JSONElement = (function () {
     // 	this.JSONTemplate = template;
     // }
     JSONElement.prototype.allAvailableElements = function () {
-        var all_elems = ['textfield', 'text-area', 'selectbox'];
+        var all_elems = ['textfield', 'text-area', 'selectbox', 'radio-button'];
         return all_elems;
     };
     JSONElement.prototype.getJsonOfElem = function (elem_name) {

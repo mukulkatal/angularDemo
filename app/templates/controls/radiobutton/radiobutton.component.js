@@ -9,27 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SelectBox = (function () {
-    function SelectBox() {
+var RadioButton = (function () {
+    function RadioButton() {
     }
-    SelectBox.prototype.ngOnInit = function () {
+    RadioButton.prototype.ngOnInit = function () {
         console.log('Done');
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], SelectBox.prototype, "data", void 0);
-    SelectBox = __decorate([
+    ], RadioButton.prototype, "data", void 0);
+    RadioButton = __decorate([
         core_1.Component({
-            selector: 'selectbox',
+            selector: 'radio-button',
             directives: [],
             viewProviders: [],
-            template: "\n    <div class=\"\">     \n        <select class=\"validate\" [required]=\"data.required\" class=\"display\">\n          <option  \n              *ngFor=\"let option of data.options\" \n              value=\"{{option.value}}\" \n              [selected]=\"option.selected\">\n              {{option.label}}\n          </option>\n        </select>\n    </div>\n\t",
-            styles: ['.display{display:block}']
+            template: "\n   <div> \n   <div> title : {{data.props.title}}  </div>\n   <div> helptext : {{data.props.helpText}}  </div>\n    <p *ngFor=\"let radio_item of data.options, let i = index\">\n        <input  \n            [(ngModel)]=\"radio_item.value\"\n            type=\"radio\"\n            id=\"radio{{i}}\"\n            class=\"validate\"\n            name=\"group\" \n            [required]=\"data.required\"          \n            [checked]=\"radio_item.selected\"\n          />         \n      <label attr.for=\"radio{{i}}\">{{radio_item.label}}</label>    \n    </p>\n  </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], SelectBox);
-    return SelectBox;
+    ], RadioButton);
+    return RadioButton;
 }());
-exports.SelectBox = SelectBox;
-//# sourceMappingURL=selectbox.component.js.map
+exports.RadioButton = RadioButton;
+//# sourceMappingURL=radiobutton.component.js.map
