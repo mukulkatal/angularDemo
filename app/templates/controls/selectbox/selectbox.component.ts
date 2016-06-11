@@ -7,7 +7,12 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   template: `
     <div class="">     
         <select class="validate" [required]="data.required" class="display">
-         <option  *ngFor="let option of data.options" value="{{option.value}}" [selected]="option.selected" >{{option.label}}</option>
+          <option  
+              *ngFor="let option of data.options" 
+              value="{{option.value}}" 
+              [selected]="option.selected">
+              {{option.label}}
+          </option>
         </select>
     </div>
 	`,

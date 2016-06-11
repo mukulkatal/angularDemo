@@ -160,6 +160,60 @@ var Template1Component = (function () {
                                                 }
                                             }
                                         ]
+                                    },
+                                    {
+                                        "order": 4,
+                                        "type": "radio-button",
+                                        "props": {
+                                            "title": "this checkbox section question",
+                                            "helpText": "SOME HELPER TEXT"
+                                        },
+                                        "config": {
+                                            "type": "radio",
+                                            "attr": [{
+                                                    "class": "customeClass",
+                                                    "style": "heightcolorred"
+                                                }],
+                                            "validations": [{
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error"
+                                                }, {
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error",
+                                                    "min": "0",
+                                                    "max": "100"
+                                                }],
+                                            "maxSelections": 1,
+                                            "direction": "horizontal",
+                                            "placeholder": "this select in placeholder",
+                                            "defaultvalue": "Default Value"
+                                        },
+                                        "options": [
+                                            {
+                                                "type": "toggel",
+                                                "label": "OPTION 1",
+                                                "value": "10",
+                                                "selected": false,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            },
+                                            {
+                                                "type": "toggel",
+                                                "label": "OPTION 2",
+                                                "value": "10",
+                                                "selected": true,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            }
+                                        ]
                                     }
                                 ]
                             },

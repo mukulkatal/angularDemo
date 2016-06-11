@@ -5,4 +5,6 @@ var textarea_component_1 = require('./textarea/textarea.component');
 exports.TextArea = textarea_component_1.TextArea;
 var selectbox_component_1 = require('./selectbox/selectbox.component');
 exports.SelectBox = selectbox_component_1.SelectBox;
+var radiobutton_component_1 = require('./radiobutton/radiobutton.component');
+exports.RadioButton = radiobutton_component_1.RadioButton;
 //# sourceMappingURL=controls.js.map
