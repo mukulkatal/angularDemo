@@ -52,7 +52,7 @@ var Template = (function () {
     Template = __decorate([
         core_1.Component({
             selector: "Temp",
-            directives: [templates_1.Template1Component, templates_1.Template2Component],
+            directives: [templates_1.TEMPLATES],
             template: "     \n         <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\"  ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n       </div>\n        \n      ",
         }), 
         __metadata('design:paramtypes', [])
