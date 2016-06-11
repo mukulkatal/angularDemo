@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { JSONElement } from '../../services/JSONElement.service';
+
 @Component({
 	selector:'editor-selectbox',
 	template:`
@@ -16,22 +18,15 @@ import { Component, Input } from '@angular/core';
 
 export class EditorSelectBox
 {
-	@Input() control: any; 
+	@Input() control: any;
 
-	option : any ={
-		"type": "toggel",
-	        "lable": "OPTION 1",
-				"value": "",
-					"selected": false,
-						"icon": "http://test.com/jd.png",
-							"attr": {
-			"class": "customeClass",
-				"style": "height:100;color:red;"
-		}
+	constructor(private jsonElementHandler: JSONElement) {
+
 	}
 
 	Add_Option_In_Dropdown()
 	{
-		this.control.options.push(this.option);
+		let control = this.jsonElementHandler.getJsonOfElem('selectbox');
+		this.control.options.push(control.options);
 	}
 }

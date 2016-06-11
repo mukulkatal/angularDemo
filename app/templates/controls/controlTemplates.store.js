@@ -36,7 +36,7 @@ exports.ControlTemplates = {
         },
         "options": [{
                 "type": "toggel",
-                "lable": "OPTION 1",
+                "label": "OPTION 1",
                 "value": "10",
                 "selected": false,
                 "icon": "http://test.com/jd.png",
@@ -82,7 +82,7 @@ exports.ControlTemplates = {
         },
         "options": [{
                 "type": "toggel",
-                "lable": "OPTION 1",
+                "label": "OPTION 1",
                 "value": "10",
                 "selected": false,
                 "icon": "http://test.com/jd.png",
@@ -106,11 +106,13 @@ exports.ControlTemplates = {
         },
         "config": {
             "type": "text",
-            "attr": [{
+            "attr": [
+                {
                     "class": "customeClass",
                     "style": "heightcolorred"
                 }],
-            "validations": [{
+            "validations": [
+                {
                     "required": "true",
                     "message": "This field is required",
                     "errorClass": "error"
@@ -129,7 +131,7 @@ exports.ControlTemplates = {
         "options": [
             {
                 "type": "toggel",
-                "lable": "OPTION 1",
+                "label": "OPTION 1",
                 "value": "1",
                 "selected": false,
                 "icon": "http://test.com/jd.png",

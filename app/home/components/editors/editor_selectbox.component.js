@@ -9,22 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var JSONElement_service_1 = require('../../services/JSONElement.service');
 var EditorSelectBox = (function () {
-    function EditorSelectBox() {
-        this.option = {
-            "type": "toggel",
-            "lable": "OPTION 1",
-            "value": "",
-            "selected": false,
-            "icon": "http://test.com/jd.png",
-            "attr": {
-                "class": "customeClass",
-                "style": "height:100;color:red;"
-            }
-        };
+    function EditorSelectBox(jsonElementHandler) {
+        this.jsonElementHandler = jsonElementHandler;
     }
     EditorSelectBox.prototype.Add_Option_In_Dropdown = function () {
-        this.control.options.push(this.option);
+        var control = this.jsonElementHandler.getJsonOfElem('selectbox');
+        this.control.options.push(control.options);
     };
     __decorate([
         core_1.Input(), 
@@ -35,7 +27,7 @@ var EditorSelectBox = (function () {
             selector: 'editor-selectbox',
             template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t<div *ngFor=\"let option of control.options ; #i = index\">\n\t\t\t<div class=\"options\">\n\t\t\t\t<div>Option {{i+1}}</div>\n\t\t\t\t<label>Label</label>: <input type=\"text\" [(ngModel)] = \"option.label\" />\n\t\t\t\t<label>Value</label> : <input type=\"text\" [(ngModel)] = \"option.value\" />\n\t\t\t</div>\t\t\t\n\t\t</div>\n\t\t<a href=\"Javascript:void(0);\" (click)=\"Add_Option_In_Dropdown()\">Add</a>\n\t"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [JSONElement_service_1.JSONElement])
     ], EditorSelectBox);
     return EditorSelectBox;
 }());

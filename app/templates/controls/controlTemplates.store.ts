@@ -36,7 +36,7 @@ export var ControlTemplates: any =
       },
       "options": [{
         "type": "toggel",
-        "lable": "OPTION 1",
+        "label": "OPTION 1",
         "value": "10",
         "selected": false,
         "icon": "http://test.com/jd.png",
@@ -84,7 +84,7 @@ export var ControlTemplates: any =
         },
         "options": [{
           "type": "toggel",
-          "lable": "OPTION 1",
+          "label": "OPTION 1",
           "value": "10",
           "selected": false,
           "icon": "http://test.com/jd.png",
@@ -110,14 +110,16 @@ export var ControlTemplates: any =
           "helpText": "SOME HELPER TEXT"
     },
     "config": {
-          "type": "text",
-          "attr": [{
-        "class": "customeClass",
-        "style": "heightcolorred"
-          }],
-          "validations": [{
-        "required": "true",
-        "message": "This field is required",
+        "type": "text",
+        "attr": [
+        {
+          "class": "customeClass",
+          "style": "heightcolorred"
+        }],
+        "validations": [
+        {
+          "required": "true",
+          "message": "This field is required",
         "errorClass": "error"
           }, {
           "required": "true",
@@ -132,17 +134,17 @@ export var ControlTemplates: any =
           "defaultvalue": "Default Value"
     },
     "options": [
-    {
-          "type": "toggel",
-          "lable": "OPTION 1",
-          "value": "1",
-          "selected": false,
-          "icon": "http://test.com/jd.png",
-          "attr": {
-        "class": "customeClass",
-        "style": "height:100;color:red;"
-          }
-    }
+      {
+        "type": "toggel",
+        "label": "OPTION 1",
+        "value": "1",
+        "selected": false,
+        "icon": "http://test.com/jd.png",
+        "attr": {
+          "class": "customeClass",
+          "style": "height:100;color:red;"
+        }
+      }
     ]
   }    
     };
