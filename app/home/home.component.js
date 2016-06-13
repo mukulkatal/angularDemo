@@ -57,6 +57,17 @@ var HomeComponent = (function () {
         var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
         this.jsonBuilderHelper.addNewChild(jsonElement);
     };
+    // delete item from section
+    HomeComponent.prototype.delete_Items = function (selected_section, selected_item) {
+        JSONBuilder_service_1.JSONBuilder.deleteControl(selected_item, selected_section.items);
+        // choose the next selected element from template section    
+        if (selected_section.items.length > 0) {
+            this.selectedControl = selected_section.items[0];
+        }
+        else {
+            this.selectedControl = '';
+        }
+    };
     HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

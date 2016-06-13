@@ -35,8 +35,14 @@ export class JSONBuilder{
     static changeControl(oldControl: any, newControl: any, template: any[]){
     	//index of old control in array
 		let index = jQuery.inArray(oldControl, template);
-		//replace oldControl with newControl at index
-		template.splice(index, 1, newControl);
-    }
-    
+		//replace oldControl with newControl at index	
+		template.splice(index, 1, newControl);		
+	}
+
+	static deleteControl(Control: any,  template: any[]) {
+		//index of old control in array
+		let index = jQuery.inArray(Control, template);
+		//replace oldControl with newControl at index		
+		template.splice(index, 1);	
+	}
 }

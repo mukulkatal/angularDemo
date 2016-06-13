@@ -72,5 +72,21 @@ export class HomeComponent implements OnInit {
   onClick(e){
     var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
     this.jsonBuilderHelper.addNewChild(jsonElement);
-  }  
+  }
+
+// delete item from section
+  delete_Items(selected_section,selected_item)
+  {
+    JSONBuilder.deleteControl(selected_item, selected_section.items);
+    // choose the next selected element from template section    
+    if (selected_section.items.length > 0 )
+    {
+      this.selectedControl = selected_section.items[0];
+    }
+    else
+    {
+      this.selectedControl = ''; 
+    }
+
+  }
 }

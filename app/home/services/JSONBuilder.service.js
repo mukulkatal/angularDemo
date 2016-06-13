@@ -38,8 +38,14 @@ var JSONBuilder = (function () {
     JSONBuilder.changeControl = function (oldControl, newControl, template) {
         //index of old control in array
         var index = jQuery.inArray(oldControl, template);
-        //replace oldControl with newControl at index
+        //replace oldControl with newControl at index	
         template.splice(index, 1, newControl);
+    };
+    JSONBuilder.deleteControl = function (Control, template) {
+        //index of old control in array
+        var index = jQuery.inArray(Control, template);
+        //replace oldControl with newControl at index		
+        template.splice(index, 1);
     };
     JSONBuilder = __decorate([
         core_1.Injectable(), 
