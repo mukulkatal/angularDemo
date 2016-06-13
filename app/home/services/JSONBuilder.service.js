@@ -35,17 +35,17 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
     };
-    JSONBuilder.changeControl = function (oldControl, newControl, template) {
+    JSONBuilder.changeControl = function (oldControl, newControl, section) {
         //index of old control in array
-        var index = jQuery.inArray(oldControl, template);
+        var index = jQuery.inArray(oldControl, section.items);
         //replace oldControl with newControl at index	
-        template.splice(index, 1, newControl);
+        section.items.splice(index, 1, newControl);
     };
-    JSONBuilder.deleteControl = function (Control, template) {
+    JSONBuilder.deleteControl = function (control, section) {
         //index of old control in array
-        var index = jQuery.inArray(Control, template);
+        var index = jQuery.inArray(control, section.items);
         //replace oldControl with newControl at index		
-        template.splice(index, 1);
+        section.items.splice(index, 1);
     };
     JSONBuilder = __decorate([
         core_1.Injectable(), 

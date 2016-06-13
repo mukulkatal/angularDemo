@@ -32,17 +32,17 @@ export class JSONBuilder{
 		return this.JSONTemplate;
 	}
 
-    static changeControl(oldControl: any, newControl: any, template: any[]){
+    static changeControl(oldControl: any, newControl: any, section: any){
     	//index of old control in array
-		let index = jQuery.inArray(oldControl, template);
+		let index = jQuery.inArray(oldControl, section.items);
 		//replace oldControl with newControl at index	
-		template.splice(index, 1, newControl);		
+		section.items.splice(index, 1, newControl);		
 	}
 
-	static deleteControl(Control: any,  template: any[]) {
+	static deleteControl(control: any,  section: any) {
 		//index of old control in array
-		let index = jQuery.inArray(Control, template);
+		let index = jQuery.inArray(control, section.items);
 		//replace oldControl with newControl at index		
-		template.splice(index, 1);	
+		section.items.splice(index, 1);	
 	}
 }

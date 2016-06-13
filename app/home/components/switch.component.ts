@@ -18,7 +18,7 @@ import { JSONElement } from '../services/JSONElement.service';
 
 export class Switch {
 	@Input() control: any;
-	@Input() jsonTemplate: any;
+	@Input() section: any;
     @Output() control_selected = new EventEmitter();
 
 	constructor(private jsonElementHandler: JSONElement ,private jsonBuilderHelper : JSONBuilder ) { 		
@@ -30,15 +30,13 @@ export class Switch {
 	onChange($event){		
 		let control = this.jsonElementHandler.getJsonOfElem($event.target.value);
 
-		console.log('control');
-		console.log(control);	
 		//set order of new control same as of old control
 		control.order = this.control.order;
 		//relace control in jsonTemplate
-		JSONBuilder.changeControl(this.control, control, this.jsonTemplate.items);
+		JSONBuilder.changeControl(this.control, control, this.section);
 		//update current control
 		this.control = control;
-		// emit output param for update editor		
+		// emit output param of switched control for updating editor		
 		this.control_selected.emit(control);
 		
 	}

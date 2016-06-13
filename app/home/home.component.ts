@@ -74,19 +74,14 @@ export class HomeComponent implements OnInit {
     this.jsonBuilderHelper.addNewChild(jsonElement);
   }
 
-// delete item from section
-  delete_Items(selected_section,selected_item)
+  // delete item from section
+  removeControl()
   {
-    JSONBuilder.deleteControl(selected_item, selected_section.items);
+    JSONBuilder.deleteControl(this.selectedControl, this.selectedSection);
     // choose the next selected element from template section    
-    if (selected_section.items.length > 0 )
-    {
-      this.selectedControl = selected_section.items[0];
-    }
+    if (this.selectedSection.items.length > 0)
+      this.selectedControl = this.selectedSection.items[0];
     else
-    {
       this.selectedControl = ''; 
-    }
-
   }
 }

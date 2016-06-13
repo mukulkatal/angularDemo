@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="col s3" style="height:100%">
-    <a *ngIf="selectedControl" (click)="delete_Items(selectedSection,selectedControl)" class="right" href="javascript:void(0);">delete Item</a>
+    <a *ngIf="selectedControl" (click)="removeControl()" class="right" href="javascript:void(0);">delete Item</a>
         <div class="">    
     		<editor 
     			*ngIf="selectedControl"
@@ -23,7 +23,7 @@
             <switch 
                 *ngIf="selectedSection"
                 [control]="selectedControl"
-                [jsonTemplate] = "selectedSection"
+                [section] = "selectedSection"
                 (control_selected)="onControlSelect($event)" 
             >
             </switch>
