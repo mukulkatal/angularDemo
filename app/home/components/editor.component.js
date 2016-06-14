@@ -14,14 +14,14 @@ var Editor = (function () {
     function Editor() {
     }
     __decorate([
-        core_1.Input(), 
+        core_1.Input('component_selected'), 
         __metadata('design:type', Object)
-    ], Editor.prototype, "editor_control", void 0);
+    ], Editor.prototype, "selectedComponent", void 0);
     Editor = __decorate([
         core_1.Component({
             selector: 'editor',
             directives: [editor_1.EditorSelectBox, editor_1.EditorTextField],
-            template: "\n\t\t<editor-textfield *ngIf=\"editor_control.type=='textfield'\" [control]=\"editor_control\"></editor-textfield>\n\t\t<editor-textfield *ngIf=\"editor_control.type=='text-area'\" [control]=\"editor_control\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"editor_control.type=='selectbox'\" [control]=\"editor_control\"></editor-selectbox>\n\t\t<editor-selectbox *ngIf=\"editor_control.type=='radio-button'\" [control]=\"editor_control\"></editor-selectbox>\n\t"
+            template: "\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='textfield'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='text-area'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='selectbox'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='radio-button'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);

@@ -16,13 +16,17 @@ var Template1Component = (function () {
         this.default_Template = new core_1.EventEmitter();
         this.selected_control = new core_1.EventEmitter();
         this.selected_section = new core_1.EventEmitter();
+        this.selected_page = new core_1.EventEmitter();
         /*  ---
             default json of the template
         */
         this.defaultJson = {
             "app": {
                 "pages": [{
+                        "description": "page 1",
+                        "order": 1,
                         "sections": [{
+                                "description": "Login Page",
                                 "order": 1,
                                 "items": [
                                     {
@@ -218,6 +222,7 @@ var Template1Component = (function () {
                                 ]
                             },
                             {
+                                "description": "registeration Page",
                                 "order": 2,
                                 "items": [
                                     {
@@ -307,7 +312,10 @@ var Template1Component = (function () {
                         ]
                     },
                     {
+                        "description": "Page 2",
+                        "order": 2,
                         "sections": [{
+                                "description": "demo page",
                                 "order": 1,
                                 "items": [
                                     {
@@ -395,6 +403,7 @@ var Template1Component = (function () {
                                 ]
                             },
                             {
+                                "description": "landing Page",
                                 "order": 2,
                                 "items": [
                                     {
@@ -487,32 +496,6 @@ var Template1Component = (function () {
             }
         };
     }
-    //[
-    //     {
-    //         order: 1,
-    //         type: "textfield",
-    //         placeholder: 'This is a text field order 1',
-    //         required: false
-    //     },
-    //     {
-    //         order: 2,
-    //         type: "text-area",
-    //         placeholder: 'This is a text field order 2',
-    //         required: false
-    //     },
-    //     {
-    //         order: 3,
-    //         type: "textfield",
-    //         placeholder: 'This is a text field order 3',
-    //         required: false
-    //     },
-    //     {
-    //         order: 4,
-    //         type: "text-area",
-    //         placeholder: 'This is a text field order 4',
-    //         required: false
-    //     }
-    // ];
     Template1Component.prototype.ngOnInit = function () {
         /*  ---
             end json on init for initialize the json
@@ -530,6 +513,9 @@ var Template1Component = (function () {
     Template1Component.prototype.selectSection = function (section) {
         this.selected_section.emit(section);
     };
+    Template1Component.prototype.selectpage = function (page) {
+        this.selected_page.emit(page);
+    };
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
@@ -542,6 +528,10 @@ var Template1Component = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], Template1Component.prototype, "selected_section", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Template1Component.prototype, "selected_page", void 0);
     Template1Component = __decorate([
         core_1.Component({
             selector: 'Temp-1',

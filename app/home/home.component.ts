@@ -22,9 +22,8 @@ declare var jQuery: any;
 
 export class HomeComponent implements OnInit {
   controls: any[];
-  //TempName : any = "Temp-1" ; 
-  selectedControl: any;
-  selectedSection: any;
+  //TempName : any = "Temp-1" ;  
+  selectedComponent: any; 
   elements: any[];
   ngOnInit() {
   }
@@ -60,13 +59,14 @@ export class HomeComponent implements OnInit {
     this.elements = jsonElementHandler.allAvailableElements();
   }
 
-  onControlSelect(control) {
-    this.selectedControl = control;
+  onComponentSelect(component)
+  {
+    this.selectedComponent = component;    
+    this.jsonBuilderHelper.setTemplate(this.selectedComponent.section.items);
   }
 
-  onSectionSelect(section) {
-    this.selectedSection =  section;
-    this.jsonBuilderHelper.setTemplate( this.selectedSection.items);
+  changeControl(control) {
+    this.selectedComponent.control = control;
   }
 
   onClick(e){
@@ -75,13 +75,12 @@ export class HomeComponent implements OnInit {
   }
 
   // delete item from section
-  removeControl()
-  {
-    JSONBuilder.deleteControl(this.selectedControl, this.selectedSection);
-    // choose the next selected element from template section    
-    if (this.selectedSection.items.length > 0)
-      this.selectedControl = this.selectedSection.items[0];
+  removeControl() {
+      JSONBuilder.deleteControl(this.selectedComponent.control, this.selectedComponent.section);
+      // choose the next selected element from template section    
+       if (this.selectedComponent.section.items.length > 0)
+          this.selectedComponent.control = this.selectedComponent.section.items[0];
     else
-      this.selectedControl = ''; 
+      this.selectedComponent.control = ''; 
   }
 }

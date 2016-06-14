@@ -46,12 +46,12 @@ var HomeComponent = (function () {
             }
         }).disableSelection();
     };
-    HomeComponent.prototype.onControlSelect = function (control) {
-        this.selectedControl = control;
+    HomeComponent.prototype.onComponentSelect = function (component) {
+        this.selectedComponent = component;
+        this.jsonBuilderHelper.setTemplate(this.selectedComponent.section.items);
     };
-    HomeComponent.prototype.onSectionSelect = function (section) {
-        this.selectedSection = section;
-        this.jsonBuilderHelper.setTemplate(this.selectedSection.items);
+    HomeComponent.prototype.changeControl = function (control) {
+        this.selectedComponent.control = control;
     };
     HomeComponent.prototype.onClick = function (e) {
         var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
@@ -59,12 +59,12 @@ var HomeComponent = (function () {
     };
     // delete item from section
     HomeComponent.prototype.removeControl = function () {
-        JSONBuilder_service_1.JSONBuilder.deleteControl(this.selectedControl, this.selectedSection);
+        JSONBuilder_service_1.JSONBuilder.deleteControl(this.selectedComponent.control, this.selectedComponent.section);
         // choose the next selected element from template section    
-        if (this.selectedSection.items.length > 0)
-            this.selectedControl = this.selectedSection.items[0];
+        if (this.selectedComponent.section.items.length > 0)
+            this.selectedComponent.control = this.selectedComponent.section.items[0];
         else
-            this.selectedControl = '';
+            this.selectedComponent.control = '';
     };
     HomeComponent = __decorate([
         core_1.Component({
