@@ -227,7 +227,7 @@ var Template1Component = (function () {
                                 "items": [
                                     {
                                         "order": 1,
-                                        "type": "text-area",
+                                        "type": "header",
                                         "props": {
                                             "title": "this checkbox section question",
                                             "helpText": "SOME HELPER TEXT"
