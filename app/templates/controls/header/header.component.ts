@@ -6,7 +6,8 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   viewProviders: [],
   template: `
     <div class="header-field">
-      <h3 >{{data.config.placeholder}}</h3>
+      <h3 >{{data.props.title}}</h3>
+      <p *ngIf="data.config.type==1">{{data.props.helpText}}</p>
     </div>
 	`
 })

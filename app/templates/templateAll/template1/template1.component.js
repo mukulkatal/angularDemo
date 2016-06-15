@@ -233,7 +233,7 @@ var Template1Component = (function () {
                                             "helpText": "SOME HELPER TEXT"
                                         },
                                         "config": {
-                                            "type": "text",
+                                            "type": "1",
                                             "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"

@@ -245,7 +245,7 @@ export class Template1Component implements OnInit
                         "helpText": "SOME HELPER TEXT"
                     },
                     "config": {
-                        "type": "text",
+                        "type": "1",
                         "attr": [{
                             "class": "customeClass",
                             "style": "heightcolorred"

@@ -9,26 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Header = (function () {
-    function Header() {
+var EditorHeader = (function () {
+    function EditorHeader() {
     }
-    Header.prototype.ngOnInit = function () {
-        console.log('Done');
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Header.prototype, "data", void 0);
-    Header = __decorate([
+    ], EditorHeader.prototype, "control", void 0);
+    EditorHeader = __decorate([
         core_1.Component({
-            selector: 'header',
-            directives: [],
-            viewProviders: [],
-            template: "\n    <div class=\"header-field\">\n      <h3 >{{data.props.title}}</h3>\n      <p *ngIf=\"data.config.type==1\">{{data.props.helpText}}</p>\n    </div>\n\t"
+            selector: 'editor-header',
+            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.type\" />\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], Header);
-    return Header;
+    ], EditorHeader);
+    return EditorHeader;
 }());
-exports.Header = Header;
-//# sourceMappingURL=header.component.js.map
+exports.EditorHeader = EditorHeader;
+//# sourceMappingURL=editor_header.component.js.map
