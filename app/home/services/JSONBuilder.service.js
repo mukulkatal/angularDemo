@@ -42,7 +42,7 @@ var JSONBuilder = (function () {
         section.items.splice(index, 1, newControl);
     };
     JSONBuilder.deleteControl = function (control, section) {
-        //index of old control in array
+        //index of old control in arra
         var index = jQuery.inArray(control, section.items);
         //replace oldControl with newControl at index		
         section.items.splice(index, 1);
