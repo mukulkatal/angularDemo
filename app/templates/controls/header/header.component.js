@@ -24,7 +24,7 @@ var Header = (function () {
             selector: 'header',
             directives: [],
             viewProviders: [],
-            template: "\n    <div class=\"header-field\">\n      <h3 >{{data.config.placeholder}}</h3>\n    </div>\n\t"
+            template: "\n    <div class=\"header-field\">\n      <h3 >{{data.props.title}}</h3>\n      <p *ngIf=\"data.config.type==1\">{{data.props.helpText}}</p>\n    </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Header);

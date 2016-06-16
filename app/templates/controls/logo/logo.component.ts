@@ -1,17 +1,17 @@
 import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'header',
+  selector: 'logo',
   directives: [],
   viewProviders: [],
   template: `
-    <div class="header-field">
-      <h3 >{{data.props.title}}</h3>
-      <p *ngIf="data.config.type==1">{{data.props.helpText}}</p>
+    <div class="logo-field">
+      <img src="{{data.props.url}}" altr="logo image" width="{{data.props.width}}" />
+      
     </div>
 	`
 })
-export class Header implements OnInit{
+export class Logo implements OnInit{
   @Input() data: any;
   value: string;
   

@@ -9,23 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var controls_1 = require('./controls');
-var Control = (function () {
-    function Control() {
+var EditorHeader = (function () {
+    function EditorHeader() {
     }
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Control.prototype, "data", void 0);
-    Control = __decorate([
+    ], EditorHeader.prototype, "control", void 0);
+    EditorHeader = __decorate([
         core_1.Component({
-            selector: 'control',
-            directives: [controls_1.CONTROLS],
-            template: "\n\t\t\t    <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n      \t\t\t<text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n      \t\t\t<selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n      \t\t\t<radio-button *ngIf=\"data.type=='radio-button'\" [data]=\"data\" ></radio-button>\n            <header *ngIf=\"data.type=='header'\" [data]=\"data\" ></header>\n      \t\t\t<logo *ngIf=\"data.type=='logo'\" [data]=\"data\" ></logo>\n      ",
+            selector: 'editor-header',
+            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.type\" />\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], Control);
-    return Control;
+    ], EditorHeader);
+    return EditorHeader;
 }());
-exports.Control = Control;
-//# sourceMappingURL=control.component.js.map
+exports.EditorHeader = EditorHeader;
+//# sourceMappingURL=editor_header.component.js.map
