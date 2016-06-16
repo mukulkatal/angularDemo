@@ -25,7 +25,97 @@ var Template1Component = (function () {
                 "pages": [{
                         "description": "page 1",
                         "order": 1,
-                        "sections": [{
+                        "sections": [
+                            {
+                                "description": "registeration Page",
+                                "order": 2,
+                                "items": [
+                                    {
+                                        "order": 1,
+                                        "type": "logo",
+                                        "props": {
+                                            "url": "http://pngimg.com/upload/car_logo_PNG1667.png",
+                                            "width": "100",
+                                            "height": "60"
+                                        },
+                                        "config": {
+                                            "type": "1",
+                                            "attr": [{
+                                                    "class": "customeClass",
+                                                    "style": "heightcolorred"
+                                                }],
+                                            "validations": [{
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error"
+                                                }, {
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error",
+                                                    "min": "0",
+                                                    "max": "100"
+                                                }],
+                                            "maxSelections": 1,
+                                            "direction": "horizontal",
+                                            "placeholder": "this text areea in placeholder",
+                                            "defaultvalue": "Default Value"
+                                        },
+                                        "options": [{
+                                                "type": "toggel",
+                                                "label": "OPTION 1",
+                                                "value": "10",
+                                                "selected": false,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            }]
+                                    },
+                                    {
+                                        "order": 1,
+                                        "type": "header",
+                                        "props": {
+                                            "title": "this checkbox section question",
+                                            "helpText": "SOME HELPER TEXT"
+                                        },
+                                        "config": {
+                                            "type": "1",
+                                            "attr": [{
+                                                    "class": "customeClass",
+                                                    "style": "heightcolorred"
+                                                }],
+                                            "validations": [{
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error"
+                                                }, {
+                                                    "required": "true",
+                                                    "message": "This field is required",
+                                                    "errorClass": "error",
+                                                    "min": "0",
+                                                    "max": "100"
+                                                }],
+                                            "maxSelections": 1,
+                                            "direction": "horizontal",
+                                            "placeholder": "this text areea in placeholder",
+                                            "defaultvalue": "Default Value"
+                                        },
+                                        "options": [{
+                                                "type": "toggel",
+                                                "label": "OPTION 1",
+                                                "value": "10",
+                                                "selected": false,
+                                                "icon": "http://test.com/jd.png",
+                                                "attr": {
+                                                    "class": "customeClass",
+                                                    "style": "height:100;color:red;"
+                                                }
+                                            }]
+                                    }
+                                ]
+                            },
+                            {
                                 "description": "Login Page",
                                 "order": 1,
                                 "items": [
@@ -220,95 +310,7 @@ var Template1Component = (function () {
                                         ]
                                     }
                                 ]
-                            },
-                            {
-                                "description": "registeration Page",
-                                "order": 2,
-                                "items": [
-                                    {
-                                        "order": 1,
-                                        "type": "header",
-                                        "props": {
-                                            "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
-                                        },
-                                        "config": {
-                                            "type": "1",
-                                            "attr": [{
-                                                    "class": "customeClass",
-                                                    "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
-                                                    "required": "true",
-                                                    "message": "This field is required",
-                                                    "errorClass": "error"
-                                                }, {
-                                                    "required": "true",
-                                                    "message": "This field is required",
-                                                    "errorClass": "error",
-                                                    "min": "0",
-                                                    "max": "100"
-                                                }],
-                                            "maxSelections": 1,
-                                            "direction": "horizontal",
-                                            "placeholder": "this text areea in placeholder",
-                                            "defaultvalue": "Default Value"
-                                        },
-                                        "options": [{
-                                                "type": "toggel",
-                                                "label": "OPTION 1",
-                                                "value": "10",
-                                                "selected": false,
-                                                "icon": "http://test.com/jd.png",
-                                                "attr": {
-                                                    "class": "customeClass",
-                                                    "style": "height:100;color:red;"
-                                                }
-                                            }]
-                                    },
-                                    {
-                                        "order": 2,
-                                        "type": "textfield",
-                                        "props": {
-                                            "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
-                                        },
-                                        "config": {
-                                            "type": "text",
-                                            "attr": [{
-                                                    "class": "customeClass",
-                                                    "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
-                                                    "required": "true",
-                                                    "message": "This field is required",
-                                                    "errorClass": "error"
-                                                }, {
-                                                    "required": "true",
-                                                    "message": "This field is required",
-                                                    "errorClass": "error",
-                                                    "min": "0",
-                                                    "max": "100"
-                                                }],
-                                            "maxSelections": 1,
-                                            "direction": "horizontal",
-                                            "placeholder": "this textfield in placeholder",
-                                            "defaultvalue": "Default Value"
-                                        },
-                                        "options": [{
-                                                "type": "toggel",
-                                                "label": "OPTION 1",
-                                                "value": "10",
-                                                "selected": false,
-                                                "icon": "http://test.com/jd.png",
-                                                "attr": {
-                                                    "class": "customeClass",
-                                                    "style": "height:100;color:red;"
-                                                }
-                                            }]
-                                    }
-                                ]
-                            },
+                            }
                         ]
                     },
                     {
