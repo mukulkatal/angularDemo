@@ -6,6 +6,7 @@ import { Header } from './header/header.component';
 import { Button } from './button/button.component';
 import { Logo } from './logo/logo.component';
 import { Slider } from './slider/slider.component';
+import { DatePicker } from './datepicker/datepicker.component';
 
 export const CONTROLS: any[] = [
 	Logo,
@@ -15,5 +16,6 @@ export const CONTROLS: any[] = [
 	RadioButton,
 	Header,
 	Button,
-	Slider
+	Slider,
+	DatePicker
 ];

@@ -7,6 +7,7 @@ var header_component_1 = require('./header/header.component');
 var button_component_1 = require('./button/button.component');
 var logo_component_1 = require('./logo/logo.component');
 var slider_component_1 = require('./slider/slider.component');
+var datepicker_component_1 = require('./datepicker/datepicker.component');
 exports.CONTROLS = [
     logo_component_1.Logo,
     textfield_component_1.TextField,
@@ -15,6 +16,7 @@ exports.CONTROLS = [
     radiobutton_component_1.RadioButton,
     header_component_1.Header,
     button_component_1.Button,
-    slider_component_1.Slider
+    slider_component_1.Slider,
+    datepicker_component_1.DatePicker
 ];
 //# sourceMappingURL=controls.js.map

@@ -13,6 +13,7 @@ import {CONTROLS} from './controls';
           <click-button *ngIf="data.type=='click-button'" [data]="data" ></click-button>
       		<logo *ngIf="data.type=='logo'" [data]="data" ></logo>
           <slider *ngIf="data.type=='slider'" [data]="data" ></slider>
+          <date-picker *ngIf="data.type=='date-picker'" [data]="data" ></date-picker>
       `,
 
 })
