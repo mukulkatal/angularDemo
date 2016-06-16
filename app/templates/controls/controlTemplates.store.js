@@ -2,6 +2,59 @@
 exports.ControlTemplates = {
     // Json conditions
     /*
+       ---  Field : Logo    ----
+       
+    */
+    "logo": {
+        "order": 1000,
+        "type": "logo",
+        "props": {
+            "url": "this checkbox section question",
+            "width": "100",
+            "height": "50"
+        },
+        "config": {
+            "type": "text",
+            "attr": [
+                {
+                    "class": "customeClass",
+                    "style": "heightcolorred"
+                }
+            ],
+            "validations": [
+                {
+                    "required": "true",
+                    "message": "This field is required",
+                    "errorClass": "error"
+                },
+                {
+                    "required": "true",
+                    "message": "This field is required",
+                    "errorClass": "error",
+                    "min": "0",
+                    "max": "100"
+                }
+            ],
+            "maxSelections": 1,
+            "direction": "horizontal",
+            "placeholder": "this logo in placeholder",
+            "defaultvalue": "Default Value"
+        },
+        "options": [
+            {
+                "type": "toggel",
+                "label": "OPTION 1",
+                "value": "10",
+                "selected": false,
+                "icon": "http://test.com/jd.png",
+                "attr": {
+                    "class": "customeClass",
+                    "style": "height:100;color:red;"
+                }
+            }
+        ]
+    },
+    /*
        ---  Field : textfield    ----
        
     */

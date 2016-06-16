@@ -5,7 +5,9 @@ var selectbox_component_1 = require('./selectbox/selectbox.component');
 var radiobutton_component_1 = require('./radiobutton/radiobutton.component');
 var header_component_1 = require('./header/header.component');
 var button_component_1 = require('./button/button.component');
+var logo_component_1 = require('./logo/logo.component');
 exports.CONTROLS = [
+    logo_component_1.Logo,
     textfield_component_1.TextField,
     textarea_component_1.TextArea,
     selectbox_component_1.SelectBox,

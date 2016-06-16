@@ -11,6 +11,7 @@ import {CONTROLS} from './controls';
           <radio-button *ngIf="data.type=='radio-button'" [data]="data" ></radio-button>
           <header *ngIf="data.type=='header'" [data]="data" ></header>
           <click-button *ngIf="data.type=='click-button'" [data]="data" ></click-button>
+      		<logo *ngIf="data.type=='logo'" [data]="data" ></logo>
       `,
 
 })

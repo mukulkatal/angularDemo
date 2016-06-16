@@ -9,23 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var controls_1 = require('./controls');
-var Control = (function () {
-    function Control() {
+var EditorLogo = (function () {
+    function EditorLogo() {
     }
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Control.prototype, "data", void 0);
-    Control = __decorate([
+    ], EditorLogo.prototype, "control", void 0);
+    EditorLogo = __decorate([
         core_1.Component({
-            selector: 'control',
-            directives: [controls_1.CONTROLS],
-            template: "\n          <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n          <text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n          <selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n          <radio-button *ngIf=\"data.type=='radio-button'\" [data]=\"data\" ></radio-button>\n          <header *ngIf=\"data.type=='header'\" [data]=\"data\" ></header>\n          <click-button *ngIf=\"data.type=='click-button'\" [data]=\"data\" ></click-button>\n      \t\t<logo *ngIf=\"data.type=='logo'\" [data]=\"data\" ></logo>\n      ",
+            selector: 'editor-logo',
+            template: "\n\t\t<div><span>URL:</span><input type=\"text\" [(ngModel)] = \"control.props.url\" /></div>\n\t\tWidth:<input type=\"text\" [(ngModel)] = \"control.props.width\" />\n\t\tHeight:<input type=\"text\" [(ngModel)] = \"control.config.height\" />\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], Control);
-    return Control;
+    ], EditorLogo);
+    return EditorLogo;
 }());
-exports.Control = Control;
-//# sourceMappingURL=control.component.js.map
+exports.EditorLogo = EditorLogo;
+//# sourceMappingURL=editor_logo.component.js.map

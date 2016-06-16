@@ -11,6 +11,7 @@ import { EDITORS } from './editor';
 		<editor-selectbox *ngIf="selectedComponent.control.type=='radio-button'" [control]="selectedComponent.control"></editor-selectbox>
 		<editor-header *ngIf="selectedComponent.control.type=='header'" [control]="selectedComponent.control"></editor-header>
 		<editor-button *ngIf="selectedComponent.control.type=='click-button'" [control]="selectedComponent.control"></editor-button>
+		<editor-logo *ngIf="selectedComponent.control.type=='logo'" [control]="selectedComponent.control"></editor-logo>
 	`
 })
 
