@@ -1,6 +1,15 @@
-export { EditorSelectBox } from './editors/editor_selectbox.component';
-export { EditorTextField } from './editors/editor_textfield.component';
-export { EditorHeader } from './editors/editor_header.component';
-export { EditorLogo } from './editors/editor_logo.component';
+import { EditorSelectBox } from './editors/editor_selectbox.component';
+import { EditorTextField } from './editors/editor_textfield.component';
+import { EditorHeader } from './editors/editor_header.component';
+import { EditorButton } from './editors/editor_button.component';
+import { EditorLogo } from './editors/editor_logo.component';
+import { EditorSlider } from './editors/editor_slider.component';
 
-export declare const CONTROL_PROVIDERS: any[];
+export const EDITORS: any[] = [
+	EditorSelectBox,
+	EditorTextField,
+	EditorHeader,
+	EditorButton,
+	EditorLogo,
+	EditorSlider
+];

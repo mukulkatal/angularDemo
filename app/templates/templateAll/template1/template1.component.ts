@@ -323,6 +323,157 @@ export class Template1Component implements OnInit
                         }
 
                     ]
+                },
+                {
+                    "order": 5,
+                    "type": "header",
+                    "props": {
+                        "title": "this checkbox section question",
+                        "helpText": "SOME HELPER TEXT"
+                    },
+                    "config": {
+                        "type": "header",
+                        "attr": [{
+                            "class": "customeClass",
+                            "style": "heightcolorred"
+                        }],
+                        "validations": [{
+                            "required": "true",
+                            "message": "This field is required",
+                            "errorClass": "error"
+                        }, {
+                                "required": "true",
+                                "message": "This field is required",
+                                "errorClass": "error",
+                                "min": "0",
+                                "max": "100"
+                            }],
+                        "maxSelections": 1,
+                        "direction": "horizontal",
+                        "placeholder": "this select in placeholder",
+                        "defaultvalue": "Default Value"
+                    },
+                    "options": [
+                        {
+                            "type": "toggel",
+                            "label": "OPTION 1",
+                            "value": "10",
+                            "selected": false,
+                            "icon": "http://test.com/jd.png",
+                            "attr": {
+                                "class": "customeClass",
+                                "style": "height:100;color:red;"
+                            }
+                        },
+                        {
+                            "type": "toggel",
+                            "label": "OPTION 2",
+                            "value": "10",
+                            "selected": true,
+                            "icon": "http://test.com/jd.png",
+                            "attr": {
+                                "class": "customeClass",
+                                "style": "height:100;color:red;"
+                            }
+                        }
+
+                    ]
+                },
+                {
+                    "order": 6,
+                    "type": "click-button",
+                    "props": {
+                        "title": "click",
+                        "helpText": "SOME HELPER TEXT"
+                    },
+                    "config": {
+                        "type": "click-button",
+                        "attr": [{
+                            "class": "customeClass",
+                            "style": "heightcolorred"
+                        }],
+                        "validations": [{
+                            "required": "true",
+                            "message": "This field is required",
+                            "errorClass": "error"
+                        }, {
+                                "required": "true",
+                                "message": "This field is required",
+                                "errorClass": "error",
+                                "min": "0",
+                                "max": "100"
+                            }],
+                        "maxSelections": 1,
+                        "direction": "horizontal",
+                        "placeholder": "this select in placeholder",
+                        "defaultvalue": "Default Value"
+                    },
+                    "options": [
+                        {
+                            "type": "toggel",
+                            "label": "OPTION 1",
+                            "value": "10",
+                            "selected": false,
+                            "icon": "http://test.com/jd.png",
+                            "attr": {
+                                "class": "customeClass",
+                                "style": "height:100;color:red;"
+                            }
+                        },
+                        {
+                            "type": "toggel",
+                            "label": "OPTION 2",
+                            "value": "10",
+                            "selected": true,
+                            "icon": "http://test.com/jd.png",
+                            "attr": {
+                                "class": "customeClass",
+                                "style": "height:100;color:red;"
+                            }
+                        }
+
+                    ]
+                },
+                {
+                    "order": 7,
+                    "type": "slider",
+                    "props": {
+                        "title": "this checkbox section question",
+                        "helpText": "SOME HELPER TEXT"
+                    },
+                    "config": {
+                        "type": "text",
+                        "attr": [{
+                            "class": "customeClass",
+                            "style": "heightcolorred"
+                        }],
+                        "validations": [{
+                            "required": "true",
+                            "message": "This field is required",
+                            "errorClass": "error"
+                        }, {
+                            "required": "true",
+                            "message": "This field is required",
+                            "errorClass": "error",
+                            "min": "0",
+                            "max": "100"
+                        }],
+                        "maxSelections": 1,
+                        "direction": "horizontal",
+                        "placeholder": "this textfield in placeholder",
+                        "defaultvalue": "Default Value"
+                    },
+                    "options": [{
+                        "type": "toggel",
+                        "label": "OPTION 1",
+                        "value": "10",
+                        "selected": false,
+                        "icon": "http://test.com/jd.png",
+                        "attr": {
+                            "class": "customeClass",
+                            "style": "height:100;color:red;"
+                        }
+                    }]
                 }
                 ]
             }

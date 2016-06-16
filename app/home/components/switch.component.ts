@@ -13,6 +13,7 @@ import { JSONElement } from '../services/JSONElement.service';
 			<option value="radio-button" [selected]="selectedComponent.control.type=='radio-button'">Radio Button</option>
 			<option value="header" [selected]="selectedComponent.control.type=='header'">Header</option>
 			<option value="logo" [selected]="selectedComponent.control.type=='logo'">Logo</option>
+			<option value="click-button" [selected]="selectedComponent.control.type=='click-button'">Button</option>
 		</select>
 	`,
 	styles: ['.display{display:block}']

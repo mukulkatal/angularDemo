@@ -43,7 +43,11 @@ var Switch = (function () {
         core_1.Component({
             selector: 'switch',
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
+<<<<<<< HEAD
             template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option value=\"text-area\" [selected]=\"selectedComponent.control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"selectedComponent.control.type=='textfield'\">Text Field</option>\n\t\t\t<option value=\"selectbox\" [selected]=\"selectedComponent.control.type=='selectbox'\">DropDown</option>\n\t\t\t<option value=\"radio-button\" [selected]=\"selectedComponent.control.type=='radio-button'\">Radio Button</option>\n\t\t\t<option value=\"header\" [selected]=\"selectedComponent.control.type=='header'\">Header</option>\n\t\t\t<option value=\"logo\" [selected]=\"selectedComponent.control.type=='logo'\">Logo</option>\n\t\t</select>\n\t",
+=======
+            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option value=\"text-area\" [selected]=\"selectedComponent.control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"selectedComponent.control.type=='textfield'\">Text Field</option>\n\t\t\t<option value=\"selectbox\" [selected]=\"selectedComponent.control.type=='selectbox'\">DropDown</option>\n\t\t\t<option value=\"radio-button\" [selected]=\"selectedComponent.control.type=='radio-button'\">Radio Button</option>\n\t\t\t<option value=\"header\" [selected]=\"selectedComponent.control.type=='header'\">Header</option>\n\t\t\t<option value=\"click-button\" [selected]=\"selectedComponent.control.type=='click-button'\">Button</option>\n\t\t</select>\n\t",
+>>>>>>> 455682ef18dbf3a3540b10263ea054f03b075507
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])

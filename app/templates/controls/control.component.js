@@ -21,7 +21,7 @@ var Control = (function () {
         core_1.Component({
             selector: 'control',
             directives: [controls_1.CONTROLS],
-            template: "\n\t\t\t    <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n      \t\t\t<text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n      \t\t\t<selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n      \t\t\t<radio-button *ngIf=\"data.type=='radio-button'\" [data]=\"data\" ></radio-button>\n            <header *ngIf=\"data.type=='header'\" [data]=\"data\" ></header>\n      \t\t\t<logo *ngIf=\"data.type=='logo'\" [data]=\"data\" ></logo>\n      ",
+            template: "\n          <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n          <text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n          <selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n          <radio-button *ngIf=\"data.type=='radio-button'\" [data]=\"data\" ></radio-button>\n          <header *ngIf=\"data.type=='header'\" [data]=\"data\" ></header>\n          <click-button *ngIf=\"data.type=='click-button'\" [data]=\"data\" ></click-button>\n      \t\t<logo *ngIf=\"data.type=='logo'\" [data]=\"data\" ></logo>\n          <slider *ngIf=\"data.type=='slider'\" [data]=\"data\" ></slider>\n      ",
         }), 
         __metadata('design:paramtypes', [])
     ], Control);
