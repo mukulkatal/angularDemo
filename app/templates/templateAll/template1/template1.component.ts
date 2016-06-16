@@ -26,13 +26,17 @@ export class Template1Component implements OnInit
     @Output() default_Template = new EventEmitter();
     @Output() selected_control = new EventEmitter();
     @Output() selected_section = new EventEmitter();
+    @Output() selected_page = new EventEmitter();
     /*  ---
         default json of the template 
     */
     defaultJson = {
     "app": {
         "pages": [{
+            "description": "page 1",
+            "order": 1,
             "sections": [{
+                "description":"Login Page",
                 "order":1,
                 "items": [
                 {
@@ -226,62 +230,22 @@ export class Template1Component implements OnInit
                         }
 
                     ]
-                },
-                 {
-                    "order": 5,
+                }
+                ]
+            },
+            {
+                "description": "registeration Page",
+                "order":2,
+                "items": [
+                {
+                    "order": 1,
                     "type": "header",
                     "props": {
                         "title": "this checkbox section question",
                         "helpText": "SOME HELPER TEXT"
                     },
                     "config": {
-                        "type": "text",
-                        "attr": [{
-                            "class": "customeClass",
-                            "style": "heightcolorred"
-                        }],
-                        "validations": [{
-                            "required": "true",
-                            "message": "This field is required",
-                            "errorClass": "error"
-                        }, {
-                            "required": "true",
-                            "message": "This field is required",
-                            "errorClass": "error",
-                            "min": "0",
-                            "max": "100"
-                        }],
-                        "maxSelections": 1,
-                        "direction": "horizontal",
-                        "placeholder": "this text area in placeholder",
-                        "defaultvalue": "Default Value"
-                    },
-                    "options": [{
-                        "type": "toggel",
-                        "label": "OPTION 1",
-                        "value": "10",
-                        "selected": false,
-                        "icon": "http://test.com/jd.png",
-                        "attr": {
-                            "class": "customeClass",
-                            "style": "height:100;color:red;"
-                        }
-                    }]
-                }
-                ]
-            },
-            {
-                "order":2,
-                "items": [
-                {
-                    "order": 1,
-                    "type": "text-area",
-                    "props": {
-                        "title": "this checkbox section question",
-                        "helpText": "SOME HELPER TEXT"
-                    },
-                    "config": {
-                        "type": "text",
+                        "type": "1",
                         "attr": [{
                             "class": "customeClass",
                             "style": "heightcolorred"
@@ -361,7 +325,10 @@ export class Template1Component implements OnInit
         },
 
         {
+            "description": "Page 2",
+            "order": 2,
             "sections": [{
+                "description": "demo page",
                 "order":1,
                 "items": [
                 {
@@ -453,6 +420,7 @@ export class Template1Component implements OnInit
                 ]
             },
             {
+                "description": "landing Page",
                 "order":2,
                 "items": [
                 {
@@ -547,36 +515,7 @@ export class Template1Component implements OnInit
 };
     
     
-    
-    
-    
-    //[
-
-    //     {
-    //         order: 1,
-    //         type: "textfield",
-    //         placeholder: 'This is a text field order 1',
-    //         required: false
-    //     },
-    //     {
-    //         order: 2,
-    //         type: "text-area",
-    //         placeholder: 'This is a text field order 2',
-    //         required: false
-    //     },
-    //     {
-    //         order: 3,
-    //         type: "textfield",
-    //         placeholder: 'This is a text field order 3',
-    //         required: false
-    //     },
-    //     {
-    //         order: 4,
-    //         type: "text-area",
-    //         placeholder: 'This is a text field order 4',
-    //         required: false
-    //     }
-    // ];
+   
 
     ngOnInit(){
     /*  ---
@@ -599,4 +538,8 @@ export class Template1Component implements OnInit
        this.selected_section.emit(section);
     }
 
+    selectpage(page)
+    {
+        this.selected_page.emit(page);
+    }
 }

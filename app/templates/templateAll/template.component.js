@@ -13,8 +13,8 @@ var templates_1 = require('./templates');
 var Template = (function () {
     function Template() {
         this.default_Template = new core_1.EventEmitter();
-        this.control_selected = new core_1.EventEmitter();
-        this.section_selected = new core_1.EventEmitter();
+        this.component_selected = new core_1.EventEmitter();
+        this.Component = { "page": '', "section": '', "control": '' };
     }
     Template.prototype.ngOnInit = function () {
     };
@@ -27,11 +27,17 @@ var Template = (function () {
            and now we have to pass it to parent template component i.e home component
     */
     Template.prototype.selectControl = function (control) {
-        this.control_selected.emit(control);
+        this.Component.control = control;
+        this.component_selected.emit(this.Component);
     };
     Template.prototype.selectSection = function (section) {
+        this.Component.section = section;
+        this.component_selected.emit(this.Component);
+    };
+    Template.prototype.selectPage = function (component) {
         //console.log(section);
-        this.section_selected.emit(section);
+        this.Component.page = component;
+        this.component_selected.emit(this.Component);
     };
     __decorate([
         core_1.Input('TempName'), 
@@ -44,16 +50,12 @@ var Template = (function () {
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], Template.prototype, "control_selected", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], Template.prototype, "section_selected", void 0);
+    ], Template.prototype, "component_selected", void 0);
     Template = __decorate([
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.TEMPLATES],
-            template: "     \n         <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\"  ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n       </div>\n        \n      ",
+            template: "     \n         <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\" (selected_page)=\"selectPage($event)\" ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n       </div>\n        \n      ",
         }), 
         __metadata('design:paramtypes', [])
     ], Template);

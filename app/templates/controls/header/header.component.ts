@@ -5,8 +5,9 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   directives: [],
   viewProviders: [],
   template: `
-    <div class="header">
-      <h2>testing df df df </h2>
+    <div class="header-field">
+      <h3 >{{data.props.title}}</h3>
+      <p *ngIf="data.config.type==1">{{data.props.helpText}}</p>
     </div>
 	`
 })

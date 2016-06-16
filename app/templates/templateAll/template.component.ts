@@ -6,7 +6,7 @@ selector :"Temp",
 directives: [TEMPLATES],
 template : `     
          <div [ngSwitch]="Temp_name">
-            <Temp-1 *ngSwitchWhen="'Temp-1'" *ngSwitchDefault  (default_Template)="bind_Template_Json($event)" (selected_control)="selectControl($event)" (selected_section)="selectSection($event)"  ></Temp-1>
+            <Temp-1 *ngSwitchWhen="'Temp-1'" *ngSwitchDefault  (default_Template)="bind_Template_Json($event)" (selected_control)="selectControl($event)" (selected_section)="selectSection($event)" (selected_page)="selectPage($event)" ></Temp-1>
             <Temp-2 *ngSwitchWhen="'Temp-2'" ></Temp-2>
        </div>
         
@@ -17,10 +17,10 @@ export class Template implements OnInit
 {
     @Input('TempName') Temp_name; 
     
-    @Output() default_Template = new EventEmitter();
-    @Output() control_selected = new EventEmitter();  
-    @Output() section_selected = new EventEmitter();  
-    
+    @Output() default_Template = new EventEmitter();  
+    @Output() component_selected = new EventEmitter();  
+    Component: any = {"page":'',"section":'',"control":''};
+
     ngOnInit(){     
     }
     
@@ -35,12 +35,19 @@ export class Template implements OnInit
            and now we have to pass it to parent template component i.e home component
     */
     selectControl(control) {
-        this.control_selected.emit(control);
+        this.Component.control = control;
+        this.component_selected.emit(this.Component);
     }
     
      selectSection(section) {
-         //console.log(section);
-        this.section_selected.emit(section);
+        this.Component.section = section;
+        this.component_selected.emit(this.Component);
     }
+
+     selectPage(component) {
+         //console.log(section);
+         this.Component.page = component;
+         this.component_selected.emit(this.Component);
+     }
 
 }

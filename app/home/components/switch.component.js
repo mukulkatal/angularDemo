@@ -23,22 +23,18 @@ var Switch = (function () {
     Switch.prototype.onChange = function ($event) {
         var control = this.jsonElementHandler.getJsonOfElem($event.target.value);
         //set order of new control same as of old control
-        control.order = this.control.order;
+        control.order = this.selectedComponent.control.order;
         //relace control in jsonTemplate
-        JSONBuilder_service_1.JSONBuilder.changeControl(this.control, control, this.section);
+        JSONBuilder_service_1.JSONBuilder.changeControl(this.selectedComponent.control, control, this.selectedComponent.section);
         //update current control
-        this.control = control;
+        this.selectedComponent.control = control;
         // emit output param of switched control for updating editor		
         this.control_selected.emit(control);
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Input('component_selected'), 
         __metadata('design:type', Object)
-    ], Switch.prototype, "control", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Switch.prototype, "section", void 0);
+    ], Switch.prototype, "selectedComponent", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
@@ -47,7 +43,7 @@ var Switch = (function () {
         core_1.Component({
             selector: 'switch',
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
-            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option value=\"text-area\" [selected]=\"control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"control.type=='textfield'\">Text Field</option>\n\t\t\t<option value=\"selectbox\" [selected]=\"control.type=='selectbox'\">DropDown</option>\n\t\t\t<option value=\"radio-button\" [selected]=\"control.type=='radio-button'\">Radio Button</option>\n\t\t</select>\n\t",
+            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option value=\"text-area\" [selected]=\"selectedComponent.control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"selectedComponent.control.type=='textfield'\">Text Field</option>\n\t\t\t<option value=\"selectbox\" [selected]=\"selectedComponent.control.type=='selectbox'\">DropDown</option>\n\t\t\t<option value=\"radio-button\" [selected]=\"selectedComponent.control.type=='radio-button'\">Radio Button</option>\n\t\t</select>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])
