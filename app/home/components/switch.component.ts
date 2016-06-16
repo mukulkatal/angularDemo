@@ -11,6 +11,8 @@ import { JSONElement } from '../services/JSONElement.service';
 			<option value="textfield" [selected]="selectedComponent.control.type=='textfield'">Text Field</option>
 			<option value="selectbox" [selected]="selectedComponent.control.type=='selectbox'">DropDown</option>
 			<option value="radio-button" [selected]="selectedComponent.control.type=='radio-button'">Radio Button</option>
+			<option value="header" [selected]="selectedComponent.control.type=='header'">Header</option>
+			<option value="logo" [selected]="selectedComponent.control.type=='logo'">Logo</option>
 		</select>
 	`,
 	styles: ['.display{display:block}']
@@ -27,14 +29,14 @@ export class Switch {
 		-- Change event function event for select
 	 */
 	onChange($event){
-		let control = this.jsonElementHandler.getJsonOfElem($event.target.value);
+		let control = $event.target.value;//this.jsonElementHandler.getJsonOfElem($event.target.value);
 		//set order of new control same as of old control
-		control.order = this.selectedComponent.control.order;
+		//control.order = this.selectedComponent.control.order;
 		//relace control in jsonTemplate
 		JSONBuilder.changeControl(this.selectedComponent.control, control, this.selectedComponent.section);
 		//update current control
-		this.selectedComponent.control = control;
+		//this.selectedComponent.control = control;
 		// emit output param of switched control for updating editor		
-		this.control_selected.emit(control);		
+		//this.control_selected.emit(control);		
 	}
 }

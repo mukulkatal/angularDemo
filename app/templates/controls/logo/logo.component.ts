@@ -6,8 +6,8 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   viewProviders: [],
   template: `
     <div class="logo-field">
-      <img src="{{data.props.url}}" altr="logo image" width="{{data.props.width}}" />
-      
+      <img src="{{data.props.title}}" alt="{{data.config.placeholder}}" width="{{data.config.attr.width}}" />
+      <p>{{data.props.helpText}}</p>
     </div>
 	`
 })

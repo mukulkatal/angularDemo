@@ -19,7 +19,7 @@ var EditorLogo = (function () {
     EditorLogo = __decorate([
         core_1.Component({
             selector: 'editor-logo',
-            template: "\n\t\t<div><span>URL:</span><input type=\"text\" [(ngModel)] = \"control.props.url\" /></div>\n\t\tWidth:<input type=\"text\" [(ngModel)] = \"control.props.width\" />\n\t\tHeight:<input type=\"text\" [(ngModel)] = \"control.config.height\" />\n\t"
+            template: "\n\t\t<div>\n\t\t\tURL :<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\t\tHelp Text : <input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\t\t\n\t\t\tAlter Text : <input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t\tWidth:<input type=\"text\" [(ngModel)] = \"control.config.attr.width\" />\n\t\t\tHeight:<input type=\"text\" [(ngModel)] = \"control.config.attr.height\" />\n\t\t</div>\t\t\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], EditorLogo);

@@ -34,16 +34,18 @@ var Template1Component = (function () {
                                         "order": 1,
                                         "type": "logo",
                                         "props": {
-                                            "url": "http://pngimg.com/upload/car_logo_PNG1667.png",
-                                            "width": "100",
-                                            "height": "60"
+                                            "title": "http://pngimg.com/upload/car_logo_PNG1667.png",
+                                            "helpText": "testing",
                                         },
                                         "config": {
-                                            "type": "1",
-                                            "attr": [{
-                                                    "class": "customeClass",
-                                                    "style": "heightcolorred"
-                                                }],
+                                            "type": "text",
+                                            "showHelp": "1",
+                                            "attr": {
+                                                "class": "customeClass",
+                                                "style": "heightcolorred",
+                                                "width": "100",
+                                                "height": "60",
+                                            },
                                             "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
@@ -80,7 +82,8 @@ var Template1Component = (function () {
                                             "helpText": "SOME HELPER TEXT"
                                         },
                                         "config": {
-                                            "type": "1",
+                                            "type": "text",
+                                            "showHelp": "1",
                                             "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"

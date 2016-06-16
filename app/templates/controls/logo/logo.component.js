@@ -24,7 +24,7 @@ var Logo = (function () {
             selector: 'logo',
             directives: [],
             viewProviders: [],
-            template: "\n    <div class=\"logo-field\">\n      <img src=\"{{data.props.url}}\" altr=\"logo image\" width=\"{{data.props.width}}\" />\n      \n    </div>\n\t"
+            template: "\n    <div class=\"logo-field\">\n      <img src=\"{{data.props.title}}\" alt=\"{{data.config.placeholder}}\" width=\"{{data.config.attr.width}}\" />\n      <p>{{data.props.helpText}}</p>\n    </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Logo);

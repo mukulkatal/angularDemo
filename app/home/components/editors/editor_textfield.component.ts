@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
 	template:`
 		<input type="text" [(ngModel)] = "control.config.placeholder" />
 		<input type="text" [(ngModel)] = "control.config.value" />
-		<input type="text" [(ngModel)] = "control.config.type" />
+		<input type="text" [(ngModel)] = "control.config.showHelp" />
 	`
 
 })//<input type="text" [(ngModel)] = "control.config.placeholder" />

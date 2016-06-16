@@ -2,9 +2,12 @@ import { Component, Input } from '@angular/core';
 @Component({
 	selector: 'editor-header',
 	template:`
-		<input type="text" [(ngModel)] = "control.props.title" />
-		<input type="text" [(ngModel)] = "control.props.helpText" />
-		<input type="text" [(ngModel)] = "control.config.type" />
+		<div>
+			Title :<input type="text" [(ngModel)] = "control.props.title" />
+			Help Text : <input type="text" [(ngModel)] = "control.props.helpText" />
+			
+			Show Description : <input type="text" [(ngModel)] = "control.config.showHelp" />
+		</div>		
 	`
 
 })//<input type="text" [(ngModel)] = "control.config.placeholder" />
