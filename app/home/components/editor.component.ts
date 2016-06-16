@@ -12,6 +12,7 @@ import { EDITORS } from './editor';
 		<editor-header *ngIf="selectedComponent.control.type=='header'" [control]="selectedComponent.control"></editor-header>
 		<editor-button *ngIf="selectedComponent.control.type=='click-button'" [control]="selectedComponent.control"></editor-button>
 		<editor-logo *ngIf="selectedComponent.control.type=='logo'" [control]="selectedComponent.control"></editor-logo>
+		<editor-slider *ngIf="selectedComponent.control.type=='slider'" [control]="selectedComponent.control"></editor-slider>
 	`
 })
 

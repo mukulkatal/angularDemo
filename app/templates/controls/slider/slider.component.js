@@ -9,26 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Logo = (function () {
-    function Logo() {
+var Slider = (function () {
+    function Slider() {
     }
-    Logo.prototype.ngOnInit = function () {
+    Slider.prototype.ngOnInit = function () {
         console.log('Done');
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Logo.prototype, "data", void 0);
-    Logo = __decorate([
+    ], Slider.prototype, "data", void 0);
+    Slider = __decorate([
         core_1.Component({
-            selector: 'logo',
+            selector: 'slider',
             directives: [],
             viewProviders: [],
-            template: "\n    <div class=\"logo-field\">\n      <img src=\"{{data.props.title}}\" alt=\"{{data.config.placeholder}}\" width=\"{{data.config.attr.width}}\" />\n      <p>{{data.props.helpText}}</p>\n    </div>\n\t"
+            template: "<div class=\"range-field\">\n     \t \t\t\t<input type=\"range\" id=\"test5\" min=\"0\" max=\"100\" />\n    \t\t   </div>"
         }), 
         __metadata('design:paramtypes', [])
-    ], Logo);
-    return Logo;
+    ], Slider);
+    return Slider;
 }());
-exports.Logo = Logo;
-//# sourceMappingURL=logo.component.js.map
+exports.Slider = Slider;
+//# sourceMappingURL=slider.component.js.map

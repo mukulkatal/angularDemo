@@ -19,7 +19,7 @@ var EditorTextField = (function () {
     EditorTextField = __decorate([
         core_1.Component({
             selector: 'editor-textfield',
-            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.value\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.type\" />\n\t"
+            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.value\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.showHelp\" />\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], EditorTextField);

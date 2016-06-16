@@ -44,16 +44,18 @@ export class Template1Component implements OnInit
                         "order": 1,
                         "type": "logo",
                         "props": {
-                            "url": "http://pngimg.com/upload/car_logo_PNG1667.png",
-                            "width": "100",
-                            "height": "60"
+                            "title": "http://pngimg.com/upload/car_logo_PNG1667.png",
+                            "helpText": "testing",
                         },
                         "config": {
-                            "type": "1",
-                            "attr": [{
+                            "type": "text",
+                            "showHelp": "1",
+                            "attr": {
                                 "class": "customeClass",
-                                "style": "heightcolorred"
-                            }],
+                                "style": "heightcolorred",
+                                "width":"100",
+                                "height":"60",
+                            },
                             "validations": [{
                                 "required": "true",
                                 "message": "This field is required",
@@ -90,7 +92,8 @@ export class Template1Component implements OnInit
                             "helpText": "SOME HELPER TEXT"
                         },
                         "config": {
-                            "type": "1",
+                            "type": "text",
+                            "showHelp": "1",
                             "attr": [{
                                 "class": "customeClass",
                                 "style": "heightcolorred"
@@ -430,6 +433,47 @@ export class Template1Component implements OnInit
                         }
 
                     ]
+                },
+                {
+                    "order": 7,
+                    "type": "slider",
+                    "props": {
+                        "title": "this checkbox section question",
+                        "helpText": "SOME HELPER TEXT"
+                    },
+                    "config": {
+                        "type": "text",
+                        "attr": [{
+                            "class": "customeClass",
+                            "style": "heightcolorred"
+                        }],
+                        "validations": [{
+                            "required": "true",
+                            "message": "This field is required",
+                            "errorClass": "error"
+                        }, {
+                            "required": "true",
+                            "message": "This field is required",
+                            "errorClass": "error",
+                            "min": "0",
+                            "max": "100"
+                        }],
+                        "maxSelections": 1,
+                        "direction": "horizontal",
+                        "placeholder": "this textfield in placeholder",
+                        "defaultvalue": "Default Value"
+                    },
+                    "options": [{
+                        "type": "toggel",
+                        "label": "OPTION 1",
+                        "value": "10",
+                        "selected": false,
+                        "icon": "http://test.com/jd.png",
+                        "attr": {
+                            "class": "customeClass",
+                            "style": "height:100;color:red;"
+                        }
+                    }]
                 }
                 ]
             }

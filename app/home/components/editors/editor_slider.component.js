@@ -9,26 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Logo = (function () {
-    function Logo() {
+var JSONElement_service_1 = require('../../services/JSONElement.service');
+var EditorSlider = (function () {
+    function EditorSlider(jsonElementHandler) {
+        this.jsonElementHandler = jsonElementHandler;
     }
-    Logo.prototype.ngOnInit = function () {
-        console.log('Done');
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Logo.prototype, "data", void 0);
-    Logo = __decorate([
+    ], EditorSlider.prototype, "control", void 0);
+    EditorSlider = __decorate([
         core_1.Component({
-            selector: 'logo',
-            directives: [],
-            viewProviders: [],
-            template: "\n    <div class=\"logo-field\">\n      <img src=\"{{data.props.title}}\" alt=\"{{data.config.placeholder}}\" width=\"{{data.config.attr.width}}\" />\n      <p>{{data.props.helpText}}</p>\n    </div>\n\t"
+            selector: 'editor-slider',
+            template: "\n\t\tHelp Text : <input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\tTitle :<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\tPlaceHolder : <input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t"
         }), 
-        __metadata('design:paramtypes', [])
-    ], Logo);
-    return Logo;
+        __metadata('design:paramtypes', [JSONElement_service_1.JSONElement])
+    ], EditorSlider);
+    return EditorSlider;
 }());
-exports.Logo = Logo;
-//# sourceMappingURL=logo.component.js.map
+exports.EditorSlider = EditorSlider;
+//# sourceMappingURL=editor_slider.component.js.map

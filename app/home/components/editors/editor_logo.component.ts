@@ -2,9 +2,14 @@ import { Component, Input } from '@angular/core';
 @Component({
 	selector: 'editor-logo',
 	template:`
-		<div><span>URL:</span><input type="text" [(ngModel)] = "control.props.url" /></div>
-		Width:<input type="text" [(ngModel)] = "control.props.width" />
-		Height:<input type="text" [(ngModel)] = "control.config.height" />
+		<div>
+			URL :<input type="text" [(ngModel)] = "control.props.title" />
+			Help Text : <input type="text" [(ngModel)] = "control.props.helpText" />
+			
+			Alter Text : <input type="text" [(ngModel)] = "control.config.placeholder" />
+			Width:<input type="text" [(ngModel)] = "control.config.attr.width" />
+			Height:<input type="text" [(ngModel)] = "control.config.attr.height" />
+		</div>		
 	`
 
 })//<input type="text" [(ngModel)] = "control.config.placeholder" />

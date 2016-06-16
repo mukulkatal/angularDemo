@@ -5,6 +5,7 @@ import { RadioButton } from './radiobutton/radiobutton.component';
 import { Header } from './header/header.component';
 import { Button } from './button/button.component';
 import { Logo } from './logo/logo.component';
+import { Slider } from './slider/slider.component';
 
 export const CONTROLS: any[] = [
 	Logo,
@@ -13,5 +14,6 @@ export const CONTROLS: any[] = [
 	SelectBox,
 	RadioButton,
 	Header,
-	Button
+	Button,
+	Slider
 ];

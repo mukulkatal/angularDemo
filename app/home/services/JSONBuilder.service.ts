@@ -36,7 +36,7 @@ export class JSONBuilder{
     	//index of old control in array
 		let index = jQuery.inArray(oldControl, section.items);
 		//replace oldControl with newControl at index	
-		section.items.splice(index, 1, newControl);		
+		section.items[index].type= newControl;
 	}
 
 	static deleteControl(control: any,  section: any) {
