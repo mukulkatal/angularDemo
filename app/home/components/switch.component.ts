@@ -11,6 +11,8 @@ import { JSONElement } from '../services/JSONElement.service';
 			<option value="textfield" [selected]="selectedComponent.control.type=='textfield'">Text Field</option>
 			<option value="selectbox" [selected]="selectedComponent.control.type=='selectbox'">DropDown</option>
 			<option value="radio-button" [selected]="selectedComponent.control.type=='radio-button'">Radio Button</option>
+			<option value="header" [selected]="selectedComponent.control.type=='header'">Header</option>
+			<option value="click-button" [selected]="selectedComponent.control.type=='click-button'">Button</option>
 		</select>
 	`,
 	styles: ['.display{display:block}']

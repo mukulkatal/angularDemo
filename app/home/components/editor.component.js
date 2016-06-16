@@ -20,8 +20,8 @@ var Editor = (function () {
     Editor = __decorate([
         core_1.Component({
             selector: 'editor',
-            directives: [editor_1.EditorSelectBox, editor_1.EditorTextField, editor_1.EditorHeader, editor_1.EditorLogo],
-            template: "\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='textfield'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='text-area'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='selectbox'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='radio-button'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t\t<editor-header *ngIf=\"selectedComponent.control.type=='header'\" [control]=\"selectedComponent.control\"></editor-header>\n\t\t<editor-logo *ngIf=\"selectedComponent.control.type=='logo'\" [control]=\"selectedComponent.control\"></editor-logo>\n\t"
+            directives: [editor_1.EDITORS],
+            template: "\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='textfield'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='text-area'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='selectbox'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='radio-button'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t\t<editor-header *ngIf=\"selectedComponent.control.type=='header'\" [control]=\"selectedComponent.control\"></editor-header>\n\t\t<editor-button *ngIf=\"selectedComponent.control.type=='click-button'\" [control]=\"selectedComponent.control\"></editor-button>\n\t\t<editor-logo *ngIf=\"selectedComponent.control.type=='logo'\" [control]=\"selectedComponent.control\"></editor-logo>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], Editor);
