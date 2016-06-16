@@ -9,23 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var controls_1 = require('./controls');
-var Control = (function () {
-    function Control() {
+var Button = (function () {
+    function Button() {
     }
+    Button.prototype.ngOnInit = function () {
+        console.log('Done');
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Control.prototype, "data", void 0);
-    Control = __decorate([
+    ], Button.prototype, "data", void 0);
+    Button = __decorate([
         core_1.Component({
-            selector: 'control',
-            directives: [controls_1.CONTROLS],
-            template: "\n          <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n          <text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n          <selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n          <radio-button *ngIf=\"data.type=='radio-button'\" [data]=\"data\" ></radio-button>\n          <header *ngIf=\"data.type=='header'\" [data]=\"data\" ></header>\n          <click-button *ngIf=\"data.type=='click-button'\" [data]=\"data\" ></click-button>\n      ",
+            selector: 'click-button',
+            directives: [],
+            viewProviders: [],
+            template: "<div class=\"input-field\">\n\t\t\t\t\t<a class=\"waves-effect waves-light btn\">{{data.props.title}}</a>                  \n             </div>"
         }), 
         __metadata('design:paramtypes', [])
-    ], Control);
-    return Control;
+    ], Button);
+    return Button;
 }());
-exports.Control = Control;
-//# sourceMappingURL=control.component.js.map
+exports.Button = Button;
+//# sourceMappingURL=button.component.js.map

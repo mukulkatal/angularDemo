@@ -1,8 +1,12 @@
 "use strict";
 var editor_selectbox_component_1 = require('./editors/editor_selectbox.component');
-exports.EditorSelectBox = editor_selectbox_component_1.EditorSelectBox;
 var editor_textfield_component_1 = require('./editors/editor_textfield.component');
-exports.EditorTextField = editor_textfield_component_1.EditorTextField;
 var editor_header_component_1 = require('./editors/editor_header.component');
-exports.EditorHeader = editor_header_component_1.EditorHeader;
+var editor_button_component_1 = require('./editors/editor_button.component');
+exports.EDITORS = [
+    editor_selectbox_component_1.EditorSelectBox,
+    editor_textfield_component_1.EditorTextField,
+    editor_header_component_1.EditorHeader,
+    editor_button_component_1.EditorButton
+];
 //# sourceMappingURL=editor.js.map
