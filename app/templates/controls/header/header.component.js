@@ -9,23 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var controls_1 = require('./controls');
-var Control = (function () {
-    function Control() {
+var Header = (function () {
+    function Header() {
     }
+    Header.prototype.ngOnInit = function () {
+        console.log('Done');
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Control.prototype, "data", void 0);
-    Control = __decorate([
+    ], Header.prototype, "data", void 0);
+    Header = __decorate([
         core_1.Component({
-            selector: 'control',
-            directives: [controls_1.CONTROLS],
-            template: "\n\t\t\t    <textfield *ngIf=\"data.type=='textfield'\" [data]=\"data\"></textfield>\n      \t\t\t<text-area *ngIf=\"data.type=='text-area'\" [data]=\"data\" ></text-area>\n      \t\t\t<selectbox *ngIf=\"data.type=='selectbox'\" [data]=\"data\" ></selectbox>\n      \t\t\t<radio-button *ngIf=\"data.type=='radio-button'\" [data]=\"data\" ></radio-button>\n      \t\t\t<header *ngIf=\"data.type=='header'\" [data]=\"data\" ></header>\n      ",
+            selector: 'header',
+            directives: [],
+            viewProviders: [],
+            template: "\n    <div class=\"header\">\n      <h2>testing df df df </h2>\n    </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], Control);
-    return Control;
+    ], Header);
+    return Header;
 }());
-exports.Control = Control;
-//# sourceMappingURL=control.component.js.map
+exports.Header = Header;
+//# sourceMappingURL=header.component.js.map
