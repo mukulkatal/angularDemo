@@ -20,8 +20,10 @@ var Template = (function () {
     }
     Template.prototype.ngOnInit = function () {
         var name = this._routeParams.get('name');
-        if (name)
+        if (name) {
+            //load template
             this.Temp_name = name;
+        }
     };
     // bind Template Json from template parent
     Template.prototype.bind_Template_Json = function (data) {
@@ -60,7 +62,7 @@ var Template = (function () {
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.TEMPLATES],
-            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\" (selected_page)=\"selectPage($event)\" ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n        </div>\n        \n      ",
+            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\" (selected_page)=\"selectPage($event)\" #template></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n        </div>\n        \n      ",
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
     ], Template);

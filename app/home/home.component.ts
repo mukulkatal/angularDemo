@@ -19,6 +19,7 @@ declare var jQuery: any;
     styles : [
     '.mt20{margin-top:20px}'
     ],
+    styleUrls: ['../../node_modules/materialize-css/dist/css/materialize.min.css']
 })
 
 export class HomeComponent implements OnInit{
@@ -34,8 +35,9 @@ export class HomeComponent implements OnInit{
     */
 
     bind_Template_Json(data: any){
+       
         this.controls = data.defaulttemp.defaulttemp;
-        
+
         //drag and sort elements in a section
         let self = this;
         jQuery(".sortable").sortable({ 
@@ -61,7 +63,7 @@ export class HomeComponent implements OnInit{
     }
 
     onComponentSelect(component){
-        this.selectedComponent = component;    
+        this.selectedComponent = component;
         this.jsonBuilderHelper.setTemplate(this.selectedComponent.section.items);
     }
 
@@ -82,5 +84,9 @@ export class HomeComponent implements OnInit{
             this.selectedComponent.control = this.selectedComponent.section.items[0];
         else
             this.selectedComponent.control = ''; 
+    }
+
+    onPreview(){
+        localStorage.setItem('template',JSON.stringify(this.controls));
     }
 }

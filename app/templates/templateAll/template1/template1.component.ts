@@ -1,4 +1,4 @@
-import { Component,Input,Output,EventEmitter , OnInit } from '@angular/core';
+import { Component,Input,Output,EventEmitter , OnInit, OnChanges } from '@angular/core';
 import {SectionComponent} from './components/sections.component';
 import {Control} from '../../../templates/controls/control.component';
 
@@ -21,12 +21,14 @@ import {Control} from '../../../templates/controls/control.component';
     ]
 })
 
-export class Template1Component implements OnInit
+export class Template1Component implements OnInit, OnChanges
 {
     @Output() default_Template = new EventEmitter();
     @Output() selected_control = new EventEmitter();
     @Output() selected_section = new EventEmitter();
     @Output() selected_page = new EventEmitter();
+
+    //@Input() jsonTemplate;
     /*  ---
         default json of the template 
     */
@@ -38,7 +40,7 @@ export class Template1Component implements OnInit
             "sections": [
             {
                     "description": "registeration Page",
-                    "order":2,
+                    "order":1,
                     "items": [
                     {
                         "order": 1,
@@ -85,7 +87,7 @@ export class Template1Component implements OnInit
                         }]
                     },
                     {
-                       "order": 1,
+                       "order": 2,
                         "type": "header",
                         "props": {
                             "title": "this checkbox section question",
@@ -130,7 +132,7 @@ export class Template1Component implements OnInit
             },
             {
                 "description":"Login Page",
-                "order":1,
+                "order":2,
                 "items": [
                 {
                     "order": 1,
@@ -719,8 +721,11 @@ export class Template1Component implements OnInit
     /*  ---
         end json on init for initialize the json 
     */
-      this.default_Template.emit({defaulttemp:this.defaultJson});
-      console.log(this.defaultJson.app.pages[0].sections[0].items);
+        let template = localStorage.getItem('template');
+        if(template){
+            this.defaultJson = JSON.parse(template);
+        }    
+        this.default_Template.emit({defaulttemp:this.defaultJson});
     }
 
   

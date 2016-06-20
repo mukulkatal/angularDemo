@@ -68,6 +68,9 @@ var HomeComponent = (function () {
         else
             this.selectedComponent.control = '';
     };
+    HomeComponent.prototype.onPreview = function () {
+        localStorage.setItem('template', JSON.stringify(this.controls));
+    };
     HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -79,6 +82,7 @@ var HomeComponent = (function () {
             styles: [
                 '.mt20{margin-top:20px}'
             ],
+            styleUrls: ['../../node_modules/materialize-css/dist/css/materialize.min.css']
         }), 
         __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement])
     ], HomeComponent);
