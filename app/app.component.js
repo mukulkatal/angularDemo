@@ -10,18 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var home_component_1 = require('./home/home.component');
+var template_component_1 = require('./templates/templateAll/template.component');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         router_deprecated_1.RouteConfig([
-            { path: '/', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true }
+            { path: '/', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
+            { path: '/preview/:name', name: 'Preview', component: template_component_1.Template }
         ]),
         core_1.Component({
             selector: 'my-app',
-            template: "<router-outlet></router-outlet>",
-            directives: [router_deprecated_1.RouterOutlet]
+            template: "\n\t  <router-outlet></router-outlet>\n\t",
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

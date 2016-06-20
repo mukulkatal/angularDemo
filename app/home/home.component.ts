@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { RouterLink } from '@angular/router-deprecated';
 import {Control} from '../templates/controls/control.component';
 import { Template } from '../templates/templateAll/Template.component';
 import { Editor } from './components/editor.component';
@@ -11,7 +12,7 @@ declare var jQuery: any;
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    directives: [Control, Editor, Template, Switch],
+    directives: [RouterLink, Control, Editor, Template, Switch],
     providers: [JSONBuilder, JSONElement],
     viewProviders: [],
     templateUrl: 'home.template.html',
@@ -22,7 +23,7 @@ declare var jQuery: any;
 
 export class HomeComponent implements OnInit{
     controls: any[];
-    //TempName : any = "Temp-1" ;  
+    TempName : any = "Temp-1" ;  
     selectedComponent: any; 
     elements: any[];
     ngOnInit(){

@@ -9,14 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var templates_1 = require('./templates');
 var Template = (function () {
-    function Template() {
+    function Template(_routeParams) {
+        this._routeParams = _routeParams;
         this.default_Template = new core_1.EventEmitter();
         this.component_selected = new core_1.EventEmitter();
         this.Component = { "page": '', "section": '', "control": '' };
     }
     Template.prototype.ngOnInit = function () {
+        var name = this._routeParams.get('name');
+        if (name)
+            this.Temp_name = name;
     };
     // bind Template Json from template parent
     Template.prototype.bind_Template_Json = function (data) {
@@ -55,9 +60,9 @@ var Template = (function () {
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.TEMPLATES],
-            template: "     \n         <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\" (selected_page)=\"selectPage($event)\" ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n       </div>\n        \n      ",
+            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\" *ngSwitchDefault  (default_Template)=\"bind_Template_Json($event)\" (selected_control)=\"selectControl($event)\" (selected_section)=\"selectSection($event)\" (selected_page)=\"selectPage($event)\" ></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n        </div>\n        \n      ",
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
     ], Template);
     return Template;
 }());

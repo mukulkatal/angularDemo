@@ -16,6 +16,9 @@ var Switch = (function () {
         this.jsonElementHandler = jsonElementHandler;
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.control_selected = new core_1.EventEmitter();
+        this.controls = [
+            'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button'
+        ];
     }
     /*
         -- Change event function event for select
@@ -43,7 +46,7 @@ var Switch = (function () {
         core_1.Component({
             selector: 'switch',
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
-            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option value=\"text-area\" [selected]=\"selectedComponent.control.type=='text-area'\">Text Area</option>\n\t\t\t<option value=\"textfield\" [selected]=\"selectedComponent.control.type=='textfield'\">Text Field</option>\n\t\t\t<option value=\"selectbox\" [selected]=\"selectedComponent.control.type=='selectbox'\">DropDown</option>\n\t\t\t<option value=\"radio-button\" [selected]=\"selectedComponent.control.type=='radio-button'\">Radio Button</option>\n\t\t\t<option value=\"header\" [selected]=\"selectedComponent.control.type=='header'\">Header</option>\n\t\t\t<option value=\"logo\" [selected]=\"selectedComponent.control.type=='logo'\">Logo</option>\n\t\t\t<option value=\"click-button\" [selected]=\"selectedComponent.control.type=='click-button'\">Button</option>\n\t\t</select>\n\t",
+            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\n\t\t\t<option *ngFor=\"let control of controls\" value=\"{{control}}\" [selected]=\"selectedComponent.control.type==control\">{{control}}</option>\n\n\t\t</select>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])

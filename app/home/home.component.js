@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var control_component_1 = require('../templates/controls/control.component');
 var Template_component_1 = require('../templates/templateAll/Template.component');
 var editor_component_1 = require('./components/editor.component');
@@ -19,6 +20,7 @@ var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.jsonElementHandler = jsonElementHandler;
+        this.TempName = "Temp-1";
         this.elements = jsonElementHandler.allAvailableElements();
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -70,7 +72,7 @@ var HomeComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            directives: [control_component_1.Control, editor_component_1.Editor, Template_component_1.Template, switch_component_1.Switch],
+            directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, Template_component_1.Template, switch_component_1.Switch],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'home.template.html',
