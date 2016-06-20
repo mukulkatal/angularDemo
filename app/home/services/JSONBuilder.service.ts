@@ -10,8 +10,8 @@ export class JSONBuilder{
 	}
 	
 	reorder(order: string[]){
-		for (var control in this.JSONTemplate){
-			for (var index in order) {
+		for(var control in this.JSONTemplate){
+			for(var index in order) {
 				if(this.JSONTemplate[control].order == order[index]) {
 					this.JSONTemplate[control].order = Number(index)+1;
 					break;

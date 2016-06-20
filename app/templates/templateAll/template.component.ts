@@ -1,14 +1,15 @@
-import { Component,Input,Output,EventEmitter,OnInit } from '@angular/core';
-import {TEMPLATES} from './templates'
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { RouteParams } from '@angular/router-deprecated';
+import { TEMPLATES } from './templates'
 
 @Component({
 selector :"Temp",
 directives: [TEMPLATES],
 template : `     
-         <div [ngSwitch]="Temp_name">
-            <Temp-1 *ngSwitchWhen="'Temp-1'" *ngSwitchDefault  (default_Template)="bind_Template_Json($event)" (selected_control)="selectControl($event)" (selected_section)="selectSection($event)" (selected_page)="selectPage($event)" ></Temp-1>
+        <div [ngSwitch]="Temp_name">
+            <Temp-1 *ngSwitchWhen="'Temp-1'" *ngSwitchDefault (default_Template)="bind_Template_Json($event)" (selected_control)="selectControl($event)" (selected_section)="selectSection($event)" (selected_page)="selectPage($event)" #template></Temp-1>
             <Temp-2 *ngSwitchWhen="'Temp-2'" ></Temp-2>
-       </div>
+        </div>
         
       `,  
 })
@@ -21,13 +22,22 @@ export class Template implements OnInit
     @Output() component_selected = new EventEmitter();  
     Component: any = {"page":'',"section":'',"control":''};
 
+    constructor(private _routeParams: RouteParams){
+
+    }
+
     ngOnInit(){     
+        let name: string = this._routeParams.get('name');
+        if(name){
+            //load template
+            this.Temp_name = name;
+        }
     }
     
     // bind Template Json from template parent
      bind_Template_Json(data: any)
      {
-         this.default_Template.emit({defaulttemp:data});    
+         this.default_Template.emit({defaulttemp:data});
      }
  
     /*  ---
@@ -49,5 +59,4 @@ export class Template implements OnInit
          this.Component.page = component;
          this.component_selected.emit(this.Component);
      }
-
 }

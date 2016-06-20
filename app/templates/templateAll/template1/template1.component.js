@@ -17,6 +17,7 @@ var Template1Component = (function () {
         this.selected_control = new core_1.EventEmitter();
         this.selected_section = new core_1.EventEmitter();
         this.selected_page = new core_1.EventEmitter();
+        //@Input() jsonTemplate;
         /*  ---
             default json of the template
         */
@@ -28,7 +29,7 @@ var Template1Component = (function () {
                         "sections": [
                             {
                                 "description": "registeration Page",
-                                "order": 2,
+                                "order": 1,
                                 "items": [
                                     {
                                         "order": 1,
@@ -75,7 +76,7 @@ var Template1Component = (function () {
                                             }]
                                     },
                                     {
-                                        "order": 1,
+                                        "order": 2,
                                         "type": "header",
                                         "props": {
                                             "title": "this checkbox section question",
@@ -120,7 +121,7 @@ var Template1Component = (function () {
                             },
                             {
                                 "description": "Login Page",
-                                "order": 1,
+                                "order": 2,
                                 "items": [
                                     {
                                         "order": 1,
@@ -695,8 +696,11 @@ var Template1Component = (function () {
         /*  ---
             end json on init for initialize the json
         */
+        var template = localStorage.getItem('template');
+        if (template) {
+            this.defaultJson = JSON.parse(template);
+        }
         this.default_Template.emit({ defaulttemp: this.defaultJson });
-        console.log(this.defaultJson.app.pages[0].sections[0].items);
     };
     /*  ---
         when control is selected from particluar template then it pass to parent

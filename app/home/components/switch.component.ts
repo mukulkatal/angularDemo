@@ -7,13 +7,9 @@ import { JSONElement } from '../services/JSONElement.service';
 	providers: [JSONBuilder,JSONElement],
 	template: `
 		<select (change)="onChange($event)" class="display">
-			<option value="text-area" [selected]="selectedComponent.control.type=='text-area'">Text Area</option>
-			<option value="textfield" [selected]="selectedComponent.control.type=='textfield'">Text Field</option>
-			<option value="selectbox" [selected]="selectedComponent.control.type=='selectbox'">DropDown</option>
-			<option value="radio-button" [selected]="selectedComponent.control.type=='radio-button'">Radio Button</option>
-			<option value="header" [selected]="selectedComponent.control.type=='header'">Header</option>
-			<option value="logo" [selected]="selectedComponent.control.type=='logo'">Logo</option>
-			<option value="click-button" [selected]="selectedComponent.control.type=='click-button'">Button</option>
+
+			<option *ngFor="let control of controls" value="{{control}}" [selected]="selectedComponent.control.type==control">{{control}}</option>
+
 		</select>
 	`,
 	styles: ['.display{display:block}']
@@ -23,6 +19,9 @@ export class Switch {
 	@Input('component_selected') selectedComponent: any;
     @Output() control_selected = new EventEmitter();
 
+    controls: string[] = [
+		'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button'
+    ];
 	constructor(private jsonElementHandler: JSONElement ,private jsonBuilderHelper : JSONBuilder ) { 		
 	}
 

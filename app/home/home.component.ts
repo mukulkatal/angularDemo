@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { RouterLink } from '@angular/router-deprecated';
 import {Control} from '../templates/controls/control.component';
 import { Template } from '../templates/templateAll/Template.component';
 import { Editor } from './components/editor.component';
@@ -11,18 +12,19 @@ declare var jQuery: any;
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    directives: [Control, Editor, Template, Switch],
+    directives: [RouterLink, Control, Editor, Template, Switch],
     providers: [JSONBuilder, JSONElement],
     viewProviders: [],
     templateUrl: 'home.template.html',
     styles : [
     '.mt20{margin-top:20px}'
     ],
+    styleUrls: ['../../node_modules/materialize-css/dist/css/materialize.min.css']
 })
 
 export class HomeComponent implements OnInit{
     controls: any[];
-    //TempName : any = "Temp-1" ;  
+    TempName : any = "Temp-1" ;  
     selectedComponent: any; 
     elements: any[];
     ngOnInit(){
@@ -33,8 +35,9 @@ export class HomeComponent implements OnInit{
     */
 
     bind_Template_Json(data: any){
+       
         this.controls = data.defaulttemp.defaulttemp;
-        
+
         //drag and sort elements in a section
         let self = this;
         jQuery(".sortable").sortable({ 
@@ -60,7 +63,7 @@ export class HomeComponent implements OnInit{
     }
 
     onComponentSelect(component){
-        this.selectedComponent = component;    
+        this.selectedComponent = component;
         this.jsonBuilderHelper.setTemplate(this.selectedComponent.section.items);
     }
 
@@ -81,5 +84,9 @@ export class HomeComponent implements OnInit{
             this.selectedComponent.control = this.selectedComponent.section.items[0];
         else
             this.selectedComponent.control = ''; 
+    }
+
+    onPreview(){
+        localStorage.setItem('template',JSON.stringify(this.controls));
     }
 }
