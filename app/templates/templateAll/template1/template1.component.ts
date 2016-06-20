@@ -1,4 +1,4 @@
-import { Component,Input,Output,EventEmitter , OnInit, OnChanges } from '@angular/core';
+import { Component,Input,Output,EventEmitter , OnInit } from '@angular/core';
 import {SectionComponent} from './components/sections.component';
 import {Control} from '../../../templates/controls/control.component';
 
@@ -21,7 +21,7 @@ import {Control} from '../../../templates/controls/control.component';
     ]
 })
 
-export class Template1Component implements OnInit, OnChanges
+export class Template1Component implements OnInit
 {
     @Output() default_Template = new EventEmitter();
     @Output() selected_control = new EventEmitter();
