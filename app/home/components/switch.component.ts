@@ -4,11 +4,11 @@ import { JSONElement } from '../services/JSONElement.service';
 
 @Component({
 	selector: 'switch',
-	providers: [JSONBuilder,JSONElement],
+	providers: [JSONElement],
 	template: `
 		<select (change)="onChange($event)" class="display">
 
-			<option *ngFor="let control of controls" value="{{control}}" [selected]="selectedComponent.control.type==control">{{control}}</option>
+			<option *ngFor="let control of controls" value="{{control}}" [selected]="jsonBuilderHelper.getSelectedControl().type==control">{{control}}</option>
 
 		</select>
 	`,
@@ -16,8 +16,6 @@ import { JSONElement } from '../services/JSONElement.service';
 })
 
 export class Switch {
-	@Input('component_selected') selectedComponent: any;
-    @Output() control_selected = new EventEmitter();
 
     controls: string[] = [
 		'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button'
@@ -29,14 +27,7 @@ export class Switch {
 		-- Change event function event for select
 	 */
 	onChange($event){
-		let control = $event.target.value;//this.jsonElementHandler.getJsonOfElem($event.target.value);
-		//set order of new control same as of old control
-		//control.order = this.selectedComponent.control.order;
-		//relace control in jsonTemplate
-		JSONBuilder.changeControl(this.selectedComponent.control, control, this.selectedComponent.section);
-		//update current control
-		//this.selectedComponent.control = control;
-		// emit output param of switched control for updating editor		
-		//this.control_selected.emit(control);		
+		let control = $event.target.value;
+		this.jsonBuilderHelper.changeControl(control);	
 	}
 }

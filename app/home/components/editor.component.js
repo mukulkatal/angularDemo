@@ -10,20 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var editor_1 = require('./editor');
+var JSONBuilder_service_1 = require('../services/JSONBuilder.service');
 var Editor = (function () {
-    function Editor() {
+    function Editor(jsonBuilderHelper) {
+        this.jsonBuilderHelper = jsonBuilderHelper;
     }
-    __decorate([
-        core_1.Input('component_selected'), 
-        __metadata('design:type', Object)
-    ], Editor.prototype, "selectedComponent", void 0);
     Editor = __decorate([
         core_1.Component({
             selector: 'editor',
             directives: [editor_1.EDITORS],
-            template: "\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='textfield'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-textfield *ngIf=\"selectedComponent.control.type=='text-area'\" [control]=\"selectedComponent.control\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='selectbox'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t\t<editor-selectbox *ngIf=\"selectedComponent.control.type=='radio-button'\" [control]=\"selectedComponent.control\"></editor-selectbox>\n\t\t<editor-header *ngIf=\"selectedComponent.control.type=='header'\" [control]=\"selectedComponent.control\"></editor-header>\n\t\t<editor-button *ngIf=\"selectedComponent.control.type=='click-button'\" [control]=\"selectedComponent.control\"></editor-button>\n\t\t<editor-logo *ngIf=\"selectedComponent.control.type=='logo'\" [control]=\"selectedComponent.control\"></editor-logo>\n\t\t<editor-slider *ngIf=\"selectedComponent.control.type=='slider'\" [control]=\"selectedComponent.control\"></editor-slider>\n\t"
+            template: "\n\t\t<editor-textfield *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='textfield'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-textfield>\n\t\t<editor-textfield *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='text-area'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-textfield>\n\t\t<editor-selectbox *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='selectbox'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-selectbox>\n\t\t<editor-selectbox *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='radio-button'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-selectbox>\n\t\t<editor-header *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='header'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-header>\n\t\t<editor-button *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='click-button'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-button>\n\t\t<editor-logo *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='logo'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-logo>\n\t\t<editor-slider *ngIf=\"jsonBuilderHelper.getSelectedControl().type=='slider'\" [control]=\"jsonBuilderHelper.getSelectedControl()\"></editor-slider>\n\t"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder])
     ], Editor);
     return Editor;
 }());

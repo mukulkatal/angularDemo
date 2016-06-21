@@ -75,17 +75,7 @@ export class HomeComponent implements OnInit{
         var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
         this.jsonBuilderHelper.addNewChild(jsonElement);
     }
-
-    // delete item from section
-    removeControl(){
-        JSONBuilder.deleteControl(this.selectedComponent.control, this.selectedComponent.section);
-        // choose the next selected element from template section    
-        if (this.selectedComponent.section.items.length > 0)
-            this.selectedComponent.control = this.selectedComponent.section.items[0];
-        else
-            this.selectedComponent.control = ''; 
-    }
-
+    
     onPreview(){
         localStorage.setItem('template',JSON.stringify(this.controls));
     }

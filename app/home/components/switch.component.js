@@ -15,7 +15,6 @@ var Switch = (function () {
     function Switch(jsonElementHandler, jsonBuilderHelper) {
         this.jsonElementHandler = jsonElementHandler;
         this.jsonBuilderHelper = jsonBuilderHelper;
-        this.control_selected = new core_1.EventEmitter();
         this.controls = [
             'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button'
         ];
@@ -24,29 +23,14 @@ var Switch = (function () {
         -- Change event function event for select
      */
     Switch.prototype.onChange = function ($event) {
-        var control = $event.target.value; //this.jsonElementHandler.getJsonOfElem($event.target.value);
-        //set order of new control same as of old control
-        //control.order = this.selectedComponent.control.order;
-        //relace control in jsonTemplate
-        JSONBuilder_service_1.JSONBuilder.changeControl(this.selectedComponent.control, control, this.selectedComponent.section);
-        //update current control
-        //this.selectedComponent.control = control;
-        // emit output param of switched control for updating editor		
-        //this.control_selected.emit(control);		
+        var control = $event.target.value;
+        this.jsonBuilderHelper.changeControl(control);
     };
-    __decorate([
-        core_1.Input('component_selected'), 
-        __metadata('design:type', Object)
-    ], Switch.prototype, "selectedComponent", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], Switch.prototype, "control_selected", void 0);
     Switch = __decorate([
         core_1.Component({
             selector: 'switch',
-            providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
-            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\n\t\t\t<option *ngFor=\"let control of controls\" value=\"{{control}}\" [selected]=\"selectedComponent.control.type==control\">{{control}}</option>\n\n\t\t</select>\n\t",
+            providers: [JSONElement_service_1.JSONElement],
+            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\n\t\t\t<option *ngFor=\"let control of controls\" value=\"{{control}}\" [selected]=\"jsonBuilderHelper.getSelectedControl().type==control\">{{control}}</option>\n\n\t\t</select>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])

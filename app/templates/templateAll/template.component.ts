@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { RouteParams } from '@angular/router-deprecated';
-import { TEMPLATES } from './templates'
+import { TEMPLATES } from './templates';
+import { JSONBuilder } from '../../home/services/JSONBuilder.service';
 
 @Component({
 selector :"Temp",
@@ -11,18 +12,16 @@ template : `
             <Temp-2 *ngSwitchWhen="'Temp-2'" ></Temp-2>
         </div>
         
-      `,  
+      `,
 })
 
 export class Template implements OnInit
 {
     @Input('TempName') Temp_name; 
     
-    @Output() default_Template = new EventEmitter();  
-    @Output() component_selected = new EventEmitter();  
-    Component: any = {"page":'',"section":'',"control":''};
+    @Output() default_Template = new EventEmitter();
 
-    constructor(private _routeParams: RouteParams){
+    constructor(private _routeParams: RouteParams, private jsonBuilderHelper: JSONBuilder) {
 
     }
 
@@ -35,28 +34,25 @@ export class Template implements OnInit
     }
     
     // bind Template Json from template parent
-     bind_Template_Json(data: any)
-     {
-         this.default_Template.emit({defaulttemp:data});
-     }
+    bind_Template_Json(template: any)
+    {
+        this.jsonBuilderHelper.setTemplate(template);
+        this.default_Template.emit({defaulttemp:template});
+    }
  
     /*  ---
            this is passed from the particluar templat component (eg . Template1.component.ts) 
            and now we have to pass it to parent template component i.e home component
     */
     selectControl(control) {
-        this.Component.control = control;
-        this.component_selected.emit(this.Component);
+        this.jsonBuilderHelper.setSelectedControl(control);
     }
     
      selectSection(section) {
-        this.Component.section = section;
-        this.component_selected.emit(this.Component);
+        this.jsonBuilderHelper.setSelectedSection(section);
     }
 
-     selectPage(component) {
-         //console.log(section);
-         this.Component.page = component;
-         this.component_selected.emit(this.Component);
+     selectPage(page) {
+         this.jsonBuilderHelper.setSelectedPage(page);
      }
 }

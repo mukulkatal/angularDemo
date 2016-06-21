@@ -16,36 +16,54 @@ var JSONBuilder = (function () {
         this.JSONTemplate = template;
     };
     JSONBuilder.prototype.reorder = function (order) {
-        for (var control in this.JSONTemplate) {
+        var sectionItems = this.selectedSection.items;
+        for (var control in sectionItems) {
             for (var index in order) {
-                if (this.JSONTemplate[control].order == order[index]) {
-                    this.JSONTemplate[control].order = Number(index) + 1;
+                if (sectionItems[control].order == order[index]) {
+                    sectionItems[control].order = Number(index) + 1;
                     break;
                 }
             }
         }
     };
     JSONBuilder.prototype.addNewChild = function (childTemplate) {
-        this.JSONTemplate.push(childTemplate);
+        this.selectedSection.items.push(childTemplate);
     };
     JSONBuilder.prototype.sort = function (order) {
         this.reorder(order);
-        this.JSONTemplate.sort(function (a, b) { return ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)); });
+        this.selectedSection.items.sort(function (a, b) { return ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)); });
     };
     JSONBuilder.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
     };
-    JSONBuilder.changeControl = function (oldControl, newControl, section) {
-        //index of old control in array
-        var index = jQuery.inArray(oldControl, section.items);
-        //replace oldControl with newControl at index	
-        section.items[index].type = newControl;
+    JSONBuilder.prototype.setSelectedControl = function (control) {
+        this.selectedControl = control;
     };
-    JSONBuilder.deleteControl = function (control, section) {
+    JSONBuilder.prototype.setSelectedSection = function (section) {
+        this.selectedSection = section;
+    };
+    JSONBuilder.prototype.setSelectedPage = function (page) {
+        this.selectedPage = page;
+    };
+    JSONBuilder.prototype.getSelectedControl = function () {
+        return this.selectedControl;
+    };
+    JSONBuilder.prototype.changeControl = function (newControl) {
+        //index of old control in array
+        var index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+        //replace oldControl with newControl at index	
+        this.selectedSection.items[index].type = newControl;
+    };
+    JSONBuilder.prototype.deleteControl = function () {
         //index of old control in arra
-        var index = jQuery.inArray(control, section.items);
+        var index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
         //replace oldControl with newControl at index		
-        section.items.splice(index, 1);
+        this.selectedSection.items.splice(index, 1);
+        // choose the next selected element from template section    
+        if (this.selectedSection.items.length > 0)
+            this.selectedControl = this.selectedSection.items[0];
+        else
+            this.selectedControl = '';
     };
     JSONBuilder = __decorate([
         core_1.Injectable(), 
