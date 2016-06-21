@@ -1,6 +1,8 @@
-import { Component, Input,OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit} from '@angular/core';
 import {Control} from '../../../templates/controls/control.component';
 import { JSONBuilder } from '../../services/JSONBuilder.service';
+
+declare var jQuery: any;
 
 @Component({
 	selector: 'component-manager',
@@ -27,22 +29,39 @@ import { JSONBuilder } from '../../services/JSONBuilder.service';
 	`
 })
 
-export class ComponentManager implements OnInit {
+export class ComponentManager implements AfterViewInit {
 	@Input('TemplateJson') TemplateJson: any;
 	controlJson: any;
 
-	constructor(private jsonBuilderHelper: JSONBuilder)
-	{
-		console.log('cntrctor');
-		console.log(this.TemplateJson);
+	constructor(private jsonBuilderHelper: JSONBuilder){
 	}
 
-	ngOnInit() {
-		console.log('test');
-		console.log(this.TemplateJson);
+	ngAfterViewInit(){
+		let self = this;
+        jQuery(".sortable1").sortable({
+            connectWith: 'ul',
+            //cursor: "move",
+            cursor: "pointer",
+            opacity: 0.5,
+            revert: true,
+            scroll: false,
+            update: function() {
+                //get order from DOM
+                // let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                // console.log(order);
+                //sort the array
+                //self.jsonBuilderHelper.sort(order);
+            },
+            out: function() {
+                let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                self.jsonBuilderHelper.sort(order);
+            },
+            receive:
+            function(event, ui) {
+                let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
+            },
+        }).disableSelection();
     }
-
-
-
 
 }

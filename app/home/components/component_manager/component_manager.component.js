@@ -14,12 +14,32 @@ var JSONBuilder_service_1 = require('../../services/JSONBuilder.service');
 var ComponentManager = (function () {
     function ComponentManager(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
-        console.log('cntrctor');
-        console.log(this.TemplateJson);
     }
-    ComponentManager.prototype.ngOnInit = function () {
-        console.log('test');
-        console.log(this.TemplateJson);
+    ComponentManager.prototype.ngAfterViewInit = function () {
+        var self = this;
+        jQuery(".sortable1").sortable({
+            connectWith: 'ul',
+            //cursor: "move",
+            cursor: "pointer",
+            opacity: 0.5,
+            revert: true,
+            scroll: false,
+            update: function () {
+                //get order from DOM
+                // let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                // console.log(order);
+                //sort the array
+                //self.jsonBuilderHelper.sort(order);
+            },
+            out: function () {
+                var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                self.jsonBuilderHelper.sort(order);
+            },
+            receive: function (event, ui) {
+                var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
+            },
+        }).disableSelection();
     };
     __decorate([
         core_1.Input('TemplateJson'), 

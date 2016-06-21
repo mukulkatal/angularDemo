@@ -56,32 +56,6 @@ var HomeComponent = (function () {
     HomeComponent.prototype.onPreview = function () {
         localStorage.setItem('template', JSON.stringify(this.controls));
     };
-    HomeComponent.prototype.loadTemplate = function () {
-        var self = this;
-        jQuery(".sortable1").sortable({
-            connectWith: 'ul',
-            //cursor: "move",
-            cursor: "pointer",
-            opacity: 0.5,
-            revert: true,
-            scroll: false,
-            update: function () {
-                //get order from DOM
-                // let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
-                // console.log(order);
-                //sort the array
-                //self.jsonBuilderHelper.sort(order);
-            },
-            out: function () {
-                var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
-                self.jsonBuilderHelper.sort(order);
-            },
-            receive: function (event, ui) {
-                var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
-                self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
-            },
-        }).disableSelection();
-    };
     HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
