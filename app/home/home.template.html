@@ -3,10 +3,10 @@
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
-                <a 
-                    [routerLink]="['Preview',{ name:TempName }]"
-                    (click)="onPreview()"
-                    class="disp-inline-flex"
+                <a
+                        [routerLink]="['Preview',{ name:TempName }]"
+                        (click)="onPreview()"
+                        class="disp-inline-flex"
                 >
                     <i class="small material-icons">play_arrow</i>
                 </a>
@@ -18,42 +18,49 @@
 </nav>
 <div class="row">
     <div class="col s3" style="height:100%">
-    <component-manager 
-        *ngIf="controls"
-        [TemplateJson]="controls"          
-    >
-    </component-manager>
+        <component-manager
+                *ngIf="controls"
+                [TemplateJson]="controls"
+        >
+        </component-manager>
     </div>
-	<div class="col s6" style="height:100%">
-	 	<Temp 
-	 		[TempName]="TempName" 
-	 		(default_Template)="bind_Template_Json($event)"
-         >
-	 	</Temp>
-	</div>
+    <div class="col s6" style="height:100%">
+        <Temp
+                [TempName]="TempName"
+                (default_Template)="bind_Template_Json($event)"
+        >
+        </Temp>
+    </div>
 
-	<div class="col s3" style="height:100%">
-    <a *ngIf="jsonBuilderHelper.getSelectedControl()" (click)="jsonBuilderHelper.deleteControl()" class="right" href="javascript:void(0);">delete Item</a>
-        <div class="">    
-    		<editor 
-    			*ngIf="jsonBuilderHelper.getSelectedControl()"
-    		>	
-    		</editor>
+    <div class="col s3" style="height:100%">
+        <a *ngIf="jsonBuilderHelper.getSelectedControl()" (click)="jsonBuilderHelper.deleteControl()" class="right"
+           href="javascript:void(0);">delete Item</a>
+        <div class="">
+            <editor
+                    *ngIf="jsonBuilderHelper.getSelectedControl()"
+            >
+            </editor>
         </div>
-        <div class="mt20" >
+        <div class="mt20">
 
-            <switch 
-                *ngIf="jsonBuilderHelper.getSelectedControl()"
+            <switch
+                    *ngIf="jsonBuilderHelper.getSelectedControl()"
             >
             </switch>
+            <formula-switch *ngIf="jsonBuilderHelper.getSelectedControl()"></formula-switch>
         </div>
-		<div> <pre>{{controls | json}}</pre> </div>
-	</div>
+        <div>
+            <final-formula></final-formula>
+        </div>
+        <div>
+            <pre>{{controls | json}}</pre>
+        </div>
+    </div>
 </div>
 
 <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red">
-      <i class="large material-icons">add</i>
+        <i class="large material-icons">add</i>
     </a>
     <ul>
         <li>

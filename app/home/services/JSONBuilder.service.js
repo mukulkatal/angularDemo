@@ -16,7 +16,7 @@ var JSONBuilder = (function () {
         this.JSONTemplate = template;
     };
     JSONBuilder.prototype.reorder = function (order) {
-        var sectionItems = this.selectedSection.items;
+        var sectionItems = this._selectedSection.items;
         for (var control in sectionItems) {
             for (var index in order) {
                 if (sectionItems[control].order == order[index]) {
@@ -27,11 +27,11 @@ var JSONBuilder = (function () {
         }
     };
     JSONBuilder.prototype.addNewChild = function (childTemplate) {
-        this.selectedSection.items.push(childTemplate);
+        this._selectedSection.items.push(childTemplate);
     };
     JSONBuilder.prototype.sort = function (order) {
         this.reorder(order);
-        this.selectedSection.items.sort(function (a, b) { return ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)); });
+        this._selectedSection.items.sort(function (a, b) { return ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)); });
     };
     JSONBuilder.prototype.getJSONBuilt = function () {
         return this.JSONTemplate;
@@ -40,33 +40,39 @@ var JSONBuilder = (function () {
         this.selectedControl = control;
     };
     JSONBuilder.prototype.setSelectedSection = function (section) {
-        this.selectedSection = section;
+        this._selectedSection = section;
     };
     JSONBuilder.prototype.setSelectedPage = function (page) {
-        this.selectedPage = page;
+        this._selectedPage = page;
+    };
+    JSONBuilder.prototype.getSelectedSection = function () {
+        return this._selectedSection;
+    };
+    JSONBuilder.prototype.getSelectedPage = function () {
+        return this._selectedPage;
     };
     JSONBuilder.prototype.getSelectedControl = function () {
         return this.selectedControl;
     };
     JSONBuilder.prototype.changeControl = function (newControl) {
         //index of old control in array
-        var index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+        var index = jQuery.inArray(this.selectedControl, this._selectedSection.items);
         //replace oldControl with newControl at index	
-        this.selectedSection.items[index].type = newControl;
+        this._selectedSection.items[index].type = newControl;
     };
     JSONBuilder.prototype.deleteControl = function () {
         //index of old control in arra
-        var index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+        var index = jQuery.inArray(this.selectedControl, this._selectedSection.items);
         //replace oldControl with newControl at index		
-        this.selectedSection.items.splice(index, 1);
+        this._selectedSection.items.splice(index, 1);
         // choose the next selected element from template section    
-        if (this.selectedSection.items.length > 0)
-            this.selectedControl = this.selectedSection.items[0];
+        if (this._selectedSection.items.length > 0)
+            this.selectedControl = this._selectedSection.items[0];
         else
             this.selectedControl = '';
     };
     JSONBuilder.prototype.multiSectionSort = function (sectionIndex, itemIndex, order) {
-        var sectionItems = this.selectedPage.sections[sectionIndex - 1].items;
+        var sectionItems = this._selectedPage.sections[sectionIndex - 1].items;
         sectionItems.splice(itemIndex, 0, this.selectedControl);
         // delete control from out section
         this.deleteControl();

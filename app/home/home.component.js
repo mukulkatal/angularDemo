@@ -17,6 +17,8 @@ var switch_component_1 = require('./components/switch.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var JSONElement_service_1 = require('./services/JSONElement.service');
 var component_manager_component_1 = require('./components/component_manager/component_manager.component');
+var formulaswitch_component_1 = require("./components/formulaswitch.component");
+var finalformula_component_1 = require("./components/finalformula.component");
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
@@ -60,7 +62,7 @@ var HomeComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, templateDev_component_1.TemplateDev, switch_component_1.Switch, component_manager_component_1.ComponentManager],
+            directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, templateDev_component_1.TemplateDev, switch_component_1.Switch, component_manager_component_1.ComponentManager, formulaswitch_component_1.FormulaSwitch, finalformula_component_1.FinalFormula],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'home.template.html',

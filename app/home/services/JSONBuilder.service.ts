@@ -3,18 +3,19 @@ import { Injectable } from '@angular/core';
 declare var jQuery: any;
 @Injectable()
 export class JSONBuilder{
-	
+
 	private JSONTemplate: any[];
 	private selectedControl: any;
-	private selectedSection: any;
-	private selectedPage: any;
+	private _selectedSection: any;
+	private _selectedPage: any;
+
 
 	setTemplate(template: any[]){
 		this.JSONTemplate = template;
 	}
 	
 	reorder(order: string[]){
-		var sectionItems: any[] = this.selectedSection.items;
+		var sectionItems: any[] = this._selectedSection.items;
 		for (var control in sectionItems) {
 			for(var index in order) {
 				if (sectionItems[control].order == order[index]) {
@@ -26,12 +27,12 @@ export class JSONBuilder{
 	}
 	
 	addNewChild(childTemplate: any){	
-		this.selectedSection.items.push(childTemplate);	
+		this._selectedSection.items.push(childTemplate);
 	}
 
 	sort(order: string[]){
 		this.reorder(order);
-		this.selectedSection.items.sort((a, b) => ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)));
+		this._selectedSection.items.sort((a, b) => ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)));
 	}
 
 	getJSONBuilt(): any[] {
@@ -43,12 +44,21 @@ export class JSONBuilder{
 	}
 
 	setSelectedSection(section: any) {
-		this.selectedSection = section;
+		this._selectedSection = section;
 	}
 
 	setSelectedPage(page: any) {
-		this.selectedPage = page;
+		this._selectedPage = page;
 	}
+
+	getSelectedSection():any{
+		return this._selectedSection;
+	}
+
+	getSelectedPage():any{
+		return this._selectedPage;
+	}
+
 
 	getSelectedControl() {
 		return this.selectedControl;
@@ -56,26 +66,26 @@ export class JSONBuilder{
 
     changeControl(newControl: any){
     	//index of old control in array
-		let index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+		let index = jQuery.inArray(this.selectedControl, this._selectedSection.items);
 		//replace oldControl with newControl at index	
-		this.selectedSection.items[index].type = newControl;
+		this._selectedSection.items[index].type = newControl;
 	}
 
 	deleteControl() {
 		//index of old control in arra
-		let index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+		let index = jQuery.inArray(this.selectedControl, this._selectedSection.items);
 		//replace oldControl with newControl at index		
-		this.selectedSection.items.splice(index, 1);
+		this._selectedSection.items.splice(index, 1);
 
 		// choose the next selected element from template section    
-        if (this.selectedSection.items.length > 0)
-            this.selectedControl = this.selectedSection.items[0];
+        if (this._selectedSection.items.length > 0)
+            this.selectedControl = this._selectedSection.items[0];
         else
             this.selectedControl = ''; 
 	}
 	
 	multiSectionSort(sectionIndex: number,itemIndex: number,order: string[]) {	
-		var sectionItems: any[] = this.selectedPage.sections[sectionIndex - 1].items;
+		var sectionItems: any[] = this._selectedPage.sections[sectionIndex - 1].items;
 		sectionItems.splice(itemIndex, 0, this.selectedControl);
 		// delete control from out section
 		this.deleteControl();	
