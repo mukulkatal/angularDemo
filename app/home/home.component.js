@@ -16,6 +16,7 @@ var editor_component_1 = require('./components/editor.component');
 var switch_component_1 = require('./components/switch.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var JSONElement_service_1 = require('./services/JSONElement.service');
+var component_manager_component_1 = require('./components/component_manager/component_manager.component');
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
@@ -62,11 +63,37 @@ var HomeComponent = (function () {
     HomeComponent.prototype.onPreview = function () {
         localStorage.setItem('template', JSON.stringify(this.controls));
     };
+    HomeComponent.prototype.loadTemplate = function () {
+        var self = this;
+        jQuery(".sortable1").sortable({
+            connectWith: 'ul',
+            //cursor: "move",
+            cursor: "pointer",
+            opacity: 0.5,
+            revert: true,
+            scroll: false,
+            update: function () {
+                //get order from DOM
+                // let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                // console.log(order);
+                //sort the array
+                //self.jsonBuilderHelper.sort(order);
+            },
+            out: function () {
+                var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                self.jsonBuilderHelper.sort(order);
+            },
+            receive: function (event, ui) {
+                var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
+            },
+        }).disableSelection();
+    };
     HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, Template_component_1.Template, switch_component_1.Switch],
+            directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, Template_component_1.Template, switch_component_1.Switch, component_manager_component_1.ComponentManager],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'home.template.html',

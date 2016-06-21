@@ -65,6 +65,18 @@ var JSONBuilder = (function () {
         else
             this.selectedControl = '';
     };
+    JSONBuilder.prototype.multiSectionSort = function (sectionIndex, itemIndex, order) {
+        var sectionItems = this.selectedPage.sections[sectionIndex - 1].items;
+        sectionItems.splice(itemIndex, 0, this.selectedControl);
+        // delete control from out section
+        this.deleteControl();
+        //sort the parent array	
+        this.sort;
+        // sort the result section
+        jQuery.each(sectionItems, function (key, item) {
+            item.order = key + 1;
+        });
+    };
     JSONBuilder = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

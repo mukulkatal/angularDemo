@@ -17,7 +17,15 @@
     </div>
 </nav>
 <div class="row">
-	<div class="col s9" style="height:100%">
+    <div class="col s3" style="height:100%">
+    <component-manager 
+        *ngIf="controls"
+        [TemplateJson]="controls"
+        (click)="loadTemplate()"            
+    >
+    </component-manager>
+    </div>
+	<div class="col s6" style="height:100%">
 	 	<Temp 
 	 		[TempName]="TempName" 
 	 		(default_Template)="bind_Template_Json($event)"

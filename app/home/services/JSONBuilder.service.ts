@@ -73,4 +73,18 @@ export class JSONBuilder{
         else
             this.selectedControl = ''; 
 	}
+	
+	multiSectionSort(sectionIndex: number,itemIndex: number,order: string[]) {	
+		var sectionItems: any[] = this.selectedPage.sections[sectionIndex - 1].items;
+		sectionItems.splice(itemIndex, 0, this.selectedControl);
+		// delete control from out section
+		this.deleteControl();	
+		//sort the parent array	
+		this.sort;
+		// sort the result section
+		jQuery.each(sectionItems, function(key, item) {
+			item.order = key+1;
+		});
+	}
+
 }

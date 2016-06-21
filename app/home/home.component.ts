@@ -6,13 +6,14 @@ import { Editor } from './components/editor.component';
 import { Switch } from './components/switch.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
 import { JSONElement } from './services/JSONElement.service';
+import { ComponentManager } from './components/component_manager/component_manager.component';
 
 declare var jQuery: any;
 
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    directives: [RouterLink, Control, Editor, Template, Switch],
+    directives: [RouterLink, Control, Editor, Template, Switch, ComponentManager],
     providers: [JSONBuilder, JSONElement],
     viewProviders: [],
     templateUrl: 'home.template.html',
@@ -78,5 +79,33 @@ export class HomeComponent implements OnInit{
     
     onPreview(){
         localStorage.setItem('template',JSON.stringify(this.controls));
+    }
+
+    loadTemplate() {
+        let self = this;
+        jQuery(".sortable1").sortable({
+            connectWith: 'ul',
+            //cursor: "move",
+            cursor: "pointer",
+            opacity: 0.5,
+            revert: true,
+            scroll: false,           
+            update: function() {               
+                //get order from DOM
+                // let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                // console.log(order);
+                //sort the array
+                //self.jsonBuilderHelper.sort(order);
+            },
+            out: function() {                
+                let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                self.jsonBuilderHelper.sort(order);
+            },
+            receive:
+            function(event, ui) {                          
+                let order = jQuery(this).sortable("toArray", { attribute: "data-order" });               
+                self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
+            },
+        }).disableSelection();
     }
 }
