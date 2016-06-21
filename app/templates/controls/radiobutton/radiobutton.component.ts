@@ -28,7 +28,6 @@ export class RadioButton implements OnInit {
   value: string;
 
   ngOnInit() {
-    console.log('Done');
   }
  
 

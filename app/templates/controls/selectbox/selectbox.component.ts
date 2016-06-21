@@ -23,8 +23,7 @@ export class SelectBox implements OnInit{
   @Input() data: any;
   value: string;
   
-  ngOnInit(){
-    console.log('Done');
+  ngOnInit() {
   }
 
 }

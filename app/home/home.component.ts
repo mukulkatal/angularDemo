@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RouterLink } from '@angular/router-deprecated';
 import {Control} from '../templates/controls/control.component';
-import { Template } from '../templates/templateAll/Template.component';
+import { TemplateDev } from '../templates/templateAll/templateDev.component';
 import { Editor } from './components/editor.component';
 import { Switch } from './components/switch.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
@@ -13,7 +13,7 @@ declare var jQuery: any;
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    directives: [RouterLink, Control, Editor, Template, Switch, ComponentManager],
+    directives: [RouterLink, Control, Editor, TemplateDev, Switch, ComponentManager],
     providers: [JSONBuilder, JSONElement],
     viewProviders: [],
     templateUrl: 'home.template.html',
@@ -25,8 +25,7 @@ declare var jQuery: any;
 
 export class HomeComponent implements OnInit{
     controls: any[];
-    TempName : any = "Temp-1" ;  
-    selectedComponent: any; 
+    TempName : any = "Temp-1" ;
     elements: any[];
     ngOnInit(){
     }
@@ -61,15 +60,6 @@ export class HomeComponent implements OnInit{
 
     constructor(private jsonBuilderHelper: JSONBuilder, private jsonElementHandler: JSONElement) {
         this.elements = jsonElementHandler.allAvailableElements();
-    }
-
-    onComponentSelect(component){
-        this.selectedComponent = component;
-        this.jsonBuilderHelper.setTemplate(this.selectedComponent.section.items);
-    }
-
-    changeControl(control){
-        this.selectedComponent.control = control;
     }
 
     onClick(e){

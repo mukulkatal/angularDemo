@@ -13,7 +13,6 @@ var TextArea = (function () {
     function TextArea() {
     }
     TextArea.prototype.ngOnInit = function () {
-        console.log('Done');
     };
     __decorate([
         core_1.Input(), 
