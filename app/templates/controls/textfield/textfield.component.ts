@@ -16,7 +16,6 @@ export class TextField implements OnInit{
   value: string;
   
   ngOnInit(){
-    console.log('Done');
   }
 
 }

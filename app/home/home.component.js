@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var control_component_1 = require('../templates/controls/control.component');
-var Template_component_1 = require('../templates/templateAll/Template.component');
+var templateDev_component_1 = require('../templates/templateAll/templateDev.component');
 var editor_component_1 = require('./components/editor.component');
 var switch_component_1 = require('./components/switch.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
@@ -48,13 +48,6 @@ var HomeComponent = (function () {
             }
         }).disableSelection();
     };
-    HomeComponent.prototype.onComponentSelect = function (component) {
-        this.selectedComponent = component;
-        this.jsonBuilderHelper.setTemplate(this.selectedComponent.section.items);
-    };
-    HomeComponent.prototype.changeControl = function (control) {
-        this.selectedComponent.control = control;
-    };
     HomeComponent.prototype.onClick = function (e) {
         var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
         this.jsonBuilderHelper.addNewChild(jsonElement);
@@ -66,7 +59,7 @@ var HomeComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, Template_component_1.Template, switch_component_1.Switch],
+            directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, templateDev_component_1.TemplateDev, switch_component_1.Switch],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
             templateUrl: 'home.template.html',

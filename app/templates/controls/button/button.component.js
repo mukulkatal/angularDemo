@@ -13,7 +13,6 @@ var Button = (function () {
     function Button() {
     }
     Button.prototype.ngOnInit = function () {
-        console.log('Done');
     };
     __decorate([
         core_1.Input(), 

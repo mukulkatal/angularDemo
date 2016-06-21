@@ -13,7 +13,6 @@ export class Button implements OnInit {
 	value: string;
 
 	ngOnInit() {
-		console.log('Done');
 	}
 
 }

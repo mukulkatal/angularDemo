@@ -13,7 +13,6 @@ var Logo = (function () {
     function Logo() {
     }
     Logo.prototype.ngOnInit = function () {
-        console.log('Done');
     };
     __decorate([
         core_1.Input(), 

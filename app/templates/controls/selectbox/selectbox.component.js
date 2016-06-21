@@ -13,7 +13,6 @@ var SelectBox = (function () {
     function SelectBox() {
     }
     SelectBox.prototype.ngOnInit = function () {
-        console.log('Done');
     };
     __decorate([
         core_1.Input(), 

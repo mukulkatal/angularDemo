@@ -13,7 +13,6 @@ export class Slider implements OnInit {
 	value: string;
 
 	ngOnInit() {
-		console.log('Done');
 	}
 
 }

@@ -14,7 +14,6 @@ export class TextArea implements OnInit{
   value: string;
   
   ngOnInit(){
-    console.log('Done');
   }
 
 }
