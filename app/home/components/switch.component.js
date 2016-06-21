@@ -17,7 +17,7 @@ var Switch = (function () {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.control_selected = new core_1.EventEmitter();
         this.controls = [
-            'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button'
+            'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button', 'slider'
         ];
     }
     /*
