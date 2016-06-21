@@ -16,7 +16,7 @@ var Switch = (function () {
         this.jsonElementHandler = jsonElementHandler;
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.controls = [
-            'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button'
+            'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button', 'slider'
         ];
     }
     /*

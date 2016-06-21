@@ -18,7 +18,7 @@ import { JSONElement } from '../services/JSONElement.service';
 export class Switch {
 
     controls: string[] = [
-		'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button'
+		'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button','slider'
     ];
 	constructor(private jsonElementHandler: JSONElement ,private jsonBuilderHelper : JSONBuilder ) { 		
 	}
