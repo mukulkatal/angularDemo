@@ -34,6 +34,6 @@ export class TemplateDev implements OnInit {
     // bind Template Json from template parent
     bind_Template_Json(template: any) {
         this.jsonBuilderHelper.setTemplate(template);
-        this.default_Template.emit({ defaulttemp: template });
+        this.default_Template.emit(template);
     }
 }

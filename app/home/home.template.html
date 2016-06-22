@@ -20,7 +20,7 @@
     <div class="col s3" style="height:100%">
     <component-manager 
         *ngIf="controls"
-        [TemplateJson]="controls"          
+        (mouseup)="reloadView()"      
     >
     </component-manager>
     </div>

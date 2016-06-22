@@ -700,7 +700,7 @@ var Template1Component = (function () {
         if (template) {
             this.defaultJson = JSON.parse(template);
         }
-        this.default_Template.emit({ defaulttemp: this.defaultJson });
+        this.default_Template.emit(this.defaultJson);
     };
     /*  ---
         when control is selected from particluar template then it pass to parent

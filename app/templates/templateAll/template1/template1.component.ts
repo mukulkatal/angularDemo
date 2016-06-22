@@ -725,7 +725,7 @@ export class Template1Component implements OnInit
         if(template){
             this.defaultJson = JSON.parse(template);
         }    
-        this.default_Template.emit({defaulttemp:this.defaultJson});
+        this.default_Template.emit(this.defaultJson);
     }
 
   

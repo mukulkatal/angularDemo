@@ -4,7 +4,7 @@ declare var jQuery: any;
 @Injectable()
 export class JSONBuilder{
 	
-	private JSONTemplate: any[];
+	private JSONTemplate: any;
 	private selectedControl: any;
 	private selectedSection: any;
 	private selectedPage: any;
@@ -34,7 +34,7 @@ export class JSONBuilder{
 		this.selectedSection.items.sort((a, b) => ((a.order < b.order) ? -1 : ((a.order > b.order) ? 1 : 0)));
 	}
 
-	getJSONBuilt(): any[] {
+	getJSONBuilt(): any {
 		return this.JSONTemplate;
 	}
 
