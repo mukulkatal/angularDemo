@@ -4,10 +4,15 @@ import { Component, Input } from '@angular/core';
 	template:`
 		<div>
 			Title :<input type="text" [(ngModel)] = "control.props.title" />
-			Help Text : <input type="text" [(ngModel)] = "control.props.helpText" />
-			
-			Show Description : <input type="text" [(ngModel)] = "control.config.showHelp" />
-		</div>		
+			Help Text : <input type="text" [(ngModel)] = "control.props.helpText" />			
+			Show Description : 
+			<p>
+		      <input name="group1" [(ngModel)]="control.config.showHelp" type="checkbox" id="test1" />
+		      <label for="test1">Show Description</label>
+		    </p>
+
+
+		</div>			
 	`
 
 })//<input type="text" [(ngModel)] = "control.config.placeholder" />

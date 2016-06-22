@@ -9,8 +9,7 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
    <div> title : {{data.props.title}}  </div>
    <div> helptext : {{data.props.helpText}}  </div>
     <p *ngFor="let radio_item of data.options, let i = index">
-        <input  
-            [(ngModel)]="radio_item.value"
+        <input
             type="radio"
             id="radio{{i}}"
             class="validate"
