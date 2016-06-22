@@ -1,5 +1,4 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {JSONBuilder} from '../services/JSONBuilder.service';
 import {JSONElement} from '../services/JSONElement.service';
 
 declare var math:any;
@@ -15,34 +14,27 @@ declare var math:any;
 })
 
 export class FinalFormula {
-    finalFormula = "0";
+    finalFormula:any;
+    finalValue:any;
+    @Output() emit1 = new EventEmitter();
+    @Output() emit2 = new EventEmitter();
 
-    @Output()
-    toggle = new EventEmitter<Object>();
-    finalValue = math.eval(this.finalFormula);
 
-    constructor(private jsonElementHandler:JSONElement, private jsonBuilderHelper:JSONBuilder) {
-    }
-
-    eachRecursive(obj) {
+    reccusiveTraverse(obj) {
         for (var k in obj) {
-            if (typeof obj[k] == "object" && obj[k] !== null)
-                this.eachRecursive(obj[k]);
-            else {
-                if (k == 'operator'||k=='operVal') {
-                    this.finalFormula += obj[k].toString();
-
-                }
-            }
+            if (k == 'formula' && obj[k].isSelected)
+                this.finalFormula += obj[k].operator + obj[k].operVal;
+            else if (typeof obj[k] == "object" && obj[k] !== null)
+                this.reccusiveTraverse(obj[k]);
         }
     }
 
     onClick() {
-
         this.finalFormula = '';
-        this.eachRecursive(this.jsonBuilderHelper.getJSONBuilt());
+        this.reccusiveTraverse(JSON.parse(localStorage.getItem('template')));
         this.finalFormula = this.finalFormula.substr(1, this.finalFormula.length);
         this.finalValue = math.eval(this.finalFormula);
-        this.toggle.emit(this.finalValue);
+        this.emit1.emit(this.finalFormula);
+        this.emit2.emit(this.finalValue);
     }
 }

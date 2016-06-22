@@ -29,8 +29,8 @@ var HomeComponent = (function () {
     HomeComponent.prototype.ngOnInit = function () {
     };
     /*
-    --  output from the templates for default json and handle selected control
-    */
+     --  output from the templates for default json and handle selected control
+     */
     HomeComponent.prototype.bind_Template_Json = function (data) {
         this.controls = data.defaulttemp.defaulttemp;
         //drag and sort elements in a section

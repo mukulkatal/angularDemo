@@ -1,14 +1,13 @@
 import {Component, Input, Output} from '@angular/core';
 import {JSONBuilder} from '../services/JSONBuilder.service';
 import {JSONElement} from '../services/JSONElement.service';
-import {OnInit} from "@angular/core";
 
 @Component({
     selector: 'formula-switch',
     providers: [JSONElement],
     template: `
 		<select (change)="onChange($event)" class="display">
-			<option *ngFor="let operator of operators" value="{{operator}}"  [selected]="(jsonBuilderHelper.getSelectedControl().props.operator==operator)">{{operator}}</option>
+			<option *ngFor="let operator of operators" value="{{operator}}" [selected]="(jsonBuilderHelper.getSelectedControl().props.formula.operator==operator)" >{{operator}}</option>
 		</select>
 	`,
     styles: ['.display{display:block}']
@@ -16,14 +15,19 @@ import {OnInit} from "@angular/core";
 
 export class FormulaSwitch {
 
-    operators:string[] = [ '+', '-', '/', '*', '^', 'log' ];
+    operators:string[] = ['+', '-', '/', '*', '^', 'log'];
 
     constructor(private jsonElementHandler:JSONElement, private jsonBuilderHelper:JSONBuilder) {
     }
-   onChange($event) {
+//[selected]="(jsonBuilderHelper.getSelectedControl().props.formula.operator==operator)"
+    onChange($event) {
         let operator = $event.target.value;
-        this.jsonBuilderHelper.getSelectedControl().props.operator = operator;
-        this.jsonBuilderHelper.getSelectedControl().props.operVal = 50;
-        console.log("elemenati" + this.jsonBuilderHelper.getSelectedControl().props.operator +" "+ operator+ " " + (this.jsonBuilderHelper.getSelectedControl().props.operator==operator)+ " "+ this.jsonBuilderHelper.getSelectedControl().props.hasOwnProperty('operator'));
+
+        this.jsonBuilderHelper.getSelectedControl().props.formula={};
+        this.jsonBuilderHelper.getSelectedControl().props.formula.operator = operator;
+        this.jsonBuilderHelper.getSelectedControl().props.formula.operVal = 50;
+        this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = true;
+        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt().defaulttemp));
+        // console.log("elemenati" + this.jsonBuilderHelper.getSelectedControl().props.operator +" "+ operator+ " " + (this.jsonBuilderHelper.getSelectedControl().props.operator==operator)+ " "+ this.jsonBuilderHelper.getSelectedControl().props.hasOwnProperty('operator'));
     }
 }

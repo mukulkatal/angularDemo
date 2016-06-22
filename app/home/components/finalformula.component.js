@@ -9,38 +9,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var JSONBuilder_service_1 = require('../services/JSONBuilder.service');
 var JSONElement_service_1 = require('../services/JSONElement.service');
 var FinalFormula = (function () {
-    function FinalFormula(jsonElementHandler, jsonBuilderHelper) {
-        this.jsonElementHandler = jsonElementHandler;
-        this.jsonBuilderHelper = jsonBuilderHelper;
-        this.finalFormula = "0";
-        this.toggle = new core_1.EventEmitter();
-        this.finalValue = math.eval(this.finalFormula);
+    function FinalFormula() {
+        this.emit1 = new core_1.EventEmitter();
+        this.emit2 = new core_1.EventEmitter();
     }
-    FinalFormula.prototype.eachRecursive = function (obj) {
+    FinalFormula.prototype.reccusiveTraverse = function (obj) {
         for (var k in obj) {
-            if (typeof obj[k] == "object" && obj[k] !== null)
-                this.eachRecursive(obj[k]);
-            else {
-                if (k == 'operator' || k == 'operVal') {
-                    this.finalFormula += obj[k].toString();
-                }
-            }
+            if (k == 'formula' && obj[k].isSelected)
+                this.finalFormula += obj[k].operator + obj[k].operVal;
+            else if (typeof obj[k] == "object" && obj[k] !== null)
+                this.reccusiveTraverse(obj[k]);
         }
     };
     FinalFormula.prototype.onClick = function () {
         this.finalFormula = '';
-        this.eachRecursive(this.jsonBuilderHelper.getJSONBuilt());
+        this.reccusiveTraverse(JSON.parse(localStorage.getItem('template')));
         this.finalFormula = this.finalFormula.substr(1, this.finalFormula.length);
         this.finalValue = math.eval(this.finalFormula);
-        this.toggle.emit(this.finalValue);
+        this.emit1.emit(this.finalFormula);
+        this.emit2.emit(this.finalValue);
     };
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], FinalFormula.prototype, "toggle", void 0);
+    ], FinalFormula.prototype, "emit1", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], FinalFormula.prototype, "emit2", void 0);
     FinalFormula = __decorate([
         core_1.Component({
             selector: 'final-formula',
@@ -48,7 +46,7 @@ var FinalFormula = (function () {
             template: "\n\t<p (click)=\"onClick()\" >Formula : {{finalFormula}}</p>\n\t<h3 >Amount : {{finalValue}}</h3>\n\t",
             styles: ['.display{display:block}']
         }), 
-        __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])
+        __metadata('design:paramtypes', [])
     ], FinalFormula);
     return FinalFormula;
 }());
