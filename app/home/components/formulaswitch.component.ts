@@ -16,15 +16,11 @@ import {OnInit} from "@angular/core";
 
 export class FormulaSwitch {
 
-    operators:string[] = [
-        '+', '-', '/', '*', '^', 'log'
-    ];
+    operators:string[] = [ '+', '-', '/', '*', '^', 'log' ];
 
     constructor(private jsonElementHandler:JSONElement, private jsonBuilderHelper:JSONBuilder) {
     }
-  //  hasOwnProperty('operator')
-// [selected]="!this.jsonBuilderHelper.getSelectedControl().props.hasOwnProperty('operator')||(this.jsonBuilderHelper.getSelectedControl().props.operator==operator)"
-    onChange($event) {
+   onChange($event) {
         let operator = $event.target.value;
         this.jsonBuilderHelper.getSelectedControl().props.operator = operator;
         this.jsonBuilderHelper.getSelectedControl().props.operVal = 50;

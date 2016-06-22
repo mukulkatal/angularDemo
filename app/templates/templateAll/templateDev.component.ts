@@ -1,6 +1,6 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { TEMPLATES } from './templates';
-import { JSONBuilder } from '../../home/services/JSONBuilder.service';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+import {TEMPLATES} from './templates';
+import {JSONBuilder} from '../../home/services/JSONBuilder.service';
 
 @Component({
     selector: "Temp",
@@ -24,7 +24,7 @@ export class TemplateDev implements OnInit {
 
     @Output() default_Template = new EventEmitter();
 
-    constructor(private jsonBuilderHelper: JSONBuilder) {
+    constructor(private jsonBuilderHelper:JSONBuilder) {
 
     }
 
@@ -32,8 +32,8 @@ export class TemplateDev implements OnInit {
     }
 
     // bind Template Json from template parent
-    bind_Template_Json(template: any) {
+    bind_Template_Json(template:any) {
         this.jsonBuilderHelper.setTemplate(template);
-        this.default_Template.emit({ defaulttemp: template });
+        this.default_Template.emit({defaulttemp: template});
     }
 }

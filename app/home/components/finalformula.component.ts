@@ -24,7 +24,6 @@ export class FinalFormula {
     constructor(private jsonElementHandler:JSONElement, private jsonBuilderHelper:JSONBuilder) {
     }
 
-
     eachRecursive(obj) {
         for (var k in obj) {
             if (typeof obj[k] == "object" && obj[k] !== null)

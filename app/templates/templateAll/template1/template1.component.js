@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var sections_component_1 = require('./components/sections.component');
 var control_component_1 = require('../../../templates/controls/control.component');
+var finalformula_component_1 = require("../../../home/components/finalformula.component");
 var Template1Component = (function () {
     function Template1Component() {
         this.default_Template = new core_1.EventEmitter();
@@ -19,8 +20,8 @@ var Template1Component = (function () {
         this.selected_page = new core_1.EventEmitter();
         //@Input() jsonTemplate;
         /*  ---
-            default json of the template
-        */
+         default json of the template
+         */
         this.defaultJson = {
             "app": {
                 "pages": [{
@@ -694,8 +695,8 @@ var Template1Component = (function () {
     }
     Template1Component.prototype.ngOnInit = function () {
         /*  ---
-            end json on init for initialize the json
-        */
+         end json on init for initialize the json
+         */
         var template = localStorage.getItem('template');
         if (template) {
             this.defaultJson = JSON.parse(template);
@@ -703,9 +704,9 @@ var Template1Component = (function () {
         this.default_Template.emit({ defaulttemp: this.defaultJson });
     };
     /*  ---
-        when control is selected from particluar template then it pass to parent
-        template component (i.e Template.ts) and then parent template component pass to home component
-    */
+     when control is selected from particluar template then it pass to parent
+     template component (i.e Template.ts) and then parent template component pass to home component
+     */
     Template1Component.prototype.selectControl = function (control) {
         this.selected_control.emit(control);
     };
@@ -734,7 +735,7 @@ var Template1Component = (function () {
     Template1Component = __decorate([
         core_1.Component({
             selector: 'Temp-1',
-            directives: [control_component_1.Control, sections_component_1.SectionComponent],
+            directives: [control_component_1.Control, sections_component_1.SectionComponent, finalformula_component_1.FinalFormula],
             viewProviders: [],
             templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
             styleUrls: ['node_modules/materialize-css/dist/css/materialize.min.css'],

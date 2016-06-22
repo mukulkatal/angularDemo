@@ -5,6 +5,7 @@ import {Control} from '../../../controls/control.component';
     selector:'section',
      directives: [Control],
     template:`
+
         <ng-content></ng-content>
     `
 })

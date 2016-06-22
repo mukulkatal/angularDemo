@@ -30,7 +30,7 @@ var Template = (function () {
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.TEMPLATES],
-            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\"></Temp-2>\n        </div>\n        \n      ",
+            template: "     \n     \n        <div [ngSwitch]=\"Temp_name\">\n        <div> \n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\"></Temp-2>\n        </div>\n        \n      ",
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
     ], Template);

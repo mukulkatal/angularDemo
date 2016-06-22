@@ -15,12 +15,8 @@ var FormulaSwitch = (function () {
     function FormulaSwitch(jsonElementHandler, jsonBuilderHelper) {
         this.jsonElementHandler = jsonElementHandler;
         this.jsonBuilderHelper = jsonBuilderHelper;
-        this.operators = [
-            '+', '-', '/', '*', '^', 'log'
-        ];
+        this.operators = ['+', '-', '/', '*', '^', 'log'];
     }
-    //  hasOwnProperty('operator')
-    // [selected]="!this.jsonBuilderHelper.getSelectedControl().props.hasOwnProperty('operator')||(this.jsonBuilderHelper.getSelectedControl().props.operator==operator)"
     FormulaSwitch.prototype.onChange = function ($event) {
         var operator = $event.target.value;
         this.jsonBuilderHelper.getSelectedControl().props.operator = operator;
