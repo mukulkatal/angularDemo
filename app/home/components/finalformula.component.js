@@ -18,9 +18,6 @@ var FinalFormula = (function () {
         this.finalFormula = "0";
         this.toggle = new core_1.EventEmitter();
         this.finalValue = math.eval(this.finalFormula);
-        this.controls = [
-            'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button', 'slider'
-        ];
     }
     FinalFormula.prototype.eachRecursive = function (obj) {
         for (var k in obj) {
@@ -33,9 +30,7 @@ var FinalFormula = (function () {
             }
         }
     };
-    FinalFormula.prototype.onClick = function ($event) {
-        //  console.log(this.jsonBuilderHelper.getSelectedPage().finalFormula);
-        //console.log(this.jsonBuilderHelper.getJSONBuilt());
+    FinalFormula.prototype.onClick = function () {
         this.finalFormula = '';
         this.eachRecursive(this.jsonBuilderHelper.getJSONBuilt());
         this.finalFormula = this.finalFormula.substr(1, this.finalFormula.length);
@@ -50,7 +45,7 @@ var FinalFormula = (function () {
         core_1.Component({
             selector: 'final-formula',
             providers: [JSONElement_service_1.JSONElement],
-            template: "\n\t<p (click)=\"onClick(event)\" >Formula : {{finalFormula}}</p>\n\t<h3 >Amount : {{finalValue}}</h3>\n\t",
+            template: "\n\t<p (click)=\"onClick()\" >Formula : {{finalFormula}}</p>\n\t<h3 >Amount : {{finalValue}}</h3>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])

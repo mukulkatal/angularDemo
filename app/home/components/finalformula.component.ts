@@ -8,7 +8,7 @@ declare var math:any;
     selector: 'final-formula',
     providers: [JSONElement],
     template: `
-	<p (click)="onClick(event)" >Formula : {{finalFormula}}</p>
+	<p (click)="onClick()" >Formula : {{finalFormula}}</p>
 	<h3 >Amount : {{finalValue}}</h3>
 	`,
     styles: ['.display{display:block}']
@@ -19,16 +19,11 @@ export class FinalFormula {
 
     @Output()
     toggle = new EventEmitter<Object>();
-
     finalValue = math.eval(this.finalFormula);
-    controls:string[] = [
-        'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button', 'slider'
-    ];
 
     constructor(private jsonElementHandler:JSONElement, private jsonBuilderHelper:JSONBuilder) {
     }
 
-    function
 
     eachRecursive(obj) {
         for (var k in obj) {
@@ -42,10 +37,7 @@ export class FinalFormula {
         }
     }
 
-    onClick($event) {
-        //  console.log(this.jsonBuilderHelper.getSelectedPage().finalFormula);
-
-        //console.log(this.jsonBuilderHelper.getJSONBuilt());
+    onClick() {
 
         this.finalFormula = '';
         this.eachRecursive(this.jsonBuilderHelper.getJSONBuilt());
