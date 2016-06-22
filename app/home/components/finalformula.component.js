@@ -24,7 +24,7 @@ var FinalFormula = (function () {
             if (typeof obj[k] == "object" && obj[k] !== null)
                 this.eachRecursive(obj[k]);
             else {
-                if (k == 'operator') {
+                if (k == 'operator' || k == 'operVal') {
                     this.finalFormula += obj[k].toString();
                 }
             }
