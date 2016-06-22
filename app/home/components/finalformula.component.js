@@ -22,14 +22,25 @@ var FinalFormula = (function () {
             'text-area', 'textfield', 'selectbox', 'radio-button', 'header', 'logo', 'click-button', 'slider'
         ];
     }
+    FinalFormula.prototype.eachRecursive = function (obj) {
+        for (var k in obj) {
+            if (typeof obj[k] == "object" && obj[k] !== null)
+                this.eachRecursive(obj[k]);
+            else {
+                if (k == 'operator') {
+                    this.finalFormula += obj[k].toString();
+                }
+            }
+        }
+    };
     FinalFormula.prototype.onClick = function ($event) {
-        console.log(this.jsonBuilderHelper.getSelectedPage().finalFormula);
-        //    let operator = $event.target.value;
-        //   if (this.jsonBuilderHelper.getSelectedPage().finalFormula)
-        this.finalFormula = this.jsonBuilderHelper.getSelectedPage().finalFormula;
+        //  console.log(this.jsonBuilderHelper.getSelectedPage().finalFormula);
+        //console.log(this.jsonBuilderHelper.getJSONBuilt());
+        this.finalFormula = '';
+        this.eachRecursive(this.jsonBuilderHelper.getJSONBuilt());
+        this.finalFormula = this.finalFormula.substr(1, this.finalFormula.length);
         this.finalValue = math.eval(this.finalFormula);
         this.toggle.emit(this.finalValue);
-        // this.jsonBuilderHelper.getSelectedControl().props.operator = operator + this.elementValue;
     };
     __decorate([
         core_1.Output(), 

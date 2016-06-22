@@ -25,9 +25,9 @@ var FormulaSwitch = (function () {
      */
     FormulaSwitch.prototype.onChange = function ($event) {
         var operator = $event.target.value;
-        this.jsonBuilderHelper.getSelectedPage().finalFormula ?
-            this.jsonBuilderHelper.getSelectedPage().finalFormula += operator + this.elementValue :
-            this.jsonBuilderHelper.getSelectedPage().finalFormula = this.elementValue;
+        // this.jsonBuilderHelper.getSelectedPage().finalFormula ?
+        //     this.jsonBuilderHelper.getSelectedPage().finalFormula += operator + this.elementValue :
+        //     this.jsonBuilderHelper.getSelectedPage().finalFormula = this.elementValue;
         this.jsonBuilderHelper.getSelectedControl().props.operator = operator + this.elementValue;
     };
     FormulaSwitch = __decorate([

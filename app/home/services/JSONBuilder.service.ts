@@ -95,6 +95,7 @@ export class JSONBuilder{
 		jQuery.each(sectionItems, function(key, item) {
 			item.order = key+1;
 		});
+		
 	}
 
 }
