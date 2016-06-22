@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var JSONElement_service_1 = require('../services/JSONElement.service');
+var JSONBuilder_service_1 = require("../services/JSONBuilder.service");
 var FinalFormula = (function () {
-    function FinalFormula() {
+    function FinalFormula(_jsonBuilder) {
+        this._jsonBuilder = _jsonBuilder;
         this.emit1 = new core_1.EventEmitter();
         this.emit2 = new core_1.EventEmitter();
     }
@@ -25,6 +27,7 @@ var FinalFormula = (function () {
     };
     FinalFormula.prototype.onClick = function () {
         this.finalFormula = '';
+        console.log(this._jsonBuilder.getSelectedControl());
         this.reccusiveTraverse(JSON.parse(localStorage.getItem('template')));
         this.finalFormula = this.finalFormula.substr(1, this.finalFormula.length);
         this.finalValue = math.eval(this.finalFormula);
@@ -46,7 +49,7 @@ var FinalFormula = (function () {
             template: "\n\t<p (click)=\"onClick()\" >Formula : {{finalFormula}}</p>\n\t<h3 >Amount : {{finalValue}}</h3>\n\t",
             styles: ['.display{display:block}']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder])
     ], FinalFormula);
     return FinalFormula;
 }());

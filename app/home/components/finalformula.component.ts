@@ -1,5 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {JSONElement} from '../services/JSONElement.service';
+import {JSONBuilder} from "../services/JSONBuilder.service";
 
 declare var math:any;
 
@@ -19,6 +20,9 @@ export class FinalFormula {
     @Output() emit1 = new EventEmitter();
     @Output() emit2 = new EventEmitter();
 
+    constructor(private _jsonBuilder: JSONBuilder) {
+
+    }
 
     reccusiveTraverse(obj) {
         for (var k in obj) {
@@ -31,6 +35,7 @@ export class FinalFormula {
 
     onClick() {
         this.finalFormula = '';
+        console.log(this._jsonBuilder.getSelectedControl());
         this.reccusiveTraverse(JSON.parse(localStorage.getItem('template')));
         this.finalFormula = this.finalFormula.substr(1, this.finalFormula.length);
         this.finalValue = math.eval(this.finalFormula);
