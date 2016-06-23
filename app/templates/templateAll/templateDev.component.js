@@ -21,7 +21,7 @@ var TemplateDev = (function () {
     // bind Template Json from template parent
     TemplateDev.prototype.bind_Template_Json = function (template) {
         this.jsonBuilderHelper.setTemplate(template);
-        this.default_Template.emit({ defaulttemp: template });
+        this.default_Template.emit(template);
     };
     __decorate([
         core_1.Input('TempName'), 

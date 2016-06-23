@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterViewInit} from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit,Output,EventEmitter} from '@angular/core';
 import {Control} from '../../../templates/controls/control.component';
 import { JSONBuilder } from '../../services/JSONBuilder.service';
 
@@ -9,8 +9,8 @@ declare var jQuery: any;
 	directives: [Control],
 	template: `
 	
-	<div *ngFor="let page of TemplateJson.app.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
-		<ul 
+	<div   *ngFor="let page of templateJson.app.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
+		<ul 			
 			*ngFor="let section of page.sections"		
 			[attr.data-section]="section.order"
 			class="col s12 m12 sortable1 mt40 z-depth-3"
@@ -30,10 +30,10 @@ declare var jQuery: any;
 })
 
 export class ComponentManager implements AfterViewInit {
-	@Input('TemplateJson') TemplateJson: any;
-	controlJson: any;
+	templateJson: any;
 
 	constructor(private jsonBuilderHelper: JSONBuilder){
+		this.templateJson = jsonBuilderHelper.getJSONBuilt();
 	}
 
 	ngAfterViewInit(){
@@ -60,7 +60,7 @@ export class ComponentManager implements AfterViewInit {
             function(event, ui) {
                 let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
                 self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
-            },
+			},
         }).disableSelection();
     }
 

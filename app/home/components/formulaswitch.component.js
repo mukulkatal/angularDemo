@@ -30,7 +30,7 @@ var FormulaSwitch = (function () {
         core_1.Component({
             selector: 'formula-switch',
             providers: [JSONElement_service_1.JSONElement],
-            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option *ngFor=\"let operator of operators\" value=\"{{operator}}\" [selected]=\"(jsonBuilderHelper.getSelectedControl().props.formula.operator==operator)\" >{{operator}}</option>\n\t\t</select>\n\t",
+            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option *ngFor=\"let operator of operators\" value=\"{{operator}}\" >{{operator}}</option>\n\t\t</select>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])
