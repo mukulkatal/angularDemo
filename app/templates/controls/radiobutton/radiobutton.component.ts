@@ -1,15 +1,16 @@
-import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'radio-button',
-  directives: [],
-  viewProviders: [],
-  template: `
+    selector: 'radio-button',
+    directives: [],
+    viewProviders: [],
+    template: `
    <div> 
    <div> title : {{data.props.title}}  </div>
    <div> helptext : {{data.props.helpText}}  </div>
     <p *ngFor="let radio_item of data.options, let i = index">
         <input
+            (change)="onChange(radio_item.value)"
             type="radio"
             id="radio{{i}}"
             class="validate"
@@ -23,11 +24,15 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 	`
 })
 export class RadioButton implements OnInit {
-  @Input() data: any;
-  value: string;
+    @Input() data:any;
+    value:string;
 
-  ngOnInit() {
-  }
- 
+    ngOnInit() {
+    }
+
+    onChange(value) {
+        this.data.props.formula.operVal = value;
+        this.data.props.formula.isSelected = true;
+    }
 
 }

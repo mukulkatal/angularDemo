@@ -16,19 +16,23 @@ var FinalFormula = (function () {
         this._jsonBuilder = _jsonBuilder;
         this.emit1 = new core_1.EventEmitter();
         this.emit2 = new core_1.EventEmitter();
+        // this._jsonBuilder.setTemplate( localStorage.getItem('template'));
     }
+    FinalFormula.prototype.ngOnInit = function () {
+    };
     FinalFormula.prototype.reccusiveTraverse = function (obj) {
         for (var k in obj) {
-            if (k == 'formula' && obj[k].isSelected)
+            if (k == 'formula' && obj[k].isSelected) {
                 this.finalFormula += obj[k].operator + obj[k].operVal;
+            }
             else if (typeof obj[k] == "object" && obj[k] !== null)
                 this.reccusiveTraverse(obj[k]);
         }
     };
     FinalFormula.prototype.onClick = function () {
         this.finalFormula = '';
-        console.log(this._jsonBuilder.getSelectedControl());
-        this.reccusiveTraverse(JSON.parse(localStorage.getItem('template')));
+        this._jsonBuilder.setTemplate(this._jsonBuilder.getSelectedPage());
+        this.reccusiveTraverse(this._jsonBuilder.getJSONBuilt());
         this.finalFormula = this.finalFormula.substr(1, this.finalFormula.length);
         this.finalValue = math.eval(this.finalFormula);
         this.emit1.emit(this.finalFormula);

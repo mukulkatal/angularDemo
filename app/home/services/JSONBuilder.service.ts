@@ -40,8 +40,7 @@ export class JSONBuilder{
 	}
 
 	setSelectedControl(control: any){
-        console.log(control);
-		this.selectedControl = control;
+       this.selectedControl = control;
 	}
 
 	setSelectedSection(section: any) {

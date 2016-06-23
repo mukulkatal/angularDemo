@@ -19,15 +19,16 @@ export class FormulaSwitch {
 
     constructor(private jsonElementHandler:JSONElement, private jsonBuilderHelper:JSONBuilder) {
     }
-//[selected]="(jsonBuilderHelper.getSelectedControl().props.formula.operator==operator)"
+
     onChange($event) {
         let operator = $event.target.value;
 
         this.jsonBuilderHelper.getSelectedControl().props.formula={};
         this.jsonBuilderHelper.getSelectedControl().props.formula.operator = operator;
-        this.jsonBuilderHelper.getSelectedControl().props.formula.operVal = 50;
-        this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = true;
+       // this.jsonBuilderHelper.getSelectedControl().props.formula.operVal = 50;
+       //  this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = false;
         localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt().defaulttemp));
-        // console.log("elemenati" + this.jsonBuilderHelper.getSelectedControl().props.operator +" "+ operator+ " " + (this.jsonBuilderHelper.getSelectedControl().props.operator==operator)+ " "+ this.jsonBuilderHelper.getSelectedControl().props.hasOwnProperty('operator'));
+        // this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = true;
+
     }
 }

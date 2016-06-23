@@ -14,6 +14,10 @@ var SelectBox = (function () {
     }
     SelectBox.prototype.ngOnInit = function () {
     };
+    SelectBox.prototype.onChange = function (value) {
+        this.data.props.formula.operVal = value;
+        this.data.props.formula.isSelected = true;
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -23,7 +27,7 @@ var SelectBox = (function () {
             selector: 'selectbox',
             directives: [],
             viewProviders: [],
-            template: "\n    <div class=\"\">     \n        <select class=\"validate\" [required]=\"data.required\" class=\"display\">\n          <option  \n              *ngFor=\"let option of data.options\" \n              value=\"{{option.value}}\" \n              [selected]=\"option.selected\">\n              {{option.label}}\n          </option>\n        </select>\n    </div>\n\t",
+            template: "\n    <div class=\"\">     \n        <select class=\"validate\" [required]=\"data.required\" class=\"display\"\n        (change)=\"onChange($event.target.value)\"\n        >\n          <option  \n        \n              *ngFor=\"let option of data.options\"  \n              value=\"{{option.value}}\" \n              [selected]=\"option.selected\">\n              {{option.label}}\n          </option>\n        </select>\n    </div>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [])

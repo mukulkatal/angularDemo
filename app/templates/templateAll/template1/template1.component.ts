@@ -49,7 +49,7 @@ export class Template1Component implements OnInit {
                                     "title": "http://pngimg.com/upload/car_logo_PNG1667.png",
                                     "helpText": "testing",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -98,7 +98,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -151,7 +151,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -197,7 +197,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -243,7 +243,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal": 1,
                                         "isSelected":false
                                     }
@@ -303,7 +303,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -363,7 +363,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -423,7 +423,7 @@ export class Template1Component implements OnInit {
                                     "title": "click",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -483,7 +483,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -529,7 +529,7 @@ export class Template1Component implements OnInit {
                                     "title": "this is datepicker question",
                                     "helpText": "Choose date:",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -588,7 +588,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -634,7 +634,7 @@ export class Template1Component implements OnInit {
                                     "title": "this checkbox section question",
                                     "helpText": "SOME HELPER TEXT",
                                     "formula": {
-                                        "operator": "",
+                                        "operator": "+",
                                         "operVal":1,
                                         "isSelected":false
                                     }
@@ -688,7 +688,7 @@ export class Template1Component implements OnInit {
                                         "title": "this checkbox section question",
                                         "helpText": "SOME HELPER TEXT",
                                         "formula": {
-                                            "operator": "",
+                                            "operator": "+",
                                             "operVal":1,
                                             "isSelected":false
                                         }
@@ -734,7 +734,7 @@ export class Template1Component implements OnInit {
                                         "title": "this checkbox section question",
                                         "helpText": "SOME HELPER TEXT",
                                         "formula": {
-                                            "operator": "",
+                                            "operator": "+",
                                             "operVal":1,
                                             "isSelected":false
                                         }
