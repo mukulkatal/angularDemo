@@ -24,14 +24,14 @@ var FormulaSwitch = (function () {
         this.jsonBuilderHelper.getSelectedControl().props.formula.operator = operator;
         this.jsonBuilderHelper.getSelectedControl().props.formula.operVal = 50;
         this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = true;
-        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt().defaulttemp));
+        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt()));
         // console.log("elemenati" + this.jsonBuilderHelper.getSelectedControl().props.operator +" "+ operator+ " " + (this.jsonBuilderHelper.getSelectedControl().props.operator==operator)+ " "+ this.jsonBuilderHelper.getSelectedControl().props.hasOwnProperty('operator'));
     };
     FormulaSwitch = __decorate([
         core_1.Component({
             selector: 'formula-switch',
             providers: [JSONElement_service_1.JSONElement],
-            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option *ngFor=\"let operator of operators\" value=\"{{operator}}\" [selected]=\"(jsonBuilderHelper.getSelectedControl().props.formula.operator==operator)\" >{{operator}}</option>\n\t\t</select>\n\t",
+            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\t\t\t<option *ngFor=\"let operator of operators\" value=\"{{operator}}\" >{{operator}}</option>\n\t\t</select>\n\t",
             styles: ['.display{display:block}']
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])

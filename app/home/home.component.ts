@@ -25,12 +25,11 @@ declare var jQuery:any;
     styleUrls: ['../../node_modules/materialize-css/dist/css/materialize.min.css']
 })
 
-export class HomeComponent implements OnInit {
-    controls:any[];
-    TempName:any = "Temp-1";
-    elements:any[];
-
-    ngOnInit() {
+export class HomeComponent implements OnInit{
+    controls: any;
+    TempName : any = "Temp-1" ;
+    elements: any[];
+    ngOnInit(){
     }
 
     /*
@@ -38,9 +37,8 @@ export class HomeComponent implements OnInit {
      */
 
     bind_Template_Json(data:any) {
-
-        this.controls = data.defaulttemp.defaulttemp;
-
+        this.controls = data;
+        
         //drag and sort elements in a section
         let self = this;
         jQuery(".sortable").sortable({
@@ -72,5 +70,10 @@ export class HomeComponent implements OnInit {
 
     onPreview() {
         localStorage.setItem('template', JSON.stringify(this.controls));
+    }
+
+    reloadView()
+    {
+        setTimeout(()=>this.controls = this.jsonBuilderHelper.getJSONBuilt(),1000);
     }
 }

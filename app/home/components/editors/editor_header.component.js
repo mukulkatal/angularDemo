@@ -19,7 +19,7 @@ var EditorHeader = (function () {
     EditorHeader = __decorate([
         core_1.Component({
             selector: 'editor-header',
-            template: "\n\t\t<div>\n\t\t\tTitle :<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\t\tHelp Text : <input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\t\t\n\t\t\tShow Description : <input type=\"text\" [(ngModel)] = \"control.config.showHelp\" />\n\t\t</div>\t\t\n\t"
+            template: "\n\t\t<div>\n\t\t\tTitle :<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\t\tHelp Text : <input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\t\t\t\n\t\t\tShow Description : \n\t\t\t<p>\n\t\t      <input name=\"group1\" [(ngModel)]=\"control.config.showHelp\" type=\"checkbox\" id=\"test1\" />\n\t\t      <label for=\"test1\">Show Description</label>\n\t\t    </p>\n\n\n\t\t</div>\t\t\t\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], EditorHeader);

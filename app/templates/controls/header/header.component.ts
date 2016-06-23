@@ -7,7 +7,7 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   template: `
     <div class="header-field">
       <h3 >{{data.props.title}}</h3>
-      <p *ngIf="data.config.type==1">{{data.props.helpText}}</p>
+      <p *ngIf="data.config.showHelp==1">{{data.props.helpText}}</p>
     </div>
 	`
 })

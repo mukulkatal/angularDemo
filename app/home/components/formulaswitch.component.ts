@@ -7,7 +7,7 @@ import {JSONElement} from '../services/JSONElement.service';
     providers: [JSONElement],
     template: `
 		<select (change)="onChange($event)" class="display">
-			<option *ngFor="let operator of operators" value="{{operator}}" [selected]="(jsonBuilderHelper.getSelectedControl().props.formula.operator==operator)" >{{operator}}</option>
+			<option *ngFor="let operator of operators" value="{{operator}}" >{{operator}}</option>
 		</select>
 	`,
     styles: ['.display{display:block}']
@@ -27,7 +27,7 @@ export class FormulaSwitch {
         this.jsonBuilderHelper.getSelectedControl().props.formula.operator = operator;
         this.jsonBuilderHelper.getSelectedControl().props.formula.operVal = 50;
         this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = true;
-        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt().defaulttemp));
+        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt()));
         // console.log("elemenati" + this.jsonBuilderHelper.getSelectedControl().props.operator +" "+ operator+ " " + (this.jsonBuilderHelper.getSelectedControl().props.operator==operator)+ " "+ this.jsonBuilderHelper.getSelectedControl().props.hasOwnProperty('operator'));
     }
 }
