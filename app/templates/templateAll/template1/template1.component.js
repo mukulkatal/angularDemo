@@ -38,6 +38,11 @@ var Template1Component = (function () {
                                         "props": {
                                             "title": "http://pngimg.com/upload/car_logo_PNG1667.png",
                                             "helpText": "testing",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -81,7 +86,12 @@ var Template1Component = (function () {
                                         "type": "header",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -129,7 +139,12 @@ var Template1Component = (function () {
                                         "type": "textfield",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -170,7 +185,12 @@ var Template1Component = (function () {
                                         "type": "text-area",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -211,7 +231,12 @@ var Template1Component = (function () {
                                         "type": "selectbox",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -265,7 +290,12 @@ var Template1Component = (function () {
                                         "type": "radio-button",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "radio",
@@ -319,7 +349,12 @@ var Template1Component = (function () {
                                         "type": "header",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "header",
@@ -373,7 +408,12 @@ var Template1Component = (function () {
                                         "type": "click-button",
                                         "props": {
                                             "title": "click",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "click-button",
@@ -427,7 +467,12 @@ var Template1Component = (function () {
                                         "type": "slider",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -468,7 +513,12 @@ var Template1Component = (function () {
                                         "type": "date-picker",
                                         "props": {
                                             "title": "this is datepicker question",
-                                            "helpText": "Choose date:"
+                                            "helpText": "Choose date:",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -520,7 +570,12 @@ var Template1Component = (function () {
                                         "type": "textfield",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -561,7 +616,12 @@ var Template1Component = (function () {
                                         "type": "text-area",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -608,7 +668,12 @@ var Template1Component = (function () {
                                         "type": "text-area",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -649,7 +714,12 @@ var Template1Component = (function () {
                                         "type": "textfield",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",

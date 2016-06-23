@@ -40,6 +40,7 @@ export class JSONBuilder{
 	}
 
 	setSelectedControl(control: any){
+        console.log(control);
 		this.selectedControl = control;
 	}
 
