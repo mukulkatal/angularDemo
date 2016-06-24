@@ -26,7 +26,8 @@ export class TemplateDev implements OnInit {
     @Input('TempName') Temp_name;
     @Input('JSON_Template') JSON_Template;
     @Output() default_Template = new EventEmitter();
-
+    newJSONObj:any;
+    oldJSONObj:any;
 
     defaultJson = {
         "app": {
@@ -717,18 +718,16 @@ export class TemplateDev implements OnInit {
         }
         this.JSON_Template = this.defaultJson;
         this.jsonBuilderHelper.setTemplate(this.JSON_Template);
+
+        //From internet;
+        this.newJSONObj = this.JSON_Template;
+        this.oldJSONObj = this.JSON_Template;
+        jQuery.extend(this.oldJSONObj, this.newJSONObj);
+
         //emit to home component.
         this.default_Template.emit(this.JSON_Template);
     }
 
-    
-    //
-    // //From internet;
-    // this.newObj=;
-    //
-    // this.oldObj=this._jsonElement.getJSONBuilt();
-    //
-    // jQuery.extend( this.oldObj, this.newObj);
 
     constructor(private jsonBuilderHelper:JSONBuilder) {
 

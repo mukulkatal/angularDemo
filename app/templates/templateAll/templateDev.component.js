@@ -12,13 +12,6 @@ var core_1 = require('@angular/core');
 var templates_1 = require('./templates');
 var JSONBuilder_service_1 = require('../../home/services/JSONBuilder.service');
 var TemplateDev = (function () {
-    //
-    // //From internet;
-    // this.newObj=;
-    //
-    // this.oldObj=this._jsonElement.getJSONBuilt();
-    //
-    // jQuery.extend( this.oldObj, this.newObj);
     function TemplateDev(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.default_Template = new core_1.EventEmitter();
@@ -702,6 +695,10 @@ var TemplateDev = (function () {
         }
         this.JSON_Template = this.defaultJson;
         this.jsonBuilderHelper.setTemplate(this.JSON_Template);
+        //From internet;
+        this.newJSONObj = this.JSON_Template;
+        this.oldJSONObj = this.JSON_Template;
+        jQuery.extend(this.oldJSONObj, this.newJSONObj);
         //emit to home component.
         this.default_Template.emit(this.JSON_Template);
     };
