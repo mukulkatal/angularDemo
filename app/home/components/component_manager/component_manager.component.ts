@@ -8,8 +8,8 @@ declare var jQuery: any;
 	selector: 'component-manager',
 	directives: [Control],
 	template: `
-	
-	<div   *ngFor="let page of templateJson.app.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
+	<div class="a">
+	<div  *ngFor="let page of templateJson.app.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
 		<ul 			
 			*ngFor="let section of page.sections"		
 			[attr.data-section]="section.order"
@@ -26,11 +26,13 @@ declare var jQuery: any;
 		
 		</ul>
 	</div>	
+	</div>	
 	`
 })
 
 export class ComponentManager implements AfterViewInit {
 	templateJson: any;
+	@Output('default_Template') default_Template = new EventEmitter();
 
 	constructor(private jsonBuilderHelper: JSONBuilder){
 		this.templateJson = jsonBuilderHelper.getJSONBuilt();
@@ -45,12 +47,8 @@ export class ComponentManager implements AfterViewInit {
             opacity: 0.5,
             revert: true,
             scroll: false,
-            update: function() {
-                //get order from DOM
-                // let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
-                // console.log(order);
-                //sort the array
-                //self.jsonBuilderHelper.sort(order);
+            stop: function() {                				
+				jQuery(self.jsonBuilderHelper.getSelectedControl().type).click();
             },
             out: function() {
                 let order = jQuery(this).sortable("toArray", { attribute: "data-order" });

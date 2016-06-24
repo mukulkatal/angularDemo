@@ -68,9 +68,4 @@ export class HomeComponent implements OnInit{
     onPreview(){
         localStorage.setItem('template',JSON.stringify(this.controls));
     }
-
-    reloadView()
-    {
-        setTimeout(()=>this.controls = this.jsonBuilderHelper.getJSONBuilt(),1000);
-    }
 }

@@ -56,10 +56,6 @@ var HomeComponent = (function () {
     HomeComponent.prototype.onPreview = function () {
         localStorage.setItem('template', JSON.stringify(this.controls));
     };
-    HomeComponent.prototype.reloadView = function () {
-        var _this = this;
-        setTimeout(function () { return _this.controls = _this.jsonBuilderHelper.getJSONBuilt(); }, 1000);
-    };
     HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
