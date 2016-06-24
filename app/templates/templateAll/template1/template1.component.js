@@ -14,15 +14,10 @@ var control_component_1 = require('../../../templates/controls/control.component
 var finalformula_component_1 = require("../../../home/components/finalformula.component");
 var Template1Component = (function () {
     function Template1Component() {
-        // @Output() default_Template = new EventEmitter();
+        this.default_Template = new core_1.EventEmitter();
         this.selected_control = new core_1.EventEmitter();
         this.selected_section = new core_1.EventEmitter();
         this.selected_page = new core_1.EventEmitter();
-<<<<<<< HEAD
-        //@Input() jsonTemplate;
-        /*  ---
-         default json of the template
-         */
         this.defaultJson = {
             "app": {
                 "pages": [{
@@ -763,27 +758,8 @@ var Template1Component = (function () {
                 ]
             }
         };
-=======
->>>>>>> 56b7c42a446981b41b862bb921ffacb2d4976523
     }
-    //@Input() jsonTemplate;
-    /*  ---
-        default json of the template
-    */
     Template1Component.prototype.ngOnInit = function () {
-        /*  ---
-<<<<<<< HEAD
-         end json on init for initialize the json
-         */
-        var template = localStorage.getItem('template');
-        if (template) {
-            this.defaultJson = JSON.parse(template);
-        }
-        this.default_Template.emit(this.defaultJson);
-=======
-            end json on init for initialize the json
-        */
->>>>>>> 56b7c42a446981b41b862bb921ffacb2d4976523
     };
     /*  ---
      when control is selected from particluar template then it pass to parent
@@ -798,6 +774,10 @@ var Template1Component = (function () {
     Template1Component.prototype.selectpage = function (page) {
         this.selected_page.emit(page);
     };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Template1Component.prototype, "default_Template", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)

@@ -85,12 +85,9 @@ export class JSONBuilder{
 	}
 	
 	multiSectionSort(sectionIndex: number,itemIndex: number,order: string[]) {	
-<<<<<<< HEAD
-		var sectionItems: any[] = this._selectedPage.sections[sectionIndex - 1].items;
-=======
-		var sectionItems: any = this.selectedPage.sections[sectionIndex - 1].items;
-				
->>>>>>> 56b7c42a446981b41b862bb921ffacb2d4976523
+
+		var sectionItems: any = this._selectedPage.sections[sectionIndex - 1].items;
+
 		sectionItems.splice(itemIndex, 0, this.selectedControl);
 		// delete control from out section
 		this.deleteControl();	

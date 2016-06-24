@@ -1,6 +1,9 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import {TEMPLATES} from './templates';
 import {JSONBuilder} from '../../home/services/JSONBuilder.service';
+import {JSONElement} from "../../home/services/JSONElement.service";
+
+declare var jQuery:any;
 
 @Component({
     selector: "Temp",
@@ -704,7 +707,7 @@ export class TemplateDev implements OnInit {
             ]
         }
     };
-    
+
     ngOnInit() {
         //get json from "server or local storage"
         let template = localStorage.getItem('template');
@@ -716,8 +719,15 @@ export class TemplateDev implements OnInit {
         this.jsonBuilderHelper.setTemplate(this.JSON_Template);
         //emit to home component.
         this.default_Template.emit(this.JSON_Template);
-
     }
+
+    //
+    // //From internet;
+    // this.newObj=;
+    //
+    // this.oldObj=this._jsonElement.getJSONBuilt();
+    //
+    // jQuery.extend( this.oldObj, this.newObj);
 
     constructor(private jsonBuilderHelper:JSONBuilder) {
 
