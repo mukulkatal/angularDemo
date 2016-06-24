@@ -4,7 +4,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
                 <a
-\
+
                     [routerLink]="['Preview',{ name:TempName }]"
                     (click)="onPreview()"
                     class="disp-inline-flex"
@@ -22,7 +22,7 @@
 
         <component-manager 
             *ngIf="controls"
-            (mouseup)="reloadView()"      
+            (mouseup)="reloadView()"
         >
         </component-manager>
     </div>

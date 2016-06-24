@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d0423d27-f4bc-4865-a30e-c21b915ff92d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/home/home.component.ts" afterPath="$PROJECT_DIR$/app/home/home.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/home/services/JSONBuilder.service.ts" afterPath="$PROJECT_DIR$/app/home/services/JSONBuilder.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/templateAll/templateDev.component.ts" afterPath="$PROJECT_DIR$/app/templates/templateAll/templateDev.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/home/home.template.html" afterPath="$PROJECT_DIR$/app/home/home.template.html" />
     </list>
     <ignored path="angularDemo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JSONBuilder.service.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JSONBuilder.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/home/services/JSONBuilder.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="424">
@@ -101,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.template.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/home/home.template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-809">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -147,10 +145,10 @@
         <option value="$PROJECT_DIR$/app/home/components/formulaswitch.component.ts" />
         <option value="$PROJECT_DIR$/app/templates/templateAll/template1/template1.component.ts" />
         <option value="$PROJECT_DIR$/app/templates/templateAll/template1/templatesHtml/template1.template.html" />
-        <option value="$PROJECT_DIR$/app/home/home.template.html" />
         <option value="$PROJECT_DIR$/app/templates/templateAll/templateDev.component.ts" />
         <option value="$PROJECT_DIR$/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/app/home/services/JSONBuilder.service.ts" />
+        <option value="$PROJECT_DIR$/app/home/home.template.html" />
       </list>
     </option>
   </component>
@@ -283,7 +281,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="typescript-compiler-editor-notification" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="home.t&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/home.template.html&#10;template1.&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/template1/templatesHtml/template1.template.html&#10;templatede&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/templateDev.component.ts&#10;fo&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/finalformula.component.ts&#10;swit&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/formulaswitch.component.ts&#10;rad&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/controls/radiobutton/radiobutton.component.ts&#10;radio&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/controls/radiobutton/radiobutton.component.ts&#10;switch&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/formulaswitch.component.ts&#10;template&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/templateDev.component.ts&#10;formu&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/finalformula.component.ts&#10;template.componen&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/template.component.ts&#10;template.compon&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/template1/template1.component.ts&#10;templateDev&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/templateDev.component.ts&#10;json&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/services/JSONBuilder.service.ts&#10;switc&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/switch.component.ts&#10;Jsonele&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="home.te&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/home.template.html&#10;home.t&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/home.template.html&#10;template1.&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/template1/templatesHtml/template1.template.html&#10;templatede&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/templateDev.component.ts&#10;fo&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/finalformula.component.ts&#10;swit&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/formulaswitch.component.ts&#10;rad&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/controls/radiobutton/radiobutton.component.ts&#10;radio&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/controls/radiobutton/radiobutton.component.ts&#10;switch&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/formulaswitch.component.ts&#10;template&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/templateDev.component.ts&#10;formu&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/finalformula.component.ts&#10;template.componen&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/template.component.ts&#10;template.compon&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/template1/template1.component.ts&#10;templateDev&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/templates/templateAll/templateDev.component.ts&#10;json&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/services/JSONBuilder.service.ts&#10;switc&#9;FILE&#9;file://C:/Users/kay/Desktop/Angular/Venturepact/angularDemo/app/home/components/switch.component.ts&#10;Jsonele&#9;null&#9;null" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -358,23 +356,23 @@
       <workItem from="1466567148751" duration="9489000" />
       <workItem from="1466669879451" duration="9934000" />
       <workItem from="1466744909815" duration="303000" />
-      <workItem from="1466758874868" duration="1106000" />
+      <workItem from="1466758874868" duration="1328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48227000" />
+    <option name="totallyTimeSpent" value="48449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.6507177" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.65434086" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.3492823" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.34565917" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -754,14 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/home.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-809">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/templateAll/template1/template1.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
@@ -808,6 +798,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/home/home.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
