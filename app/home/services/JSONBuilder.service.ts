@@ -67,7 +67,7 @@ export class JSONBuilder{
 		//replace oldControl with newControl at index		
 		this.selectedSection.items.splice(index, 1);
 
-		// choose the next selected element from template section    
+		choose the next selected element from template section    
         if (this.selectedSection.items.length > 0)
             this.selectedControl = this.selectedSection.items[0];
         else
@@ -79,7 +79,9 @@ export class JSONBuilder{
 				
 		sectionItems.splice(itemIndex, 0, this.selectedControl);
 		// delete control from out section
-		this.deleteControl();	
+		let index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+		//replace oldControl with newControl at index		
+		this.selectedSection.items.splice(index, 1);
 		//sort the parent array	
 		this.sort;
 		// sort the result section

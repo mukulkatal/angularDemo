@@ -1,0 +1,68 @@
+[1mdiff --git a/app/home/components/component_manager/component_manager.component.js b/app/home/components/component_manager/component_manager.component.js[m
+[1mindex 4a1c0b2..d58ac9f 100644[m
+[1m--- a/app/home/components/component_manager/component_manager.component.js[m
+[1m+++ b/app/home/components/component_manager/component_manager.component.js[m
+[36m@@ -14,7 +14,6 @@[m [mvar JSONBuilder_service_1 = require('../../services/JSONBuilder.service');[m
+ var ComponentManager = (function () {[m
+     function ComponentManager(jsonBuilderHelper) {[m
+         this.jsonBuilderHelper = jsonBuilderHelper;[m
+[31m-        this.default_Template = new core_1.EventEmitter();[m
+         this.templateJson = jsonBuilderHelper.getJSONBuilt();[m
+     }[m
+     ComponentManager.prototype.ngAfterViewInit = function () {[m
+[36m@@ -39,15 +38,11 @@[m [mvar ComponentManager = (function () {[m
+             },[m
+         }).disableSelection();[m
+     };[m
+[31m-    __decorate([[m
+[31m-        core_1.Output('default_Template'), [m
+[31m-        __metadata('design:type', Object)[m
+[31m-    ], ComponentManager.prototype, "default_Template", void 0);[m
+     ComponentManager = __decorate([[m
+         core_1.Component({[m
+             selector: 'component-manager',[m
+             directives: [control_component_1.Control],[m
+[31m-            template: "\n\t<div class=\"a\">\n\t<div  *ngFor=\"let page of templateJson.app.pages\" (mousedown)=\"jsonBuilderHelper.setSelectedPage(page)\" >\n\t\t<ul \t\t\t\n\t\t\t*ngFor=\"let section of page.sections\"\t\t\n\t\t\t[attr.data-section]=\"section.order\"\n\t\t\tclass=\"col s12 m12 sortable1 mt40 z-depth-3\"\n\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedSection(section)\"\n\t\t>\n\t\t \n\t\t\t<li class=\"child p20 \" *ngFor=\"let control of section.items\" \n\t\t\t\t[attr.data-order]=\"control.order\"\n\t\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedControl(control)\"\t\t\t\t\t\t\t\n\t\t\t>\n\t\t\t\t{{control.type}}\n\t\t\t</li>\n\t\t\n\t\t</ul>\n\t</div>\t\n\t</div>\t\n\t"[m
+[32m+[m[32m            template: "\t\n\t<div  *ngFor=\"let page of templateJson.app.pages\" (mousedown)=\"jsonBuilderHelper.setSelectedPage(page)\" >\n\t\t<ul \t\t\t\n\t\t\t*ngFor=\"let section of page.sections\"\t\t\n\t\t\t[attr.data-section]=\"section.order\"\n\t\t\tclass=\"col s12 m12 sortable1 mt40 z-depth-3\"\n\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedSection(section)\"\n\t\t>\n\t\t \n\t\t\t<li class=\"child p20 \" *ngFor=\"let control of section.items\" \n\t\t\t\t[attr.data-order]=\"control.order\"\n\t\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedControl(control)\"\t\t\t\t\t\t\t\n\t\t\t>\n\t\t\t\t{{control.type}}\n\t\t\t</li>\n\t\t\n\t\t</ul>\n\t</div>\t\n\t"[m
+         }), [m
+         __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder])[m
+     ], ComponentManager);[m
+[1mdiff --git a/app/home/components/component_manager/component_manager.component.js.map b/app/home/components/component_manager/component_manager.component.js.map[m
+[1mindex 9b0a8b7..f97f7f9 100644[m
+[1m--- a/app/home/components/component_manager/component_manager.component.js.map[m
+[1m+++ b/app/home/components/component_manager/component_manager.component.js.map[m
+[36m@@ -1 +1 @@[m
+[31m-{"version":3,"file":"component_manager.component.js","sourceRoot":"","sources":["component_manager.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA2E,eAAe,CAAC,CAAA;AAC3F,kCAAsB,+CAA+C,CAAC,CAAA;AACtE,oCAA4B,oCAAoC,CAAC,CAAA;AA8BjE;IAIC,0BAAoB,iBAA8B;QAA9B,sBAAiB,GAAjB,iBAAiB,CAAa;QAFtB,qBAAgB,GAAG,IAAI,mBAAY,EAAE,CAAC;QAGjE,IAAI,CAAC,YAAY,GAAG,iBAAiB,CAAC,YAAY,EAAE,CAAC;IACtD,CAAC;IAED,0CAAe,GAAf;QACC,IAAI,IAAI,GAAG,IAAI,CAAC;QACV,MAAM,CAAC,YAAY,CAAC,CAAC,QAAQ,CAAC;YAC1B,WAAW,EAAE,IAAI;YACjB,iBAAiB;YACjB,MAAM,EAAE,SAAS;YACjB,OAAO,EAAE,GAAG;YACZ,MAAM,EAAE,IAAI;YACZ,MAAM,EAAE,KAAK;YACb,IAAI,EAAE;gBACd,MAAM,CAAC,IAAI,CAAC,iBAAiB,CAAC,kBAAkB,EAAE,CAAC,IAAI,CAAC,CAAC,KAAK,EAAE,CAAC;YACzD,CAAC;YACD,GAAG,EAAE;gBACD,IAAI,KAAK,GAAG,MAAM,CAAC,IAAI,CAAC,CAAC,QAAQ,CAAC,SAAS,EAAE,EAAE,SAAS,EAAE,YAAY,EAAE,CAAC,CAAC;gBAC1E,IAAI,CAAC,iBAAiB,CAAC,IAAI,CAAC,KAAK,CAAC,CAAC;YACvC,CAAC;YACD,OAAO,EACP,UAAS,KAAK,EAAE,EAAE;gBACd,IAAI,KAAK,GAAG,MAAM,CAAC,IAAI,CAAC,CAAC,QAAQ,CAAC,SAAS,EAAE,EAAE,SAAS,EAAE,YAAY,EAAE,CAAC,CAAC;gBAC1E,IAAI,CAAC,iBAAiB,CAAC,gBAAgB,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,IAAI,CAAC,cAAc,CAAC,EAAE,EAAE,CAAC,IAAI,CAAC,KAAK,EAAE,EAAE,KAAK,CAAC,CAAC;YAChH,CAAC;SACK,CAAC,CAAC,gBAAgB,EAAE,CAAC;IAC1B,CAAC;IA5BJ;QAAC,aAAM,CAAC,kBAAkB,CAAC;;8DAAA;IA5B5B;QAAC,gBAAS,CAAC;YACV,QAAQ,EAAE,mBAAmB;YAC7B,UAAU,EAAE,CAAC,2BAAO,CAAC;YACrB,QAAQ,EAAE,yqBAoBT;SACD,CAAC;;wBAAA;IAkCF,uBAAC;AAAD,CAAC,AAhCD,IAgCC;AAhCY,wBAAgB,mBAgC5B,CAAA"}[m
+\ No newline at end of file[m
+[32m+[m[32m{"version":3,"file":"component_manager.component.js","sourceRoot":"","sources":["component_manager.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA2E,eAAe,CAAC,CAAA;AAC3F,kCAAsB,+CAA+C,CAAC,CAAA;AACtE,oCAA4B,oCAAoC,CAAC,CAAA;AA4BjE;IAGC,0BAAoB,iBAA8B;QAA9B,sBAAiB,GAAjB,iBAAiB,CAAa;QACjD,IAAI,CAAC,YAAY,GAAG,iBAAiB,CAAC,YAAY,EAAE,CAAC;IACtD,CAAC;IAED,0CAAe,GAAf;QACC,IAAI,IAAI,GAAG,IAAI,CAAC;QACV,MAAM,CAAC,YAAY,CAAC,CAAC,QAAQ,CAAC;YAC1B,WAAW,EAAE,IAAI;YACjB,iBAAiB;YACjB,MAAM,EAAE,SAAS;YACjB,OAAO,EAAE,GAAG;YACZ,MAAM,EAAE,IAAI;YACZ,MAAM,EAAE,KAAK;YACb,IAAI,EAAE;gBACd,MAAM,CAAC,IAAI,CAAC,iBAAiB,CAAC,kBAAkB,EAAE,CAAC,IAAI,CAAC,CAAC,KAAK,EAAE,CAAC;YACzD,CAAC;YACD,GAAG,EAAE;gBACD,IAAI,KAAK,GAAG,MAAM,CAAC,IAAI,CAAC,CAAC,QAAQ,CAAC,SAAS,EAAE,EAAE,SAAS,EAAE,YAAY,EAAE,CAAC,CAAC;gBAC1E,IAAI,CAAC,iBAAiB,CAAC,IAAI,CAAC,KAAK,CAAC,CAAC;YACvC,CAAC;YACD,OAAO,EACP,UAAS,KAAK,EAAE,EAAE;gBACd,IAAI,KAAK,GAAG,MAAM,CAAC,IAAI,CAAC,CAAC,QAAQ,CAAC,SAAS,EAAE,EAAE,SAAS,EAAE,YAAY,EAAE,CAAC,CAAC;gBAC1E,IAAI,CAAC,iBAAiB,CAAC,gBAAgB,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,IAAI,CAAC,cAAc,CAAC,EAAE,EAAE,CAAC,IAAI,CAAC,KAAK,EAAE,EAAE,KAAK,CAAC,CAAC;YAChH,CAAC;SACK,CAAC,CAAC,gBAAgB,EAAE,CAAC;IAC1B,CAAC;IArDL;QAAC,gBAAS,CAAC;YACV,QAAQ,EAAE,mBAAmB;YAC7B,UAAU,EAAE,CAAC,2BAAO,CAAC;YACrB,QAAQ,EAAE,0oBAkBT;SACD,CAAC;;wBAAA;IAiCF,uBAAC;AAAD,CAAC,AA/BD,IA+BC;AA/BY,wBAAgB,mBA+B5B,CAAA"}[m
+\ No newline at end of file[m
+[1mdiff --git a/app/home/components/component_manager/component_manager.component.ts b/app/home/components/component_manager/component_manager.component.ts[m
+[1mindex eeac8c4..4777cfa 100644[m
+[1m--- a/app/home/components/component_manager/component_manager.component.ts[m
+[1m+++ b/app/home/components/component_manager/component_manager.component.ts[m
+[36m@@ -7,8 +7,7 @@[m [mdeclare var jQuery: any;[m
+ @Component({[m
+ 	selector: 'component-manager',[m
+ 	directives: [Control],[m
+[31m-	template: `[m
+[31m-	<div class="a">[m
+[32m+[m	[32mtemplate: `[m[41m	[m
+ 	<div  *ngFor="let page of templateJson.app.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >[m
+ 		<ul 			[m
+ 			*ngFor="let section of page.sections"		[m
+[36m@@ -26,14 +25,12 @@[m [mdeclare var jQuery: any;[m
+ 		[m
+ 		</ul>[m
+ 	</div>	[m
+[31m-	</div>	[m
+ 	`[m
+ })[m
+ [m
+ export class ComponentManager implements AfterViewInit {[m
+ 	templateJson: any;[m
+[31m-	@Output('default_Template') default_Template = new EventEmitter();[m
+[31m-[m
+[32m+[m[41m	[m
+ 	constructor(private jsonBuilderHelper: JSONBuilder){[m
+ 		this.templateJson = jsonBuilderHelper.getJSONBuilt();[m
+ 	}[m

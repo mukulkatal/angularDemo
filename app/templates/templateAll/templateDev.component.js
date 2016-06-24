@@ -687,12 +687,15 @@ var TemplateDev = (function () {
         };
     }
     TemplateDev.prototype.ngOnInit = function () {
+        //get json from "server or local storage"
         var template = localStorage.getItem('template');
         if (template) {
+            //if present then assign it.
             this.JSON_Template = JSON.parse(template);
         }
         this.JSON_Template = this.defaultJson;
         this.jsonBuilderHelper.setTemplate(this.JSON_Template);
+        //emit to home component.
         this.default_Template.emit(this.JSON_Template);
     };
     __decorate([

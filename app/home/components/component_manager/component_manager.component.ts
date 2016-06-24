@@ -19,7 +19,7 @@ declare var jQuery: any;
 		 
 			<li class="child p20 " *ngFor="let control of section.items" 
 				[attr.data-order]="control.order"
-				(mousedown)="jsonBuilderHelper.setSelectedControl(control)"							
+				(mousedown)="selectControl(control)"					
 			>
 				{{control.type}}
 			</li>
@@ -32,7 +32,6 @@ declare var jQuery: any;
 
 export class ComponentManager implements AfterViewInit {
 	templateJson: any;
-	@Output('default_Template') default_Template = new EventEmitter();
 
 	constructor(private jsonBuilderHelper: JSONBuilder){
 		this.templateJson = jsonBuilderHelper.getJSONBuilt();
@@ -48,7 +47,7 @@ export class ComponentManager implements AfterViewInit {
             revert: true,
             scroll: false,
             stop: function() {                				
-				jQuery(self.jsonBuilderHelper.getSelectedControl().type).click();
+				jQuery(self.jsonBuilderHelper.getSelectedControl().type).click();			
             },
             out: function() {
                 let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
@@ -62,4 +61,8 @@ export class ComponentManager implements AfterViewInit {
         }).disableSelection();
     }
 
+	selectControl(control) {
+		console.log(control.type);
+        this.jsonBuilderHelper.setSelectedControl(control);
+    }
 }
