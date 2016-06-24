@@ -721,6 +721,7 @@ export class TemplateDev implements OnInit {
         this.default_Template.emit(this.JSON_Template);
     }
 
+    
     //
     // //From internet;
     // this.newObj=;
