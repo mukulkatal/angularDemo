@@ -25,12 +25,15 @@ export class TemplateDev implements OnInit {
     @Output() default_Template = new EventEmitter();
 
     ngOnInit() {
+        //get json from "server or local storage"
         let template = localStorage.getItem('template');
         if (template) {
+            //if present then assign it.
             this.JSON_Template = JSON.parse(template);
         }
             this.JSON_Template=this.defaultJson;
             this.jsonBuilderHelper.setTemplate(this.JSON_Template);
+            //emit to home component.
             this.default_Template.emit(this.JSON_Template);
 
     }
@@ -718,9 +721,5 @@ export class TemplateDev implements OnInit {
             }
         };
 
-    // bind Template Json from template parent
-    // bind_Template_Json(template: any) {
-    //     this.jsonBuilderHelper.setTemplate(template);
-    //     this.default_Template.emit(template);
-    // }
+
 }
