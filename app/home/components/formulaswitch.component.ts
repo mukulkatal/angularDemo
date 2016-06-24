@@ -28,7 +28,7 @@ export class FormulaSwitch {
 
        // this.jsonBuilderHelper.getSelectedControl().props.formula.operVal = 50;
        //  this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = false;
-        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt().defaulttemp));
+        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt()));
         // this.jsonBuilderHelper.getSelectedControl().props.formula.isSelected = true;
     }
 }
