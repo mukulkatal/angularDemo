@@ -1,18 +1,18 @@
-<div *ngFor="let page of defaultJson.app.pages" (mousedown)="selectpage(page)" >
-<div class="col s12 m12" >    
-	<section 
+<div *ngFor="let page of JSON_Template.app.pages" (mousedown)="selectpage(page)" >
+<div class="col s12 m12" >
+	<section
 			*ngFor="let section of page.sections"
 			(mousedown)="selectSection(section)"
 			class="col s12 m12 sortable mt40 z-depth-3"
 	>
-		 
-			<div class="child p20 " *ngFor="let control of section.items" 
+
+			<div class="child p20 " *ngFor="let control of section.items"
 				[attr.data-order]="control.order"
 				(mousedown)="selectControl(control)"
 			>
 				<control [data]="control"></control>
 			</div>
-		
+
 	</section>
 </div>
 </div>

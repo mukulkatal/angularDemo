@@ -31,10 +31,12 @@ var HomeComponent = (function () {
     */
     HomeComponent.prototype.bind_Template_Json = function (data) {
         this.controls = data;
+        // console.log("in home");
+        // console.log(this.controls);
         //drag and sort elements in a section
         var self = this;
         jQuery(".sortable").sortable({
-            //connectWith:   '.sortable-section',    
+            //connectWith:   '.sortable-section',
             cursor: "move",
             opacity: 0.5,
             revert: true,

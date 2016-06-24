@@ -36,10 +36,12 @@ export class HomeComponent implements OnInit{
 
     bind_Template_Json(data: any){
         this.controls = data;
+        // console.log("in home");
+        // console.log(this.controls);
         //drag and sort elements in a section
         let self = this;
-        jQuery(".sortable").sortable({ 
-            //connectWith:   '.sortable-section',    
+        jQuery(".sortable").sortable({
+            //connectWith:   '.sortable-section',
             cursor: "move",
             opacity: 0.5,
             revert: true,
@@ -64,7 +66,7 @@ export class HomeComponent implements OnInit{
         var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
         this.jsonBuilderHelper.addNewChild(jsonElement);
     }
-    
+
     onPreview(){
         localStorage.setItem('template',JSON.stringify(this.controls));
     }
