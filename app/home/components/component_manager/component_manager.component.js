@@ -14,6 +14,7 @@ var JSONBuilder_service_1 = require('../../services/JSONBuilder.service');
 var ComponentManager = (function () {
     function ComponentManager(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
+        this.default_Template = new core_1.EventEmitter();
         this.templateJson = jsonBuilderHelper.getJSONBuilt();
     }
     ComponentManager.prototype.ngAfterViewInit = function () {
@@ -25,12 +26,8 @@ var ComponentManager = (function () {
             opacity: 0.5,
             revert: true,
             scroll: false,
-            update: function () {
-                //get order from DOM
-                // let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
-                // console.log(order);
-                //sort the array
-                //self.jsonBuilderHelper.sort(order);
+            stop: function () {
+                jQuery(self.jsonBuilderHelper.getSelectedControl().type).click();
             },
             out: function () {
                 var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
@@ -42,11 +39,15 @@ var ComponentManager = (function () {
             },
         }).disableSelection();
     };
+    __decorate([
+        core_1.Output('default_Template'), 
+        __metadata('design:type', Object)
+    ], ComponentManager.prototype, "default_Template", void 0);
     ComponentManager = __decorate([
         core_1.Component({
             selector: 'component-manager',
             directives: [control_component_1.Control],
-            template: "\n\t\n\t<div   *ngFor=\"let page of templateJson.app.pages\" (mousedown)=\"jsonBuilderHelper.setSelectedPage(page)\" >\n\t\t<ul \t\t\t\n\t\t\t*ngFor=\"let section of page.sections\"\t\t\n\t\t\t[attr.data-section]=\"section.order\"\n\t\t\tclass=\"col s12 m12 sortable1 mt40 z-depth-3\"\n\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedSection(section)\"\n\t\t>\n\t\t \n\t\t\t<li class=\"child p20 \" *ngFor=\"let control of section.items\" \n\t\t\t\t[attr.data-order]=\"control.order\"\n\t\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedControl(control)\"\t\t\t\t\t\t\t\n\t\t\t>\n\t\t\t\t{{control.type}}\n\t\t\t</li>\n\t\t\n\t\t</ul>\n\t</div>\t\n\t"
+            template: "\n\t<div class=\"a\">\n\t<div  *ngFor=\"let page of templateJson.app.pages\" (mousedown)=\"jsonBuilderHelper.setSelectedPage(page)\" >\n\t\t<ul \t\t\t\n\t\t\t*ngFor=\"let section of page.sections\"\t\t\n\t\t\t[attr.data-section]=\"section.order\"\n\t\t\tclass=\"col s12 m12 sortable1 mt40 z-depth-3\"\n\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedSection(section)\"\n\t\t>\n\t\t \n\t\t\t<li class=\"child p20 \" *ngFor=\"let control of section.items\" \n\t\t\t\t[attr.data-order]=\"control.order\"\n\t\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedControl(control)\"\t\t\t\t\t\t\t\n\t\t\t>\n\t\t\t\t{{control.type}}\n\t\t\t</li>\n\t\t\n\t\t</ul>\n\t</div>\t\n\t</div>\t\n\t"
         }), 
         __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder])
     ], ComponentManager);

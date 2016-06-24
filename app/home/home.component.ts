@@ -38,11 +38,20 @@ export class HomeComponent implements OnInit{
 
     bind_Template_Json(data:any) {
         this.controls = data;
+<<<<<<< HEAD
         
         //drag and sort elements in a section
         let self = this;
         jQuery(".sortable").sortable({
             //connectWith:   '.sortable-section',    
+=======
+        // console.log("in home");
+        // console.log(this.controls);
+        //drag and sort elements in a section
+        let self = this;
+        jQuery(".sortable").sortable({
+            //connectWith:   '.sortable-section',
+>>>>>>> 56b7c42a446981b41b862bb921ffacb2d4976523
             cursor: "move",
             opacity: 0.5,
             revert: true,
@@ -68,12 +77,12 @@ export class HomeComponent implements OnInit{
         this.jsonBuilderHelper.addNewChild(jsonElement);
     }
 
+<<<<<<< HEAD
     onPreview() {
         localStorage.setItem('template', JSON.stringify(this.controls));
-    }
-
-    reloadView()
-    {
-        setTimeout(()=>this.controls = this.jsonBuilderHelper.getJSONBuilt(),1000);
+=======
+    onPreview(){
+        localStorage.setItem('template',JSON.stringify(this.controls));
+>>>>>>> 56b7c42a446981b41b862bb921ffacb2d4976523
     }
 }

@@ -4,9 +4,10 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
                 <a
-                        [routerLink]="['Preview',{ name:TempName }]"
-                        (click)="onPreview()"
-                        class="disp-inline-flex"
+\
+                    [routerLink]="['Preview',{ name:TempName }]"
+                    (click)="onPreview()"
+                    class="disp-inline-flex"
                 >
                     <i class="small material-icons">play_arrow</i>
                 </a>
@@ -18,6 +19,7 @@
 </nav>
 <div class="row">
     <div class="col s3" style="height:100%">
+
         <component-manager 
             *ngIf="controls"
             (mouseup)="reloadView()"      
@@ -40,6 +42,7 @@
                     *ngIf="jsonBuilderHelper.getSelectedControl()"
             >
             </editor>
+
         </div>
         <div class="mt20">
 

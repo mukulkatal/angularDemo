@@ -1,4 +1,5 @@
-import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import {SectionComponent} from './components/sections.component';
 import {Control} from '../../../templates/controls/control.component';
 import {FinalFormula} from "../../../home/components/finalformula.component";
@@ -22,16 +23,15 @@ import {FinalFormula} from "../../../home/components/finalformula.component";
     ]
 })
 
+
 export class Template1Component implements OnInit {
     @Output() default_Template = new EventEmitter();
+
     @Output() selected_control = new EventEmitter();
     @Output() selected_section = new EventEmitter();
     @Output() selected_page = new EventEmitter();
+    @Input() JSON_Template;
 
-    //@Input() jsonTemplate;
-    /*  ---
-     default json of the template
-     */
     defaultJson = {
         "app": {
             "pages": [{
@@ -783,14 +783,7 @@ export class Template1Component implements OnInit {
     };
 
     ngOnInit() {
-        /*  ---
-         end json on init for initialize the json
-         */
-        let template = localStorage.getItem('template');
-        if (template) {
-            this.defaultJson = JSON.parse(template);
-        }    
-        this.default_Template.emit(this.defaultJson);
+
     }
 
 
@@ -803,8 +796,8 @@ export class Template1Component implements OnInit {
         this.selected_control.emit(control);
     }
 
-    selectSection(section) {
-        this.selected_section.emit(section);
+    selectSection(section){
+       this.selected_section.emit(section);
     }
 
     selectpage(page) {
