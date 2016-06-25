@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import {SectionComponent} from './components/sections.component';
 import {Control} from '../../../templates/controls/control.component';
-//import {App,Item,Section,Page} from './../../model/model';
-import {App} from './../../model/app.model';
-import {Page} from './../../model/page.model';
-import {Section} from './../../model/section.model';
-import {Item} from './../../model/item.model';
+import {App,Item,Section,Page} from './../../../home/models/model';
+// import {App} from './../../model/app.model';
+// import {Page} from './../../model/page.model';
+// import {Section} from './../../model/section.model';
+// import {Item} from './../../model/item.model';
 
 
 @Component({
