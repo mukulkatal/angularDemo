@@ -9,16 +9,16 @@ declare var jQuery: any;
 	directives: [Control],
 	template: `
 	<div class="a">
-	<div  *ngFor="let page of templateJson.app.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
+	<div  *ngFor="let page of templateJson.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
 		<ul 			
-			*ngFor="let section of page.sections"		
-			[attr.data-section]="section.order"
+			*ngFor="let section of page.sections,let s=index"		
+			[attr.data-section]="s+1"
 			class="col s12 m12 sortable1 mt40 z-depth-3"
 			(mousedown)="jsonBuilderHelper.setSelectedSection(section)"
 		>
 		 
-			<li class="child p20 " *ngFor="let control of section.items" 
-				[attr.data-order]="control.order"
+			<li class="child p20 " *ngFor="let control of section.items,let i=index" 
+				[attr.data-order]="i+1"
 				(mousedown)="selectControl(control)"					
 			>
 				{{control.type}}
@@ -34,7 +34,7 @@ export class ComponentManager implements AfterViewInit {
 	templateJson: any;
 
 	constructor(private jsonBuilderHelper: JSONBuilder){
-		this.templateJson = jsonBuilderHelper.getJSONBuilt();
+		this.templateJson = jsonBuilderHelper.getJSONBuilt();		
 	}
 
 	ngAfterViewInit(){
@@ -61,8 +61,8 @@ export class ComponentManager implements AfterViewInit {
         }).disableSelection();
     }
 
-	selectControl(control) {
-		console.log(control.type);
+	selectControl(control) {	
+
         this.jsonBuilderHelper.setSelectedControl(control);
     }
 }

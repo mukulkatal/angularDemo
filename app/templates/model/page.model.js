@@ -1,10 +1,20 @@
 "use strict";
-var section_model_1 = require('./section.model');
 var Page = (function () {
-    function Page() {
+    function Page(type) {
         this.description = "";
-        this.section = [new section_model_1.Section, new section_model_1.Section];
+        this.type = "";
+        this.sections = [];
+        this.type = type;
     }
+    //add sections to page
+    Page.prototype.addSections = function () {
+        var sections = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            sections[_i - 0] = arguments[_i];
+        }
+        for (var section in sections)
+            this.sections.push(sections[section]);
+    };
     return Page;
 }());
 exports.Page = Page;

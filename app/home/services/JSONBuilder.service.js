@@ -67,6 +67,8 @@ var JSONBuilder = (function () {
     };
     JSONBuilder.prototype.multiSectionSort = function (sectionIndex, itemIndex, order) {
         var sectionItems = this.selectedPage.sections[sectionIndex - 1].items;
+        console.log(this.selectedControl);
+        console.log(itemIndex);
         sectionItems.splice(itemIndex, 0, this.selectedControl);
         // delete control from out section
         var index = jQuery.inArray(this.selectedControl, this.selectedSection.items);

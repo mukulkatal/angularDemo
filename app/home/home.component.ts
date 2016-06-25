@@ -36,8 +36,7 @@ export class HomeComponent implements OnInit{
 
     bind_Template_Json(data: any){
         this.controls = data;
-        // console.log("in home");
-        // console.log(this.controls);
+               
         //drag and sort elements in a section
         let self = this;
         jQuery(".sortable").sortable({

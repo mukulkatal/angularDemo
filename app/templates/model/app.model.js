@@ -1,10 +1,18 @@
 "use strict";
-var page_model_1 = require('./page.model');
 var App = (function () {
     function App() {
         this.description = "";
-        this.pages = [new page_model_1.Page(), new page_model_1.Page()];
+        this.pages = [];
     }
+    //add a page
+    App.prototype.addPages = function () {
+        var pages = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            pages[_i - 0] = arguments[_i];
+        }
+        for (var page in pages)
+            this.pages.push(pages[page]);
+    };
     return App;
 }());
 exports.App = App;
