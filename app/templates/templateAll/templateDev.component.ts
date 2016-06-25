@@ -12,6 +12,7 @@ import { JSONBuilder } from '../../home/services/JSONBuilder.service';
                (selected_control)="jsonBuilderHelper.setSelectedControl($event)"
                (selected_section)="jsonBuilderHelper.setSelectedSection($event)"
                (selected_page)="jsonBuilderHelper.setSelectedPage($event)"
+               [JSON_Template]="JSON_Template"
              >
             </Temp-1>
             <Temp-2 *ngSwitchWhen="'Temp-2'" ></Temp-2>
@@ -22,7 +23,7 @@ import { JSONBuilder } from '../../home/services/JSONBuilder.service';
 
 export class TemplateDev implements OnInit {
     @Input('TempName') Temp_name;
-    @Input('JSON_Template') JSON_Template;
+    JSON_Template;
     @Output() default_Template = new EventEmitter();
 
    ngOnInit() {
@@ -30,7 +31,7 @@ export class TemplateDev implements OnInit {
       let template = localStorage.getItem('template');
       if (template) {
          //if present then assign it.
-         this.JSON_Template = JSON.parse(template);    
+         this.JSON_Template = JSON.parse(template);
       }
    }
 

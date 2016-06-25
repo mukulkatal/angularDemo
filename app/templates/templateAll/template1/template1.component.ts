@@ -54,7 +54,7 @@ export class Template1Component implements OnInit
 
         if(!this.JSON_Template)
         {
-             let app             = new App();
+            let app             = new App();
             // add pages in app
             let landingPage     = new Page('landing');
             let questionPage    = new Page('questions');

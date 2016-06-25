@@ -34,10 +34,6 @@ var TemplateDev = (function () {
         __metadata('design:type', Object)
     ], TemplateDev.prototype, "Temp_name", void 0);
     __decorate([
-        core_1.Input('JSON_Template'), 
-        __metadata('design:type', Object)
-    ], TemplateDev.prototype, "JSON_Template", void 0);
-    __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], TemplateDev.prototype, "default_Template", void 0);
@@ -45,7 +41,7 @@ var TemplateDev = (function () {
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.TEMPLATES],
-            template: "\n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"\n               (default_Template)=\"bind_Template_Json($event)\" \n               (selected_control)=\"jsonBuilderHelper.setSelectedControl($event)\"\n               (selected_section)=\"jsonBuilderHelper.setSelectedSection($event)\"\n               (selected_page)=\"jsonBuilderHelper.setSelectedPage($event)\"\n             >\n            </Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n        </div>\n\n      ",
+            template: "\n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"\n               (default_Template)=\"bind_Template_Json($event)\" \n               (selected_control)=\"jsonBuilderHelper.setSelectedControl($event)\"\n               (selected_section)=\"jsonBuilderHelper.setSelectedSection($event)\"\n               (selected_page)=\"jsonBuilderHelper.setSelectedPage($event)\"\n               [JSON_Template]=\"JSON_Template\"\n             >\n            </Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\" ></Temp-2>\n        </div>\n\n      ",
         }), 
         __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder])
     ], TemplateDev);
