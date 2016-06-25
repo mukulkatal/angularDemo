@@ -45,6 +45,12 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.setSelectedPage = function (page) {
         this.selectedPage = page;
     };
+    JSONBuilder.prototype.getSelectedSection = function () {
+        return this.selectedSection;
+    };
+    JSONBuilder.prototype.getSelectedPage = function () {
+        return this.selectedPage;
+    };
     JSONBuilder.prototype.getSelectedControl = function () {
         return this.selectedControl;
     };

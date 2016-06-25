@@ -45,6 +45,10 @@
                 *ngIf="jsonBuilderHelper.getSelectedControl()"
             >
             </switch>
+            <formula-switch *ngIf="jsonBuilderHelper.getSelectedControl()"></formula-switch>
+        </div>
+        <div>
+            <final-formula></final-formula>
         </div>
 		<div> <pre>{{controls | json}}</pre> </div>
 	</div>

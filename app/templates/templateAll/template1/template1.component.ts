@@ -1,10 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import {SectionComponent} from './components/sections.component';
 import {Control} from '../../../templates/controls/control.component';
+import {FinalFormula} from "../../../home/components/formula_builder/finalformula.component";
 
 @Component({
     selector: 'Temp-1',
-    directives: [Control,SectionComponent],
+    directives: [Control,SectionComponent,FinalFormula],
     viewProviders: [],
     templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
     styleUrls: ['node_modules/materialize-css/dist/css/materialize.min.css'],

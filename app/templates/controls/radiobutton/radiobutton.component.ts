@@ -10,6 +10,7 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
    <div> helptext : {{data.props.helpText}}  </div>
     <p *ngFor="let radio_item of data.options, let i = index">
         <input
+			(change)="onChange(radio_item.value)"
             type="radio"
             id="radio{{i}}"
             class="validate"
@@ -29,5 +30,9 @@ export class RadioButton implements OnInit {
   ngOnInit() {
   }
  
+	onChange(value) {
+	        this.data.props.formula.operVal = value;
+	        this.data.props.formula.isSelected = true;
+	  }
 
 }

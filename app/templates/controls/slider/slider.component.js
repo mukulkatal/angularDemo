@@ -14,6 +14,10 @@ var Slider = (function () {
     }
     Slider.prototype.ngOnInit = function () {
     };
+    Slider.prototype.onChange = function (value) {
+        this.data.props.formula.operVal = value;
+        this.data.props.formula.isSelected = true;
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -23,7 +27,7 @@ var Slider = (function () {
             selector: 'slider',
             directives: [],
             viewProviders: [],
-            template: "<div class=\"range-field\">\n     \t \t\t\t<input type=\"range\" id=\"test5\" min=\"0\" max=\"100\" />\n    \t\t   </div>"
+            template: "<div class=\"range-field\" (change)=\"onChange($event.target.value)\">\n     \t \t\t\t<input type=\"range\" id=\"test5\" min=\"0\" max=\"100\" />\n    \t\t   </div>"
         }), 
         __metadata('design:paramtypes', [])
     ], Slider);

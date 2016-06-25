@@ -17,8 +17,7 @@ var TemplateDev = (function () {
         this.default_Template = new core_1.EventEmitter();
         this.defaultJson = {
             "app": {
-                "pages": [
-                    {
+                "pages": [{
                         "description": "page 1",
                         "order": 1,
                         "sections": [
@@ -32,6 +31,11 @@ var TemplateDev = (function () {
                                         "props": {
                                             "title": "http://pngimg.com/upload/car_logo_PNG1667.png",
                                             "helpText": "testing",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
@@ -42,27 +46,23 @@ var TemplateDev = (function () {
                                                 "width": "100",
                                                 "height": "60",
                                             },
-                                            "validations": [
-                                                {
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text areea in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -72,46 +72,44 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     },
                                     {
                                         "order": 2,
                                         "type": "header",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
                                             "showHelp": "1",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text areea in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -121,8 +119,7 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     }
                                 ]
                             },
@@ -135,37 +132,36 @@ var TemplateDev = (function () {
                                         "type": "textfield",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -175,45 +171,43 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     },
                                     {
                                         "order": 2,
                                         "type": "text-area",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text area in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -223,38 +217,37 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     },
                                     {
                                         "order": 3,
                                         "type": "selectbox",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -290,30 +283,30 @@ var TemplateDev = (function () {
                                         "type": "radio-button",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "radio",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -349,30 +342,30 @@ var TemplateDev = (function () {
                                         "type": "header",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "header",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -408,30 +401,30 @@ var TemplateDev = (function () {
                                         "type": "click-button",
                                         "props": {
                                             "title": "click",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "click-button",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -467,37 +460,36 @@ var TemplateDev = (function () {
                                         "type": "slider",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -507,45 +499,43 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     },
                                     {
                                         "order": 8,
                                         "type": "date-picker",
                                         "props": {
                                             "title": "this is datepicker question",
-                                            "helpText": "Choose date:"
+                                            "helpText": "Choose date:",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -555,8 +545,7 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     }
                                 ]
                             }
@@ -565,8 +554,7 @@ var TemplateDev = (function () {
                     {
                         "description": "Page 2",
                         "order": 2,
-                        "sections": [
-                            {
+                        "sections": [{
                                 "description": "demo page",
                                 "order": 1,
                                 "items": [
@@ -575,37 +563,36 @@ var TemplateDev = (function () {
                                         "type": "textfield",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -615,45 +602,43 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     },
                                     {
                                         "order": 2,
                                         "type": "text-area",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text area in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -663,8 +648,7 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     }
                                 ]
                             },
@@ -677,37 +661,36 @@ var TemplateDev = (function () {
                                         "type": "text-area",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text areea in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -717,45 +700,43 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     },
                                     {
                                         "order": 2,
                                         "type": "textfield",
                                         "props": {
                                             "title": "this checkbox section question",
-                                            "helpText": "SOME HELPER TEXT"
+                                            "helpText": "SOME HELPER TEXT",
+                                            "formula": {
+                                                "operator": "+",
+                                                "operVal": 1,
+                                                "isSelected": false
+                                            }
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [
-                                                {
+                                            "attr": [{
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }
-                                            ],
-                                            "validations": [
-                                                {
+                                                }],
+                                            "validations": [{
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                },
-                                                {
+                                                }, {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }
-                                            ],
+                                                }],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [
-                                            {
+                                        "options": [{
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -765,8 +746,7 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }
-                                        ]
+                                            }]
                                     }
                                 ]
                             },

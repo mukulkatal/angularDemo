@@ -6,7 +6,7 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
   viewProviders: [],
   template: `
     <div class="">     
-        <select class="validate" [required]="data.required" class="display">
+        <select class="validate" [required]="data.required" class="display" (change)="onChange($event.target.value)">
           <option  
               *ngFor="let option of data.options" 
               value="{{option.value}}" 
@@ -26,4 +26,8 @@ export class SelectBox implements OnInit{
   ngOnInit() {
   }
 
+ onChange(value) {
+        this.data.props.formula.operVal = value;
+        this.data.props.formula.isSelected = true;
+  }
 }

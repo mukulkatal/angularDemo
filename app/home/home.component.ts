@@ -7,13 +7,15 @@ import { Switch } from './components/switch.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
 import { JSONElement } from './services/JSONElement.service';
 import { ComponentManager } from './components/component_manager/component_manager.component';
+import {FormulaSwitch} from "./components/formula_builder/formulaswitch.component";
+import {FinalFormula} from "./components/formula_builder/finalformula.component";
 
 declare var jQuery: any;
 
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    directives: [RouterLink, Control, Editor, TemplateDev, Switch, ComponentManager],
+    directives: [RouterLink, Control, Editor, TemplateDev, Switch, ComponentManager,FormulaSwitch,FinalFormula],
     providers: [JSONBuilder, JSONElement],
     viewProviders: [],
     templateUrl: 'home.template.html',

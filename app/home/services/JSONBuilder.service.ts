@@ -50,6 +50,13 @@ export class JSONBuilder{
 		this.selectedPage = page;
 	}
 
+	getSelectedSection():any{
+		return this.selectedSection;
+	}
+
+	getSelectedPage():any{
+		return this.selectedPage;
+	}
 	getSelectedControl() {
 		return this.selectedControl;
 	}

@@ -14,6 +14,10 @@ var RadioButton = (function () {
     }
     RadioButton.prototype.ngOnInit = function () {
     };
+    RadioButton.prototype.onChange = function (value) {
+        this.data.props.formula.operVal = value;
+        this.data.props.formula.isSelected = true;
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -23,7 +27,7 @@ var RadioButton = (function () {
             selector: 'radio-button',
             directives: [],
             viewProviders: [],
-            template: "\n   <div> \n   <div> title : {{data.props.title}}  </div>\n   <div> helptext : {{data.props.helpText}}  </div>\n    <p *ngFor=\"let radio_item of data.options, let i = index\">\n        <input\n            type=\"radio\"\n            id=\"radio{{i}}\"\n            class=\"validate\"\n            name=\"group\" \n            [required]=\"data.required\"          \n            [checked]=\"radio_item.selected\"\n          />         \n      <label attr.for=\"radio{{i}}\">{{radio_item.label}}</label>    \n    </p>\n  </div>\n\t"
+            template: "\n   <div> \n   <div> title : {{data.props.title}}  </div>\n   <div> helptext : {{data.props.helpText}}  </div>\n    <p *ngFor=\"let radio_item of data.options, let i = index\">\n        <input\n\t\t\t(change)=\"onChange(radio_item.value)\"\n            type=\"radio\"\n            id=\"radio{{i}}\"\n            class=\"validate\"\n            name=\"group\" \n            [required]=\"data.required\"          \n            [checked]=\"radio_item.selected\"\n          />         \n      <label attr.for=\"radio{{i}}\">{{radio_item.label}}</label>    \n    </p>\n  </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], RadioButton);

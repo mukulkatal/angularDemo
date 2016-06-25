@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var templates_1 = require('./templates');
+var JSONBuilder_service_1 = require("../../home/services/JSONBuilder.service");
 var Template = (function () {
-    function Template(_routeParams) {
+    function Template(_routeParams, jsonBuilderHelper) {
         this._routeParams = _routeParams;
+        this.jsonBuilderHelper = jsonBuilderHelper;
     }
     Template.prototype.ngOnInit = function () {
         var name = this._routeParams.get('name');
@@ -37,9 +39,9 @@ var Template = (function () {
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.TEMPLATES],
-            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"\n            [JSON_Template]=\"JSON_Template\"\n            >\n            </Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\"></Temp-2>\n        </div>\n        \n      ",
+            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"\n            [JSON_Template]=\"JSON_Template\"\n\t\t\t\t(selected_control)=\"jsonBuilderHelper.setSelectedControl($event)\" \n                (selected_section)=\"jsonBuilderHelper.setSelectedSection($event)\" \n                (selected_page)=\"jsonBuilderHelper.setSelectedPage($event)\"\n            >\n            </Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\"></Temp-2>\n        </div>\n        \n      ", providers: [JSONBuilder_service_1.JSONBuilder]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, JSONBuilder_service_1.JSONBuilder])
     ], Template);
     return Template;
 }());
