@@ -77,6 +77,7 @@ var Template1Component = (function () {
             item2 = new item_model_1.Item('header', 'This is textfield', 'textfield help');
             section2.addItems(item1, item2);
             this.JSON_Template = app;
+            console.log(JSON.stringify(app));
         }
         this.default_Template.emit(this.JSON_Template);
     };

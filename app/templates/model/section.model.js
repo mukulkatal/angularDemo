@@ -11,8 +11,10 @@ var Section = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             items[_i - 0] = arguments[_i];
         }
-        for (var item in items)
+        for (var item in items) {
+            items[item].order = Number(item) + 1;
             this.items.push(items[item]);
+        }
     };
     return Section;
 }());

@@ -109,6 +109,7 @@ export class Template1Component implements OnInit
             section2.addItems(item1,item2);
 
             this.JSON_Template=app;
+            console.log(JSON.stringify(app));
         }
         this.default_Template.emit(this.JSON_Template);
     }

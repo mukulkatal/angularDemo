@@ -13,6 +13,9 @@ export class Page {
 	public addSections(...sections)
 	{
 		for(let section in sections)
+		{
+			sections[section].order	=	Number(section)+1;
 			this.sections.push(sections[section]);
+		}
 	}
 }
