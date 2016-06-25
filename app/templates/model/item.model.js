@@ -35,6 +35,30 @@ var Item = (function () {
             placeholder: "",
             defaultvalue: "",
         };
+        this.options = [
+            {
+                type: "",
+                label: "male",
+                value: "1",
+                selected: "true",
+                icon: "",
+                attr: {
+                    class: "",
+                    style: "",
+                }
+            },
+            {
+                type: "",
+                label: "female",
+                value: "0",
+                selected: "",
+                icon: "",
+                attr: {
+                    class: "",
+                    style: "",
+                }
+            }
+        ];
         this.type = type;
         this.props.title = title || "";
         this.props.helpText = helpText || "";

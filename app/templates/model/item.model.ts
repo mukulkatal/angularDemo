@@ -35,7 +35,7 @@ export class Item {
        placeholder:"",
        defaultvalue:"",
     };
-    options:[
+    options:any =[
        {
         type:"",
          label:"male",
