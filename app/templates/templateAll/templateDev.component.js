@@ -17,7 +17,8 @@ var TemplateDev = (function () {
         this.default_Template = new core_1.EventEmitter();
         this.defaultJson = {
             "app": {
-                "pages": [{
+                "pages": [
+                    {
                         "description": "page 1",
                         "order": 1,
                         "sections": [
@@ -41,23 +42,27 @@ var TemplateDev = (function () {
                                                 "width": "100",
                                                 "height": "60",
                                             },
-                                            "validations": [{
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text areea in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -67,7 +72,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     },
                                     {
                                         "order": 2,
@@ -79,27 +85,33 @@ var TemplateDev = (function () {
                                         "config": {
                                             "type": "text",
                                             "showHelp": "1",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text areea in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -109,7 +121,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -126,27 +139,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -156,7 +175,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     },
                                     {
                                         "order": 2,
@@ -167,27 +187,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text area in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -197,7 +223,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     },
                                     {
                                         "order": 3,
@@ -208,21 +235,26 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -262,21 +294,26 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "radio",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -316,21 +353,26 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "header",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -370,21 +412,26 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "click-button",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this select in placeholder",
@@ -424,27 +471,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -454,7 +507,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     },
                                     {
                                         "order": 8,
@@ -465,27 +519,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -495,7 +555,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -504,7 +565,8 @@ var TemplateDev = (function () {
                     {
                         "description": "Page 2",
                         "order": 2,
-                        "sections": [{
+                        "sections": [
+                            {
                                 "description": "demo page",
                                 "order": 1,
                                 "items": [
@@ -517,27 +579,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -547,7 +615,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     },
                                     {
                                         "order": 2,
@@ -558,27 +627,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text area in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -588,7 +663,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -605,27 +681,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this text areea in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -635,7 +717,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     },
                                     {
                                         "order": 2,
@@ -646,27 +729,33 @@ var TemplateDev = (function () {
                                         },
                                         "config": {
                                             "type": "text",
-                                            "attr": [{
+                                            "attr": [
+                                                {
                                                     "class": "customeClass",
                                                     "style": "heightcolorred"
-                                                }],
-                                            "validations": [{
+                                                }
+                                            ],
+                                            "validations": [
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error"
-                                                }, {
+                                                },
+                                                {
                                                     "required": "true",
                                                     "message": "This field is required",
                                                     "errorClass": "error",
                                                     "min": "0",
                                                     "max": "100"
-                                                }],
+                                                }
+                                            ],
                                             "maxSelections": 1,
                                             "direction": "horizontal",
                                             "placeholder": "this textfield in placeholder",
                                             "defaultvalue": "Default Value"
                                         },
-                                        "options": [{
+                                        "options": [
+                                            {
                                                 "type": "toggel",
                                                 "label": "OPTION 1",
                                                 "value": "10",
@@ -676,7 +765,8 @@ var TemplateDev = (function () {
                                                     "class": "customeClass",
                                                     "style": "height:100;color:red;"
                                                 }
-                                            }]
+                                            }
+                                        ]
                                     }
                                 ]
                             },

@@ -7,7 +7,10 @@ selector :"Temp",
 directives: [TEMPLATES],
 template : `     
         <div [ngSwitch]="Temp_name">
-            <Temp-1 *ngSwitchWhen="'Temp-1'"></Temp-1>
+            <Temp-1 *ngSwitchWhen="'Temp-1'"
+            [JSON_Template]="JSON_Template"
+            >
+            </Temp-1>
             <Temp-2 *ngSwitchWhen="'Temp-2'"></Temp-2>
         </div>
         
@@ -17,6 +20,7 @@ template : `
 export class Template implements OnInit
 {
     @Input('TempName') Temp_name;
+    private JSON_Template;
 
     constructor(private _routeParams: RouteParams) {
 
@@ -25,6 +29,15 @@ export class Template implements OnInit
     ngOnInit(){     
         let name: string = this._routeParams.get('name');
         if(name){
+            //get json from "server or local storage"
+            let template = localStorage.getItem('template');
+            if(template){
+                this.JSON_Template = JSON.parse(template);
+            }
+            else{
+                //get json from server
+            }
+
             //load template
             this.Temp_name = name;
         }
