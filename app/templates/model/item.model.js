@@ -48,6 +48,17 @@ var Item = (function () {
     Item.prototype.setHelptext = function (helpText) {
         this.props.helpText = helpText;
     };
+    Item.prototype.setPlaceHolder = function (placeholder) {
+        this.config.placeholder = placeholder;
+    };
+    Item.prototype.setOptions = function () {
+        var options = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            options[_i - 0] = arguments[_i];
+        }
+        for (var option in options)
+            this.options.push(options[option]);
+    };
     return Item;
 }());
 exports.Item = Item;
