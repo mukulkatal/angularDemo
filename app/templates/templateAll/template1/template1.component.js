@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var sections_component_1 = require('./components/sections.component');
 var control_component_1 = require('../../../templates/controls/control.component');
 var finalformula_component_1 = require("../../../home/components/formula_builder/finalformula.component");
+var formulaBuilder_component_1 = require("../../../home/components/formula_builder/formulaBuilder.component");
 var Template1Component = (function () {
     function Template1Component() {
         // @Output() default_Template = new EventEmitter();
@@ -60,7 +61,7 @@ var Template1Component = (function () {
     Template1Component = __decorate([
         core_1.Component({
             selector: 'Temp-1',
-            directives: [control_component_1.Control, sections_component_1.SectionComponent, finalformula_component_1.FinalFormula],
+            directives: [control_component_1.Control, sections_component_1.SectionComponent, finalformula_component_1.FinalFormula, formulaBuilder_component_1.FormulaBuilder],
             viewProviders: [],
             templateUrl: 'app/templates/templateAll/template1/templatesHtml/template1.template.html',
             styleUrls: ['node_modules/materialize-css/dist/css/materialize.min.css'],
