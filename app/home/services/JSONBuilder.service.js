@@ -68,7 +68,7 @@ var JSONBuilder = (function () {
         if (this.selectedSection.items.length > 0)
             this.selectedControl = this.selectedSection.items[0];
         else
-            this.selectedControl = '';
+            this.selectedControl = undefined;
     };
     JSONBuilder.prototype.multiSectionSort = function (sectionIndex, itemIndex, order) {
         var sectionItems = this.selectedPage.sections[sectionIndex - 1].items;

@@ -7,7 +7,7 @@ declare var jQuery: any;
 export class JSONBuilder{
 	
 	private JSONTemplate: any;
-	private selectedControl: Section;
+	private selectedControl: any;
 	private selectedSection: any;
 	private selectedPage: any;
 
@@ -78,7 +78,7 @@ export class JSONBuilder{
         if (this.selectedSection.items.length > 0)
             this.selectedControl = this.selectedSection.items[0];
         else
-            this.selectedControl = ''; 
+            this.selectedControl = undefined; 
 	}
 	
 	multiSectionSort(sectionIndex: number,itemIndex: number,order: string[]) {	

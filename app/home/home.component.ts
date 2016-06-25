@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit{
     }
 
     onClick(e){
-        let item = new Item('textfield');
+        let item = new Item('textfield','','');
         this.jsonBuilderHelper.getSelectedSection().addItems(item);
     }
 

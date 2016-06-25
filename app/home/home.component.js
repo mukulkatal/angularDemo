@@ -51,7 +51,7 @@ var HomeComponent = (function () {
         }).disableSelection();
     };
     HomeComponent.prototype.onClick = function (e) {
-        var item = new model_1.Item('textfield');
+        var item = new model_1.Item('textfield', '', '');
         this.jsonBuilderHelper.getSelectedSection().addItems(item);
     };
     HomeComponent.prototype.onPreview = function () {
