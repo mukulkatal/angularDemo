@@ -1,11 +1,13 @@
 
 import { Injectable } from '@angular/core';
+import {App,Item,Section,Page} from './../models/model';
+
 declare var jQuery: any;
 @Injectable()
 export class JSONBuilder{
 	
 	private JSONTemplate: any;
-	private selectedControl: any;
+	private selectedControl: Section;
 	private selectedSection: any;
 	private selectedPage: any;
 
@@ -44,6 +46,7 @@ export class JSONBuilder{
 
 	setSelectedSection(section: any) {
 		this.selectedSection = section;
+		this.selectedSection.__proto__ = Section.prototype;
 	}
 
 	setSelectedPage(page: any) {
@@ -52,6 +55,10 @@ export class JSONBuilder{
 
 	getSelectedControl() {
 		return this.selectedControl;
+	}
+
+	getSelectedSection() {
+		return this.selectedSection;
 	}
 
     changeControl(newControl: any){

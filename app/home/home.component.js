@@ -17,6 +17,7 @@ var switch_component_1 = require('./components/switch.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var JSONElement_service_1 = require('./services/JSONElement.service');
 var component_manager_component_1 = require('./components/component_manager/component_manager.component');
+var model_1 = require('./models/model');
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
@@ -50,8 +51,8 @@ var HomeComponent = (function () {
         }).disableSelection();
     };
     HomeComponent.prototype.onClick = function (e) {
-        var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
-        this.jsonBuilderHelper.addNewChild(jsonElement);
+        var item = new model_1.Item('textfield');
+        this.jsonBuilderHelper.getSelectedSection().addItems(item);
     };
     HomeComponent.prototype.onPreview = function () {
         localStorage.setItem('template', JSON.stringify(this.controls));

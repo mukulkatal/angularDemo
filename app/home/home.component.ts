@@ -7,6 +7,7 @@ import { Switch } from './components/switch.component';
 import { JSONBuilder } from './services/JSONBuilder.service';
 import { JSONElement } from './services/JSONElement.service';
 import { ComponentManager } from './components/component_manager/component_manager.component';
+import {App,Item,Section,Page} from './models/model';
 
 declare var jQuery: any;
 
@@ -62,8 +63,8 @@ export class HomeComponent implements OnInit{
     }
 
     onClick(e){
-        var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
-        this.jsonBuilderHelper.addNewChild(jsonElement);
+        let item = new Item('textfield');
+        this.jsonBuilderHelper.getSelectedSection().addItems(item);
     }
 
     onPreview(){
