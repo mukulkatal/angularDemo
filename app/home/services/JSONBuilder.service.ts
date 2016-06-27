@@ -96,4 +96,16 @@ export class JSONBuilder{
 		});
 	}
 
+	duplicateControl() {	
+		// var sectionItems: any =	this.selectedSection;
+		let index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+		this.selectedSection.items.splice(index+1, 0, this.selectedControl);
+		//sort the parent array	
+		this.sort;
+		// sort the result section
+		jQuery.each(this.selectedSection.items, function(key, item) {
+			item.order = key+1;
+		});
+	}
+
 }

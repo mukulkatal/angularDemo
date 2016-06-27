@@ -84,6 +84,17 @@ var JSONBuilder = (function () {
             item.order = key + 1;
         });
     };
+    JSONBuilder.prototype.duplicateControl = function () {
+        // var sectionItems: any =	this.selectedSection;
+        var index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+        this.selectedSection.items.splice(index + 1, 0, this.selectedControl);
+        //sort the parent array	
+        this.sort;
+        // sort the result section
+        jQuery.each(this.selectedSection.items, function (key, item) {
+            item.order = key + 1;
+        });
+    };
     JSONBuilder = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

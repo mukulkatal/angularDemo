@@ -24,8 +24,22 @@
                     (mousedown)="selectControl(control)"
                 >
                     <span class="ellipsis">{{control.type}}</span>
-                    <a href="javascript:void(0);" class="sublist-action" title="Duplicate"><i class="material-icons">filter_none</i></a>
-                    <a href="javascript:void(0);" class="sublist-action"  (click)="jsonBuilderHelper.deleteControl()"  title="Delete"><i class="material-icons">clear</i></a>
+                    <a 
+                        href="javascript:void(0);" 
+                        class="sublist-action" 
+                        title="Duplicate"
+                        (click)="jsonBuilderHelper.duplicateControl()"
+                    >
+                        <i class="material-icons">filter_none</i>
+                    </a>
+                    <a 
+                        href="javascript:void(0);" 
+                        class="sublist-action"  
+                        (click)="jsonBuilderHelper.deleteControl()" 
+                        title="Delete"
+                    >
+                        <i class="material-icons">clear</i>
+                    </a>
                 </li>
             </ul>
         </div>
