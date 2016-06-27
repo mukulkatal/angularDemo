@@ -9,6 +9,7 @@ export class Item {
     config: any = {
        type:"",
        showHelp:"",
+       showControl:"",
        attr: {
           class:"",
           style:"",
