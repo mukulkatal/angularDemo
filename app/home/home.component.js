@@ -17,6 +17,7 @@ var switch_component_1 = require('./components/switch.component');
 var JSONBuilder_service_1 = require('./services/JSONBuilder.service');
 var JSONElement_service_1 = require('./services/JSONElement.service');
 var component_manager_component_1 = require('./components/component_manager/component_manager.component');
+var model_1 = require('./models/model');
 var HomeComponent = (function () {
     function HomeComponent(jsonBuilderHelper, jsonElementHandler) {
         this.jsonBuilderHelper = jsonBuilderHelper;
@@ -31,8 +32,6 @@ var HomeComponent = (function () {
     */
     HomeComponent.prototype.bind_Template_Json = function (data) {
         this.controls = data;
-        // console.log("in home");
-        // console.log(this.controls);
         //drag and sort elements in a section
         var self = this;
         jQuery(".sortable").sortable({
@@ -45,15 +44,14 @@ var HomeComponent = (function () {
             update: function () {
                 //get order from DOM
                 var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
-                console.log(order);
                 //sort the array
                 self.jsonBuilderHelper.sort(order);
             }
         }).disableSelection();
     };
     HomeComponent.prototype.onClick = function (e) {
-        var jsonElement = this.jsonElementHandler.getJsonOfElem('textfield');
-        this.jsonBuilderHelper.addNewChild(jsonElement);
+        var item = new model_1.Item('textfield', '', '');
+        this.jsonBuilderHelper.getSelectedSection().addItems(item);
     };
     HomeComponent.prototype.onPreview = function () {
         localStorage.setItem('template', JSON.stringify(this.controls));

@@ -18,6 +18,13 @@ var Template = (function () {
     Template.prototype.ngOnInit = function () {
         var name = this._routeParams.get('name');
         if (name) {
+            //get json from "server or local storage"
+            var template = localStorage.getItem('template');
+            if (template) {
+                this.JSON_Template = JSON.parse(template);
+            }
+            else {
+            }
             //load template
             this.Temp_name = name;
         }
@@ -30,7 +37,7 @@ var Template = (function () {
         core_1.Component({
             selector: "Temp",
             directives: [templates_1.TEMPLATES],
-            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"></Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\"></Temp-2>\n        </div>\n        \n      ",
+            template: "     \n        <div [ngSwitch]=\"Temp_name\">\n            <Temp-1 *ngSwitchWhen=\"'Temp-1'\"\n            [JSON_Template]=\"JSON_Template\"\n            >\n            </Temp-1>\n            <Temp-2 *ngSwitchWhen=\"'Temp-2'\"></Temp-2>\n        </div>\n        \n      ",
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.RouteParams])
     ], Template);

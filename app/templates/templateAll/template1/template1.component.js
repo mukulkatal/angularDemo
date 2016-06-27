@@ -11,21 +11,74 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var sections_component_1 = require('./components/sections.component');
 var control_component_1 = require('../../../templates/controls/control.component');
+var model_1 = require('./../../../home/models/model');
+// import {App} from './../../model/app.model';
+// import {Page} from './../../model/page.model';
+// import {Section} from './../../model/section.model';
+// import {Item} from './../../model/item.model';
 var Template1Component = (function () {
-    function Template1Component() {
-        // @Output() default_Template = new EventEmitter();
-        this.selected_control = new core_1.EventEmitter();
-        this.selected_section = new core_1.EventEmitter();
-        this.selected_page = new core_1.EventEmitter();
-    }
     //@Input() jsonTemplate;
     /*  ---
         default json of the template
     */
+    function Template1Component() {
+        //app:any = App();
+        this.default_Template = new core_1.EventEmitter();
+        this.selected_control = new core_1.EventEmitter();
+        this.selected_section = new core_1.EventEmitter();
+        this.selected_page = new core_1.EventEmitter();
+    }
     Template1Component.prototype.ngOnInit = function () {
         /*  ---
-            end json on init for initialize the json
-        */
+                end json on init for initialize the json
+            */
+        if (!this.JSON_Template) {
+            var app = new model_1.App();
+            // add pages in app
+            var landingPage = new model_1.Page('landing');
+            var questionPage = new model_1.Page('questions');
+            var resultPage = new model_1.Page('result');
+            var page4 = new model_1.Page('other');
+            app.addPages(landingPage, questionPage, resultPage, page4);
+            //add section in landing page
+            var section1 = new model_1.Section();
+            var section2 = new model_1.Section();
+            landingPage.addSections(section1, section2);
+            // add items in section 1 in landing page
+            var item1 = new model_1.Item('textfield', 'This is textfield', 'textfield help');
+            var item2 = new model_1.Item('text-area', 'This is textfield', 'textfield help');
+            section1.addItems(item1, item2);
+            // add items in section 2 in landing page        
+            item1 = new model_1.Item('selectbox', 'This is textfield', 'textfield help');
+            item2 = new model_1.Item('radio-button', 'This is textfield', 'textfield help');
+            section2.addItems(item1, item2);
+            //add section in question page
+            section1 = new model_1.Section();
+            section2 = new model_1.Section();
+            questionPage.addSections(section1, section2);
+            // add items in section 1 in question page
+            item1 = new model_1.Item('textfield', 'This is textfield', 'textfield help');
+            item2 = new model_1.Item('logo', 'This is textfield', 'textfield help');
+            section1.addItems(item1, item2);
+            // add items in section 2 in question page        
+            item1 = new model_1.Item('selectbox', 'This is textfield', 'textfield help');
+            item2 = new model_1.Item('header', 'This is textfield', 'textfield help');
+            section2.addItems(item1, item2);
+            //add section in result page
+            section1 = new model_1.Section();
+            section2 = new model_1.Section();
+            resultPage.addSections(section1, section2);
+            // add items in section 1 in result page
+            item1 = new model_1.Item('slider', 'This is slider', 'slider help');
+            item2 = new model_1.Item('slider', 'This is textfield', 'textfield help');
+            section1.addItems(item1, item2);
+            // add items in section 2 in result page        
+            item1 = new model_1.Item('selectbox', 'This is textfield', 'textfield help');
+            item2 = new model_1.Item('header', 'This is textfield', 'textfield help');
+            section2.addItems(item1, item2);
+            this.JSON_Template = app;
+        }
+        this.default_Template.emit(this.JSON_Template);
     };
     /*  ---
         when control is selected from particluar template then it pass to parent
@@ -40,6 +93,10 @@ var Template1Component = (function () {
     Template1Component.prototype.selectpage = function (page) {
         this.selected_page.emit(page);
     };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Template1Component.prototype, "default_Template", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)

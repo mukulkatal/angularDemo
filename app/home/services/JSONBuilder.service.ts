@@ -1,5 +1,7 @@
 
 import { Injectable } from '@angular/core';
+import {App,Item,Section,Page} from './../models/model';
+
 declare var jQuery: any;
 @Injectable()
 export class JSONBuilder{
@@ -44,6 +46,7 @@ export class JSONBuilder{
 
 	setSelectedSection(section: any) {
 		this.selectedSection = section;
+		this.selectedSection.__proto__ = Section.prototype;
 	}
 
 	setSelectedPage(page: any) {
@@ -52,6 +55,10 @@ export class JSONBuilder{
 
 	getSelectedControl() {
 		return this.selectedControl;
+	}
+
+	getSelectedSection() {
+		return this.selectedSection;
 	}
 
     changeControl(newControl: any){
@@ -67,19 +74,20 @@ export class JSONBuilder{
 		//replace oldControl with newControl at index		
 		this.selectedSection.items.splice(index, 1);
 
-		// choose the next selected element from template section    
+		//choose the next selected element from template section    
         if (this.selectedSection.items.length > 0)
             this.selectedControl = this.selectedSection.items[0];
         else
-            this.selectedControl = ''; 
+            this.selectedControl = undefined; 
 	}
 	
 	multiSectionSort(sectionIndex: number,itemIndex: number,order: string[]) {	
 		var sectionItems: any = this.selectedPage.sections[sectionIndex - 1].items;
-				
 		sectionItems.splice(itemIndex, 0, this.selectedControl);
 		// delete control from out section
-		this.deleteControl();	
+		let index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
+		//replace oldControl with newControl at index		
+		this.selectedSection.items.splice(index, 1);
 		//sort the parent array	
 		this.sort;
 		// sort the result section

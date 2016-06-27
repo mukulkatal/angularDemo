@@ -8,6 +8,7 @@ import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 					<a class="waves-effect waves-light btn">{{data.props.title}}</a>                  
              </div>`
 })
+
 export class Button implements OnInit {
 	@Input() data: any;
 	value: string;

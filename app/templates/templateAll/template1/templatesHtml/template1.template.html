@@ -1,4 +1,4 @@
-<div *ngFor="let page of JSON_Template.app.pages" (mousedown)="selectpage(page)" >
+<div *ngFor="let page of JSON_Template.pages" (mousedown)="selectpage(page)" >
 <div class="col s12 m12" >
 	<section
 			*ngFor="let section of page.sections"
@@ -6,8 +6,8 @@
 			class="col s12 m12 sortable mt40 z-depth-3"
 	>
 
-			<div class="child p20 " *ngFor="let control of section.items"
-				[attr.data-order]="control.order"
+			<div class="child p20 " *ngFor="let control of section.items,let i=index"
+				[attr.data-order]="i+1"
 				(mousedown)="selectControl(control)"
 			>
 				<control [data]="control"></control>
