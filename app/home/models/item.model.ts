@@ -3,7 +3,8 @@ export class Item {
     order:string="";
     type:string="";
     props: any = {
-  		title: "",
+      title: "",
+      currentValue: "",
   		helpText : "",
   	};
     config: any = {
