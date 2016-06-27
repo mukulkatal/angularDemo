@@ -19,7 +19,7 @@ var EditorLogo = (function () {
     EditorLogo = __decorate([
         core_1.Component({
             selector: 'editor-logo',
-            template: "\n\t\t<div>\n\t\t\tURL :<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\t\tHelp Text : <input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\t\t\n\t\t\tAlter Text : <input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t\tWidth:<input type=\"text\" [(ngModel)] = \"control.config.attr.width\" />\n\t\t\tHeight:<input type=\"text\" [(ngModel)] = \"control.config.attr.height\" />\n\t\t</div>\t\t\n\t"
+            template: "\n\t\t <div class=\"logo-details\">\n\t\t\t<span>{{control.type}}:</span>\n\t\t\t<div class=\"desc-switch\">\n\t\t\t\t<input type=\"checkbox\" name=\"properties-checkbox\" checked data-size=\"mini\" [(ngModel)] = \"control.config.showControl\">\n\t\t\t</div>\n\t\t\t<div class=\"landing-inputfile\">\n\t\t\t\t<div class=\"col-xs-12 no-padding\">\n\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t<input type=\"text\" class=\"file-input\" placeholder=\"No file\" readonly [(ngModel)] = \"control.props.currentValue\">\n\t\t\t\t\t\t<label class=\"input-group-btn\">\n\t\t\t\t\t\t\t<span class=\"btn btn-default btn-flat btn-basic2\">\n\t\t\t\t\t\t\tUpload <input type=\"file\" style=\"display: none;\">\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], EditorLogo);

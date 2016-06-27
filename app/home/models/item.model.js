@@ -10,6 +10,7 @@ var Item = (function () {
         this.config = {
             type: "",
             showHelp: "",
+            showControl: "",
             attr: {
                 class: "",
                 style: "",
