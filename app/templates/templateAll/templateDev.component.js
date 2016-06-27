@@ -23,18 +23,11 @@ var TemplateDev = (function () {
             //if present then assign it.
             this.JSON_Template = JSON.parse(template);
         }
-<<<<<<< HEAD
-        this.JSON_Template = this.defaultJson;
-        this.jsonBuilderHelper.setTemplate(this.JSON_Template);
-        //emit to home component.
-        this.default_Template.emit(this.JSON_Template);
-=======
     };
     // bind Template Json from template parent
     TemplateDev.prototype.bind_Template_Json = function (template) {
         this.jsonBuilderHelper.setTemplate(template);
         this.default_Template.emit(template);
->>>>>>> 0976ff635f16ac1a0b3033f3c5e992e3e0f60637
     };
     __decorate([
         core_1.Input('TempName'), 
