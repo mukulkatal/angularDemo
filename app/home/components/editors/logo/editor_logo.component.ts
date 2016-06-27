@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
 			<div class="landing-inputfile">
 				<div class="col-xs-12 no-padding">
 					<div class="input-group">
-						<input type="text" class="file-input" placeholder="No file" readonly [(ngModel)] = "control.props.title">
+						<input type="text" class="file-input" placeholder="No file" readonly [(ngModel)] = "control.props.currentValue">
 						<label class="input-group-btn">
 							<span class="btn btn-default btn-flat btn-basic2">
 							Upload <input type="file" style="display: none;">
