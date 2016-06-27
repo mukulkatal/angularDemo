@@ -23,9 +23,10 @@ var EditorSlider = (function () {
             selector: 'editor-slider',
             template: "\n\t\tHelp Text : <input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\tTitle :<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\tPlaceHolder : <input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t"
         }), 
-        __metadata('design:paramtypes', [JSONElement_service_1.JSONElement])
+        __metadata('design:paramtypes', [(typeof (_a = typeof JSONElement_service_1.JSONElement !== 'undefined' && JSONElement_service_1.JSONElement) === 'function' && _a) || Object])
     ], EditorSlider);
     return EditorSlider;
+    var _a;
 }());
 exports.EditorSlider = EditorSlider;
 //# sourceMappingURL=editor_slider.component.js.map
