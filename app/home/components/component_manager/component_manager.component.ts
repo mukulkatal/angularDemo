@@ -38,8 +38,7 @@ export class ComponentManager implements AfterViewInit {
 	constructor(private jsonBuilderHelper: JSONBuilder){
 
 		this.templateJson = jsonBuilderHelper.getJSONBuilt();	
-		console.log('asd');	
-		console.log(this.templateJson);	
+	
 	}
 
 	ngAfterViewInit(){
@@ -61,13 +60,13 @@ export class ComponentManager implements AfterViewInit {
             receive:
             function(event, ui) {
                 let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                 console.log('recieve');
                 self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
 			},
         }).disableSelection();
     }
 
-	selectControl(control) {	
-
+	selectControl(control) {			
         this.jsonBuilderHelper.setSelectedControl(control);
     }
 }

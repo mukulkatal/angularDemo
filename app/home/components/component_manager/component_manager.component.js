@@ -15,8 +15,6 @@ var ComponentManager = (function () {
     function ComponentManager(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.templateJson = jsonBuilderHelper.getJSONBuilt();
-        console.log('asd');
-        console.log(this.templateJson);
     }
     ComponentManager.prototype.ngAfterViewInit = function () {
         var self = this;
@@ -36,6 +34,7 @@ var ComponentManager = (function () {
             },
             receive: function (event, ui) {
                 var order = jQuery(this).sortable("toArray", { attribute: "data-order" });
+                console.log('recieve');
                 self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
             },
         }).disableSelection();

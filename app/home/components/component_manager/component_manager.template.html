@@ -3,17 +3,21 @@
         *ngFor="let page of templateJson.pages" 
         (mousedown)="jsonBuilderHelper.setSelectedPage(page)" 
     >
-        <a href="">{{page.type}}</a>
+        <a href="javascript:void(0)">{{page.type}}</a>
         <div 
             class="ed-sidebar-questions-sub"
-            *ngFor="let section of page.sections,let s=index"       
-            [attr.data-section]="s+1"
-            class="col s12 m12 sortable1 mt40 z-depth-3"
-            (mousedown)="jsonBuilderHelper.setSelectedSection(section)"
+            *ngFor="let section of page.sections,let s=index" 
         >
-            <label>{{page.type}}</label> 
+            <label
+            >
+            {{page.type}}
+            </label> 
             <!-- section type -->
-            <ul>
+            <ul  
+                class="sortable1"
+                [attr.data-section]="s+1"
+                (mousedown)="jsonBuilderHelper.setSelectedSection(section)"
+            >
                 <li 
                     *ngFor="let control of section.items,let i=index" 
                     [attr.data-order]="i+1"
@@ -21,7 +25,7 @@
                 >
                     <span class="ellipsis">{{control.type}}</span>
                     <a href="javascript:void(0);" class="sublist-action" title="Duplicate"><i class="material-icons">filter_none</i></a>
-                    <a href="javascript:void(0);" class="sublist-action" title="Delete"><i class="material-icons">clear</i></a>
+                    <a href="javascript:void(0);" class="sublist-action"  (click)="jsonBuilderHelper.deleteControl()"  title="Delete"><i class="material-icons">clear</i></a>
                 </li>
             </ul>
         </div>
