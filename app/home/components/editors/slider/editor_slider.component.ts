@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { JSONElement } from '../../services/JSONElement.service';
+import { JSONElement } from '../../../services/JSONElement.service';
 
 @Component({
 	selector:'editor-slider',

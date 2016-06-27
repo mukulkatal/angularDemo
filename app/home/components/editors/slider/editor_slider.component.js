@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var JSONElement_service_1 = require('../../services/JSONElement.service');
+var JSONElement_service_1 = require('../../../services/JSONElement.service');
 var EditorSlider = (function () {
     function EditorSlider(jsonElementHandler) {
         this.jsonElementHandler = jsonElementHandler;
@@ -23,10 +23,9 @@ var EditorSlider = (function () {
             selector: 'editor-slider',
             template: "\n\t\tHelp Text : <input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\tTitle :<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\tPlaceHolder : <input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t"
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof JSONElement_service_1.JSONElement !== 'undefined' && JSONElement_service_1.JSONElement) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [JSONElement_service_1.JSONElement])
     ], EditorSlider);
     return EditorSlider;
-    var _a;
 }());
 exports.EditorSlider = EditorSlider;
 //# sourceMappingURL=editor_slider.component.js.map
