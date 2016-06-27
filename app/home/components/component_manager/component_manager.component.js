@@ -15,6 +15,8 @@ var ComponentManager = (function () {
     function ComponentManager(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
         this.templateJson = jsonBuilderHelper.getJSONBuilt();
+        console.log('asd');
+        console.log(this.templateJson);
     }
     ComponentManager.prototype.ngAfterViewInit = function () {
         var self = this;
@@ -45,7 +47,7 @@ var ComponentManager = (function () {
         core_1.Component({
             selector: 'component-manager',
             directives: [control_component_1.Control],
-            template: "\n\t<div class=\"a\">\n\t<div  *ngFor=\"let page of templateJson.pages\" (mousedown)=\"jsonBuilderHelper.setSelectedPage(page)\" >\n\t\t<ul \t\t\t\n\t\t\t*ngFor=\"let section of page.sections,let s=index\"\t\t\n\t\t\t[attr.data-section]=\"s+1\"\n\t\t\tclass=\"col s12 m12 sortable1 mt40 z-depth-3\"\n\t\t\t(mousedown)=\"jsonBuilderHelper.setSelectedSection(section)\"\n\t\t>\n\t\t \n\t\t\t<li class=\"child p20 \" *ngFor=\"let control of section.items,let i=index\" \n\t\t\t\t[attr.data-order]=\"i+1\"\n\t\t\t\t(mousedown)=\"selectControl(control)\"\t\t\t\t\t\n\t\t\t>\n\t\t\t\t{{control.type}}\n\t\t\t</li>\n\t\t\n\t\t</ul>\n\t</div>\t\n\t</div>\t\n\t"
+            templateUrl: 'app/home/components/component_manager/component_manager.template.html',
         }), 
         __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder])
     ], ComponentManager);

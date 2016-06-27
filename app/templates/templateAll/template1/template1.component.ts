@@ -56,35 +56,35 @@ export class Template1Component implements OnInit
         {
             let app             = new App();
             // add pages in app
-            let landingPage     = new Page('landing');
-            let questionPage    = new Page('questions');
-            let resultPage      = new Page('result');
-            let page4           = new Page('other');
-            app.addPages(landingPage,questionPage,resultPage,page4);
+            let landingPage     = new Page('Landing Page');
+            let questionPage    = new Page('Questionnaire');
+            let resultPage      = new Page('Result Page');
+            //let page4           = new Page('other');
+            app.addPages(landingPage,questionPage,resultPage);
 
             //add section in landing page
             let section1  = new Section();
             let section2  = new Section();
-            landingPage.addSections(section1,section2);
+            // landingPage.addSections(section1,section2);
 
-            // add items in section 1 in landing page
-            let item1  = new Item('textfield','This is textfield','textfield help');
-            let item2  = new Item('text-area','This is textfield','textfield help');       
-            section1.addItems(item1,item2);
+            // // add items in section 1 in landing page
+            // let item1  = new Item('textfield','This is textfield','textfield help');
+            // let item2  = new Item('text-area','This is textfield','textfield help');       
+            // section1.addItems(item1,item2);
 
-            // add items in section 2 in landing page        
-            item1  = new Item('selectbox','This is textfield','textfield help');
-            item2  = new Item('radio-button','This is textfield','textfield help'); 
-            section2.addItems(item1,item2);
+            // // add items in section 2 in landing page        
+            // item1  = new Item('selectbox','This is textfield','textfield help');
+            // item2  = new Item('radio-button','This is textfield','textfield help'); 
+            // section2.addItems(item1,item2);
 
              //add section in question page
-            section1  = new Section();
-            section2  = new Section();
+            // section1  = new Section();
+            // section2  = new Section();
             questionPage.addSections(section1,section2);
             
             // add items in section 1 in question page
-            item1  = new Item('textfield','This is textfield','textfield help');
-            item2  = new Item('logo','This is textfield','textfield help');       
+            let item1  = new Item('textfield','This is textfield','textfield help');
+            let item2  = new Item('logo','This is textfield','textfield help');       
             section1.addItems(item1,item2);
 
             // add items in section 2 in question page        

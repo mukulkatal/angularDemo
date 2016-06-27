@@ -35,30 +35,30 @@ var Template1Component = (function () {
         if (!this.JSON_Template) {
             var app = new model_1.App();
             // add pages in app
-            var landingPage = new model_1.Page('landing');
-            var questionPage = new model_1.Page('questions');
-            var resultPage = new model_1.Page('result');
-            var page4 = new model_1.Page('other');
-            app.addPages(landingPage, questionPage, resultPage, page4);
+            var landingPage = new model_1.Page('Landing Page');
+            var questionPage = new model_1.Page('Questionnaire');
+            var resultPage = new model_1.Page('Result Page');
+            //let page4           = new Page('other');
+            app.addPages(landingPage, questionPage, resultPage);
             //add section in landing page
             var section1 = new model_1.Section();
             var section2 = new model_1.Section();
-            landingPage.addSections(section1, section2);
-            // add items in section 1 in landing page
-            var item1 = new model_1.Item('textfield', 'This is textfield', 'textfield help');
-            var item2 = new model_1.Item('text-area', 'This is textfield', 'textfield help');
-            section1.addItems(item1, item2);
-            // add items in section 2 in landing page        
-            item1 = new model_1.Item('selectbox', 'This is textfield', 'textfield help');
-            item2 = new model_1.Item('radio-button', 'This is textfield', 'textfield help');
-            section2.addItems(item1, item2);
+            // landingPage.addSections(section1,section2);
+            // // add items in section 1 in landing page
+            // let item1  = new Item('textfield','This is textfield','textfield help');
+            // let item2  = new Item('text-area','This is textfield','textfield help');       
+            // section1.addItems(item1,item2);
+            // // add items in section 2 in landing page        
+            // item1  = new Item('selectbox','This is textfield','textfield help');
+            // item2  = new Item('radio-button','This is textfield','textfield help'); 
+            // section2.addItems(item1,item2);
             //add section in question page
-            section1 = new model_1.Section();
-            section2 = new model_1.Section();
+            // section1  = new Section();
+            // section2  = new Section();
             questionPage.addSections(section1, section2);
             // add items in section 1 in question page
-            item1 = new model_1.Item('textfield', 'This is textfield', 'textfield help');
-            item2 = new model_1.Item('logo', 'This is textfield', 'textfield help');
+            var item1 = new model_1.Item('textfield', 'This is textfield', 'textfield help');
+            var item2 = new model_1.Item('logo', 'This is textfield', 'textfield help');
             section1.addItems(item1, item2);
             // add items in section 2 in question page        
             item1 = new model_1.Item('selectbox', 'This is textfield', 'textfield help');

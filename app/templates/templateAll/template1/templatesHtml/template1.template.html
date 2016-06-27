@@ -1,4 +1,4 @@
-<div *ngFor="let page of JSON_Template.pages" (mousedown)="selectpage(page)" >
+<!-- <div *ngFor="let page of JSON_Template.pages" (mousedown)="selectpage(page)" >
 <div class="col s12 m12" >
 	<section
 			*ngFor="let section of page.sections"
@@ -10,9 +10,33 @@
 				[attr.data-order]="i+1"
 				(mousedown)="selectControl(control)"
 			>
-				<control [data]="control"></control>
+				<control [data]="control" ></control>
 			</div>
 
 	</section>
 </div>
-</div>
+</div> -->
+
+<section class="main-bg">
+    <header>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12 logo">
+                <a href="#">
+                    <img src="assets/template/images/logo.png" alt="Company Logo">
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End-->
+    <div class="main-section ">
+        <!-- Content Section-->
+        <div class="landing-page">
+            <h1 class="main-head">Heading Goes here</h1>
+            <h2 class="sub-head">Optional sub heading goes here</h2>
+            <p class="description">
+                Desription of the calculator also optional and not mandatory. Desription of the calculator also optional and not mandatory.
+            </p>
+            <a href="#section2" class="btn prime-action page-scroll ">Get Started</a>
+        </div>
+    </div>
+</section>

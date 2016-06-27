@@ -17,11 +17,16 @@ declare var jQuery: any;
     directives: [RouterLink, Control, Editor, TemplateDev, Switch, ComponentManager],
     providers: [JSONBuilder, JSONElement],
     viewProviders: [],
-    templateUrl: 'home.template.html',
-    styles : [
-    '.mt20{margin-top:20px}'
-    ],
-    styleUrls: ['../../node_modules/materialize-css/dist/css/materialize.min.css']
+    templateUrl: 'home1.template.html',
+    // styles : [
+    // '.mt20{margin-top:20px}'
+    // ],
+   // styleUrls:  [
+   //                  'assets/css/bootstrap.css',
+   //                  'assets/css/bootstrap-switch.css',
+   //                  'assets/css/bootstrap-select.css',
+   //                  'assets/css/custom.css',
+   //              ]
 })
 
 export class HomeComponent implements OnInit{
@@ -35,7 +40,7 @@ export class HomeComponent implements OnInit{
     --  output from the templates for default json and handle selected control
     */
 
-    bind_Template_Json(data: any){
+    bind_Template_Json(data: any){        
         this.controls = data;
                
         //drag and sort elements in a section

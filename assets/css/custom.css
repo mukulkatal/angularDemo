@@ -1,0 +1,1244 @@
+/* font kit start */
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'), url('../fonts/roboto-bold-webfont.woff') format('woff'), url('../fonts/roboto-bold-webfont.ttf') format('truetype'), url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light-webfont.ttf') format('truetype'), url('../fonts/roboto-light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'), url('../fonts/roboto-regular-webfont.woff') format('woff'), url('../fonts/roboto-regular-webfont.ttf') format('truetype'), url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'), local('materialIcons-Regular'), url(../fonts/materialIcons-Regular.woff2) format('woff2'), url(../fonts/materialIcons-Regular.woff) format('woff'), url(../fonts/materialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+
+/* font kit end */
+
+
+/*################### common css start ###################*/
+
+body {
+    font-family: robotoregular;
+    color: #8e989f !important;
+    padding-top: 63px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a:focus,
+img:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-flat {
+    border-radius: 0px;
+}
+
+.orange-text {
+    color: #e97252;
+}
+
+.blue-text {
+    color: #269fd8;
+}
+
+.grey-text {
+    color: #8e989f;
+}
+
+.btn-basic {
+    color: #269fd8;
+    border: 1px solid #dae2e6;
+    font-size: 13px;
+}
+
+.disable-btn {
+    border: 1px solid #dae2e6;
+    color: #bec5c9;
+}
+
+.disable-btn:hover {
+    border: 1px solid #dae2e6;
+    color: #bec5c9;
+}
+
+.btn-basic2 {
+    color: #e97252;
+    border: 1px solid #dae2e6;
+    font-size: 11px;
+    background: #f6f8f9;
+    padding: 10px;
+}
+
+.btn-basic2 i {
+    color: #e97252;
+    font-size: 14px;
+    position: relative;
+    top: 3px;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.position-right {
+    right: 0px;
+}
+
+.template-outr {
+    padding-left: 30px;
+}
+
+.template-outr .no-padding {
+    padding: 0px;
+}
+
+.navbar-rightside .btn-basic {
+    margin-right: 15px;
+}
+
+
+/*################### common css end ###################*/
+
+
+/*################### editor header css start ###################*/
+
+.editor-navheader {
+    margin-left: 4px !important;
+}
+
+.navbar-rightside {
+    float: right;
+    margin-top: 13px;
+}
+
+.navbar-default {
+    background: #fff;
+    border-color: #dae2e6;
+    padding-bottom: 10px;
+}
+
+.navbar-logopadding {
+    padding-right: 35px;
+    margin-left: 0 !important;
+}
+
+input.ed-projectname {
+    border: none;
+    border-left: 1px solid #dae2e6;
+    color: #5cc9e6;
+    float: left;
+    font-size: 18px;
+    margin-top: 13px;
+    padding-bottom: 5px;
+    padding-top: 4px;
+    padding-left: 20px;
+    width: 45%;
+}
+
+.navbar-fixed-top .nav-padding {
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
+.template-outr {
+    padding-left: 30px;
+}
+
+.template-outr .no-padding {
+    padding: 0px;
+}
+
+.sidebar-offcanvas {
+    padding-right: 30px;
+}
+
+.navbar-rightside {
+    float: right;
+    margin-top: 13px;
+}
+
+.navbar-default {
+    background: #fff;
+    border-color: #dae2e6;
+    padding-bottom: 11px;
+}
+
+.navbar-logopadding {
+    padding-right: 35px;
+}
+
+.ed-projectname {
+    border-left: 1px solid #dae2e6;
+    color: #5cc9e6;
+    float: left;
+    font-size: 18px;
+    margin-top: 13px;
+    padding-bottom: 5px;
+    padding-top: 4px;
+    padding-left: 20px;
+}
+
+.navbar-rightside .btn-basic {
+    margin-right: 10px;
+}
+
+.btn-menu {
+    border: 1px solid #dae2e6;
+    height: 31px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.btn-menu i {
+    font-size: 16px;
+}
+
+.navbar-leftside {
+    border-left: 1px solid #dae2e6;
+    color: #5cc9e6;
+    font-size: 18px;
+    margin-left: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-top: 4px;
+}
+
+.navbar-leftside label {
+    font-size: 14px;
+    color: #8e989f;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.navbar-leftside label i {
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+.navbar-leftside label i:last-child {
+    margin-left: 10px;
+}
+
+.navbar-leftside .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+
+/*################### editor header css start ###################*/
+
+
+/*################### editor left sidebar css start ###################*/
+
+
+/* Hide for mobile, show later */
+
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .editor-sidebar.sidebar {
+        position: fixed;
+        top: 62px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 0px;
+        /*overflow-x: hidden;
+    overflow-y: auto; */
+        background-color: #fff;
+        border-right: 1px solid #dae2e6;
+    }
+}
+
+.editor-accordion {
+    float: left;
+    width: 100%;
+}
+
+.editor-accordion .panel-body {
+    padding: 0px;
+}
+
+.editor-accordion .panel-heading {
+    padding: 0px;
+    background: #f5f8f8;
+}
+
+.editor-accordion .panel-heading .panel-title a {
+    padding: 9px 15px;
+    display: block;
+    text-decoration: none;
+    line-height: 16px;
+    font-size: 15px;
+    border-bottom: 1px solid #dae2e6;
+    border-top: 1px solid #fff;
+}
+
+.editor-accordion .panel-group .panel + .panel {
+    margin-top: 0px;
+}
+
+.editor-accordion .panel {
+    border: none;
+    box-shadow: none;
+}
+
+.ed-sidebar-topsection {
+    display: block;
+    padding: 7px 20px;
+    border-bottom: 1px solid #dae2e6;
+    line-height: 21px;
+}
+
+.ed-sidebar-topsection span {
+    display: inline-block;
+}
+
+.page-add {
+    float: right;
+    margin-top: 2px;
+}
+
+.page-add label {
+    color: #bec5c9;
+    font-weight: normal;
+    font-size: 12px;
+    float: left;
+    margin-right: 5px;
+}
+
+.page-add a {
+    transition: all 200ms ease-in 0s;
+}
+
+.page-add a i:hover {
+    color: #269fd8;
+}
+
+.page-add a i {
+    font-size: 18px;
+    color: #f56151;
+}
+
+.ed-sidebar {
+    display: block;
+    padding: 13px 20px;
+    /*border-bottom:1px solid #dae2e6;*/
+}
+
+.ed-sidebar a {
+    transition: all 200ms ease-in 0s;
+    color: #269fd8;
+    font-size: 13px;
+}
+
+.ed-sidebar a:hover {
+    text-decoration: none;
+    color: #f56151;
+}
+
+.ed-sidebar {
+    display: block;
+    padding: 13px 20px;
+    padding-right: 10px;
+    /*border-bottom:1px solid #dae2e6;*/
+}
+
+.ed-sidebar a {
+    transition: all 200ms ease-in 0s;
+    color: #269fd8;
+    font-size: 13px;
+}
+
+.ed-sidebar a:hover {
+    text-decoration: none;
+    color: #f56151;
+}
+
+.ed-sidebar-sub {
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+.ed-sidebar-sub label {
+    font-weight: normal;
+    color: #62696d;
+    background: #f6f8f9;
+    padding: 0 5px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.ed-sidebar-sub ul {
+    padding: 0px;
+    padding-left: 25px;
+}
+
+.ed-sidebar-sub ul li {
+    list-style-type: decimal;
+    font-size: 13px;
+    transition: all 200ms ease-in 0s;
+    margin-bottom: 5px;
+}
+
+.ed-sidebar-sub ul li:hover .sublist-action {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ed-sidebar-sub ul li span {
+    width: 77%;
+    position: relative;
+    display: inline-block;
+    top: 4px;
+}
+
+.ed-sidebar-sub ul li a {
+    display: none;
+    transition: all 200ms ease-in 0s;
+}
+
+.ed-sidebar-sub ul li a i {
+    color: #8e989f;
+    font-size: 13px;
+}
+
+.ed-sidebar-sub ul li a i:hover {
+    color: #f56151;
+}
+
+.ed-sidebar {
+    display: block;
+    padding: 13px 20px;
+    padding-right: 10px;
+    border-bottom: 1px solid #dae2e6;
+}
+
+.ed-sidebar a {
+    transition: all 200ms ease-in 0s;
+    color: #269fd8;
+    font-size: 13px;
+}
+
+.ed-sidebar a i {
+    font-size: 14px;
+    position: relative;
+    top: 4px;
+    float: right;
+}
+
+.ed-sidebar a:hover {
+    text-decoration: none;
+    color: #f56151;
+}
+
+.ed-sidebar-sub {
+    padding-left: 0px;
+    margin-top: 15px;
+}
+
+.ed-sidebar-sub label {
+    font-weight: normal;
+    color: #62696d;
+    background: #f6f8f9;
+    padding: 0 5px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.ed-sidebar-sub ul {
+    padding: 0px;
+    padding-left: 25px;
+}
+
+.ed-sidebar-sub ul li {
+    list-style-type: decimal;
+    font-size: 13px;
+    transition: all 200ms ease-in 0s;
+    margin-bottom: 5px;
+}
+
+.ed-sidebar-sub ul li:hover .sublist-action {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+
+.ed-sidebar-sub ul li span {
+    width: 98%;
+    display: inline-block;
+}
+
+
+/*################### editor left sidebar css end ###################*/
+
+
+/*################### Editor Right Template section css start ###################*/
+
+.editor-template-tabs {
+    display: block;
+}
+
+.editor-template-tabs .nav-tabs {
+    border-bottom: none;
+    padding-bottom: 4px;
+    padding-top: 5px;
+}
+
+.editor-template-tabs .nav-tabs > li:first-child {
+    margin-left: 20%;
+}
+
+.editor-template-tabs .nav-tabs > li {
+    float: none;
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-right: 12px;
+}
+
+.editor-template-tabs .nav-tabs > li i {
+    font-size: 18px;
+    color: #bec5c9;
+    position: relative;
+    top: 5px;
+}
+
+.editor-template-tabs .nav-tabs > li.active > a {
+    color: #f56151;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #dae2e6;
+}
+
+.editor-template-tabs .nav-tabs > li > a {
+    color: #8e989f;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #dae2e6;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 12px;
+    transition: all 200ms ease-in 0s;
+}
+
+.editor-template-tabs .nav-tabs > li > a:hover {
+    background: #fafafa;
+}
+
+.editor-template-tabs .tab-content {
+    border-top: 1px solid #dae2e6;
+    padding: 60px 0px 0px 0px;
+    background-image: url('../../assets/images/build-bg.jpg');
+}
+
+
+/*################### Editor Right Template section css end ###################*/
+
+
+/*################### Editor Properties css start ###################*/
+
+
+/* sidebar css start */
+
+.sidebar-layout {
+    height: 100vh;
+    border: 1px solid #dae2e6;
+    border-right: 0px;
+    box-shadow: -2px 0 6px -1px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    z-index: 99;
+}
+
+.sidebar-topselector {
+    border-bottom: 1px solid #dae2e6;
+    font-size: 13px;
+    color: #8e989f;
+}
+
+.sidebar-offcanvas {
+    padding-right: 0px;
+    top: 60px;
+    z-index: 9;
+}
+
+.card-layout {
+    display: block;
+    padding: 8px 20px;
+    line-height: 20px;
+}
+
+.card-layout .dropdown-toggle {
+    cursor: pointer;
+}
+
+.card-layout.open .dropdown-toggle {
+    box-shadow: none;
+}
+
+.card-layout i {
+    font-size: 14px;
+    position: relative;
+    top: 3px;
+}
+
+.sidebar-bottomoutr {
+    padding: 20px;
+}
+
+.layout-select {
+    border-bottom: 1px solid #dae2e6;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.layout-select-box {
+    float: left;
+}
+
+.layout-select a {
+    transition: all 200ms ease-in 0s;
+    border: 3px solid #fff;
+    display: inline-block;
+}
+
+.layout-select .layout-select-box:first-child {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 14px;
+}
+
+.layout-select a:hover {
+    border: 3px solid #62cbe8;
+}
+
+.layout-select a.active {
+    border: 3px solid #62cbe8;
+}
+
+.layout-select span {
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+.color-select {
+    border-bottom: 1px solid #dae2e6;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.color-select span {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.color-select ul {
+    float: left;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.color-select ul li {
+    float: left;
+    width: auto;
+    margin-right: 10px;
+}
+
+.color-select ul li a.color-option {
+    float: left;
+    width: 24px;
+    height: 24px;
+}
+
+.blue {
+    background: #62cbe8;
+}
+
+.green {
+    background: #28c2ba;
+}
+
+.orange {
+    background: #e97252;
+}
+
+.background-select {
+    border-bottom: 1px solid #dae2e6;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.background-select span {
+    float: left;
+    width: 100%;
+}
+
+.background-select span:nth-child(2) {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #c7cdd0;
+    font-size: 12px;
+}
+
+.background-select button:nth-child(4) {
+    margin-left: 10px;
+}
+
+
+/* sidebar css end */
+
+
+/* landing css start */
+
+.sidebar-bottomselector {
+    padding: 20px;
+    display: inline-block;
+    font-size: 13px;
+    color: #8e989f;
+}
+
+.heading-box {
+    border: 1px solid #dae2e6;
+}
+
+.heading-box-top {
+    background: #f6f8f9;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #dae2e6;
+}
+
+.heading-box-top .select-default {
+    background: none;
+    border: none;
+    float: left;
+    color: #62696d;
+    font-size: 12px;
+}
+
+.heading-box-topinput {
+    resize: none;
+    border: none;
+    width: 100%;
+    padding: 3px;
+    padding-left: 5px;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+.heading-box-top .heading-editor {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.heading-box-top .heading-editor li {
+    float: left;
+    width: auto;
+}
+
+.heading-box-top .heading-editor li a {
+    border-left: 1px solid #dae2e6;
+    float: left;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.heading-box-top .heading-editor li a:hover {
+    background: #e4e5e6;
+}
+
+.heading-box-top .heading-editor li a i {
+    font-size: 14px;
+    color: #62696d;
+}
+
+.lan-description {
+    border-top: 1px solid #e9eef0;
+    border-bottom: 1px solid #e9eef0;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.desc-switch {
+    float: right;
+}
+
+.butn-details {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-detail-text {
+    border: 1px solid #dae2e6;
+    padding: 8px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-detail-size .select-default {
+    background: #f6f8f9;
+    border: 1px solid #dae2e6;
+    font-size: 12px;
+    color: #62696d;
+    padding: 5px;
+}
+
+.btn-detail-size span {
+    top: 5px;
+    position: relative;
+}
+
+.btn-detail-link {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-detail-link span {
+    top: 5px;
+    position: relative;
+}
+
+.btn-detail-link input {
+    border: 1px solid #dae2e6;
+    padding: 8px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    color: #5cc9e6;
+}
+
+.placeholder-color1::-webkit-input-placeholder {
+    color: #5cc9e6;
+}
+
+.placeholder-color1:-moz-placeholder {
+    color: #5cc9e6;
+}
+
+.placeholder-color1::-moz-placeholder {
+    color: #5cc9e6;
+}
+
+.placeholder-color1:-ms-input-placeholder {
+    color: #5cc9e6;
+}
+
+.logo-details {
+    border-top: 1px solid #e9eef0;
+    border-bottom: 1px solid #e9eef0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    float: left;
+    width: 100%;
+}
+
+.color-details {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    float: left;
+    width: 100%;
+}
+
+.setting-details {
+    padding-bottom: 5px;
+    float: left;
+    width: 100%;
+}
+
+.setting-detail-box {
+    margin-top: 10px;
+}
+
+.setting-details button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* select dropdown css start */
+
+.landing-dropdown {
+    background: none;
+}
+
+
+/* select dropdown css end */
+
+
+/* file input css start */
+
+.landing-inputfile {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.file-input {
+    border: 1px solid #dae2e6;
+    padding: 8px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    line-height: 19px;
+    display: block;
+    width: 100%;
+}
+
+
+/* file input css end */
+
+
+/*Question page Properties Start*/
+
+.type-details {
+    border-bottom: 1px solid #e9eef0;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    float: left;
+}
+
+.form-text {
+    background: #f6f8f9;
+    border: 1px solid #dae2e6;
+    font-size: 12px;
+    color: #62696d;
+    padding: 5px;
+    box-shadow: none;
+    border-radius: 0;
+    line-height: normal;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.form-label {
+    line-height: 24px;
+    float: left;
+    min-width: 17px;
+}
+
+.text-group {
+    margin-bottom: 15px;
+}
+
+.icon-group {
+    margin-bottom: 0px;
+}
+
+.type-detail .text-group:last-child {
+    margin-bottom: 0px;
+}
+
+.check {
+    width: 100%;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+.check label {
+    content: " ";
+    width: 18px;
+    height: 18px;
+    border: 1px solid #dae2e6;
+    margin-right: 10px;
+    float: left; 
+}
+
+.check label::after {
+    position: relative;
+    font-size: 13px;
+    left: 1px;
+    color: #8e989f;
+}
+
+.check input[type="checkbox"]:checked + label::after {
+    font-family: "Material Icons";
+    content: "\e5ca";
+}
+
+.check input[type="checkbox"] {
+    left: -9999px;
+    position: absolute;
+}
+.check input[type="checkbox"]:checked + label + div {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+
+
+/* Radio with ic icon class */
+
+.radio-icon input[type="radio"] {
+    left: -9999px;
+    position: absolute;
+}
+
+.ic label {
+    content: none;
+    border: none;
+    height: auto;
+    width: auto;
+    border: 1px solid #dae2e6;
+    padding: 1px 3px;
+    margin-right: 10px;
+}
+
+.ic input[type="radio"]:checked + label::after {
+    content: none;
+}
+
+.ic input[type="radio"]:checked + label {
+    border: 1px solid #62cbe8;
+}
+
+.ic i {
+    font-size: 24px;
+    line-height: 1;
+    margin-top: 1px;
+}
+
+.icon-group .form-label {
+    line-height: 34px;
+}
+
+.more-options .btn {
+    border: none;
+    padding: 0px;
+}
+
+.more-options.open .btn-default:focus,
+.more-options.open .btn-default:hover,
+.more-options.open .btn-default:active {
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+.more-options .btn-default:focus,
+.more-options .btn-default:hover,
+.more-options .btn-default:active {
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+.more-options.btn-group.open .dropdown-toggle {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: none;
+}
+
+.more-options .btn-default:active:hover,
+.more-options .btn-default.active:hover,
+.more-options.open > .dropdown-toggle.btn-default:hover,
+.more-options .btn-default:active:focus,
+.more-options .btn-default.active:focus,
+.more-options.open > .dropdown-toggle.btn-default:focus,
+.more-options .btn-default:active.focus,
+.more-options .btn-default.active.focus,
+.more-options.open > .dropdown-toggle.btn-default.focus {
+    color: #333;
+    background: none;
+    border: none;
+}
+
+.more-options i {
+    font-size: 14px;
+    line-height: 28px;
+    color: #c2c9cd;
+}
+
+.type-head {
+    margin-bottom: 15px;
+}
+
+a.default {
+    color: #f56151;
+    line-height: 24px;
+}
+
+a.default:hover,
+a.default:focus,
+a.default:active {
+    text-decoration: none;
+    color: #f56151;
+}
+
+.default-label {
+    background: #269fd8;
+    border-radius: 20px;
+    padding: 1px 6px;
+    color: #fff;
+    font-size: 11px;
+    margin-left: -2px;
+}
+
+.placeholder-text {
+    padding-left: 0px;
+    width: 96%;
+    padding-right: 15px;
+    float: left;
+}
+
+
+/*helptip*/
+
+.help-tip i {
+    color: #bec5c9;
+    font-size: 13px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.help-checktip {
+    float: left;
+    background-color: #464655;
+    color: #fff;
+    padding: 5px;
+    width: 185px;
+    font-size: 11px;
+    border-radius: 4px;
+    position: absolute;
+    top: -39px;
+    left: 39px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    visibility: hidden;
+    box-shadow: 0 1px 1px #f0f0f1;
+    text-align: center;
+    left: -83px;
+}
+
+.help-checktip:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 10px;
+    height: 10px;
+    border-top: 6px solid #464655;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+
+.help-tip {
+    margin: 1px 7px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    color: rgba(40, 112, 145, 0.6);
+    margin: 0px;
+}
+
+.help-tip:hover > .help-checktip {
+    visibility: visible;
+    z-index: 999;
+}
+
+.more-options .dropdown-menu {
+    top: 70%;
+    left: -103px;
+    min-width: 130px;
+    font-size: 12px;
+    border-radius: 0px;
+}
+
+
+/*################### Editor Properties css end ###################*/
+
+.template-section{
+    padding:60px 0px 0px 0px;
+}

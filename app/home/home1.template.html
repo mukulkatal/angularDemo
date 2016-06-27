@@ -1,0 +1,784 @@
+<!-- Editor header start-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav-padding">
+        <div class="navbar-header editor-navheader col-sm-3 col-md-2">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand navbar-logopadding">
+                <img src="assets/images/logo.png" />
+            </a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <input type="text" class="ed-projectname" contenteditable="true" value="This is the project name" placeholder="This is the project name" />
+            <div class="navbar-rightside">
+                <button type="button" class="btn btn-default btn-sm btn-flat btn-basic btn-menu"><i class="material-icons">donut_large</i></button>
+                <button 
+                    type="button" 
+                    class="btn btn-default btn-sm btn-flat btn-basic"
+                     [routerLink]="['Preview',{ name:TempName }]"
+                    (click)="onPreview()"
+                >
+                Preview
+                </button>               
+                <button type="button" disabled class="btn btn-default btn-sm btn-flat btn-basic disable-btn">Publish</button>
+                <div class="btn-group navbar-leftside">
+                    <div class="col-xs-12 no-padding">
+                        <label><i class="material-icons blue-text">account_box</i> Pratham</label>
+                        <div class="btn-group">
+                            <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <label><i class="material-icons">help_outline</i></label>
+                            </div>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Editor header end-->
+ <!-- Editor Left sidebar start -->
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 editor-sidebar sidebar">
+            <div class="editor-accordion">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Build</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <component-manager
+                                *ngIf="controls"
+                            >
+                            </component-manager>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Configure</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                dfsadfsaf
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Analyze</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                sfdsfggasdf
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ed-sidebar-topsection hide">
+                <span>Pages</span>
+                <div class="page-add">
+                    <label>Add</label>
+                    <a href="javascript:void(0);"><i class="material-icons">add_circle_outline</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Editor Left sidebar end -->
+
+ <!-- Editor Right Template section strat -->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 no-padding">
+    <div class="editor-template-tabs">
+        <div class="template-section" id="build">
+            <Temp
+                [TempName]="TempName"
+                (default_Template)="bind_Template_Json($event)"
+             >
+            </Temp>
+        </div>
+    </div>
+</div>
+<!-- Editor Right Template section end  -->
+
+<!--landing layout start -->
+    <div id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas affix position-right">
+        <div class="sidebar-layout side-scroll">
+            <div class="main-side">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        Landing Page Properties
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="col-xs-12 no-padding">
+                        <span>Heading:</span>
+                        <div class="heading-box">
+                            <div class="heading-box-top">
+                                <select class="select-default" data-width="fit" data-style="landing-dropdown">
+                                    <option>H1</option>
+                                    <option>H2</option>
+                                    <option>H3</option>
+                                    <option>H4</option>
+                                    <option>H5</option>
+                                    <option>H6</option>
+                                </select>
+                                <ul class="heading-editor">
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
+                                </ul>
+                            </div>
+                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
+                        </div>
+                        <div class="lan-description">
+                            <span>Description:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
+                            </div>
+                        </div>
+                        <div class="butn-details">
+                            <span>Button:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" checked data-size="mini">
+                            </div>
+                            <input type="text" class="btn-detail-text" />
+                            <!-- <div class="btn-detail-size col-xs-12 no-padding">
+                                <span class="col-xs-2 no-padding">Size:</span>
+                                <select class="select-default" data-width="fit">
+                                    <option>XL</option>
+                                    <option>XXL</option>
+                                    <option>XXXL</option>
+                                </select>
+                            </div>
+                            <div class="btn-detail-link col-xs-12 no-padding">
+                                <span class="col-xs-2 no-padding">Link:</span>
+                                <input type="text" class="col-xs-10 placeholder-color1" value="http://" placeholder="http://" />
+                            </div> -->
+                        </div>
+                        <div class="logo-details">
+                            <span>Logo:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" checked data-size="mini">
+                            </div>
+                            <div class="landing-inputfile">
+                                <div class="col-xs-12 no-padding">
+                                    <div class="input-group">
+                                        <input type="text" class="file-input" placeholder="No file" readonly>
+                                        <label class="input-group-btn">
+                                            <span class="btn btn-default btn-flat btn-basic2">
+                                            Upload <input type="file" style="display: none;">
+                                        </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="color-details">
+                            <div class="color-select">
+                                <span>Theme Color:</span>
+                                <ul>
+                                    <li>
+                                        <a href="" class="color-option blue"></a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="color-option green"></a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="color-option orange"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="background-select">
+                                <span>Background Image:</span>
+                                <span>Replace the background imgage</span>
+                                <button type="button" class="btn btn-default btn-flat btn-basic2"><i class="material-icons">image</i> Replace Image</button>
+                                <button type="button" class="btn btn-default btn-flat btn-basic2"><i class="material-icons">video_call</i> Add Video</button>
+                            </div>
+                        </div>
+                        <div class="setting-details">
+                            <span class="col-xs-12 no-padding">Settings:</span>
+                            <div class="col-xs-12 no-padding setting-detail-box">
+                                <span>Powered by Venture Pact</span>
+                                <div class="desc-switch">
+                                    <input type="checkbox" name="properties-checkbox" checked data-size="mini">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding setting-detail-box">
+                                <span>Privacy Policy</span>
+                                <div class="desc-switch">
+                                    <input type="checkbox" name="properties-checkbox" checked data-size="mini">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default btn-flat btn-basic2"><i class="material-icons">image</i> Use Another Teamplate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-side hide" for="numeric-input">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        Question Properties:
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="col-xs-12 no-padding">
+                        <div class="type-details">
+                            <div class="btn-detail-size col-xs-12 no-padding">
+                                <span class="col-md-2 no-padding form-label">Type:</span>
+                                <div class="col-md-5">
+                                    <select class="select-default" data-width="fit">
+                                        <option>Numeric Type</option>
+                                        <option>Text</option>
+                                        <option>Email</option>
+                                        <option>Password</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="type-head">Question:</p>
+                        <div class="heading-box">
+                            <div class="heading-box-top">
+                                <select class="select-default pull-right" data-width="fit" data-style="landing-dropdown">
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                </select>
+                                <ul class="heading-editor">
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
+                                </ul>
+                            </div>
+                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
+                        </div>
+                        <div class="lan-description">
+                            <span>Description:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <div class="col-xs-12 no-padding text-group">
+                                <span class="col-md-3 no-padding form-label">Placeholder:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group ">
+                                <span class=" col-md-3 no-padding form-label">Min Value:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group ">
+                                <span class="col-md-3 no-padding form-label">Max Value:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <label class="check">
+                                <input type="checkbox" value="Value1 " name="checkbox1" id="check1">
+                                <label for="check1"> </label>
+                                Mark as Mandatory
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-side hide" for="numeric-slider">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        Question Properties:
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="col-xs-12 no-padding">
+                        <div class="type-details">
+                            <div class="btn-detail-size col-xs-12 no-padding">
+                                <span class="col-xs-2 no-padding">Type:</span>
+                                <select class="select-default" data-width="fit">
+                                    <option>Numeric Slider</option>
+                                    <option>Text</option>
+                                    <option>Email</option>
+                                    <option>Password</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="type-head">Question:</p>
+                        <div class="heading-box">
+                            <div class="heading-box-top">
+                                <select class="select-default pull-right" data-width="fit" data-style="landing-dropdown">
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                </select>
+                                <ul class="heading-editor">
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
+                                </ul>
+                            </div>
+                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
+                        </div>
+                        <div class="lan-description">
+                            <span>Description:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <div class="col-xs-12 no-padding text-group ">
+                                <span class="no-padding form-label">Min Value:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group ">
+                                <span class="no-padding form-label">Max Value:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group">
+                                <span class="no-padding form-label">No. of Intervals:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group">
+                                <span class="no-padding form-label">Scale:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                                <div class="help-tip">
+                                    <i class="material-icons">help</i>
+                                    <div class="help-checktip">Scale property is denoting what scale of text slider is required</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group">
+                                <span class="no-padding form-label">Default Value:</span>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <label class="check">
+                                <input type="checkbox" value="Value1 " name="checkbox1" id="check2">
+                                <label for="check2"> </label>
+                                Mark as Mandatory
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-side hide" for="open choices">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        Question Properties:
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="col-xs-12 no-padding">
+                        <div class="type-details">
+                            <div class="btn-detail-size col-xs-12 no-padding">
+                                <span class="col-xs-2 no-padding">Type:</span>
+                                <select class="select-default" data-width="fit">
+                                    <option>Multi Select</option>
+                                    <option>Text</option>
+                                    <option>Email</option>
+                                    <option>Password</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="type-head">Question:</p>
+                        <div class="heading-box">
+                            <div class="heading-box-top">
+                                <select class="select-default pull-right" data-width="fit" data-style="landing-dropdown">
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                </select>
+                                <ul class="heading-editor">
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
+                                </ul>
+                            </div>
+                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
+                        </div>
+                        <div class="lan-description">
+                            <span>Description:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <div class="col-xs-12 no-padding text-group icon-group ">
+                                <span class="no-padding form-label">Icons:</span>
+                                <div class="col-md-5">
+                                    <label class="radio-icon ic">
+                                        <input type="radio" name="icon-select" id="ic1">
+                                        <label for="ic1"><i class="material-icons">landscape</i> </label>
+                                    </label>
+                                    <label class="radio-icon ic">
+                                        <input type="radio" name="icon-select" id="ic2">
+                                        <label for="ic2"><i class="material-icons">landscape</i> </label>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <p class="type-head">Options:</p>
+                            <div class="col-xs-12 no-padding text-group ">
+                                <span class="no-padding form-label"><span class="default-label">D</span></span>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-text">
+                                </div>
+                                <!-- More button -->
+                                <div class="btn-group  more-options">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more</i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Delete</a></li>
+                                        <li><a href="#">Set as Default</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group ">
+                                <span class="no-padding form-label">1:</span>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-text">
+                                </div>
+                                <!-- More button -->
+                                <div class="btn-group  more-options">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more</i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group">
+                                <span class="no-padding form-label">2:</span>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-text">
+                                </div>
+                                <!-- More button -->
+                                <div class="btn-group  more-options">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more</i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group">
+                                <span class="no-padding form-label">3:</span>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-text">
+                                </div>
+                                <!-- More button -->
+                                <div class="btn-group  more-options">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more</i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 no-padding text-group">
+                                <span class="no-padding form-label">4:</span>
+                                <div class="col-md-10">
+                                    <a href="#" class="default">Add Option</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <label class="check">
+                                <input type="checkbox" value="mandatory" name="checkbox1" id="check3">
+                                <label for="check3"> </label>
+                                Mark as Mandatory
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-side hide" for="text-input">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        Question1
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="type-details">
+                        <div class="btn-detail-size col-xs-12 no-padding">
+                            <span class="col-xs-2 no-padding">Type:</span>
+                            <select class="select-default" data-width="fit">
+                                <option>Email</option>
+                                <option>Text</option>
+                                <option>Email</option>
+                                <option>Password</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 no-padding">
+                        <p class="type-head">Question:</p>
+                        <div class="heading-box">
+                            <div class="heading-box-top">
+                                <select class="select-default pull-right" data-width="fit" data-style="landing-dropdown">
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                </select>
+                                <ul class="heading-editor">
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
+                                </ul>
+                            </div>
+                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
+                        </div>
+                        <div class="lan-description">
+                            <span>Description:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <div class="col-xs-12 no-padding text-group ">
+                                <div class=" placeholder-text">
+                                    <input type="text" class="form-text" placeholder="Placeholder Text">
+                                </div>
+                                <!-- More button -->
+                                <div class="btn-group  more-options">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more</i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <label class="check">
+                                <input type="checkbox" value="Value1 " name="checkbox1" id="check1">
+                                <label for="check1"> </label>
+                                Mark as Mandatory
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-side hide" for="toggle">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        Question1
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="col-xs-12 no-padding">
+                        <div class="type-details">
+                            <div class="btn-detail-size col-xs-12 no-padding">
+                                <span class="col-xs-2 no-padding">Type:</span>
+                                <select class="select-default" data-width="fit">
+                                    <option>Email</option>
+                                    <option>Text</option>
+                                    <option>Email</option>
+                                    <option>Password</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="type-head">Question:</p>
+                        <div class="heading-box">
+                            <div class="heading-box-top">
+                                <select class="select-default pull-right" data-width="fit" data-style="landing-dropdown">
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                </select>
+                                <ul class="heading-editor">
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
+                                </ul>
+                            </div>
+                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
+                        </div>
+                        <div class="lan-description">
+                            <span>Description:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <div class="col-xs-12 no-padding text-group ">
+                                <p class="type-head">Define two values:</p>
+                                <div class="col-xs-12 no-padding form-group"><span class="no-padding form-label">1:</span>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-text">
+                                    </div>
+                                    <a href="#" class="default"> Set as Default</a></div>
+                                <div class="col-xs-12 no-padding form-group"><span class="no-padding form-label">2:</span>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-text">
+                                    </div>
+                                    <a href="#" class="default"> Set as Default</a></div>
+                                <div class="col-xs-12 no-padding form-group"><span class="no-padding form-label">3:</span>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-text">
+                                    </div>
+                                    <a href="#" class="default"> Set as Default</a></div>
+                                <div class="col-xs-12 no-padding form-group"><span class="no-padding form-label">4:</span>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-text">
+                                    </div>
+                                    <a href="#" class="default"> Set as Default</a></div>
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <label class="check">
+                                <input type="checkbox" value="Value1 " name="checkbox1" id="check1">
+                                <label for="check1"> </label>
+                                Mark as Mandatory
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-side hide">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        Question1
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="col-xs-12 no-padding">
+                        <div class="type-details">
+                            <p class="type-head">Question:</p>
+                            <input type="text" class="form-text" placeholder="placeholder">
+                        </div>
+                        <div class="heading-box">
+                            <div class="heading-box-top">
+                                <select class="select-default pull-right" data-width="fit" data-style="landing-dropdown">
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                    <option>Variable</option>
+                                </select>
+                                <ul class="heading-editor">
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
+                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
+                                </ul>
+                            </div>
+                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
+                        </div>
+                        <div class="lan-description">
+                            <span>Description:</span>
+                            <div class="desc-switch">
+                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <div class="col-xs-12 no-padding text-group ">
+                                <div class=" placeholder-text">
+                                    <input type="text" class="form-text" placeholder="placeholder">
+                                </div>
+                                <!-- More button -->
+                                <div class="btn-group  more-options">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more</i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="type-details">
+                            <label class="check">
+                                <input type="checkbox" value="Value1 " name="checkbox1" id="check1">
+                                <label for="check1"> </label>
+                                Mark as Mandatory
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-side hide" for="icons">
+                <div class="sidebar-topselector">
+                    <div class="card-layout">
+                        <select class="select-default" data-width="fit">
+                            <option>Material Icon</option>
+                            <option>Font Awesome</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="sidebar-bottomselector">
+                    <div class="type-details">
+                    </div>
+                    <div class="col-xs-12 no-padding">
+                        <div class="type-details">
+                        </div>
+                        <div class="type-details">
+                            <label class="check">
+                                <input type="checkbox" value="Value1 " name="checkbox1" id="check1">
+                                <label for="check1"> </label>
+                                Mark as Mandatory
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--landing layout end -->
+
+

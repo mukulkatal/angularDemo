@@ -7,34 +7,39 @@ declare var jQuery: any;
 @Component({
 	selector: 'component-manager',
 	directives: [Control],
-	template: `
-	<div class="a">
-	<div  *ngFor="let page of templateJson.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
-		<ul 			
-			*ngFor="let section of page.sections,let s=index"		
-			[attr.data-section]="s+1"
-			class="col s12 m12 sortable1 mt40 z-depth-3"
-			(mousedown)="jsonBuilderHelper.setSelectedSection(section)"
-		>
-		 
-			<li class="child p20 " *ngFor="let control of section.items,let i=index" 
-				[attr.data-order]="i+1"
-				(mousedown)="selectControl(control)"					
-			>
-				{{control.type}}
-			</li>
+	templateUrl: 'app/home/components/component_manager/component_manager.template.html',
+	// <div class="a">
+ //    <div  *ngFor="let page of templateJson.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
+ //     <ul             
+ //         *ngFor="let section of page.sections,let s=index"       
+ //         [attr.data-section]="s+1"
+ //         class="col s12 m12 sortable1 mt40 z-depth-3"
+ //         (mousedown)="jsonBuilderHelper.setSelectedSection(section)"
+ //     >
+         
+ //         <li class="child p20 " *ngFor="let control of section.items,let i=index" 
+ //             [attr.data-order]="i+1"
+ //             (mousedown)="selectControl(control)"                    
+ //         >
+ //             {{control.type}}
+ //         </li>
+        
+ //     </ul>
+ //    </div>   
+ //    </div>
+
 		
-		</ul>
-	</div>	
-	</div>	
-	`
+	
 })
 
 export class ComponentManager implements AfterViewInit {
 	templateJson: any;
 
 	constructor(private jsonBuilderHelper: JSONBuilder){
-		this.templateJson = jsonBuilderHelper.getJSONBuilt();		
+
+		this.templateJson = jsonBuilderHelper.getJSONBuilt();	
+		console.log('asd');	
+		console.log(this.templateJson);	
 	}
 
 	ngAfterViewInit(){

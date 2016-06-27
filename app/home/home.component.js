@@ -63,11 +63,7 @@ var HomeComponent = (function () {
             directives: [router_deprecated_1.RouterLink, control_component_1.Control, editor_component_1.Editor, templateDev_component_1.TemplateDev, switch_component_1.Switch, component_manager_component_1.ComponentManager],
             providers: [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement],
             viewProviders: [],
-            templateUrl: 'home.template.html',
-            styles: [
-                '.mt20{margin-top:20px}'
-            ],
-            styleUrls: ['../../node_modules/materialize-css/dist/css/materialize.min.css']
+            templateUrl: 'home1.template.html',
         }), 
         __metadata('design:paramtypes', [JSONBuilder_service_1.JSONBuilder, JSONElement_service_1.JSONElement])
     ], HomeComponent);
