@@ -109,7 +109,6 @@ export class Template1Component implements OnInit
             section2.addItems(item1,item2);
 
             this.JSON_Template=app;
-            console.log(JSON.stringify(app));
         }
         this.default_Template.emit(this.JSON_Template);
     }
@@ -120,12 +119,10 @@ export class Template1Component implements OnInit
         template component (i.e Template.ts) and then parent template component pass to home component
     */
     selectControl(control) {
-        console.log(control);
         this.selected_control.emit(control);
     }
 
     selectSection(section){
-         console.log(section);
        this.selected_section.emit(section);
     }
 

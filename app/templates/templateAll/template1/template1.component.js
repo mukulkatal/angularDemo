@@ -77,7 +77,6 @@ var Template1Component = (function () {
             item2 = new model_1.Item('header', 'This is textfield', 'textfield help');
             section2.addItems(item1, item2);
             this.JSON_Template = app;
-            console.log(JSON.stringify(app));
         }
         this.default_Template.emit(this.JSON_Template);
     };
@@ -86,11 +85,9 @@ var Template1Component = (function () {
         template component (i.e Template.ts) and then parent template component pass to home component
     */
     Template1Component.prototype.selectControl = function (control) {
-        console.log(control);
         this.selected_control.emit(control);
     };
     Template1Component.prototype.selectSection = function (section) {
-        console.log(section);
         this.selected_section.emit(section);
     };
     Template1Component.prototype.selectpage = function (page) {

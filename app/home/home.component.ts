@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit{
             update: function() {
                 //get order from DOM
                 let order = jQuery(this).sortable("toArray", { attribute: "data-order" });
-                console.log(order);
                 //sort the array
                 self.jsonBuilderHelper.sort(order);
             }
