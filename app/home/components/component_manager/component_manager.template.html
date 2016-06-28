@@ -2,16 +2,19 @@
     <div class="ed-sidebar" 
         *ngFor="let page of templateJson.pages" 
         (mousedown)="jsonBuilderHelper.setSelectedPage(page)"
+        (click)="selectModel('Page')"
     >
         <a href="javascript:void(0)">{{page.type}}</a>
         <div 
             class="ed-sidebar-questions-sub"
             *ngFor="let section of page.sections,let s=index" 
         >
-            <label
+            <a 
+                href="#" 
+                class="sub-head"
             >
-            {{page.type}}
-            </label> 
+                 {{page.type}}
+            </a>          
             <!-- section type -->
             <ul  
                 class="sortable1"
@@ -22,8 +25,9 @@
                     *ngFor="let control of section.items,let i=index" 
                     [attr.data-order]="i+1"
                     (mousedown)="selectControl(control)"
+                    (click)="selectModel('Control')"
                 >
-                    <span class="ellipsis">{{control.type}}</span>
+                    <a href="#" class="ellipsis head">{{control.type}}</a>
                     <a 
                         href="javascript:void(0);" 
                         class="sublist-action" 

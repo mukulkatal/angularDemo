@@ -121,10 +121,11 @@
 <!--landing layout start -->
 <div id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas affix position-right">
     <div class="sidebar-layout side-scroll">
-    <editor
-        *ngIf="jsonBuilderHelper.getSelectedControl()"
-    >
-    </editor>
+        <editor
+            *ngIf="jsonBuilderHelper.getSelectedControl() || jsonBuilderHelper.getSelectedPage
+            ()"
+        >
+        </editor>    
     </div>
 </div>
 <!--landing layout end -->

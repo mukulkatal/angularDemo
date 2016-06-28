@@ -48,6 +48,10 @@ var ComponentManager = (function () {
     ComponentManager.prototype.selectControl = function (control) {
         this.jsonBuilderHelper.setSelectedControl(control);
     };
+    ComponentManager.prototype.selectModel = function (type) {
+        event.stopPropagation();
+        this.jsonBuilderHelper.setSelectedModel(type);
+    };
     ComponentManager = __decorate([
         core_1.Component({
             selector: 'component-manager',

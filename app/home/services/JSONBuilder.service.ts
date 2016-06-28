@@ -10,6 +10,7 @@ export class JSONBuilder{
 	private selectedControl: any;
 	private selectedSection: any;
 	private selectedPage: any;
+	private selectedModel: any;
 
 	setTemplate(template: any[]){
 		this.JSONTemplate = template;
@@ -61,6 +62,10 @@ export class JSONBuilder{
 		return this.selectedSection;
 	}
 
+	getSelectedPage() {
+		return this.selectedPage;
+	}
+
     changeControl(newControl: any){
     	//index of old control in array
 		let index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
@@ -106,6 +111,14 @@ export class JSONBuilder{
 		jQuery.each(this.selectedSection.items, function(key, item) {
 			item.order = key+1;
 		});
+	}
+
+	setSelectedModel(type: any){
+		this.selectedModel = type;
+	}
+
+	getSelectedModel() {
+		return this.selectedModel;
 	}
 
 }

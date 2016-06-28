@@ -76,4 +76,10 @@ export class ComponentManager implements AfterViewInit {
 	selectControl(control) {			
         this.jsonBuilderHelper.setSelectedControl(control);
     }
+
+    selectModel(type)
+    {
+        event.stopPropagation();
+        this.jsonBuilderHelper.setSelectedModel(type);
+    }
 }

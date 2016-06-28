@@ -70,11 +70,11 @@ var Template1Component = (function () {
             resultPage.addSections(section1, section2);
             // add items in section 1 in result page
             item1 = new model_1.Item('slider', 'This is slider', 'slider help');
-            item2 = new model_1.Item('slider', 'This is textfield', 'textfield help');
+            item2 = new model_1.Item('slider', 'This is slider', 'textfield help');
             section1.addItems(item1, item2);
             // add items in section 2 in result page        
-            item1 = new model_1.Item('selectbox', 'This is textfield', 'textfield help');
-            item2 = new model_1.Item('header', 'This is textfield', 'textfield help');
+            item1 = new model_1.Item('selectbox', 'This is slectbox', 'slectboix help');
+            item2 = new model_1.Item('header', 'This is header', 'header help');
             section2.addItems(item1, item2);
             this.JSON_Template = app;
         }

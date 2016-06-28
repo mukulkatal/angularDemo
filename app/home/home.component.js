@@ -28,7 +28,6 @@ var HomeComponent = (function () {
     HomeComponent.prototype.ngOnInit = function () {
     };
     HomeComponent.prototype.ngAfterViewInit = function () {
-        console.log('enter');
         /* On click outside the div hide sidebar container */
         jQuery(document).mouseup(function (e) {
             console.log('mouseup');

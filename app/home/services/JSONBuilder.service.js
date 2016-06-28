@@ -53,6 +53,9 @@ var JSONBuilder = (function () {
     JSONBuilder.prototype.getSelectedSection = function () {
         return this.selectedSection;
     };
+    JSONBuilder.prototype.getSelectedPage = function () {
+        return this.selectedPage;
+    };
     JSONBuilder.prototype.changeControl = function (newControl) {
         //index of old control in array
         var index = jQuery.inArray(this.selectedControl, this.selectedSection.items);
@@ -94,6 +97,12 @@ var JSONBuilder = (function () {
         jQuery.each(this.selectedSection.items, function (key, item) {
             item.order = key + 1;
         });
+    };
+    JSONBuilder.prototype.setSelectedModel = function (type) {
+        this.selectedModel = type;
+    };
+    JSONBuilder.prototype.getSelectedModel = function () {
+        return this.selectedModel;
     };
     JSONBuilder = __decorate([
         core_1.Injectable(), 

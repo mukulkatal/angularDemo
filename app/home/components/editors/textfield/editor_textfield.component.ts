@@ -29,7 +29,7 @@ import { Component, Input } from '@angular/core';
                 Mark as Mandatory
             </label>
         </div>
-	`
+    `
 
 })//<input type="text" [(ngModel)] = "control.config.placeholder" />
 	// <input type="text" [(ngModel)] = "control.config.placeholder" />

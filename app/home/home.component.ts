@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit,AfterViewInit{
     }
     ngAfterViewInit()
     {
-        console.log('enter');
         /* On click outside the div hide sidebar container */
         jQuery(document).mouseup(function(e) {
             console.log('mouseup');

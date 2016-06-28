@@ -61,7 +61,7 @@
 
 body {
     font-family: robotoregular;
-    color: #8e989f !important;
+    color: #8e989f;
     padding-top: 63px;
 }
 
@@ -76,7 +76,7 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-    outline: none !important;
+    outline: none;
 }
 
 .ellipsis {
@@ -159,7 +159,7 @@ select:focus {
 /*################### editor header css start ###################*/
 
 .editor-navheader {
-    margin-left: 4px !important;
+    margin-left: 4px;
 }
 
 .navbar-rightside {
@@ -391,7 +391,7 @@ input.ed-projectname {
     /*border-bottom:1px solid #dae2e6;*/
 }
 
-.ed-sidebar a {
+.ed-sidebar a.sub-head {
     transition: all 200ms ease-in 0s;
     color: #269fd8;
     font-size: 13px;
@@ -409,11 +409,7 @@ input.ed-projectname {
     /*border-bottom:1px solid #dae2e6;*/
 }
 
-.ed-sidebar a {
-    transition: all 200ms ease-in 0s;
-    color: #269fd8;
-    font-size: 13px;
-}
+
 
 .ed-sidebar a:hover {
     text-decoration: none;
@@ -451,14 +447,14 @@ input.ed-projectname {
     vertical-align: middle;
 }
 
-.ed-sidebar-sub ul li span {
+.ed-sidebar-sub ul li a.head {
     width: 77%;
     position: relative;
     display: inline-block;
     top: 4px;
 }
 
-.ed-sidebar-sub ul li a {
+.ed-sidebar-sub ul li a.sublist-action {
     display: none;
     transition: all 200ms ease-in 0s;
 }
@@ -477,12 +473,6 @@ input.ed-projectname {
     padding: 13px 20px;
     padding-right: 10px;
     border-bottom: 1px solid #dae2e6;
-}
-
-.ed-sidebar a {
-    transition: all 200ms ease-in 0s;
-    color: #269fd8;
-    font-size: 13px;
 }
 
 .ed-sidebar a i {
@@ -529,10 +519,6 @@ input.ed-projectname {
     top: -2px;
 }
 
-.ed-sidebar-sub ul li span {
-    width: 98%;
-    display: inline-block;
-}
 
 
 /*################### editor left sidebar css end ###################*/
