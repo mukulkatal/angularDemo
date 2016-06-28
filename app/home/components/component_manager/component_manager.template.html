@@ -1,7 +1,7 @@
 <div class="panel-body panel-scroll">
     <div class="ed-sidebar" 
         *ngFor="let page of templateJson.pages" 
-        (mousedown)="jsonBuilderHelper.setSelectedPage(page)" 
+        (mousedown)="jsonBuilderHelper.setSelectedPage(page)"
     >
         <a href="javascript:void(0)">{{page.type}}</a>
         <div 

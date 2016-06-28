@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, AfterViewInit,Output,EventEmitter} from '@angular/core';
 import {Control} from '../../../templates/controls/control.component';
 import { JSONBuilder } from '../../services/JSONBuilder.service';
-
+// import {slimscroll} from '';
 declare var jQuery: any;
 
 @Component({
@@ -64,6 +64,13 @@ export class ComponentManager implements AfterViewInit {
                 self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
 			},
         }).disableSelection();
+
+        jQuery('.side-scroll').slimScroll({
+            height: '94vh'
+        });
+        jQuery('.panel-scroll').slimScroll({
+            height: '82vh'
+        });
     }
 
 	selectControl(control) {			

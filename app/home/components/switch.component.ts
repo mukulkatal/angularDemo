@@ -6,15 +6,21 @@ import { JSONElement } from '../services/JSONElement.service';
 	selector: 'switch',
 	providers: [JSONElement],
 	template: `
-		<select (change)="onChange($event)" class="display">
-
-			<option *ngFor="let control of controls" value="{{control}}" [selected]="jsonBuilderHelper.getSelectedControl().type==control">{{control}}</option>
-
-		</select>
+				<select 
+					class="select-default" 
+					(change)="onChange($event)" 
+					data-width="fit"
+				>
+			        <option *ngFor="let control of controls" value="{{control}}" [selected]="jsonBuilderHelper.getSelectedControl().type==control">{{control}}</option>
+			    </select>
 	`,
-	styles: ['.display{display:block}']
+	//styles: ['.display{display:block}']
 })
+//<select (change)="onChange($event)" class="display">
 
+		// 	<option *ngFor="let control of controls" value="{{control}}" [selected]="jsonBuilderHelper.getSelectedControl().type==control">{{control}}</option>
+
+		// </select>
 export class Switch {
 
     controls: string[] = [

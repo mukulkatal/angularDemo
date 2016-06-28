@@ -30,8 +30,7 @@ var Switch = (function () {
         core_1.Component({
             selector: 'switch',
             providers: [JSONElement_service_1.JSONElement],
-            template: "\n\t\t<select (change)=\"onChange($event)\" class=\"display\">\n\n\t\t\t<option *ngFor=\"let control of controls\" value=\"{{control}}\" [selected]=\"jsonBuilderHelper.getSelectedControl().type==control\">{{control}}</option>\n\n\t\t</select>\n\t",
-            styles: ['.display{display:block}']
+            template: "\n\t\t\t\t<select \n\t\t\t\t\tclass=\"select-default\" \n\t\t\t\t\t(change)=\"onChange($event)\" \n\t\t\t\t\tdata-width=\"fit\"\n\t\t\t\t>\n\t\t\t        <option *ngFor=\"let control of controls\" value=\"{{control}}\" [selected]=\"jsonBuilderHelper.getSelectedControl().type==control\">{{control}}</option>\n\t\t\t    </select>\n\t",
         }), 
         __metadata('design:paramtypes', [JSONElement_service_1.JSONElement, JSONBuilder_service_1.JSONBuilder])
     ], Switch);
