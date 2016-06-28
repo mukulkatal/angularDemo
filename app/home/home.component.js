@@ -27,6 +27,30 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
+    HomeComponent.prototype.ngAfterViewInit = function () {
+        console.log('enter');
+        /* On click outside the div hide sidebar container */
+        jQuery(document).mouseup(function (e) {
+            console.log('mouseup');
+            var container = jQuery("#sidebar");
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && (container.has(e.target).length === 0)) {
+                if (!jQuery('.ed-sidebar a').is(e.target)) {
+                    container.hide('slide', {
+                        direction: 'right',
+                        easing: 'linear'
+                    }, 400);
+                }
+                else {
+                    container.show('slide', {
+                        direction: 'right',
+                        easing: 'linear'
+                    }, 400);
+                }
+            }
+        });
+        // /* End of funtion */
+    };
     /*
     --  output from the templates for default json and handle selected control
     */

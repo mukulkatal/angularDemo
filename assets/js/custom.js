@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
     /* slimscroll js */
-    $('.side-scroll').slimScroll({
-        height: '94vh'
-    });
-    $('.panel-scroll').slimScroll({
-        height: '82vh'
-    });
+    // $('.side-scroll').slimScroll({
+    //     height: '94vh'
+    // });
+    // $('.panel-scroll').slimScroll({
+    //     height: '82vh'
+    // });
     /* switch js */
     $.fn.bootstrapSwitch.defaults.onColor = 'blue';
     $.fn.bootstrapSwitch.defaults.offColor = 'orange';

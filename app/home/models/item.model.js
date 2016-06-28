@@ -5,6 +5,7 @@ var Item = (function () {
         this.type = "";
         this.props = {
             title: "",
+            currentValue: "",
             helpText: "",
         };
         this.config = {

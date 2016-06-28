@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter,AfterViewInit } from '@angular/core';
 import { RouterLink } from '@angular/router-deprecated';
 import {Control} from '../templates/controls/control.component';
 import { TemplateDev } from '../templates/templateAll/templateDev.component';
@@ -29,11 +29,36 @@ declare var jQuery: any;
    //              ]
 })
 
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit,AfterViewInit{
     controls: any;
     TempName : any = "Temp-1" ;
     elements: any[];
     ngOnInit(){
+    }
+    ngAfterViewInit()
+    {
+        console.log('enter');
+        /* On click outside the div hide sidebar container */
+        jQuery(document).mouseup(function(e) {
+            console.log('mouseup');
+            var container = jQuery("#sidebar");
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && (container.has(e.target).length === 0)) // ... nor a descendant of the container
+            {
+                if (!jQuery('.ed-sidebar a').is(e.target)) {
+                    container.hide('slide', {
+                        direction: 'right',
+                        easing: 'linear'
+                    }, 400);
+                } else {
+                    container.show('slide', {
+                        direction: 'right',
+                        easing: 'linear'
+                    }, 400);
+                }
+            }
+        });
+// /* End of funtion */
     }
 
     /*

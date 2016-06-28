@@ -19,7 +19,7 @@ var EditorTextField = (function () {
     EditorTextField = __decorate([
         core_1.Component({
             selector: 'editor-textfield',
-            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.placeholder\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.value\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.showHelp\" />\n\t"
+            template: "\t\t\n         <div class=\"type-details\">\n            <div class=\"col-xs-12 no-padding text-group\">\n                <span class=\"col-md-3 no-padding form-label\">Placeholder:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\" [(ngModel)] = \"control.config.placeholder\">\n                </div>\n            </div>\n            <div class=\"col-xs-12 no-padding text-group \">\n                <span class=\" col-md-3 no-padding form-label\">Min Value:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\">\n                </div>\n            </div>\n            <div class=\"col-xs-12 no-padding text-group \">\n                <span class=\"col-md-3 no-padding form-label\">Max Value:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\">\n                </div>\n            </div>\n        </div>\n        <div class=\"type-details\">\n            <label class=\"check\">\n                <input type=\"checkbox\" value=\"Value1 \" name=\"checkbox1\" id=\"check1\">\n                <label for=\"check1\"> </label>\n                Mark as Mandatory\n            </label>\n        </div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], EditorTextField);

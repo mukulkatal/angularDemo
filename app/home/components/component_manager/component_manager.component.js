@@ -38,6 +38,12 @@ var ComponentManager = (function () {
                 self.jsonBuilderHelper.multiSectionSort(jQuery(this).attr("data-section"), ui.item.index(), order);
             },
         }).disableSelection();
+        jQuery('.side-scroll').slimScroll({
+            height: '94vh'
+        });
+        jQuery('.panel-scroll').slimScroll({
+            height: '82vh'
+        });
     };
     ComponentManager.prototype.selectControl = function (control) {
         this.jsonBuilderHelper.setSelectedControl(control);
