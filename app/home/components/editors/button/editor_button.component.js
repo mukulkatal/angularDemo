@@ -19,7 +19,7 @@ var EditorButton = (function () {
     EditorButton = __decorate([
         core_1.Component({
             selector: 'editor-button',
-            template: "\n\t\t<input type=\"text\" [(ngModel)] = \"control.props.title\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.props.helpText\" />\n\t\t<input type=\"text\" [(ngModel)] = \"control.config.type\" />\n\t"
+            template: "\n\t\t<div class=\"butn-details\">\n\t\t\t<span>{{control.type}}:</span>\n\t\t\t<div class=\"desc-switch\">\n\t\t\t\t<input type=\"checkbox\" name=\"properties-checkbox\" checked data-size=\"mini\" [(ngModel)] = \"control.props.currentValue\">\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], EditorButton);
