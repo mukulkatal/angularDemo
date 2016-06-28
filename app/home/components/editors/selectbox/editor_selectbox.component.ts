@@ -26,7 +26,7 @@ import { JSONElement } from '../../../services/JSONElement.service';
 				</div>
 			</div>
 			<div class="col-xs-12 no-padding text-group">
-				<span class="no-padding form-label">4:</span>
+				<span class="no-padding form-label"></span>
 				<div class="col-md-10">
 					<a href="javascript:void(0);" (click)="add_Option_In_Dropdown()" class="default">Add Option</a>
 				</div>
