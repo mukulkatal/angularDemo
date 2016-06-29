@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { TEMPLATES } from './templates';
 import { JSONBuilder } from '../../home/services/JSONBuilder.service';
+import {App} from '../../home/models/model';
 
 @Component({
     selector: "Temp",
@@ -23,7 +24,7 @@ import { JSONBuilder } from '../../home/services/JSONBuilder.service';
 
 export class TemplateDev implements OnInit {
     @Input('TempName') Temp_name;
-    JSON_Template;
+    JSON_Template: App;
     @Output() default_Template = new EventEmitter();
 
    ngOnInit() {
@@ -31,7 +32,7 @@ export class TemplateDev implements OnInit {
       let template = localStorage.getItem('template');
       if (template) {
          //if present then assign it.
-         this.JSON_Template = JSON.parse(template);
+         this.JSON_Template = new App().deserialize(JSON.parse(template));
       }
    }
 

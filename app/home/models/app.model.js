@@ -1,4 +1,5 @@
 "use strict";
+var page_model_1 = require('./page.model');
 var App = (function () {
     function App() {
         this.description = "";
@@ -12,6 +13,18 @@ var App = (function () {
         }
         for (var page in pages)
             this.pages.push(pages[page]);
+    };
+    App.prototype.deserialize = function (input) {
+        for (var prop in input) {
+            if (typeof input[prop] === 'object') {
+                for (var page in input[prop]) {
+                    this.pages.push(new page_model_1.Page('').deserialize(input[prop][page]));
+                }
+            }
+            else
+                this[prop] = input[prop] || this[prop];
+        }
+        return this;
     };
     return App;
 }());

@@ -85,6 +85,15 @@ var Item = (function () {
         for (var option in options)
             this.options.push(options[option]);
     };
+    Item.prototype.deserialize = function (input) {
+        for (var prop in input) {
+            if (typeof input[prop] === 'object')
+                jQuery.extend(true, this[prop], input[prop]);
+            else
+                this[prop] = input[prop] || this[prop];
+        }
+        return this;
+    };
     return Item;
 }());
 exports.Item = Item;

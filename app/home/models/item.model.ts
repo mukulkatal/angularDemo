@@ -1,4 +1,7 @@
-export class Item {
+import {Serializable} from './serializeable.interface';
+
+declare var jQuery: any;
+export class Item implements Serializable<Item>{
 
     order:string="";
     type:string="";
@@ -87,5 +90,15 @@ export class Item {
     public setOptions(...options){
       for(let option in options)
         this.options.push(options[option]);
+    }
+
+    deserialize(input): Item{
+      for(let prop in input){
+        if(typeof input[prop] === 'object')
+          jQuery.extend(true, this[prop], input[prop]);
+        else
+          this[prop] = input[prop] || this[prop];
+      }
+      return this;
     }
 }

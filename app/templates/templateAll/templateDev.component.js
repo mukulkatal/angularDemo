@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var templates_1 = require('./templates');
 var JSONBuilder_service_1 = require('../../home/services/JSONBuilder.service');
+var model_1 = require('../../home/models/model');
 var TemplateDev = (function () {
     function TemplateDev(jsonBuilderHelper) {
         this.jsonBuilderHelper = jsonBuilderHelper;
@@ -21,7 +22,7 @@ var TemplateDev = (function () {
         var template = localStorage.getItem('template');
         if (template) {
             //if present then assign it.
-            this.JSON_Template = JSON.parse(template);
+            this.JSON_Template = new model_1.App().deserialize(JSON.parse(template));
         }
     };
     // bind Template Json from template parent

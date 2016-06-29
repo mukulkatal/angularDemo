@@ -1,6 +1,7 @@
+import {Serializable} from './serializeable.interface';
 import {Section} from './section.model';
 
-export class Page {
+export class Page implements Serializable<Page>{
 	description: string = "";
 	type: string = "";
 	sections: Section[] = [];
@@ -18,4 +19,18 @@ export class Page {
 			this.sections.push(sections[section]);
 		}
 	}
+
+	deserialize(input): Page{
+		for(let prop in input){
+			if(typeof input[prop] === 'object'){
+				for(let section in input[prop]){
+					this.sections.push(new Section().deserialize(input[prop][section]));
+				}
+			}
+			else
+				this[prop] = input[prop] || this[prop];
+		}
+        return this;
+    }
+
 }

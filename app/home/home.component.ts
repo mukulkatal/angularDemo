@@ -18,15 +18,12 @@ declare var jQuery: any;
     providers: [JSONBuilder, JSONElement],
     viewProviders: [],
     templateUrl: 'home1.template.html',
-    // styles : [
-    // '.mt20{margin-top:20px}'
-    // ],
-   // styleUrls:  [
-   //                  'assets/css/bootstrap.css',
-   //                  'assets/css/bootstrap-switch.css',
-   //                  'assets/css/bootstrap-select.css',
-   //                  'assets/css/custom.css',
-   //              ]
+    /*styleUrls:[
+        '../../assets/css/bootstrap.css',
+        '../../assets/css/bootstrap-switch.css',
+        '../../assets/css/bootstrap-select.css',
+        '../../assets/css/custom.css',
+    ]*/
 })
 
 export class HomeComponent implements OnInit,AfterViewInit{
@@ -96,6 +93,7 @@ export class HomeComponent implements OnInit,AfterViewInit{
     }
 
     onPreview(){
-        localStorage.setItem('template',JSON.stringify(this.controls));
+        console.log(this.jsonBuilderHelper.getJSONBuilt());
+        localStorage.setItem('template',JSON.stringify(this.jsonBuilderHelper.getJSONBuilt()));
     }
 }

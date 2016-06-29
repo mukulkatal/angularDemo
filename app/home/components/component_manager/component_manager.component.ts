@@ -8,28 +8,6 @@ declare var jQuery: any;
 	selector: 'component-manager',
 	directives: [Control],
 	templateUrl: 'app/home/components/component_manager/component_manager.template.html',
-	// <div class="a">
- //    <div  *ngFor="let page of templateJson.pages" (mousedown)="jsonBuilderHelper.setSelectedPage(page)" >
- //     <ul             
- //         *ngFor="let section of page.sections,let s=index"       
- //         [attr.data-section]="s+1"
- //         class="col s12 m12 sortable1 mt40 z-depth-3"
- //         (mousedown)="jsonBuilderHelper.setSelectedSection(section)"
- //     >
-         
- //         <li class="child p20 " *ngFor="let control of section.items,let i=index" 
- //             [attr.data-order]="i+1"
- //             (mousedown)="selectControl(control)"                    
- //         >
- //             {{control.type}}
- //         </li>
-        
- //     </ul>
- //    </div>   
- //    </div>
-
-		
-	
 })
 
 export class ComponentManager implements AfterViewInit {

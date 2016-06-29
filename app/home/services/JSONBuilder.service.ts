@@ -12,7 +12,7 @@ export class JSONBuilder{
 	private selectedPage: any;
 	private selectedModel: any;
 
-	setTemplate(template: any[]){
+	setTemplate(template: App){
 		this.JSONTemplate = template;
 	}
 	
@@ -41,16 +41,17 @@ export class JSONBuilder{
 		return this.JSONTemplate;
 	}
 
-	setSelectedControl(control: any){
+	setSelectedControl(control: Item){
 		this.selectedControl = control;
+		console.log(this.selectedControl);
 	}
 
-	setSelectedSection(section: any) {
+	setSelectedSection(section: Section) {
 		this.selectedSection = section;
 		this.selectedSection.__proto__ = Section.prototype;
 	}
 
-	setSelectedPage(page: any) {
+	setSelectedPage(page: Page) {
 		this.selectedPage = page;
 	}
 

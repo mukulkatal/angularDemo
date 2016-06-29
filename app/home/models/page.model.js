@@ -1,4 +1,5 @@
 "use strict";
+var section_model_1 = require('./section.model');
 var Page = (function () {
     function Page(type) {
         this.description = "";
@@ -16,6 +17,18 @@ var Page = (function () {
             sections[section].order = Number(section) + 1;
             this.sections.push(sections[section]);
         }
+    };
+    Page.prototype.deserialize = function (input) {
+        for (var prop in input) {
+            if (typeof input[prop] === 'object') {
+                for (var section in input[prop]) {
+                    this.sections.push(new section_model_1.Section().deserialize(input[prop][section]));
+                }
+            }
+            else
+                this[prop] = input[prop] || this[prop];
+        }
+        return this;
     };
     return Page;
 }());

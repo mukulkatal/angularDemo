@@ -39,6 +39,7 @@ var JSONBuilder = (function () {
     };
     JSONBuilder.prototype.setSelectedControl = function (control) {
         this.selectedControl = control;
+        console.log(this.selectedControl);
     };
     JSONBuilder.prototype.setSelectedSection = function (section) {
         this.selectedSection = section;

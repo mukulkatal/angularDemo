@@ -77,7 +77,8 @@ var HomeComponent = (function () {
         this.jsonBuilderHelper.getSelectedSection().addItems(item);
     };
     HomeComponent.prototype.onPreview = function () {
-        localStorage.setItem('template', JSON.stringify(this.controls));
+        console.log(this.jsonBuilderHelper.getJSONBuilt());
+        localStorage.setItem('template', JSON.stringify(this.jsonBuilderHelper.getJSONBuilt()));
     };
     HomeComponent = __decorate([
         core_1.Component({
