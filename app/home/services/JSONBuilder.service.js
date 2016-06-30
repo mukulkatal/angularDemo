@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var model_1 = require('./../models/model');
 var JSONBuilder = (function () {
     function JSONBuilder() {
     }
@@ -39,11 +38,9 @@ var JSONBuilder = (function () {
     };
     JSONBuilder.prototype.setSelectedControl = function (control) {
         this.selectedControl = control;
-        console.log(this.selectedControl);
     };
     JSONBuilder.prototype.setSelectedSection = function (section) {
         this.selectedSection = section;
-        this.selectedSection.__proto__ = model_1.Section.prototype;
     };
     JSONBuilder.prototype.setSelectedPage = function (page) {
         this.selectedPage = page;

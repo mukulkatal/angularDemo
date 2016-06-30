@@ -18,7 +18,7 @@ var App = (function () {
         for (var prop in input) {
             if (typeof input[prop] === 'object') {
                 for (var page in input[prop]) {
-                    this.pages.push(new page_model_1.Page('').deserialize(input[prop][page]));
+                    this.pages.push(new page_model_1.Page().deserialize(input[prop][page]));
                 }
             }
             else

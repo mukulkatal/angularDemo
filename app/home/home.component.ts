@@ -93,7 +93,6 @@ export class HomeComponent implements OnInit,AfterViewInit{
     }
 
     onPreview(){
-        console.log(this.jsonBuilderHelper.getJSONBuilt());
         localStorage.setItem('template',JSON.stringify(this.jsonBuilderHelper.getJSONBuilt()));
     }
 }

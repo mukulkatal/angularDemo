@@ -17,7 +17,7 @@ export class App implements Serializable<App>{
 		for(let prop in input){
 			if(typeof input[prop] === 'object'){
 				for(let page in input[prop]){
-					this.pages.push(new Page('').deserialize(input[prop][page]));
+					this.pages.push(new Page().deserialize(input[prop][page]));
 				}
 			}
 			else

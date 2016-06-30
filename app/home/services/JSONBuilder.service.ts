@@ -6,10 +6,10 @@ declare var jQuery: any;
 @Injectable()
 export class JSONBuilder{
 	
-	private JSONTemplate: any;
-	private selectedControl: any;
-	private selectedSection: any;
-	private selectedPage: any;
+	private JSONTemplate: App;
+	private selectedControl: Item;
+	private selectedSection: Section;
+	private selectedPage: Page;
 	private selectedModel: any;
 
 	setTemplate(template: App){
@@ -43,12 +43,10 @@ export class JSONBuilder{
 
 	setSelectedControl(control: Item){
 		this.selectedControl = control;
-		console.log(this.selectedControl);
 	}
 
 	setSelectedSection(section: Section) {
 		this.selectedSection = section;
-		this.selectedSection.__proto__ = Section.prototype;
 	}
 
 	setSelectedPage(page: Page) {

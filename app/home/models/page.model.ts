@@ -6,7 +6,7 @@ export class Page implements Serializable<Page>{
 	type: string = "";
 	sections: Section[] = [];
 
-	constructor(type: string){
+	constructor(type?: string){
     	this.type = type;    	
     }
 

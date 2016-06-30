@@ -20,7 +20,7 @@ export class Section implements Serializable<Section>{
 		for(let prop in input){
 			if(typeof input[prop] === 'object'){
 				for(let item in input[prop]){
-					this.items.push(new Item('','','').deserialize(input[prop][item]));
+					this.items.push(new Item().deserialize(input[prop][item]));
 				}
 			}
 			else

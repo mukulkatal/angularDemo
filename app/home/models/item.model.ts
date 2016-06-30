@@ -65,7 +65,7 @@ export class Item implements Serializable<Item>{
        }
     ];
 
-    constructor(type: string, title:string, helpText:string){
+    constructor(type?: string, title?:string, helpText?:string){
     	this.type = type;
     	this.props.title = title || "";
     	this.props.helpText = helpText || "";

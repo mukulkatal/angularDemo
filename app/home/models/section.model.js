@@ -21,7 +21,7 @@ var Section = (function () {
         for (var prop in input) {
             if (typeof input[prop] === 'object') {
                 for (var item in input[prop]) {
-                    this.items.push(new item_model_1.Item('', '', '').deserialize(input[prop][item]));
+                    this.items.push(new item_model_1.Item().deserialize(input[prop][item]));
                 }
             }
             else
