@@ -4,6 +4,7 @@ import { EditorHeader } from './editors/header/editor_header.component';
 import { EditorButton } from './editors/button/editor_button.component';
 import { EditorLogo } from './editors/logo/editor_logo.component';
 import { EditorSlider } from './editors/slider/editor_slider.component';
+import { CommonEditor } from './editors/common/common_properties.component';
 // import { EditorPage } from './editors/page/editor_page.component';
 
 export const EDITORS: any[] = [
@@ -13,5 +14,5 @@ export const EDITORS: any[] = [
 	EditorButton,
 	EditorLogo,
 	EditorSlider,
-	// EditorPage
+	CommonEditor
 ];

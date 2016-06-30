@@ -7,7 +7,7 @@ import {Switch} from './switch.component'
 	selector: 'editor',
 	directives: [EDITORS,Switch],
 	template: `
-	  		  <div class="main-side " for="text-input">
+	  		<div class="main-side " for="text-input">
                 <div class="sidebar-topselector">
                     <div class="card-layout">
                         title
@@ -19,41 +19,19 @@ import {Switch} from './switch.component'
                             <span class="col-xs-2 no-padding">Type:</span>
                                 <switch
                                     *ngIf="jsonBuilderHelper.getSelectedControl()"                                   
-                                >
+                                >    1
                                 </switch>                           
                         </div>
                     </div>
                     <div class="col-xs-12 no-padding">
-                        <p class="type-head">Question:</p>
-                        <div class="heading-box">
-                            <div class="heading-box-top">
-                                <select class="select-default pull-right" data-width="fit" data-style="landing-dropdown">
-                                    <option>Variable</option>
-                                    <option>Variable</option>
-                                    <option>Variable</option>
-                                    <option>Variable</option>
-                                    <option>Variable</option>
-                                    <option>Variable</option>
-                                </select>
-                                <ul class="heading-editor">
-                                    <li><a href="javascript:void(0);"><i class="material-icons">format_bold</i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="material-icons">format_italic</i></a></li>
-                                    <li><a href="javascript:void(0);"><i class="material-icons">format_color_text</i></a></li>
-                                </ul>
-                            </div>
-                            <textarea type="text" value="" class="heading-box-topinput" rows="3"></textarea>
-                        </div>
-                        <div class="lan-description">
-                            <span>Description:</span>
-                            <div class="desc-switch">
-                                <input type="checkbox" name="properties-checkbox" data-size="mini" data-on-color="blue">
-                            </div>
-                        </div>
-                         <editor-page 
+                    <!-- For page editor -->
+                        <editor-page 
                             *ngIf="jsonBuilderHelper.getSelectedModel()=='Page'"
                             [control]="jsonBuilderHelper.getSelectedPage()"
                         >
-                        </editor-page>                      
+                        </editor-page>      
+                    <!-- ****  -->    
+
                         <editor-textfield 
                             *ngIf="jsonBuilderHelper.getSelectedModel()=='Control' && jsonBuilderHelper.getSelectedControl().type=='textfield'" 
                             [control]="jsonBuilderHelper.getSelectedControl()"

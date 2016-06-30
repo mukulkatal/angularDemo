@@ -1,9 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { JSONElement } from '../../../services/JSONElement.service';
-
+import { CommonEditor  } from '../common/common_properties.component';
 @Component({
 	selector:'editor-selectbox',
+	directives: [CommonEditor],
 	template:`
+	<!-- Common Component -->
+		<common-editor
+			[control]="control"
+		>
+		</common-editor>
+	<!-- Common Component-->
+
 		<div class="type-details">
 			<p class="type-head">Options:</p>
 			<div class="col-xs-12 no-padding text-group" *ngFor="let option of control.options ; let i = index">
@@ -32,6 +40,7 @@ import { JSONElement } from '../../../services/JSONElement.service';
 				</div>
 			</div>
 		</div>
+
 	`
 })
 /*Help Text : <input type="text" [(ngModel)] = "control.props.helpText" />

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var common_properties_component_1 = require('../common/common_properties.component');
 var EditorTextField = (function () {
     function EditorTextField() {
     }
@@ -19,7 +20,8 @@ var EditorTextField = (function () {
     EditorTextField = __decorate([
         core_1.Component({
             selector: 'editor-textfield',
-            template: "\t\t\n         <div class=\"type-details\">\n            <div class=\"col-xs-12 no-padding text-group\">\n                <span class=\"col-md-3 no-padding form-label\">Placeholder:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\" [(ngModel)] = \"control.config.placeholder\">\n                </div>\n            </div>\n            <div class=\"col-xs-12 no-padding text-group \">\n                <span class=\" col-md-3 no-padding form-label\">Min Value:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\">\n                </div>\n            </div>\n            <div class=\"col-xs-12 no-padding text-group \">\n                <span class=\"col-md-3 no-padding form-label\">Max Value:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\">\n                </div>\n            </div>\n        </div>\n        <div class=\"type-details\">\n            <label class=\"check\">\n                <input type=\"checkbox\" value=\"Value1 \" name=\"checkbox1\" id=\"check1\">\n                <label for=\"check1\"> </label>\n                Mark as Mandatory\n            </label>\n        </div>\n    "
+            directives: [common_properties_component_1.CommonEditor],
+            template: "\n    <!-- Common Component -->\n        <common-editor\n            [control]=\"control\"\n        >\n        </common-editor>\n    <!-- Common Component-->\t\n         <div class=\"type-details\">\n            <div class=\"col-xs-12 no-padding text-group\">\n                <span class=\"col-md-3 no-padding form-label\">Placeholder:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\" [(ngModel)] = \"control.config.placeholder\">\n                </div>\n            </div>\n            <div class=\"col-xs-12 no-padding text-group \">\n                <span class=\" col-md-3 no-padding form-label\">Min Value:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\">\n                </div>\n            </div>\n            <div class=\"col-xs-12 no-padding text-group \">\n                <span class=\"col-md-3 no-padding form-label\">Max Value:</span>\n                <div class=\"col-md-5\">\n                    <input type=\"text\" class=\"form-text\">\n                </div>\n            </div>\n        </div>\n        <div class=\"type-details\">\n            <label class=\"check\">\n                <input type=\"checkbox\" value=\"Value1 \" name=\"checkbox1\" id=\"check1\">\n                <label for=\"check1\"> </label>\n                Mark as Mandatory\n            </label>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], EditorTextField);

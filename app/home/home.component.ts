@@ -55,6 +55,8 @@ export class HomeComponent implements OnInit,AfterViewInit{
             }
         });
 // /* End of funtion */
+
+        
     }
 
     /*

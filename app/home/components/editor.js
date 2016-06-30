@@ -5,6 +5,7 @@ var editor_header_component_1 = require('./editors/header/editor_header.componen
 var editor_button_component_1 = require('./editors/button/editor_button.component');
 var editor_logo_component_1 = require('./editors/logo/editor_logo.component');
 var editor_slider_component_1 = require('./editors/slider/editor_slider.component');
+var common_properties_component_1 = require('./editors/common/common_properties.component');
 // import { EditorPage } from './editors/page/editor_page.component';
 exports.EDITORS = [
     editor_selectbox_component_1.EditorSelectBox,
@@ -13,5 +14,6 @@ exports.EDITORS = [
     editor_button_component_1.EditorButton,
     editor_logo_component_1.EditorLogo,
     editor_slider_component_1.EditorSlider,
+    common_properties_component_1.CommonEditor
 ];
 //# sourceMappingURL=editor.js.map

@@ -1,7 +1,16 @@
 import { Component, Input } from '@angular/core';
+import { CommonEditor  } from '../common/common_properties.component';
+
 @Component({
 	selector: 'editor-textfield',
-	template:`		
+    directives: [CommonEditor],
+	template:`
+    <!-- Common Component -->
+        <common-editor
+            [control]="control"
+        >
+        </common-editor>
+    <!-- Common Component-->	
          <div class="type-details">
             <div class="col-xs-12 no-padding text-group">
                 <span class="col-md-3 no-padding form-label">Placeholder:</span>
